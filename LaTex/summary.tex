@@ -1,0 +1,27 @@
+%!TEX root = thesis.tex
+\chapter{Summary}
+\label{chapter:summary}
+To study phase transitions and critical behaviors, Monte Carlo methods and finite-size scaling are necessary. Caused by the irrelevant field of finite size, there is some correction depending on size.
+To get precise results, large-size simulations should be performed.
+
+To simulate large size system in less time, we implement the Monte Carlo method on GPUs.
+According to the checkerboard algorithm, We can parallelize the singe-spin flips and measurements into threads on hundreds of GPU cores.
+It does reduce the time for Monte Carlo simulations.
+
+We study the simple XY model. With no anisotropy, we obtain $\nu = 0.6708(1)$ and $\gamma=1.324(4)$, consistent with previous results.
+The emergent U(1) symmetry is a characteristic in the transitions of anisotropic XY model.
+Following the work of \citeauthor{lou_emergence_2007}, we study the the length scale $\Lambda$ of U(1) symmetry with the Monte Carlo method on GPU.
+For the  dangerous irrelevance, $\Lambda$ diverge faster than the correlation length, $\Lambda\sim \xi^{a_q},\ a=\nu_q/\nu>1$.
+For the simple XY model with $Z_q$ anisotropy, we find $a_4=1.06(4)$, $a_5=1.6(1)$, $a_6=2.4(1)$, $a_6=2.4(1)$, $a_7=3.0(1)$, $a_8=4.4(3)$, which are consistent with previous works.
+
+For the XY model with nonlinear potential, the transitions are first-order for $P$ large enough.
+For $P>1$, with $Z_q$ anisotropy, $\nu_q$ and $a_q$ vary with $h$, the strength of anisotropy. And, $\nu_q$ may be smaller than $\nu$ for $h=0$.
+In the case with $Z_4$ anisotropy, for $P\geq1.5$, the transitions turn into first-order transition for $h$ large enough, and as $h$ increasing, the exponents become non-universal.
+For $q>4$, there are two different cases depending on $P$.
+For $P$ large enough, the critical behaviors and the behavior of $\Lambda$ are almost the same as the $Z_4$ case, but the non-universal behaviors can not be confirmed clearly because of errors caused by finite-size effects.
+In the case that $P$ is not so large, the transition is always continuous.
+Though $\nu_q$ also vary with $h$, it is always larger than $\nu$ for $h=0$.
+The anisotropy should be irrelevant, but it is not sure that the critical exponents are constant with different $h$.
+
+An important question left is the regions of non-universal behavior.
+To answer this question, simulations on systems with larger sizes should be carried out.
