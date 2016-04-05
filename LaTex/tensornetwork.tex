@@ -19,19 +19,51 @@ Graphically, we usually use a node and few bonds to represent a tensor. Some spe
 
 \section{Tensor operations and tensor network diagrams} % (fold)
 \label{operation}
-Basically we can't calculate an fold tensors directly. So the first step, we should unfold tensors. On the other words, we must make their rank lower than 3 before operating. In order to explaining clearly, I give bond two different types, incoming (BD\_IN) and outgoing (BD\_OUT) bond, which is on node's left and right. Further explanation, BD\_IN and BD\_OUT can be imagined as rows and columns of a matrix. For instance, if the indices of $T_{\alpha \beta \gamma}$ ordered like Fig\ref{fig221}(i), it means that $T_{\alpha \beta \gamma}$ is a matrix $T_{\chi_{\beta}\chi_{\gamma},\chi_{\alpha}}$. Similarity, If it's like Fig\ref{fig221}(ii), it means that $T_{\alpha \beta \gamma}$ is a matrix $T_{\chi_{\beta},\chi_{\alpha}\chi_{\gamma}}$.
+Basically we can't calculate an fold tensors directly. So the first step, we should unfold tensors. On the other words, we must make their rank lower than 3 before operating. The process is also called \textit{permuteation}.
 
+\subsection{Permutation}
+Fig\ref{fig224} is a simple permutation example which means that the tensor $A$ permuted into tensor $\hat{A}$, 
+	\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.75\textwidth]{figures/fig224.png}
+	\caption[The process of permuting a tensor.]{Simple example of a tensor permutation. Permute tensor $A$ from indices $\alpha \beta \gamma$ to $\hat{A}_{\alpha \gamma \beta}$ }
+	\label{fig224}
+	\end{figure}
+\begin{align}
+	A_{\alpha \beta \gamma} \rightarrow \hat{A}_{\alpha \gamma \beta}
+\end{align}
+The components of $\hat{A}$ and $A$ are equivalence, but having different arrangements.
+In order to explaining clearly, I use two flags, incoming (BD\_IN) and outgoing (BD\_OUT) bonds which are also designed for distinguishing different types of \textit{uni10::Bond} in \textit{Uni10}, to show how to reduce the rank of a tensor. Further explanation, BD\_IN and BD\_OUT can be imagined as rows and columns of a matrix. For instance, if the indices of $T_{\alpha \beta \gamma}$ ordered like Fig\ref{fig221}(i), it means that $T_{\alpha \beta \gamma}$ is a matrix $T_{\chi_{\beta}\chi_{\gamma},\chi_{\alpha}}$. Similarity, If it's like Fig\ref{fig221}(ii), it means that $T_{\alpha \beta \gamma}$ is a matrix $T_{\chi_{\beta},\chi_{\alpha}\chi_{\gamma}}$.
 	\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/fig221.png}
 	\caption[Representaion of unfold tensors.]{(i) Unfold a tensor to a matrix $T_{\chi_{\beta}\chi_{\gamma},\chi_{\alpha}}$, (ii) Unfold a tensor to a matrix $T_{\chi_{\beta},\chi_{\alpha}\chi_{\gamma}}$.}
 	\label{fig221}
 	\end{figure}
-
-\subsection{Shape}
-
-\subsection{Permutation}
-
+\subsection{Tensor contraction}
+Tensor contraction is defined as the sum of all products of the shared indices of tensors. For instance, tensor contraction between two rank-2 tensors $A_{\alpha \beta}$ and $B_{\beta \gamma}$ which is equivalent to inner product between matrix, inner product between matrix $A_{\chi_{\alpha}, \chi{\beta}}$ and $B_{\chi_{\beta}, \chi_{\gamma}}$
+\begin{align}
+	C_{\alpha \gamma}=\sum\limits_{\beta = 1}^{\chi_{\beta}}{A_{\alpha \beta}B_{\beta \gamma}},
+\end{align}
+and the tensor diagram is shown in Fig\ref{fig222}(i)
+	\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.75\textwidth]{figures/fig222.png}
+	\caption[Simple examples of tensor diagrams.]{(i) Contraction between $A_{\alpha \beta}$ and $B_{\beta \gamma}$ is equivalent to inner product between matrix $A_{\chi_{\alpha}, \chi{\beta}}$ and $B_{\chi_{\beta}, \chi_{\gamma}}$ (ii) A simple tensor network}
+	\label{fig222}
+	\end{figure}
+	Now we considered a more complexity network, Fig\ref{fig222}(ii). The equations of it is written as, 
+\begin{align}
+	D_{\alpha \gamma \sigma \epsilon}=\sum_{\beta \rho \delta}{A_{\rho \beta}B_{\beta \sigma \epsilon \delta}C_{\gamma \delta \rho \alpha}},
+\end{align}
+The processes in this contraction network can be separated to some steps.
+Firstly, : 
+	\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.75\textwidth]{figures/fig223.png}
+	\caption[The contraction processes of the example network which shown in Fig\ref{fig222}(b)]{ The contraction processes of the example shown in Fig\ref{fig222}}
+	\label{fig223}
+	\end{figure}
 \section{Reducing Computational Complexity} % (fold)
 \label{sub:reduce}
 

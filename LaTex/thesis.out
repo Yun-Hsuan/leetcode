@@ -6,8 +6,8 @@
 \BOOKMARK [0][-]{chapter.2}{Tensor\040Network\040Theory}{}% 6
 \BOOKMARK [1][-]{section.2.1}{Representation\040of\040tensors\040in\040tensor\040Networks}{chapter.2}% 7
 \BOOKMARK [1][-]{section.2.2}{Tensor\040operations\040and\040tensor\040network\040diagrams}{chapter.2}% 8
-\BOOKMARK [2][-]{subsection.2.2.1}{Shape}{section.2.2}% 9
-\BOOKMARK [2][-]{subsection.2.2.2}{Permutation}{section.2.2}% 10
+\BOOKMARK [2][-]{subsection.2.2.1}{Permutation}{section.2.2}% 9
+\BOOKMARK [2][-]{subsection.2.2.2}{Tensor\040contraction}{section.2.2}% 10
 \BOOKMARK [1][-]{section.2.3}{Reducing\040Computational\040Complexity}{chapter.2}% 11
 \BOOKMARK [0][-]{chapter.3}{Properties\040of\040MPS,\040PEPS\040and\040PESS}{}% 12
 \BOOKMARK [1][-]{section.3.1}{Matrix\040Product\040State}{chapter.3}% 13
