@@ -1,7 +1,6 @@
 %!TEX root = thesis.tex
 \chapter{Tensor Network Theory}
 In tensor network theory, we are used to represent tensors graphically instead of complicated equations, because \textit{tensor diagrams} can map to quantum states and geometric lattices explicitly. Base on its clearly representation, we can implement tensor network algorithms simply. This section begins from a fundamental question: How to draw a tensor network diagrams?
-
 \section{Representation of tensors in tensor Networks}
 \label{notations}
 In mathematical concept, a tensor is considered as a multi-dimensional array of scalers. The arrangement of the elements in a tensor is dependent to its \textit{indices} and the \textit{rank} of tensor is equivalent to the number of indices. Thus, a rank-0 tensor is a scaler $(T)$, a rank-1 tensor is a vector $(T_{i})$, a rank-2 tensor is a matrix $(T_{ij})$ and so on. 
@@ -45,26 +44,45 @@ Tensor contraction is defined as the sum of all products of the shared indices o
 \begin{align}
 	C_{\alpha \gamma}=\sum\limits_{\beta = 1}^{\chi_{\beta}}{A_{\alpha \beta}B_{\beta \gamma}},
 \end{align}
-and the tensor diagram is shown in Fig\ref{fig222}(i)
+and the tensor diagram is shown in Fig\ref{fig222}(i),
 	\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/fig222.png}
 	\caption[Simple examples of tensor diagrams.]{(i) Contraction between $A_{\alpha \beta}$ and $B_{\beta \gamma}$ is equivalent to inner product between matrix $A_{\chi_{\alpha}, \chi{\beta}}$ and $B_{\chi_{\beta}, \chi_{\gamma}}$ (ii) A simple tensor network}
 	\label{fig222}
 	\end{figure}
-	Now we considered a more complexity network, Fig\ref{fig222}(ii). The equations of it is written as, 
+
+	Now we considered a more complexity network, in Fig\ref{fig222}(ii). The equations is written as, 
 \begin{align}
 	D_{\alpha \gamma \sigma \epsilon}=\sum_{\beta \rho \delta}{A_{\rho \beta}B_{\beta \sigma \epsilon \delta}C_{\gamma \delta \rho \alpha}},
 \end{align}
-The processes in this contraction network can be separated to some steps.
-Firstly, : 
+The contraction processes of this network can be separated to some steps.
 	\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/fig223.png}
-	\caption[The contraction processes of the example network which shown in Fig\ref{fig222}(b)]{ The contraction processes of the example shown in Fig\ref{fig222}}
+	\caption[The contraction processes of the example network which shown in Fig\ref{fig222}(ii)]{ The contraction processes of the example shown in Fig\ref{fig222}}
 	\label{fig223}
 	\end{figure}
-\section{Reducing Computational Complexity} % (fold)
-\label{sub:reduce}
 
-Make simulation possible and improve the accuracy and efficiency.
+	(i) First, select a pair of tensors arbitrarily. In Fig\ref{fig223}, we chose beginning from contracting tensors A and C . Actually, this step is very crucial. For example, If the dimensions of each bonds are the same and we select tensor B and C instead, it not only enlarge computational consumption, but also make algorithms inefficient. I'll discuss more detail in \ref{optctm}.(ii) Second, $A$ and $C$ should permute into legal shape. In this case,  $A$ and $C$ are permuted into $A_{\gamma \alpha \delta \rho}$ with one BD\_OUT and $C_{\rho \beta}$ with one BD\_IN, therefore the question evolves to inner product matrix $A_{\chi_{\gamma}\chi_{\alpha}\chi_{\delta}, \chi_{\rho}}$ and $A_{\chi_{\rho}, \chi_{\beta}}$.Repeated step (i) and (ii) again, after getting the tensor $\theta_{\gamma \alpha \delta \beta}$. Permute tensors $\theta$ and $B$ into $\theta_{\gamma \alpha \delta \beta}$ having two BD\_OUT and $B_{\delta \beta \sigma \epsilon}$ having two BD\_IN and we will get tensor $D$, after contracting them by matrix multiplication.
+
+\section{Describe Quantum states with tensor network} % (fold)
+\label{sub:map2quan}
+Before drawing a many-body system with TN, we should discuss how to describe a chain of N particles, with each particle having $d$ different states and why using TN. Hence, we considered a many-body systems is composed of many local particles and have studied that a pure state corresponds to a vector in Hilbert space, so we intuitively imagined that the wave-function of systems can be written as,
+\begin{align}
+	\Ket{\Psi_{N}} =\sum_{i_1,i_2,\ldots,i_N}{C_{i_1,i_2,i_3,\ldots,i_N}\Ket{i_1}\otimes\Ket{i_2}\otimes \ldots \otimes \Ket{i_N}},
+\label{wavefunc}
+\end{align}
+each individual $\Ket{i_1}, \Ket{i_2},\ldots, \Ket{i_N}$ spanned by an orthogonal basis which the degree of freedom is $d$. After writing down the eq.\ref{wavefunc}, we are able to build a TN for quantum states,
+	\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.75\textwidth]{figures/fig225.png}
+	\caption[Represent wave-function of quntum states of TN]{(i) Wave-function: $\Ket{\Psi_N}$ (ii) Norm of $\Ket{\Psi_N}$; $\Braket{\Psi_N|\Psi_N}$ (iii) Expectation value of observable $O$; $\Bra{\Psi_N}O\Ket{\Psi_N}$}
+	\label{fig225}
+	\end{figure}
+	each bond of tensor corresponds to the local Hilbert space and the dimensions of each bond is equivalent to the states of particle on $i$ site. The geometric notation of $\Ket{\Psi}$ and some fundamental operations are shown in Fig.\ref{fig225}. 
+
+From \ref{wavefunc}, we are aware of the number of coefficients, $C_{i_1,i_2,i_3,\ldots,\i_N}$, is proportional to $d^N$ and fully describing a many-body system which is too expensive. Fortunately, the wave-function can be decomposed to two subsystem by Schmidt Decomposition and there are more details in chapter.\ref{chapter:2ditebd}. 
+
+
+
