@@ -40,9 +40,9 @@ On the other work, contract the tensors in Fig.\ref{fig312} repeatedly until the
 In this section, we apply the TN diagrams to introduce the methods of implementation of algorithm. If you are interested in the mathematical formula of them, please read the references[\ref{22}][\ref{dd}][\ref{eaef}], witch include more details of theoretical discussion.
 
 \label{itebd}
-\subsection{iTEBD on a 1-D system}
+\subsection{Infinite Imaginary Time Evolving Block Decimation}
 
-The algorithm start form 2 random states and 2 random diagonal matrices which are considered as entanglement between particles. In the TN diagram, Fig.\ref{fig313}, the states and the entanglement between neighbor sites are represented by the nodes and bonds with different colors.
+The algorithm start from 2 random states and 2 random diagonal matrices which are considered as entanglement between particles. In the TN diagrams, Fig.\ref{fig313}, the states and entanglement between neighbor sites are represented by the nodes and bonds with different colors.
 
 \label{1ditebd}
 \begin{figure}[ht]
@@ -53,19 +53,27 @@ The algorithm start form 2 random states and 2 random diagonal matrices which ar
 	\label{fig313}
 \end{figure}
 
+The processes shown in Fig.\ref{fig313} is a standard strategy for implementation of iTEBD and also called \textit{Simple Update}. 
+
+In one dimensional system, the performance of Simple Update is pretty well, because 1-D systems obey the canonical form and have less influences of environment. However, in 2-D systems, due to the area law, we need consider environment more restrictively when measuring the local observable. Moreover, the computational consumption is another serious problem, owing to the growth of a state's dimension which is proportional to $dD^4$.
+
+In order to solving that obstacles, optimizations of 2-D algorithms  became an important part in condense matter physics. This chapter we focus on obtaining good enough projected entangled pair states from 2-D iTEBD and the strategies of improving measurement would be shown in following chapters.
+
 \subsection{iTEBD on a 2-D system}
 \label{2ditebd}
 
-Now that we extend it to a two dimensional system. In chapter.\ref{chpater:state}, we have known that a two dimensional many-body system is able to be represented by PEPS and due to impossibly drawing an network of infinite sites, the structure of infinite PEPS (iPEPS) is decided by the geometry of the lattice and the unit cell we chosen. In usual, the size of unit cell depend on the n-site evolution operator. For instance, if updating iPEPS on a square lattice with 2-site operator, the tensor diagram would be drawn as Fig.\ref{fig314} 
+Now that we stated to extend it to a two dimensional system. In chapter.\ref{chapter:properties}, we have known that a two dimensional many-body system is able to be represented by PEPS. Due to impossibly drawing an network of infinite sites, the structure of infinite PEPS (iPEPS) is decided by the geometry of the lattice and the unit cell we chosen. In usual, the size of unit cell depend on the n-site evolution operator. For instance, if the target is updating iPEPS of a square lattice with 2-site operator, the tensor diagram would be drawn as Fig.\ref{fig314}.
 
-	\begin{figure}[ht]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/fig314.png}
-	\caption[The tensor diagrams of 2-D lattice]{Four sites unit cell in infinite PEPS.}
+	\caption[The tensor diagrams of 2-D lattice]{Four sites unit cell in iPEPS.}
 	\label{fig314}
-	\end{figure}
+\end{figure}
 
 \subsubsection{Description with tensor network}
+
+How can we update the states in Fig.\ref{fig314}? The most intuitive scheme is applying the scheme of \textit{Simple Update}. In Fig.\ref{fig315}, 
 
 	\begin{figure}[ht]
 	\centering

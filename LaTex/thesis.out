@@ -16,7 +16,7 @@
 \BOOKMARK [0][-]{chapter.4}{2-D\040Imaginary\040Time\040Evolving\040Block\040Decimation}{}% 16
 \BOOKMARK [1][-]{section.4.1}{Imaginary\040Time\040Evolution}{chapter.4}% 17
 \BOOKMARK [1][-]{section.4.2}{Infinite\040Imaginary-Time\040Evolving\040Block\040Decimation}{chapter.4}% 18
-\BOOKMARK [2][-]{subsection.4.2.1}{iTEBD\040on\040a\0401-D\040system}{section.4.2}% 19
+\BOOKMARK [2][-]{subsection.4.2.1}{Infinite\040Imaginary\040Time\040Evolving\040Block\040Decimation}{section.4.2}% 19
 \BOOKMARK [2][-]{subsection.4.2.2}{iTEBD\040on\040a\0402-D\040system}{section.4.2}% 20
 \BOOKMARK [3][-]{subsubsection.4.2.2.1}{Description\040with\040tensor\040network}{subsection.4.2.2}% 21
 \BOOKMARK [3][-]{subsubsection.4.2.2.2}{Pseudocode}{subsection.4.2.2}% 22
