@@ -37,31 +37,44 @@ On the other work, contract the tensors in Fig.\ref{fig312} repeatedly until the
 \end{figure}
 
 \section{Infinite Imaginary-Time Evolving Block Decimation}
+In this section, we apply the TN diagrams to introduce the methods of implementation of algorithm. If you are interested in the mathematical formula of them, please read the references[\ref{22}][\ref{dd}][\ref{eaef}], witch include more details of theoretical discussion.
+
 \label{itebd}
-\subsection{D = 1}
+\subsection{iTEBD on a 1-D system}
+
+The algorithm start form 2 random states and 2 random diagonal matrices which are considered as entanglement between particles. In the TN diagram, Fig.\ref{fig313}, the states and the entanglement between neighbor sites are represented by the nodes and bonds with different colors.
+
 \label{1ditebd}
-	\begin{figure}[ht]
+\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/fig313.png}
-	\caption[tmp]{}
+	\caption[The tensor network diagrams for the 1-D iTEBD]{ (i)Absorb all $\lambda$ to $\gamma$. (ii) Contract an evolution operator $e^{-\delta H}$ for evolving the system. (iii) Decompose the tensor $\theta$ by SVD. (iv) Truncate and Update the states and $\lambda$ on the green bond.(v) Remove $
+		\lambda$ for obtaining the states. (iv) After updating the states and $\lambda$ on the purple bond, apply the way to update the red bond and repeat all the steps until the ground state convergence.}
 	\label{fig313}
-	\end{figure}
+\end{figure}
 
-\subsection{D = 2}
+\subsection{iTEBD on a 2-D system}
 \label{2ditebd}
+
+Now that we extend it to a two dimensional system. In chapter.\ref{chpater:state}, we have known that a two dimensional many-body system is able to be represented by PEPS and due to impossibly drawing an network of infinite sites, the structure of infinite PEPS (iPEPS) is decided by the geometry of the lattice and the unit cell we chosen. In usual, the size of unit cell depend on the n-site evolution operator. For instance, if updating iPEPS on a square lattice with 2-site operator, the tensor diagram would be drawn as Fig.\ref{fig314} 
+
 	\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/fig314.png}
-	\caption[tmp]{}
+	\caption[The tensor diagrams of 2-D lattice]{Four sites unit cell in infinite PEPS.}
 	\label{fig314}
 	\end{figure}
+
+\subsubsection{Description with tensor network}
 
 	\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/fig315.png}
-	\caption[tmp]{}
+	\caption[The tensor network diagrams for the 2-D iTEBD]{}
 	\label{fig315}
 	\end{figure}
+
+\subsubsection{Pseudocode}
 
 \section{Ameliorate two-dimensional iTEBD}
 \label{2dhastin}
@@ -69,7 +82,7 @@ On the other work, contract the tensors in Fig.\ref{fig312} repeatedly until the
 	\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/fig316.png}
-	\caption[tmp]{}
+	\caption[The tensor network diagrams for the 2-D iTEBD which is ameliorated by Hestins]{}
 	\label{fig316}
 	\end{figure}
 
@@ -81,22 +94,16 @@ On the other work, contract the tensors in Fig.\ref{fig312} repeatedly until the
 	\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/fig317.png}
-	\caption[tmp]{}
+	\caption[The tensor network diagrams for the 2-D iTEBD with QR decomposition]{}
 	\label{fig317}
 	\end{figure}
 
 	\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/fig318.png}
-	\caption[tmp]{}
-	\label{fig318}
-	\end{figure}
-
-	\begin{figure}[ht]
-	\centering
 	\includegraphics[width=0.75\textwidth]{figures/fig319.png}
-	\caption[tmp]{}
-	\label{fig319}
+	\caption[The tensor network diagrams for the ameliorated 2-D iTEBD with QR decompositiont]{The tensor network diagrams for the ameliorated 2-D iTEBD. More explicitly discussion are in	this paragraph}
+	\label{fig318}
 	\end{figure}
 
 \subsection{Initialization}
