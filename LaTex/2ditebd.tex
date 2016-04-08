@@ -36,11 +36,11 @@ On the other work, contract the tensors in Fig.\ref{fig312} repeatedly until the
 	\label{fig311}
 \end{figure}
 
-\section{Infinite Imaginary-Time Evolving Block Decimation}
+\section{Simple Infinite Imaginary-Time Evolving Block Decimation for 2-D system}
 In this section, we apply the TN diagrams to introduce the methods of implementation of algorithm. If you are interested in the mathematical formula of them, please read the references[\ref{22}][\ref{dd}][\ref{eaef}], witch include more details of theoretical discussion.
 
 \label{itebd}
-\subsection{Infinite Imaginary Time Evolving Block Decimation}
+\subsection{Simple Infinite Imaginary Time Evolving Block Decimation for 1-D system}
 
 The algorithm start from 2 random states and 2 random diagonal matrices which are considered as entanglement between particles. In the TN diagrams, Fig.\ref{fig313}, the states and entanglement between neighbor sites are represented by the nodes and bonds with different colors.
 
@@ -55,34 +55,55 @@ The algorithm start from 2 random states and 2 random diagonal matrices which ar
 
 The processes shown in Fig.\ref{fig313} is a standard strategy for implementation of iTEBD and also called \textit{Simple Update}. 
 
-In one dimensional system, the performance of Simple Update is pretty well, because 1-D systems obey the canonical form and have less influences of environment. However, in 2-D systems, due to the area law, we need consider environment more restrictively when measuring the local observable. Moreover, the computational consumption is another serious problem, owing to the growth of a state's dimension which is proportional to $dD^4$.
+In one dimensional system, the performance of Simple Update is pretty well, because 1-D systems obey the canonical form and have less influences of environment. However, in 2-D systems, due to the area law, we need consider the environment more restrictively when measuring the local observable. Moreover, the computational consumption is another serious problem, owing to the growth of a state's dimension which is proportional to $dD^4$.
 
 In order to solving that obstacles, optimizations of 2-D algorithms  became an important part in condense matter physics. This chapter we focus on obtaining good enough projected entangled pair states from 2-D iTEBD and the strategies of improving measurement would be shown in following chapters.
 
-\subsection{iTEBD on a 2-D system}
+\subsection{Description and Pseudocode of iTEBD for 2-D system}
 \label{2ditebd}
 
 Now that we stated to extend it to a two dimensional system. In chapter.\ref{chapter:properties}, we have known that a two dimensional many-body system is able to be represented by PEPS. Due to impossibly drawing an network of infinite sites, the structure of infinite PEPS (iPEPS) is decided by the geometry of the lattice and the unit cell we chosen. In usual, the size of unit cell depend on the n-site evolution operator. For instance, if the target is updating iPEPS of a square lattice with 2-site operator, the tensor diagram would be drawn as Fig.\ref{fig314}.
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.75\textwidth]{figures/fig314.png}
+	\includegraphics[width=0.6\textwidth]{figures/fig314.png}
 	\caption[The tensor diagrams of 2-D lattice]{Four sites unit cell in iPEPS.}
 	\label{fig314}
 \end{figure}
 
-\subsubsection{Description with tensor network}
+After setting the form of iPEPS, we start to deal the question of updating states. The most intuitive scheme is to apply the scheme of \textit{Simple Update} which is shown in Fig.\ref{fig315} . The steps is similar to the iTEBD on 1-D systems. However, there are some differences. First, the projected entangled pair states is a rank-5 tensor. Second, there are more entangled should be considered, due to having more neighbor sites.
 
-How can we update the states in Fig.\ref{fig314}? The most intuitive scheme is applying the scheme of \textit{Simple Update}. In Fig.\ref{fig315}, 
+The more theoretical description is written in [\ref{}][\ref{}]. Here, we explain the methods with TNs and some simple pseudocode.
 
 	\begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/fig315.png}
 	\caption[The tensor network diagrams for the 2-D iTEBD]{}
 	\label{fig315}
-	\end{figure}
+\end{figure}
 
-\subsubsection{Pseudocode}
+\begin{algorithm}
+	\caption{My algorithm}\label{euclid}
+	\begin{algorithmic}[1]
+		\Procedure{MyProcedure}{}
+		\State $\textit{stringlen} \gets \text{length of }\textit{string}$
+		\State $i \gets \textit{patlen}$
+		\BState \emph{top}:
+		\If {$i > \textit{stringlen}$} \Return false
+		\EndIf
+		\State $j \gets \textit{patlen}$
+		\BState \emph{loop}:
+		\If {$\textit{string}(i) = \textit{path}(j)$}
+		\State $j \gets j-1$.
+		\State $i \gets i-1$.
+		\State \textbf{goto} \emph{loop}.
+		\State \textbf{close};
+		\EndIf
+		\State $i \gets i+\max(\textit{delta}_1(\textit{string}(i)),\textit{delta}_2(j))$.
+		\State \textbf{goto} \emph{top}.
+		\EndProcedure
+	\end{algorithmic}
+\end{algorithm}
 
 \section{Ameliorate two-dimensional iTEBD}
 \label{2dhastin}
