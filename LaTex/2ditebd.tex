@@ -40,15 +40,15 @@ On the other work, contract the tensors in Fig.\ref{fig312} repeatedly until the
 In this section, we apply the TN diagrams to introduce the methods of implementation of algorithm. If you are interested in the mathematical formula of them, please read the references[\ref{22}][\ref{dd}][\ref{eaef}], witch include more details of theoretical discussion.
 
 \label{itebd}
-\subsection{Simple Infinite Imaginary Time Evolving Block Decimation for 1-D system}
+\subsection{Simple Description of iTEBD for 1-D system}
 
 The algorithm start from 2 random states and 2 random diagonal matrices which are considered as entanglement between particles. In the TN diagrams, Fig.\ref{fig313}, the states and entanglement between neighbor sites are represented by the nodes and bonds with different colors.
 
 \label{1ditebd}
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.75\textwidth]{figures/fig313.png}
-	\caption[The tensor network diagrams for the 1-D iTEBD]{ (i)Absorb all $\lambda$ to $\gamma$. (ii) Contract an evolution operator $e^{-\delta H}$ for evolving the system. (iii) Decompose the tensor $\theta$ by SVD. (iv) Truncate and Update the states and $\lambda$ on the green bond.(v) Remove $
+	\includegraphics[width=0.90\textwidth]{figures/fig313.png}
+	\caption[The tensor network diagrams for the 1-D iTEBD]{ (i)Absorb all $\lambda$ to $\Gamma$. (ii) Contract an evolution operator $e^{-\delta H}$ for evolving the system. (iii) Decompose the tensor $\theta$ by SVD. (iv) Truncate and Update the states and $\lambda$ on the green bond.(v) Remove $
 		\lambda$ for obtaining the states. (iv) After updating the states and $\lambda$ on the purple bond, apply the way to update the red bond and repeat all the steps until the ground state convergence.}
 	\label{fig313}
 \end{figure}
@@ -71,16 +71,27 @@ Now that we stated to extend it to a two dimensional system. In chapter.\ref{cha
 	\label{fig314}
 \end{figure}
 
-After setting the form of iPEPS, we start to deal the question of updating states. The most intuitive scheme is to apply the scheme of \textit{Simple Update} which is shown in Fig.\ref{fig315} . The steps is similar to the iTEBD on 1-D systems. However, there are some differences. First, the projected entangled pair states is a rank-5 tensor. Second, there are more entangled should be considered, due to having more neighbor sites.
+After setting the form of iPEPS, we start to deal the question of updating states. The most intuitive scheme is to apply the scheme of \textit{Simple Update} which is shown in Fig.\ref{fig315}. The steps are similar to the iTEBD on 1-D systems. However, there are some differences. Firstly, the projected entangled pair states is a rank-5 tensor. Secondly, there are more entangled should be considered, due to increased neighbor sites.
 
-The more theoretical description is written in [\ref{}][\ref{}]. Here, we explain the methods with TNs and some simple pseudocode.
+More theoretical descriptions are written in [\ref{}][\ref{}]. Here, we explain the methods with TNs and some simple pseudocodes. The basic idea of \textit{2-D iTEBD} is to update the states from four directions by \textit{Simple Update}. The example starting from updating the green bond is shown in Fig.\ref{fig315} and Fig.\ref{fig316},
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1.00\textwidth]{figures/fig315.png}
+	\caption[The tensor network diagrams of updating the green bond in iPEPS with 2D-iTEBD]{Absorb all $\lambda$ to $\Gamma$. (ii) Contract an evolution operator $e^{-\delta H}$ for evolving the system. (iii) Decompose the tensor $\theta$ by SVD. (iv) Truncate and Update the states and $\lambda$ on the green bond.(v) Remove $\lambda$ for obtaining the states. (iv) Obtain a original form of iPEPS. Repeat all the step to update the other bonds until the ground state energy convergence}
+	\label{fig315}
+\end{figure}
+
+It's the same as one dimensional case, The first step is to absorb all $\lambda$ around the sites. The tensor with gray bold means the state have absorbed all entanglements. Secondly, contract the gate, $e^{-\delta H}$, for getting the tensor $\theta$. Thirdly, apply singular value decomposition to update states and the entanglement on the green bond. After decomposing $\theta$, we found that the dimension of the green bond increase to $dD^4$. Therefor, truncation plays a significant roles for keeping the dimension in the algorithm. In the end of the updating processes, multiply pseudo inverse of all $\lambda$ to the tensors for reducing to original form. 
 
 	\begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.75\textwidth]{figures/fig315.png}
-	\caption[The tensor network diagrams for the 2-D iTEBD]{}
-	\label{fig315}
-\end{figure}
+	\includegraphics[width=1.00\textwidth]{figures/fig316.png}
+	\caption[The tensor network diagrams of updating the yellow bond in iPEPS with 2D-iTEBD]{Update the yellow bond and the steps are similar to Fig.\ref{fig315}}
+	\label{fig316}
+	\end{figure}
+
+	For easily to imagine how to updating the others directions. The updating steps of yellow bond are shown In Fig.\ref{fig316}.
 
 \begin{algorithm}
 	\caption{My algorithm}\label{euclid}
@@ -105,36 +116,73 @@ The more theoretical description is written in [\ref{}][\ref{}]. Here, we explai
 	\end{algorithmic}
 \end{algorithm}
 
+
 \section{Ameliorate two-dimensional iTEBD}
 \label{2dhastin}
 
+This method which make the algorithm more stable was published by \textit{M. B. Hastings}. Although \textit{Simple Update} shown in section.\ref{2ditebd} can obtain pretty good states, it's not stable and efficient enough. The reason is that too many multiplications of pseudo inverse $\lambda$ at the step Fig.\ref{fig315}(v). In numerical methods, it's hard to deal the problem of dividing the value which is equal or approach to zero. On the other words, the more inverse operations, the more the probability of bring about divergence or destroying algorithms.
+
+For reducing the risk of breaking algorithms. Firstly, declare the states $\Gamma$ which include two entanglements among them. For instance, In Fig.\ref{fig317}(i), the red tensor is considered as multiplication of $A$ and the $\lambda$ on the yellow. The purple one is multiplication of $B$ and remained $\lambda$. Secondly, in Fig.\ref{fig317}(ii), because the entanglements on red and blue bonds are included in tensor $B$, we just need absorb the yellow one and contract the evolution operation for obtaining tensor $C$. Thirdly, we contract the red and blue $\lambda$ to the red and blue bonds which belong to the original tensor $A$ in tensor $C$ for getting $\theta$. Fourthly, getting the $\tilde{B}$ from decomposing and truncating $\theta$. Owing to avoid multiplying inverse matrices, we get $\tilde{A}$ by contracting tensor $C$ and $\tilde{B}$ and multiply an inverse $\lambda$ of yellow bond for removing the entanglement and reducing to original form.
+
 	\begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.75\textwidth]{figures/fig316.png}
-	\caption[The tensor network diagrams for the 2-D iTEBD which is ameliorated by Hestins]{}
-	\label{fig316}
+	\includegraphics[width=1.00\textwidth]{figures/fig317.png}
+	\caption[The tensor network diagrams for the 2-D iTEBD with QR decomposition]{The tensor network diagrams for the ameliorated 2-D iTEBD.}
+	\label{fig317}
 	\end{figure}
+
+	Finally, repeat all the processes shown in Fig.\ref{fig317} to update different bonds until the convergence of the ground state energy.
 
 \section{Optimizations}
 \label{2dopt}
 
-\subsection{QR decomposition}
-\label{2doptQR}
-	\begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.75\textwidth]{figures/fig317.png}
-	\caption[The tensor network diagrams for the 2-D iTEBD with QR decomposition]{}
-	\label{fig317}
-	\end{figure}
-
-	\begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.75\textwidth]{figures/fig318.png}
-	\includegraphics[width=0.75\textwidth]{figures/fig319.png}
-	\caption[The tensor network diagrams for the ameliorated 2-D iTEBD with QR decompositiont]{The tensor network diagrams for the ameliorated 2-D iTEBD. More explicitly discussion are in	this paragraph}
-	\label{fig318}
-	\end{figure}
-
 \subsection{Initialization}
 \label{2doptInit}
+Intuitively, the initialization of states should not affect the result. However, it's a serious misunderstanding. Actually, stating from a awful initial sates may break the algorithms or hardly converge.
+
+From the viewpoint of physics, translational invariance is one of essential properties in many-body system, So we can assume that the group state on two sites should be similar. For instance, if the TN diagram of the states is shown as Fig \ref{fig321}(i), Fig \ref{fig321}(ii) might be the better way to initialize the states.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1.00\textwidth]{figures/fig321.png}
+	\caption[The diagrams of initializing projected entangled pair states]{(i) The structure of PEPS, (ii) The initialization of states}
+	\label{fig321}
+\end{figure}
+
+\subsection{QR decomposition}
+
+Though the strategy described in previous sections improve the stability, it's not efficient enough. The reason why is that the dimension of tensor $\theta$, in Fig.\ref{fig315}(iii) and Fig.\ref{fig317}(iii), is proportional to $d^2D^6$. In addition to that, the time complexity of singular value decomposition is proportional to $O(NM^2)$. In conclusion, the steps, in Fig.\ref{fig315}(iii) and Fig.\ref{fig317}(iii), are expensive, it is necessary to reduce the dimension of tensor $\theta$. 
+\label{2doptQR} \begin{figure}[H] \centering \includegraphics[width=0.80\textwidth]{figures/fig318.png} \caption[The tensor network diagrams for the ameliorated 2-D iTEBD with QR decompositiont]{The tensor network diagrams for the ameliorated 2-D iTEBD.} \label{fig318} \end{figure} To achieve the goal, the projected pair state must be decomposed by QR decomposition. The processes making \textit{Simple Update} more efficient is illustrated in Fig \ref{fig318}.  Most of the steps shown in Fig \ref{fig318} are like in Fig \ref{fig315}. The only difference is that after absorbing the all $\lambda$, we decompose the state to an orthogonal matrix and upper triangular matrix by QR. For instance, in Fig \ref{fig318} (ii), the state $A$ is decomposed to an orthogonal matrix X and upper triangular matrix $a_R$. Due to the columns of $X$ are orthonormal, $XX^{\dagger}$ is equal to $I$. In the other word, the tensor $X$ can be ignored and we just need consider the tensor $a_R$ by QR. Similarity, the state $B$ can be decomposed to a lower triangular $b_L$ and an orthogonal matrix $Y$ by LQ which is equivalence to operate QR decomposition after transpose the matrix. Next, (iii) we can obtain the tensor $\theta$ whose dimension is $d^2D$ from $a_R$, $b_L$ and an evolution operator.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.90\textwidth]{figures/fig319.png}
+	\includegraphics[width=0.90\textwidth]{figures/fig320.png}
+	\caption[The tensor network diagrams for the ameliorated 2-D iTEBD with QR decompositiont]{The tensor network diagrams for the ameliorated 2-D iTEBD.}
+	\label{fig319}
+\end{figure}
+
+The strategy to accelerate \textit{Ameliorate Simple Update} is shown in the Fig \ref{fig319} and its main idea is also to reduce the dimension of $\theta$.
+
+\section{Comparison}
+\label{Comparison}
+\subsection{Different Initializations}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1.00\textwidth]{figures/fig322.png}
+	\caption[Different methods to initialize the states]{(i) Type 1, (ii) Type 2}
+	\label{fig322}
+\end{figure}
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.75\textwidth]{figures/fig323.png}
+	\caption[Comparison the results of Heisenberg model on square lattice which are obtaining from different initial states.]{The Blue line represents updating tensors from the initial state shown in Fig \ref{fig322} (i) and the green one represents updating from Fig \ref{fig322} (ii)}
+	\label{fig322}
+\end{figure}
+
+
+
+
 
