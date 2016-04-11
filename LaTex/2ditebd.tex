@@ -2,7 +2,7 @@
 \chapter{2-D Imaginary Time Evolving Block Decimation}
 \label{chapter:2ditebd}
 
-In this chapter we introduce some different ways to implement two-dimensional imaginary time-evolving block decimation and apply them in calculation of ground state of Heisenberg and transverse Ising model on two-dimensional square lattice. In section \ref{ite} and \ref{itebd}, we briefly review the idea of imaginary time evolution (iTEBD),[\ref{vidal}] and explain how to extend it to two-dimensional [\ref{X,zhon}]. Second, we briefly review another method to make 2D-iTEBD more stable[\ref{1.1}]. In the last section \ref{2dopt}, we record various particulars which are helpful optimizing algorithms.
+In this chapter we introduce some different ways to implement two-dimensional imaginary time-evolving block decimation and apply them in calculation of ground state of Heisenberg and transverse Ising model on two-dimensional square lattice. In section \ref{ite} and \ref{itebd}, we briefly review the idea of imaginary time evolution (TEBD) \cite{vidal_efficient_2003} \cite{vidal_efficient_2004} and explain how to extend it to an infinite two-dimensional system \cite{li_efficient_2012}. Second, we briefly review another implementation which is able to make 2D-iTEBD more stable\cite{hastings_light-cone_2009}. In the last section \ref{2dopt}, we record various particulars which are helpful optimizing algorithms.
 
 \section{Imaginary Time Evolution}
 \label{ite}
@@ -11,14 +11,14 @@ Theoretically, if having the imaginary time evolution operator $e^{-\tau H}$, we
 	\label{mapgroud}
 	\Ket{\psi_0} = \frac{e^{\tau H} \Ket{\Psi}}{\parallel e^{\tau H} \Ket{\Psi}\parallel}
 \end{align}
-but according to the eq.\ref{mapgroud}, we may found that the number of coefficients in an origin evolution operator $e^{-\tau H}$ is proportional to $2^N \times 2^N$. On the other words, it is impossible to update entire system directly. In order to restricting the rapid dimensional growth, we apply \textit{Suzuki Trotter decomposition}[\ref{1.1}][\ref{1.1}] to approximate. The main idea of \textit{Suzuki Trotter} is decomposing the whole system to lots of units cell and using some smaller operations to update the wave-function.
+but according to the eq.\ref{mapgroud}, we may found that the number of coefficients in an origin evolution operator $e^{-\tau H}$ is proportional to $2^N \times 2^N$. On the other words, it is impossible to update entire system directly. In order to restricting the rapid dimensional growth, we apply \textit{Suzuki Trotter decomposition} to approximate. The main idea of \textit{Suzuki Trotter} is decomposing the whole system to lots of units cell and using some smaller operations to update the wave-function.
 \begin{align}
 	\label{STd}
 	e^{\delta A + B} = e^{\delta A}e^{\delta B} + O(\delta^2)
 \end{align}
 eq.\ref{STd} means the first-order Suzuki Trotter  decomposition, and A and B are non-commutative with each other.
 
-Now that the dimension of the evolution operator is reduced to a n-site operator and in chapter \ref{chapter:properties}, we have shown that a many-body system can map to a MPS or PEPS structure, so we can draw the process of updating a ground state like Fig.\ref{fig312},
+Now that the dimension of the evolution operator is reduced to a n-site operator and in chapter \ref{chapter:properties}, we have shown that a many-body system can map to a MPS \cite{verstraete_matrix_2006}\cite{ostlund_thermodynamic_1995}  or PEPS \cite{murg_variational_2007} structure, so we can draw the process of updating a ground state like Fig.\ref{fig312},
 
 \begin{figure}[ht]
 	\centering
@@ -37,7 +37,7 @@ On the other work, contract the tensors in Fig.\ref{fig312} repeatedly until the
 \end{figure}
 
 \section{Simple Infinite Imaginary-Time Evolving Block Decimation for 2-D system}
-In this section, we apply the TN diagrams to introduce the methods of implementation of algorithm. If you are interested in the mathematical formula of them, please read the references \citep{vidal_efficient_2004} [\ref{dd}][\ref{eaef}], witch include more details of theoretical discussion.
+In this section, we apply the TN diagrams to introduce various implementation methods. More theoretical details are included in the references \cite{vidal_classical_2007} \citep{jiang_accurate_2008} \citep{orus_infinite_2008}.
 
 \label{itebd}
 \subsection{Simple Description of iTEBD for 1-D system}
@@ -120,7 +120,7 @@ It's the same as one dimensional case, The first step is to absorb all $\lambda$
 \section{Ameliorate two-dimensional iTEBD}
 \label{2dhastin}
 
-This method which make the algorithm more stable was published by \textit{M. B. Hastings}. Although \textit{Simple Update} shown in section.\ref{2ditebd} can obtain pretty good states, it's not stable and efficient enough. The reason is that too many multiplications of pseudo inverse $\lambda$ at the step Fig.\ref{fig315}(v). In numerical methods, it's hard to deal the problem of dividing the value which is equal or approach to zero. On the other words, the more inverse operations, the more the probability of bring about divergence or destroying algorithms.
+This method which make the algorithm more stable was published by \textit{M. B. Hastings} \cite{hastings_light-cone_2009}. Although \textit{Simple Update} shown in section.\ref{2ditebd} can obtain pretty good states, it's not stable and efficient enough. The reason is that too many multiplications of pseudo inverse $\lambda$ at the step Fig.\ref{fig315}(v). In numerical methods, it's hard to deal the problem of dividing the value which is equal or approach to zero. On the other words, the more inverse operations, the more the probability of bring about divergence or destroying algorithms.
 
 For reducing the risk of breaking algorithms. Firstly, declare the states $\Gamma$ which include two entanglements among them. For instance, In Fig.\ref{fig317}(i), the red tensor is considered as multiplication of $A$ and the $\lambda$ on the yellow. The purple one is multiplication of $B$ and remained $\lambda$. Secondly, in Fig.\ref{fig317}(ii), because the entanglements on red and blue bonds are included in tensor $B$, we just need absorb the yellow one and contract the evolution operation for obtaining tensor $C$. Thirdly, we contract the red and blue $\lambda$ to the red and blue bonds which belong to the original tensor $A$ in tensor $C$ for getting $\theta$. Fourthly, getting the $\tilde{B}$ from decomposing and truncating $\theta$. Owing to avoid multiplying inverse matrices, we get $\tilde{A}$ by contracting tensor $C$ and $\tilde{B}$ and multiply an inverse $\lambda$ of yellow bond for removing the entanglement and reducing to original form.
 
@@ -153,8 +153,8 @@ From the viewpoint of physics, translational invariance is one of essential prop
 
 \subsection{QR decomposition}
 
-Though the strategy described in previous sections improve the stability, it's not efficient enough. The reason why is that the dimension of tensor $\theta$, in Fig.\ref{fig315}(iii) and Fig.\ref{fig317}(iii), is proportional to $d^2D^6$. In addition to that, the time complexity of singular value decomposition is proportional to $O(NM^2)$. In conclusion, the steps, in Fig.\ref{fig315}(iii) and Fig.\ref{fig317}(iii), are expensive, it is necessary to reduce the dimension of tensor $\theta$. 
-\label{2doptQR} \begin{figure}[H] \centering \includegraphics[width=0.80\textwidth]{figures/fig318.png} \caption[The tensor network diagrams for the ameliorated 2-D iTEBD with QR decompositiont]{The tensor network diagrams for the ameliorated 2-D iTEBD.} \label{fig318} \end{figure} To achieve the goal, the projected pair state must be decomposed by QR decomposition. The processes making \textit{Simple Update} more efficient is illustrated in Fig \ref{fig318}.  Most of the steps shown in Fig \ref{fig318} are like in Fig \ref{fig315}. The only difference is that after absorbing all the $\lambda$, we decompose the state to an orthogonal matrix and an upper triangular matrix by QR. For instance, in Fig \ref{fig318} (ii), the state $A$ is decomposed to an orthogonal matrix X and upper triangular matrix $a_R$. Due to the columns of $X$ are orthonormal, $XX^{\dagger}$ is equal to $I$. In the other word, the tensor $X$ can be ignored and we just need consider the tensor $a_R$ by QR. Similarity, the state $B$ can be decomposed to a lower triangular $b_L$ and an orthogonal matrix $Y$ by LQ which is equivalence to operate QR decomposition after transpose the matrix. Next, (iii) we can obtain the tensor $\theta$ whose dimension is $d^2D$ from $a_R$, $b_L$ and an evolution operator.
+Though the strategy described in previous sections improve the stability, it's not efficient enough. The reason why is that the dimension of tensor $\theta$, in Fig.\ref{fig315}(iii) and Fig.\ref{fig317}(iii), is proportional to $d^2D^6$. In addition to that, the time complexity of singular value decomposition is proportional to $O(NM^2)$. In conclusion, those steps are expensive and the dimension of tensor $\theta$ must be redued for accelerating. 
+\label{2doptQR} \begin{figure}[H] \centering \includegraphics[width=0.80\textwidth]{figures/fig318.png} \caption[The tensor network diagrams for the ameliorated 2-D iTEBD with QR decompositiont]{The tensor network diagrams for the ameliorated 2-D iTEBD.} \label{fig318} \end{figure} To achieve the goal, the projected pair state must be decomposed by QR decomposition \cite{li_efficient_2012} \cite{yang_accelerated_2007}. The processes making \textit{Simple Update} more efficient is illustrated in Fig \ref{fig318}.  Most of the steps shown in Fig \ref{fig318} are like in Fig \ref{fig315}. The only difference is that after absorbing all the $\lambda$, we decompose the state to an orthogonal matrix and an upper triangular matrix by QR. For instance, in Fig \ref{fig318} (ii), the state $A$ is decomposed to an orthogonal matrix X and upper triangular matrix $a_R$. Due to the columns of $X$ are orthonormal, $XX^{\dagger}$ is equal to $I$. In the other word, the tensor $X$ can be ignored and we just need consider the tensor $a_R$ by QR. Similarity, the state $B$ can be decomposed to a lower triangular $b_L$ and an orthogonal matrix $Y$ by LQ which is equivalence to operate QR decomposition after transpose the matrix. Next, (iii) we can obtain the tensor $\theta$ whose dimension is $d^2D$ from $a_R$, $b_L$ and an evolution operator.
 
 \begin{figure}[ht]
 	\centering
