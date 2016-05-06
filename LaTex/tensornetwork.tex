@@ -1,6 +1,5 @@
 %!TEX root = thesis.tex
-\chapter{Tensor Network Theory}
-This section begins from a fundamental question: How to draw a tensor network diagrams? In tensor network theory \cite{jordan_studies_2011} \cite{orus_practical_2014} \cite{bauer_tensor_2011}, we used to represent tensors graphically instead of complicated equations, because \textit{tensor diagrams} can map to quantum states and geometric lattices explicitly. Base on its clear representation, the implementation of  tensor network algorithms become simply. \section{Representation of tensors in tensor Networks}
+\chapter{Tensor Network Theory} This section begins from a fundamental question: How to draw a tensor network diagrams? In tensor network theory \cite{jordan_studies_2011} \cite{orus_practical_2014} \cite{bauer_tensor_2011}, we used to represent tensors graphically instead of complicated equations, because \textit{tensor diagrams} can map to quantum states and geometric lattices explicitly. Base on its clear representation, the implementation of  tensor network algorithms become simply. \section{Representation of tensors in tensor Networks}
 \label{notations}
 In mathematical concept, a tensor is considered as a multi-dimensional array of scalers. The arrangement of the elements in a tensor is dependent on its \textit{indices} and the \textit{rank} of tensor is equivalent to the number of indices. Thus, a rank-0 tensor is a scaler $(T)$, a rank-1 tensor is a vector $(T_{i})$, a rank-2 tensor is a matrix $(T_{ij})$ and so on. 
 
@@ -73,7 +72,7 @@ Before drawing a many-body system with TN, we should discuss how to describe a c
 	\label{wavefunc}
 \end{align}
 each individual $\Ket{i_1}, \Ket{i_2},\ldots, \Ket{i_N}$ spanned by an orthogonal basis which the degree of freedom is $d$. After writing down the eq.\ref{wavefunc}, we are able to build a TN for quantum states,
-\begin{figure}[ht]
+\begin{figure}
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/fig225.png}
 	\caption[Represent wave-function of quntum states of TN]{(i) Wave-function: $\Ket{\Psi_N}$ (ii) Norm of $\Ket{\Psi_N}$; $\Braket{\Psi_N|\Psi_N}$ (iii) Expectation value of observable $O$; $\Bra{\Psi_N}O\Ket{\Psi_N}$}
