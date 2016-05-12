@@ -36,14 +36,62 @@ and show that there is an unique spin-singlet state. The result encourage us to 
 \begin{align}
 	\Ket{\psi_{\alpha}} = \frac{1}{\sqrt{6}} \sum_{\left\{ s_i s_j s_k\right\}}{S^{\alpha}_{s_i s_j s_k}\Ket{s_i, s_j, s_k}},
 \end{align}
-where $s_i,s_j,s_k$ are $S=1$ virtual spins located at site $i,j$ and $k$ containing in the simplex $\alpha$ and $S^{\alpha}_{s_i s_j s_k}$ is the Levi-Civita antisymmetric tensor $\varepsilon_{ijk}$ [Fig. \ref{fig411}(b)]. For mapping the two virtual $S=1$ spins to the spin-2 subspace, we defined the projection operator $P$ on each site,
+where $s_i,s_j,s_k$ are $S=1$ virtual spins located at site $i,j$ and $k$ containing in the simplex $\alpha$ and $S^{\alpha}_{s_i s_j s_k}$ is the Levi-Civita antisymmetric tensor $\varepsilon_{ijk}$ [Fig. \ref{fig411}(b)]. For mapping the two virtual $S=1$ spins to the spin-2 subspace, we defined the projection operator $P_i$ on each site,
 \begin{align}
-	P = \sum_{s_i,s^{\prime}_{i}}\sum_{s_i,s^{\prime}_{i}}
+	P = \sum_{s_i,s^{\prime}_{i}}\sum_{\sigma_i}{A^{\sigma_i}_{s_i,s_i^{\prime}}\Ket{\sigma_i}\Bra{s_i,s_i^{\prime}}}
 \end{align}
+where $\Ket{\sigma_i}$ is a basis of the $S=2$ spin at site $i$. $A^{\sigma_i}_{s_i,s_i^{\prime}}$ is a projected matrix whose components are filled by the Clebsch-Gordan coefficients,
+\[
+	\begin{aligned}
+		&A_{11}^2 = A_{33}^{-2} = 1, \\
+		&A_{12}^1 = A_{21}^{1} = A_{23}^{-1} = A_{32}^{-1} = \frac{1}{\sqrt{2}}, \\
+		&A_{13}^0 = A_{31}^{0} = \frac{1}{\sqrt{6}}, \\
+		&A_{22}^0 = \frac{2}{\sqrt{6}},
+	\end{aligned}
+\]
+Now that we can write down the wave function of the simplex-solid state,
+\begin{align}
+	\Ket{\Phi} &= \bigoplus_i P_i \prod_{\alpha}{\Ket{\psi_{\alpha}}} \\
+	&= \Tr \left( \dots S_{s_i s_j s_k}^{\alpha} A^{\sigma_i}_{s_i,s_i^{\prime}} A^{\sigma_j}_{s_j,s_j^{\prime}} A^{\sigma_k}_{s_k,s_k^{\prime}} \dots \right) \Ket{\dots \sigma_i \sigma_j \sigma_k \dots}.
+\end{align}
+and apply the tensor-network representation to descrbe it, see in Fig. \ref{fig411}(b).
 
+This structure could be extended to any higher integer spins. In conlusion, a physical $S=2n$ (even-integer) spin is considered as a symmetric superposition of two virtual $S=n$ spins and $S=2n-1$ (odd-integer) is regarded as a symmetric superposition of a virtual $S=n-1$ spin and a virtual $S=n$ spin [ Fig. \ref{fig411}(a) ]. More details are included in reference \cite{} \cite{}.
+\section{Variational PESS ansatz}
+The PESS ansatz is similar to the imaginary time evolution discussed in chapter.\ref{chapter:2ditebd}. However, unlike the PEPS algorithms, we apply a higher rank tensor $S$ to describe the entanglement entropy among virtual particles in a simplex state. Due to the difference, we use \textit{high-order singular value decomposition} (HOSVD) rather than SVD to decompose wave function.
+\subsection{High-order singular value decomposition}
+\label{hosvd}
+In the section, we will introduce to $N$th-order singular value decomposition (HOSVD) which is proposed for decomposing rank-N tensors and show the pseudocode to illustrate the scheme of the implementation.
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1.00\textwidth]{figures/fig4311.png}
+	\caption[The picture of the HOSVD for a rank-3 tensor.]{Picture of the HOSVD for a rank-3 tensor $A$. $U^(1)$,$U^(2)$ and $U^(3)$ are unitary matrices and $S$ (yellow cuboid) is a core tensor.}
+	\label{fig4311}
+\end{figure}
+
+According to the theorem of HOSVD \cite{}, every \textit{complex} ($ I_1 \times I_2 \times \dots \times I_N$)-tensor $A$ could be decompose to a \textit{core tensor} $S$ and other $n$-mode unitary matrix $U^{(n)}$, where the maximum of $n$ must be smaller than $N$,
+\begin{align}
+	A = S \times U^{(1)} \times U^{(2)} \times \dots \times U^{(n)}
+\end{align} As shown in Fig. \ref{fig4311}, a rank-3 tensor $A$ is decomposed to a core tensor $S$ (yellow cuboid) and three unitary matrices obtaining from three different modes.  The core tensor $S$ is a \textit{complex} ($ I_1 \times I_2 \times \dots \times I_N$)-tensor and have some significant properties, \begin{enumerate}
+	\item Row-orthogonal: Two subtensors $S_{\alpha}^{(n)}$ and $S_{\beta}^{(n)}$ are orthogonal when $\alpha \neq \beta$. 
+		\begin{align}		
+			\left\langle S^{(n)}_{\alpha},S^{(n)}_{\beta} \right\rangle \quad \text{, if} \quad \alpha = \beta
+		\end{align}		
+		In other words, no matter the shape of $S$, each rows are orthogonal.
+	\item Ordering: The Frobenius-norms $\text{ } \norm{S^{(n)}_{i}} $ is ordered from large to small.
+		\begin{align}		
+			\norm{S^{(n)}_1} \geq \norm{S^{(n)}_2} \geq \dots \geq \norm{S^{(n)}_{I_n}} \geq 0,
+		\end{align}		
+		for all possible values of $n$.
+\end{enumerate}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.90\textwidth]{figures/fig4312.png}
+	\caption[The tensor-network representation of HOSVD]{(a) Decompose $A$ to a core tensor $S$ and $n$-mode unitary matrix $U^{(n)}$, (b) Obtain tensors $U^{(n)}$ from decomposing various modes of tensor $A$ by SVD, (c) Obtain the core tensor $S$ from contracting all transpose unitary tensors $U^{(n)T}$ }
+	\label{fig4312}
+\end{figure}
 
 \subsection{3-PESS}
-The example on Kagome lattice.
 \label{3pess}
 
 \subsection{5-PESS}

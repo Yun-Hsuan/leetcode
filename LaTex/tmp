@@ -1,0 +1,718 @@
+xelatex thesis
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+(./thesis.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(./ntuthesis.cls
+Document Class: ntuthesis 2013/04/23 Thesis template for National Taiwan Univer
+sity
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/bk12.clo))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifvtex.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/expl3-code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/l3unicode-data.def)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.def))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.st
+y) (/usr/local/texlive/2015/texmf-dist/tex/latex/l3packages/xparse/xparse.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fontspec/fontspec.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fontspec/fontspec-patches.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/euenc/eu1enc.def)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/euenc/eu1lmr.fd))
+(/usr/local/texlive/2015/texmf-dist/tex/xelatex/xunicode/xunicode.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tipa/t3enc.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/euenc/eu1lmss.fd))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg)
+(/usr/local/texlive/2015/texmf-dist/tex/xelatex/xetex-def/xetex.def))))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+(/usr/local/texlive/2015/texmf-dist/tex/xelatex/xecjk/xunicode-addon.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/xelatex/xunicode/xunicode.sty
+*** Reloading Xunicode for encoding 'EU1' ***
+) (/usr/local/texlive/2015/texmf-dist/tex/xelatex/xecjk/xunicode-extra.def)
+(/usr/local/texlive/2015/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/setspace/setspace.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/enumerate.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/wallpaper/wallpaper.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/colortbl/colortbl.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/array.sty)))))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/dcolumn.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/subfigure/subfigure.sty
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2015/texmf-dist/tex/latex/subfigure/subfigure.cfg))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/arydshln/arydshln.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/indentfirst.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdfpages/ppxetex.def))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption3.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/commath/commath.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/units/nicefrac.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/placeins/placeins.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/braket/braket.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/algorithms/algorithm.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/stackengine/stackengine.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/etoolbox/etoolbox.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg))
+
+Package hyperref Message: Driver (autodetected): hxetex.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hxetex.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/stringenc.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/se-ascii-print.def)
+(./ntuvars.tex) (./thesis.aux
+
+LaTeX Warning: Label `reduce_a' multiply defined.
+
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/tipa/t3cmr.fd)
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(./thesis.out) (./thesis.out) <use  "watermark.pdf" > [1]
+(./acknowledgements.tex <use  "watermark.pdf" > [1]) (./abstract.tex
+<use  "watermark.pdf" > [2] <use  "watermark.pdf" > [3])
+<use  "watermark.pdf" > [4] (./thesis.toc
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd)
+<use  "watermark.pdf" > [5] <use  "watermark.pdf" > [6])
+<use  "watermark.pdf" > [7] (./thesis.lof <use  "watermark.pdf" > [8])
+<use  "watermark.pdf" > [9] (./thesis.lot) <use  "watermark.pdf" > [10]
+(./introduction.tex
+Chapter 1.
+) (./tensornetwork.tex <use  "watermark.pdf" > [1] <use  "watermark.pdf" >
+[2]
+Chapter 2.
+<use  "figures/fig211.png" > <use  "watermark.pdf" > [3]
+<use  "figures/fig224.png" > <use  "figures/fig221.png" >
+<use  "watermark.pdf" > [4] <use  "watermark.pdf" > [5]
+<use  "figures/fig222.png" > <use  "figures/fig223.png" >
+
+LaTeX Warning: Reference `optctm' on page 6 undefined on input line 65.
+
+<use  "watermark.pdf" > [6] <use  "figures/fig225.png" >
+
+LaTeX Warning: Command \i invalid in math mode on input line 83.
+
+) (./2ditebd.tex <use  "watermark.pdf" > [7] <use  "watermark.pdf" > [8]
+Chapter 3.
+<use  "watermark.pdf" > [9]
+Overfull \hbox (11.6174pt too wide) in paragraph at lines 18--20
+\EU1/TimesNewRoman(0)/m/n/12 eq.[]3.2[] means the first-order Suzuki Trotter de
+composition, and A and B are non-commutative
+
+LaTeX Warning: Reference `chapter:properties' on page 10 undefined on input lin
+e 21.
+
+<use  "figures/fig312.png" > <use  "figures/fig311.png" >
+<use  "watermark.pdf" > [10] <use  "figures/fig313.png" >
+<use  "watermark.pdf" > [11]
+
+LaTeX Warning: Reference `chapter:properties' on page 12 undefined on input lin
+e 65.
+
+<use  "figures/fig314.png" > <use  "watermark.pdf" > [12]
+
+LaTeX Warning: Reference `' on page 13 undefined on input line 76.
+
+
+LaTeX Warning: Reference `' on page 13 undefined on input line 76.
+
+<use  "figures/fig315.png" > <use  "watermark.pdf" > [13]
+<use  "figures/fig316.png" > <use  "watermark.pdf" > [14]
+<use  "figures/fig317.png" > <use  "watermark.pdf" > [15]
+<use  "figures/fig321.png" > <use  "figures/fig318.png" >
+<use  "watermark.pdf" > [16]
+
+Package natbib Warning: Citation `yang_accelerated_2007' on page 17 undefined o
+n input line 157.
+
+<use  "figures/fig319.png" > <use  "figures/fig320.png" >
+<use  "watermark.pdf" > [17] <use  "watermark.pdf" > [18]
+<use  "figures/fig322.png" > <use  "figures/fig323.png" >
+<use  "figures/fig324.png" > <use  "figures/fig325.png" >
+<use  "figures/fig326.png" > <use  "figures/fig327.png" >) (./pess.tex
+<use  "watermark.pdf" > [19] <use  "watermark.pdf" > [20]
+<use  "watermark.pdf" > [21]
+Chapter 4.
+
+Overfull \hbox (0.42523pt too wide) in paragraph at lines 10--11
+\EU1/TimesNewRoman(0)/m/n/12 network representation of simplex states is called
+ projected entangled simplex state (PESS)
+<use  "figures/fig411.png" > <use  "watermark.pdf" > [22]
+<use  "watermark.pdf" > [23] <use  "watermark.pdf" > [24]
+<use  "figures/fig4311.png" > <use  "watermark.pdf" > [25]
+<use  "figures/fig4312.png" > <use  "watermark.pdf" > [26]) (./ctm.tex
+<use  "watermark.pdf" > [27]
+Chapter 5.
+<use  "figures/fig501.png" > <use  "watermark.pdf" > [28]
+<use  "figures/fig511.png" > <use  "watermark.pdf" > [29]
+Overfull \hbox (6.07352pt too wide) in paragraph at lines 41--42
+[]\EU1/TimesNewRoman(0)/m/n/12 Insertion: Insert two new columns which consist 
+of { $\OML/cmm/m/it/12 T[]; b; a; T[]$ \EU1/TimesNewRoman(0)/m/n/12 } and { $\O
+ML/cmm/m/it/12 T[]; a; b; T[]$
+<use  "watermark.pdf" > [30] <use  "figures/fig512.png" >
+<use  "figures/fig513.png" > <use  "watermark.pdf" > [31]
+<use  "watermark.pdf" > [32]) (./summary.tex <use  "watermark.pdf" > [33]
+Chapter 6.
+) (./thesis.bbl <use  "watermark.pdf" > [34] <use  "watermark.pdf" > [35])
+
+Package natbib Warning: There were undefined citations.
+
+<use  "watermark.pdf" > [36] (./thesis.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ )
+(see the transcript file for additional information)
+Output written on thesis.pdf (47 pages).
+Transcript written on thesis.log.
+bibtex thesis
+This is BibTeX, Version 0.99d (TeX Live 2015)
+The top-level auxiliary file: thesis.aux
+The style file: apsrev4-1.bst
+Database file #1: thesis.bib
+Warning--entry type for "jordan_studies_2011" isn't style-file defined
+--line 246 of file thesis.bib
+Warning--entry type for "bauer_tensor_2011" isn't style-file defined
+--line 255 of file thesis.bib
+Warning--I didn't find a database entry for "yang_accelerated_2007"
+Warning--I didn't find a database entry for ""
+merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
+Control: key (0) 
+Control: author (72) initials jnrlst
+Control: editor formatted (1) identically to author
+Control: production of article title (-1) disabled
+Control: page (0) single
+Control: year (1) truncated
+Control: production of eprint (0) enabled
+Warning--missing journal in white_density_1992
+Warning--missing journal in white_density-matrix_1993
+Warning--missing journal in verstraete_matrix_2006
+Warning--empty year in verstraete_matrix_2006
+Warning--missing journal in ostlund_thermodynamic_1995
+Warning--empty year in ostlund_thermodynamic_1995
+Warning--missing journal in murg_variational_2007
+Warning--empty year in murg_variational_2007
+Warning--missing journal in verstraete_matrix_2008
+Warning--empty year in verstraete_matrix_2008
+Warning--missing journal in vidal_efficient_2003
+Warning--missing journal in vidal_efficient_2004
+Warning--missing journal in vidal_entanglement_2007
+Warning--empty year in jordan_studies_2011
+Warning--missing journal in orus_practical_2014
+Warning--empty year in orus_practical_2014
+Warning--empty year in bauer_tensor_2011
+Warning--missing journal in li_efficient_2012
+Warning--empty year in li_efficient_2012
+Warning--missing journal in hastings_light-cone_2009
+Warning--empty year in hastings_light-cone_2009
+Warning--missing journal in vidal_classical_2007
+Warning--missing journal in jiang_accurate_2008
+Warning--empty year in jiang_accurate_2008
+Warning--missing journal in orus_infinite_2008
+Warning--empty year in orus_infinite_2008
+(There were 30 warnings)
+xelatex thesis
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+(./thesis.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(./ntuthesis.cls
+Document Class: ntuthesis 2013/04/23 Thesis template for National Taiwan Univer
+sity
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/bk12.clo))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifvtex.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/expl3-code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/l3unicode-data.def)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.def))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.st
+y) (/usr/local/texlive/2015/texmf-dist/tex/latex/l3packages/xparse/xparse.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fontspec/fontspec.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fontspec/fontspec-patches.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/euenc/eu1enc.def)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/euenc/eu1lmr.fd))
+(/usr/local/texlive/2015/texmf-dist/tex/xelatex/xunicode/xunicode.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tipa/t3enc.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/euenc/eu1lmss.fd))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg)
+(/usr/local/texlive/2015/texmf-dist/tex/xelatex/xetex-def/xetex.def))))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+(/usr/local/texlive/2015/texmf-dist/tex/xelatex/xecjk/xunicode-addon.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/xelatex/xunicode/xunicode.sty
+*** Reloading Xunicode for encoding 'EU1' ***
+) (/usr/local/texlive/2015/texmf-dist/tex/xelatex/xecjk/xunicode-extra.def)
+(/usr/local/texlive/2015/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/setspace/setspace.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/enumerate.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/wallpaper/wallpaper.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/colortbl/colortbl.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/array.sty)))))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/dcolumn.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/subfigure/subfigure.sty
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2015/texmf-dist/tex/latex/subfigure/subfigure.cfg))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/arydshln/arydshln.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/indentfirst.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdfpages/ppxetex.def))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption3.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/commath/commath.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/units/nicefrac.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/placeins/placeins.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/braket/braket.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/algorithms/algorithm.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/stackengine/stackengine.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/etoolbox/etoolbox.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg))
+
+Package hyperref Message: Driver (autodetected): hxetex.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hxetex.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/stringenc.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/se-ascii-print.def)
+(./ntuvars.tex) (./thesis.aux
+
+LaTeX Warning: Label `reduce_a' multiply defined.
+
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/tipa/t3cmr.fd)
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(./thesis.out) (./thesis.out) <use  "watermark.pdf" > [1]
+(./acknowledgements.tex <use  "watermark.pdf" > [1]) (./abstract.tex
+<use  "watermark.pdf" > [2] <use  "watermark.pdf" > [3])
+<use  "watermark.pdf" > [4] (./thesis.toc
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd)
+<use  "watermark.pdf" > [5] <use  "watermark.pdf" > [6])
+<use  "watermark.pdf" > [7] (./thesis.lof <use  "watermark.pdf" > [8])
+<use  "watermark.pdf" > [9] (./thesis.lot) <use  "watermark.pdf" > [10]
+(./introduction.tex
+Chapter 1.
+) (./tensornetwork.tex <use  "watermark.pdf" > [1] <use  "watermark.pdf" >
+[2]
+Chapter 2.
+<use  "figures/fig211.png" > <use  "watermark.pdf" > [3]
+<use  "figures/fig224.png" > <use  "figures/fig221.png" >
+<use  "watermark.pdf" > [4] <use  "watermark.pdf" > [5]
+<use  "figures/fig222.png" > <use  "figures/fig223.png" >
+
+LaTeX Warning: Reference `optctm' on page 6 undefined on input line 65.
+
+<use  "watermark.pdf" > [6] <use  "figures/fig225.png" >
+
+LaTeX Warning: Command \i invalid in math mode on input line 83.
+
+) (./2ditebd.tex <use  "watermark.pdf" > [7] <use  "watermark.pdf" > [8]
+Chapter 3.
+<use  "watermark.pdf" > [9]
+Overfull \hbox (11.6174pt too wide) in paragraph at lines 18--20
+\EU1/TimesNewRoman(0)/m/n/12 eq.[]3.2[] means the first-order Suzuki Trotter de
+composition, and A and B are non-commutative
+
+LaTeX Warning: Reference `chapter:properties' on page 10 undefined on input lin
+e 21.
+
+<use  "figures/fig312.png" > <use  "figures/fig311.png" >
+<use  "watermark.pdf" > [10] <use  "figures/fig313.png" >
+<use  "watermark.pdf" > [11]
+
+LaTeX Warning: Reference `chapter:properties' on page 12 undefined on input lin
+e 65.
+
+<use  "figures/fig314.png" > <use  "watermark.pdf" > [12]
+
+LaTeX Warning: Reference `' on page 13 undefined on input line 76.
+
+
+LaTeX Warning: Reference `' on page 13 undefined on input line 76.
+
+<use  "figures/fig315.png" > <use  "watermark.pdf" > [13]
+<use  "figures/fig316.png" > <use  "watermark.pdf" > [14]
+<use  "figures/fig317.png" > <use  "watermark.pdf" > [15]
+<use  "figures/fig321.png" > <use  "figures/fig318.png" >
+<use  "watermark.pdf" > [16]
+
+Package natbib Warning: Citation `yang_accelerated_2007' on page 17 undefined o
+n input line 157.
+
+<use  "figures/fig319.png" > <use  "figures/fig320.png" >
+<use  "watermark.pdf" > [17] <use  "watermark.pdf" > [18]
+<use  "figures/fig322.png" > <use  "figures/fig323.png" >
+<use  "figures/fig324.png" > <use  "figures/fig325.png" >
+<use  "figures/fig326.png" > <use  "figures/fig327.png" >) (./pess.tex
+<use  "watermark.pdf" > [19] <use  "watermark.pdf" > [20]
+<use  "watermark.pdf" > [21]
+Chapter 4.
+
+Overfull \hbox (0.42523pt too wide) in paragraph at lines 10--11
+\EU1/TimesNewRoman(0)/m/n/12 network representation of simplex states is called
+ projected entangled simplex state (PESS)
+<use  "figures/fig411.png" > <use  "watermark.pdf" > [22]
+<use  "watermark.pdf" > [23] <use  "watermark.pdf" > [24]
+<use  "figures/fig4311.png" > <use  "watermark.pdf" > [25]
+<use  "figures/fig4312.png" > <use  "watermark.pdf" > [26]) (./ctm.tex
+<use  "watermark.pdf" > [27]
+Chapter 5.
+<use  "figures/fig501.png" > <use  "watermark.pdf" > [28]
+<use  "figures/fig511.png" > <use  "watermark.pdf" > [29]
+Overfull \hbox (6.07352pt too wide) in paragraph at lines 41--42
+[]\EU1/TimesNewRoman(0)/m/n/12 Insertion: Insert two new columns which consist 
+of { $\OML/cmm/m/it/12 T[]; b; a; T[]$ \EU1/TimesNewRoman(0)/m/n/12 } and { $\O
+ML/cmm/m/it/12 T[]; a; b; T[]$
+<use  "watermark.pdf" > [30] <use  "figures/fig512.png" >
+<use  "figures/fig513.png" > <use  "watermark.pdf" > [31]
+<use  "watermark.pdf" > [32]) (./summary.tex <use  "watermark.pdf" > [33]
+Chapter 6.
+) (./thesis.bbl <use  "watermark.pdf" > [34] <use  "watermark.pdf" > [35])
+
+Package natbib Warning: There were undefined citations.
+
+<use  "watermark.pdf" > [36] (./thesis.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ )
+(see the transcript file for additional information)
+Output written on thesis.pdf (47 pages).
+Transcript written on thesis.log.
+xelatex thesis
+This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex)
+ restricted \write18 enabled.
+entering extended mode
+(./thesis.tex
+LaTeX2e <2015/01/01>
+Babel <3.9l> and hyphenation patterns for 79 languages loaded.
+(./ntuthesis.cls
+Document Class: ntuthesis 2013/04/23 Thesis template for National Taiwan Univer
+sity
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/bk12.clo))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/geometry/geometry.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/keyval.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifpdf.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ifvtex.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/ifxetex/ifxetex.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/xelatex/xecjk/xeCJK.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/expl3-code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/l3unicode-data.def)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/l3xdvipdfmx.def))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3packages/xtemplate/xtemplate.st
+y) (/usr/local/texlive/2015/texmf-dist/tex/latex/l3packages/xparse/xparse.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3packages/l3keys2e/l3keys2e.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fontspec/fontspec.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fontspec/fontspec-patches.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fontspec/fontspec-xetex.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/fontenc.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/euenc/eu1enc.def)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/euenc/eu1lmr.fd))
+(/usr/local/texlive/2015/texmf-dist/tex/xelatex/xunicode/xunicode.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tipa/t3enc.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/euenc/eu1lmss.fd))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/graphics.cfg)
+(/usr/local/texlive/2015/texmf-dist/tex/xelatex/xetex-def/xetex.def))))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/fontspec/fontspec.cfg)))
+(/usr/local/texlive/2015/texmf-dist/tex/xelatex/xecjk/xunicode-addon.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/xelatex/xunicode/xunicode.sty
+*** Reloading Xunicode for encoding 'EU1' ***
+) (/usr/local/texlive/2015/texmf-dist/tex/xelatex/xecjk/xunicode-extra.def)
+(/usr/local/texlive/2015/texmf-dist/tex/xelatex/xecjk/xeCJK.cfg))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/setspace/setspace.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/enumerate.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/wallpaper/wallpaper.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/eso-pic/eso-pic.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/atbegshi.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/ltxcmds.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/color.cfg)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/colortbl/colortbl.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/array.sty)))))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/verbatim.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/url/url.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/dcolumn.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/bm.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/subfigure/subfigure.sty
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/local/texlive/2015/texmf-dist/tex/latex/subfigure/subfigure.cfg))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amsfonts.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/amssymb.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/booktabs/booktabs.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/arydshln/arydshln.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/tools/indentfirst.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdfpages/pdfpages.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/pdfpages/ppxetex.def))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/caption/caption3.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/commath/commath.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/natbib/natbib.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/units/nicefrac.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/placeins/placeins.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/braket/braket.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/algorithms/algorithm.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/float/float.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/algorithmicx/algpseudocode.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/algorithmicx/algorithmicx.sty
+Document Style algorithmicx 1.2 - a greatly improved `algorithmic' style
+)
+Document Style - pseudocode environments for use with the `algorithmicx' style
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/stackengine/stackengine.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/etoolbox/etoolbox.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/latexconfig/hyperref.cfg))
+
+Package hyperref Message: Driver (autodetected): hxetex.
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/hxetex.def
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/puenc.def)
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/stringenc.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/se-ascii-print.def)
+(./ntuvars.tex) (./thesis.aux
+
+LaTeX Warning: Label `reduce_a' multiply defined.
+
+) (/usr/local/texlive/2015/texmf-dist/tex/latex/tipa/t3cmr.fd)
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+(/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(./thesis.out) (./thesis.out) <use  "watermark.pdf" > [1]
+(./acknowledgements.tex <use  "watermark.pdf" > [1]) (./abstract.tex
+<use  "watermark.pdf" > [2] <use  "watermark.pdf" > [3])
+<use  "watermark.pdf" > [4] (./thesis.toc
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd)
+<use  "watermark.pdf" > [5] <use  "watermark.pdf" > [6])
+<use  "watermark.pdf" > [7] (./thesis.lof <use  "watermark.pdf" > [8])
+<use  "watermark.pdf" > [9] (./thesis.lot) <use  "watermark.pdf" > [10]
+(./introduction.tex
+Chapter 1.
+) (./tensornetwork.tex <use  "watermark.pdf" > [1] <use  "watermark.pdf" >
+[2]
+Chapter 2.
+<use  "figures/fig211.png" > <use  "watermark.pdf" > [3]
+<use  "figures/fig224.png" > <use  "figures/fig221.png" >
+<use  "watermark.pdf" > [4] <use  "watermark.pdf" > [5]
+<use  "figures/fig222.png" > <use  "figures/fig223.png" >
+
+LaTeX Warning: Reference `optctm' on page 6 undefined on input line 65.
+
+<use  "watermark.pdf" > [6] <use  "figures/fig225.png" >
+
+LaTeX Warning: Command \i invalid in math mode on input line 83.
+
+) (./2ditebd.tex <use  "watermark.pdf" > [7] <use  "watermark.pdf" > [8]
+Chapter 3.
+<use  "watermark.pdf" > [9]
+Overfull \hbox (11.6174pt too wide) in paragraph at lines 18--20
+\EU1/TimesNewRoman(0)/m/n/12 eq.[]3.2[] means the first-order Suzuki Trotter de
+composition, and A and B are non-commutative
+
+LaTeX Warning: Reference `chapter:properties' on page 10 undefined on input lin
+e 21.
+
+<use  "figures/fig312.png" > <use  "figures/fig311.png" >
+<use  "watermark.pdf" > [10] <use  "figures/fig313.png" >
+<use  "watermark.pdf" > [11]
+
+LaTeX Warning: Reference `chapter:properties' on page 12 undefined on input lin
+e 65.
+
+<use  "figures/fig314.png" > <use  "watermark.pdf" > [12]
+
+LaTeX Warning: Reference `' on page 13 undefined on input line 76.
+
+
+LaTeX Warning: Reference `' on page 13 undefined on input line 76.
+
+<use  "figures/fig315.png" > <use  "watermark.pdf" > [13]
+<use  "figures/fig316.png" > <use  "watermark.pdf" > [14]
+<use  "figures/fig317.png" > <use  "watermark.pdf" > [15]
+<use  "figures/fig321.png" > <use  "figures/fig318.png" >
+<use  "watermark.pdf" > [16]
+
+Package natbib Warning: Citation `yang_accelerated_2007' on page 17 undefined o
+n input line 157.
+
+<use  "figures/fig319.png" > <use  "figures/fig320.png" >
+<use  "watermark.pdf" > [17] <use  "watermark.pdf" > [18]
+<use  "figures/fig322.png" > <use  "figures/fig323.png" >
+<use  "figures/fig324.png" > <use  "figures/fig325.png" >
+<use  "figures/fig326.png" > <use  "figures/fig327.png" >) (./pess.tex
+<use  "watermark.pdf" > [19] <use  "watermark.pdf" > [20]
+<use  "watermark.pdf" > [21]
+Chapter 4.
+
+Overfull \hbox (0.42523pt too wide) in paragraph at lines 10--11
+\EU1/TimesNewRoman(0)/m/n/12 network representation of simplex states is called
+ projected entangled simplex state (PESS)
+<use  "figures/fig411.png" > <use  "watermark.pdf" > [22]
+<use  "watermark.pdf" > [23] <use  "watermark.pdf" > [24]
+<use  "figures/fig4311.png" > <use  "watermark.pdf" > [25]
+<use  "figures/fig4312.png" > <use  "watermark.pdf" > [26]) (./ctm.tex
+<use  "watermark.pdf" > [27]
+Chapter 5.
+<use  "figures/fig501.png" > <use  "watermark.pdf" > [28]
+<use  "figures/fig511.png" > <use  "watermark.pdf" > [29]
+Overfull \hbox (6.07352pt too wide) in paragraph at lines 41--42
+[]\EU1/TimesNewRoman(0)/m/n/12 Insertion: Insert two new columns which consist 
+of { $\OML/cmm/m/it/12 T[]; b; a; T[]$ \EU1/TimesNewRoman(0)/m/n/12 } and { $\O
+ML/cmm/m/it/12 T[]; a; b; T[]$
+<use  "watermark.pdf" > [30] <use  "figures/fig512.png" >
+<use  "figures/fig513.png" > <use  "watermark.pdf" > [31]
+<use  "watermark.pdf" > [32]) (./summary.tex <use  "watermark.pdf" > [33]
+Chapter 6.
+) (./thesis.bbl <use  "watermark.pdf" > [34] <use  "watermark.pdf" > [35])
+
+Package natbib Warning: There were undefined citations.
+
+<use  "watermark.pdf" > [36] (./thesis.aux)
+
+LaTeX Warning: There were undefined references.
+
+
+LaTeX Warning: There were multiply-defined labels.
+
+ )
+(see the transcript file for additional information)
+Output written on thesis.pdf (47 pages).
+Transcript written on thesis.log.
