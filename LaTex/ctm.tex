@@ -19,14 +19,53 @@ In the following subsections, we will show more details of implementation of CTM
 
 \section{Obtain States from PEPS}
 \label{2ditebdctm}
-In chapter.\ref{chapter:2ditebd}, we have discussed about obtaining the infinite PEPS state $\Ket{\psi}$ of an infinite 2D square lattice by imaginary time evolution and knowing that the infinite PEPS could be characterized by two tensors A and B repeatedly. The state has components $A^d_{uldr}$ and $B^d_{drul}$. The label $d$ represent a physical basis and labels $u,l,d,r$ are the virtual bonds of infinite PEPS, Fig. \ref{fig511}(a). Next, for 
+In chapter.\ref{chapter:2ditebd}, we have discussed about obtaining the infinite PEPS state $\Ket{\psi}$ of an infinite 2D square lattice by imaginary time evolution and known that the infinite PEPS could be characterized by two tensors $A^h_{uldr}$ and $B^h_{drul}$ repeatedly (Fig. \ref{fig511}(a)). The scaler norm of the iPEPS $\Braket{\psi|\psi}$ is composed by reduced tensors $a_{\bar{u}\bar{l}\bar{d}\bar{r}}$ and $b_{\bar{d}\bar{r}\bar{u}\bar{l}}$(Fig. \ref{fig511}(b)), where
+\begin{align}
+	\label{reduce_a}
+	\bar{a} \equiv \sum_{h=1}^{d} A_{h} \otimes A^{*}_{h} \\
+	\bar{b} \equiv \sum_{h=1}^{d} B_{h} \otimes B^{*}_{h}
+\end{align}
 
+Then, we can consider the environment $\varepsilon^{\left[\vec{r_1},\vec{r_2},\vec{r_3},\vec{r_4}\right]}$ of a four-site structure (Fig. \ref{fig511}(c)), and try to approximate it with effective environment $G^{\left[\vec{r_1},\vec{r_2},\vec{r_3},\vec{r_4}\right]}$ (Fig. \ref{fig511}(d)), which consists of $$C_1, T_{a1}, T_{b1},C_2, T_{a2}, T_{b2},C_3, T_{a3}, T_{b3},C_4, T_{a4}, T_{b4},$$
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/fig511.png}
 	\caption[The picture of the main idea of itebd.]{The red and blue tensor denotes on \textit{odd} and \textit{even} sites. The yellow one are time evolution operators $e^{-\tau H_{k,k+1}}$, $e^{-\tau H_{k+1,k}}$}
 	\label{fig511}
 \end{figure}
+
+For the approximation of environment, the directional variant of the CTMRG was developed. According to \textit{directional coarse-graining moves}, the effective environment could be updated from four different moves , left, right, up and down and iterated until the environments converges. 
+
+For instance, the procedures to the left move, shown in the Fig. \ref{fig512} which is derived by Roman and Vidal, is made up of four major steps,
+\begin{enumerate}
+	\item Insertion: Insert two new columns which consist of \{ $T_{a1},b,a,T_{b3}$ \} and \{ $T_{b1},a,b,T_{a3}$ \} as in Fig. \ref{fig512}(b).
+	\item Absorption: In order to obtaining two new corner matrices $\tilde{C_1}$ and $\tilde{C_4}$, and two new transfer matrices $\tilde{T_{b4}}$ and $\tilde{T_{a4}}$, we contract tensors $C_1$ and $T_{b1}$, tensors $C_3$ and $T_{a3}$, tensors $T_{a4}$ and $b$, and tensors $T_{b4}$ and $a$. Then, contract tensors $\tilde{C_1}$ and $\tilde{T_{b4}}$, and tensors $\tilde{C_4}$ and $\tilde{T_{a4}}$, obtaining $\tilde{Q_1}$ and $\tilde{Q_4}$ which play significant rules for calculating isometries between $\tilde{T_{b4}}$ and $\tilde{T_{a4}}$ as in Fig. \ref{fig512}(c).
+	\item Renormalization: Truncate the vertical virtual bonds of $\widetilde{C_1}$, $\widetilde{T_{b4}}$, $\widetilde{T_{a4}}$, and $\widetilde{C_4}$ by contracting the isometries $Z$ and $W$, where
+\begin{align}
+	\label{isometry}
+	Z^{\dagger}Z = I \\
+	W^{\dagger}W = I
+\end{align}
+and the renormalization of the left CTM, yield as
+\begin{align}
+	\label{renormalize}
+	C^{\prime}_1 = Z^{\dagger} \tilde{C_1} \\
+	T_{b4}^{\prime} = Z\tilde{T_{b4}}W^{\dagger} \\
+	T_{a4}^{\prime} = W\tilde{T_{b4}}Z^{\dagger} \\
+	C^{\prime}_4 = Z\widetilde{C_4}
+\end{align}
+See the Fig. \ref{fig512}(d) and \ref{fig512}(f).
+	\item Truncation: To determinate the isometries Z and W in the \textit{renormalization} steps is the most significant part. In this case, we use the eigenvalue decomposition of 
+		\begin{align}
+			\label{eigh_ctm}
+			\tilde{C_1}\tilde{C^{\dagger}_1}+\tilde{C_4}\tilde{C^{\dagger}_4}= \tilde{Z} D_z \tilde{Z^{\dagger}}\\
+			\tilde{Q_1}\tilde{Q^{\dagger}_1}+\tilde{Q_4}\tilde{Q^{\dagger}_4}= \tilde{W} D_w \tilde{W^{\dagger}}
+		\end{align}
+		shown in Fig. \ref{fig512}(e). It's not hard to find that the 
+		the dimension of bonds of $D_z$ and $D_w$ increase to $\chi^2$. For that reason, we have to truncate $\tilde{Z}$ and $\tilde{W}$ to isometries $Z$ and $W$ which are equivalent to keeping the columns of $\tilde{Z}$ and $\tilde{W}$ corresponding to $\chi$ largest eigenvalues of $D_z$ and $D_w$.
+\end{enumerate}
+
+Now, we need repeat the procedures in Fig. \ref{fig512}(b)-(d) again for absorbing the other inserted column in Fig. \ref{fig512}(d) and obtain a new effective environment $G^{\prime \left[\vec{r_1},\vec{r_2},\vec{r_3},\vec{r_4}\right]}$ for the four-site unit cell. By composing four variant moves of the CTM we build an epoch of CTMRG. 
 
 \begin{figure}[ht]
 	\centering
@@ -39,4 +78,3 @@ In chapter.\ref{chapter:2ditebd}, we have discussed about obtaining the infinite
 \section{Obtain States from PESS}
 \label{pessctm}
 CTM with PESS.
-

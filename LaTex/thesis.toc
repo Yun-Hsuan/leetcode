@@ -23,14 +23,14 @@
 \contentsline {subsection}{\numberline {3.5.1}Different Initializations}{19}{subsection.3.5.1}
 \contentsline {chapter}{\numberline {4}Infinite Projected Entangled Simplex State}{22}{chapter.4}
 \contentsline {section}{\numberline {4.1}Simplex-solid State}{22}{section.4.1}
-\contentsline {section}{\numberline {4.2}Infinite Kagome Lattice}{22}{section.4.2}
-\contentsline {subsection}{\numberline {4.2.1}3-PESS}{22}{subsection.4.2.1}
-\contentsline {subsection}{\numberline {4.2.2}5-PESS}{23}{subsection.4.2.2}
-\contentsline {section}{\numberline {4.3}Infinite Square Lattice}{23}{section.4.3}
-\contentsline {subsection}{\numberline {4.3.1}4-PESS (Rank-3 local tensors)}{23}{subsection.4.3.1}
-\contentsline {subsection}{\numberline {4.3.2}4-PESS (Rank-5 local tensors)}{23}{subsection.4.3.2}
-\contentsline {chapter}{\numberline {5}Corner Transfer Matrix}{24}{chapter.5}
-\contentsline {section}{\numberline {5.1}Obtain States from PEPS}{25}{section.5.1}
-\contentsline {section}{\numberline {5.2}Obtain States from PESS}{28}{section.5.2}
-\contentsline {chapter}{\numberline {6}Summary}{29}{chapter.6}
-\contentsline {chapter}{Bibliography}{29}{chapter.6}
+\contentsline {section}{\numberline {4.2}Infinite Kagome Lattice}{23}{section.4.2}
+\contentsline {subsection}{\numberline {4.2.1}3-PESS}{24}{subsection.4.2.1}
+\contentsline {subsection}{\numberline {4.2.2}5-PESS}{24}{subsection.4.2.2}
+\contentsline {section}{\numberline {4.3}Infinite Square Lattice}{24}{section.4.3}
+\contentsline {subsection}{\numberline {4.3.1}4-PESS (Rank-3 local tensors)}{24}{subsection.4.3.1}
+\contentsline {subsection}{\numberline {4.3.2}4-PESS (Rank-5 local tensors)}{24}{subsection.4.3.2}
+\contentsline {chapter}{\numberline {5}Corner Transfer Matrix}{25}{chapter.5}
+\contentsline {section}{\numberline {5.1}Obtain States from PEPS}{26}{section.5.1}
+\contentsline {section}{\numberline {5.2}Obtain States from PESS}{30}{section.5.2}
+\contentsline {chapter}{\numberline {6}Summary}{31}{chapter.6}
+\contentsline {chapter}{Bibliography}{31}{chapter.6}

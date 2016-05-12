@@ -26,11 +26,13 @@
 \usepackage{braket}
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode}
+\usepackage{stackengine}
 
 \makeatletter
 \def\BState{\State\hskip-\ALG@thistlm}
 \makeatother
 
+\newcommand\barbelow[1]{\stackunder[1.2pt]{$#1$}{\rule{.8ex}{.075ex}}}
 \newcommand\VRule[1][\arrayrulewidth]{\vrule width #1}
 \newcommand{\Hamiltonian}{\mathcal{H}}
 \newcommand{\rb}{\right}
