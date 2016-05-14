@@ -134,11 +134,19 @@ when the value of $\tau$ is small enough.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.00\textwidth]{figures/fig4321.png}
-	\caption[The graphical representation of 3-PESS]{The graphical representation of 3-PESS. (a) The PESS state can be considered as composed by two simplices, upward- (green triangular) and downward-triangular (green triangular). The red dash-line represent as the geometry of the kagome lattice. As this figure shown, the projection tensors (Blue circle) are rank-3 with the dimension $dD^2$, where $d$ is the dimension of the physicla basis and $D$ is the dimension of the virtual bonds (gray line), and the entangled simplex tensors, with the dimension $D^3$, are located at the cross of three virtual bonds (gray line) in each simplex states. (b) Two simplices in 3-PESS structure. These two type simplices, clustered with the sharing projection tensors, $A^{\sigma_i}_{mm^{\prime}}$, $A^{\sigma_j}_{nn^{\prime}}$ and $A^{\sigma_k}_{ll^{\prime}}$. However, their entangled simplex tensor are individual. In (a), the core tensor of the red simplex is $S^{\alpha}_{mnl}$ and the green one is $S^{\beta}_{m^{\prime}n^{\prime}l^{\prime}}$}
+	\caption[The graphical representation of 3-PESS]{The graphical representation of 3-PESS. (a) The PESS state can be considered as composed by two simplices, upward- (green triangular) and downward-triangular (green triangular). The red dash-line represent as the geometry of the kagome lattice. As this figure shown, the projection tensors (Blue circle) are rank-3 with the dimension $dD^2$, where $d$ is the dimension of the physical basis and $D$ is the dimension of the virtual bonds (gray line), and the entangled simplex tensors, with the dimension $D^3$, are located at the cross of three virtual bonds (gray line) in each simplex states. (b) Two simplices in 3-PESS structure. These two type simplices, clustered with the sharing projection tensors, $A^{\sigma_i}_{mm^{\prime}}$, $A^{\sigma_j}_{nn^{\prime}}$ and $A^{\sigma_k}_{ll^{\prime}}$. However, their entangled simplex tensor are individual. In (a), the core tensor of the red simplex is $S^{\alpha}_{mnl}$ and the green one is $S^{\beta}_{m^{\prime}n^{\prime}l^{\prime}}$}
 	\label{fig4321}
 \end{figure}
 
 After determining the evolution operators, $e^{\tau H_{\Delta}}$ and $e^{\tau H_{\nabla}}$, we apply the schem of the simple update to approximate theground state wave function of 3-PESS. As shown in Fig. \ref{fig4323}, we take an example of updating upward-triangular simplex $\alpha$ to illustrate,
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1.00\textwidth]{figures/fig4322.png}
+	\caption[The schem of the simple update for 3-PESS.]{The schem of the simple update for 3-PESS. The more detail descriptions are in the paragraph}
+	\label{fig4322}
+\end{figure}
+
 \begin{enumerate}
 	\item Obtain a clustered simplex tensor $\theta$: Firstly, absorb all the environment bond vectors surrounding the simplex state. See Fig. \ref{fig4322}(a),  the environment vectors, $\lambda^{\beta}_{m^{\prime}m}$ , $\lambda^{\beta}_{n^{\prime}n}$ and $\lambda^{\beta}_{l^{\prime}l}$, are obtained from the entangled simplex tensor of simplex $\beta$, due to the canonical form of the PESS \cite{},
 		\begin{align}
@@ -148,27 +156,44 @@ After determining the evolution operators, $e^{\tau H_{\Delta}}$ and $e^{\tau H_
 		\end{align}
 		and base on the features of HOSVD, shown in eq. \ref{}. The $\lambda$s can be simply obtained, when we decompose the clustered tensors of the simplex $\beta$ in the updating process. Secondly, contract all tensors in simplex state to obtain the clustered tensor $\theta$. The mathematical representation of the step is written as,  
 		\begin{align}
-			\theta_{m^{\prime} n^{\prime} l^{\prime}}^{\sigma_i \sigma_j \sigma_k} = \sum_{mnl}{S^{(\alpha)}_{mnl} \lambda^{(\beta)}_{m^{\prime}} A^{\sigma_i}_{mm^{\prime}} \lambda^{(\beta)}_{n^{\prime}} A^{\sigma_j}_{nn^{\prime}} \lambda^{(\beta)}_{l^{\prime}} A^{\sigma_k}_{ll^{\prime}}}
+			\theta_{m^{\prime} n^{\prime} l^{\prime}}^{\sigma_i \sigma_j \sigma_k} = \sum_{mnl,m^{\prime}n^{\prime}l^{\prime}}{S^{(\alpha)}_{mnl} \lambda^{(\beta)}_{m^{\prime \prime}} A^{\sigma_i}_{mm^{\prime}} \lambda^{(\beta)}_{n^{\prime \prime}} A^{\sigma_j}_{nn^{\prime}} \lambda^{(\beta)}_{l^{\prime \prime}} A^{\sigma_k}_{ll^{\prime}}}
 		\end{align}
 	\item Apply the evolution operator $U(\tau)$: In eq. \ref{eq415}, we have generated the evolution operator for 3-PESS ansatz. Due to updating upward-triangles simplex, $U(\tau)$ is defined as, 
 		\begin{align}
 			U(\tau) = e^{-\tau H_{\Delta}}
 		\end{align}
 		Now that, we utilize $U(\tau)$ to the cluster tensor $\theta$, see Fig. \ref{fig4322}(c) and obtain a new cluster tensor $\theta^{\prime}$, 
-	\item Decompose $\theta^{\prime}$ into the general form of the simplex state: Apply the high-order singular value decomposition (HOSVD) to renormalize projection tensors. During operating HOSVD, we need save the environment bond vectors, $\lambda^{(\alpha)}_{m}$, $\lambda^{(\alpha)}_{n}$ and $\lambda^{(\alpha)}_{l}$, surrounding the simplex $\beta$. All $lambda^{(\alpha)}$ could be obtained from decomposing different modes of $\theta^{\prime}$. As shown in Fig. \ref{fig4312}(b).
+	\item Decompose $\theta^{\prime}$ into the general form of the simplex state: Apply the high-order singular value decomposition (HOSVD) to obtain new projection tensors, $U^{(\sigma_i)}$, $U^{(\sigma_j)}$ and $U^{(\sigma_k)}$, and a new core tensor of simplex $\alpha$, $S^{(\alpha)^{\prime}}$, see Fig. \ref{fig4322}(d). During operating HOSVD, we need save the environment bond vectors, $\lambda^{(\alpha)}_{m}$, $\lambda^{(\alpha)}_{n}$ and $\lambda^{(\alpha)}_{l}$, surrounding the simplex $\beta$. All $\lambda^{(\alpha)}$ could be obtained from decomposing different modes of $\theta^{\prime}$. As shown in Fig. \ref{fig4312}(b).
+	\item Truncation: In order to avoid the exponential increment of the virtual bonds dimension, we need truncate the brown bonds in Fig. \ref{fig4322}(d) to specified dimension $D^{\prime}$ which can be fixed to original dimension $D$ or determined dynamically by setting an truncation error as the discussion in section \ref{truncationerror}. The simple way is to truncate projection tensors firstly,  
+		\begin{align}
+			&U^{\sigma_i} \rightarrow \widetilde{U}^{\sigma_i}_{mm^{\prime}} \\
+			&U^{\sigma_j} \rightarrow \widetilde{U}^{\sigma_j}_{nn^{\prime}} \\
+			&U^{\sigma_k} \rightarrow \widetilde{U}^{\sigma_k}_{ll^{\prime}}
+		\end{align}
+		Next, contract the transpose of these tensors with $\theta^{\prime}$, as Fig. \ref{fig4312}(c), to obtain $\widetilde{S}^{\alpha}$ in Fig. \ref{fig4322}(e), where
+		\begin{align}
+			\widetilde{S}^{(\alpha)} = \sum_{m^{\prime}n^{\prime}l^{\prime}}{\theta_{m^{\prime} n^{\prime} l^{\prime}}^{\prime \sigma_i \sigma_j \sigma_k} \widetilde{U}^{\sigma_i}_{mm^{\prime}} \widetilde{U}^{\sigma_j}_{nn^{\prime}} \widetilde{U}^{\sigma_k}_{ll^{\prime}}}
+		\end{align}
+	\item Absorb the inverse environment bond vectors $\lambda^{(\beta)^{-1}}$ into truncated projection tensors: To obtain the updated projection tensors $\widetilde{A}^{\sigma_i}_{mm^{\prime}}$, $\widetilde{A}^{\sigma_j}_{nn^{\prime}}$ and $\widetilde{A}^{\sigma_k}_{ll^{\prime}}$, we need remove the influence of environment, 
+		\begin{align}
+			\widetilde{A}^{\sigma_i}_{mm^{\prime}} &= \sum_{m^{\prime \prime}}{ \lambda^{(\beta)}_{m^{\prime} m^{\prime \prime}} \widetilde{U}^{\sigma_i}_{mm^{\prime \prime}}} \\
+			\widetilde{A}^{\sigma_j}_{nn^{\prime}} &= \sum_{n^{\prime \prime}}{ \lambda^{(\beta)}_{n^{\prime} n^{\prime \prime}} \widetilde{U}^{\sigma_j}_{nn^{\prime \prime}}} \\
+			\widetilde{A}^{\sigma_k}_{ll^{\prime}} &= \sum_{l^{\prime \prime}}{ \lambda^{(\beta)}_{l^{\prime} l^{\prime \prime}} \widetilde{U}^{\sigma_i}_{ll^{\prime \prime}}}
+		\end{align}	
+		see Fig. \ref{fig4322}(f),
 \end{enumerate}
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=1.00\textwidth]{figures/fig4322.png}
-	\caption[The schem of the simple update for 3-PESS.]{The schem of the simple update for 3-PESS. The more detail descriptions are in the paragraph}
-	\label{fig4322}
-\end{figure}
+
+At here, one updated epoch is completed. Finally, the ground state will be obtained by iterating the procedures for each simplex, upward- and downward- triangular $(\Delta, \nabla)$, until the wave function of PESS converge,
+
+%$\mathlarger{\rjoin}$
 \subsection{5-PESS}
+In the 5-PESS structure, the procedure to approximate the ground state wave function is similar to 3-PESS. However, due to the transformation of the structure, the character of core tensors in 5-PESS is a little different from 3-PESS. See Fig. \ref{fig4323}(a), it is obvious that the core tensors are located on the physical sites. In other words, the core tensors, in 5-PESS, include the physical basis states.
+
 \label{5pess}
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.00\textwidth]{figures/fig4323.png}
-	\caption[The picture of the HOSVD for a rank-3 tensor.]{Picture of the HOSVD for a rank-3 tensor $A$. $U^{(1)}$,$U^{(2)}$ and $U^{(3)}$ are unitary matrices and $S$ (yellow cuboid) is a core tensor.}
+	\caption[The graphical representation of 3-PESS]{The graphical representation of 3-PESS. (a) The PESS state can be considered as composed by two simplices, upward- (green triangular) and downward-triangular (green triangular). The red dash-line represent as the geometry of the kagome lattice. As this figure shown, the projection tensors (Blue circle) are rank-3 with the dimension $dD^2$, where $d$ is the dimension of the physicla basis and $D$ is the dimension of the virtual bonds (gray line), and the entangled simplex tensors, with the dimension $D^3$, are located at the cross of three virtual bonds (gray line) in each simplex states. (b) Two simplices in 3-PESS structure. These two type simplices, clustered with the sharing projection tensors, $A^{\sigma_i}_{mm^{\prime}}$, $A^{\sigma_j}_{nn^{\prime}}$ and $A^{\sigma_k}_{ll^{\prime}}$. However, their entangled simplex tensor are individual. In (a), the core tensor of the red simplex is $S^{\alpha}_{mnl}$ and the green one is $S^{\beta}_{m^{\prime}n^{\prime}l^{\prime}}$}
 	\label{fig4323}
 \end{figure}
 \begin{figure}[ht]

@@ -28,11 +28,12 @@
 \usepackage{algorithm}
 \usepackage[noend]{algpseudocode}
 \usepackage{stackengine}
+\usepackage{relsize}
 
 \makeatletter
 \def\BState{\State\hskip-\ALG@thistlm}
 \makeatother
-
+\newcommand{\rjoin}{\rotatebox[origin=c]{-90}{$\Join$}}
 \newcommand\barbelow[1]{\stackunder[1.2pt]{$#1$}{\rule{.8ex}{.075ex}}}
 \newcommand\VRule[1][\arrayrulewidth]{\vrule width #1}
 \newcommand{\Hamiltonian}{\mathcal{H}}
