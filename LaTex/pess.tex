@@ -61,7 +61,7 @@ In the section, we will introduce to $N$th-order singular value decomposition (H
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.00\textwidth]{figures/fig4311.png}
-	\caption[The picture of the HOSVD for a rank-3 tensor.]{Picture of the HOSVD for a rank-3 tensor $A$. $U^{(1)}$,$U^{(2)}$ and $U^{(3)}$ are unitary matrices and $S$ (yellow cuboid) is a core tensor.}
+	\caption[The picture of HOSVD for a rank-3 tensor.]{The picture of HOSVD for a rank-3 tensor $A$. $U^{(1)}$,$U^{(2)}$ and $U^{(3)}$ are unitary matrices and $S$ (yellow cuboid) is a core tensor.}
 	\label{fig4311}
 \end{figure}
 
@@ -100,7 +100,12 @@ Now that we show the tensor-network representation for explaining more explicitl
 In chapter.\ref{chapter:2ditebd}, we have introduced an efficient approximation, the "simple update", for determining the PEPS wave function. In principle, the wave function of PESS can be approached by the same way.
 In PEPS structure, the ground-state wave function is approximated by iterated application of imaginary-time evolution operators $U(\tau) = e^{-\tau H}$ on an random PEPS state $\Ket{\Psi_t}$, where $\tau$ is a small constant, see Fig. \ref{fig312}. Base on the scheme, we can obtain the ground-state wave function of PESS by following steps,
 \begin{enumerate}
-	\item Split Hamiltonian $H$ to $H_{\alpha}$ and $H_{\beta}$ where $\alpha$ and $\beta$ are dependent on the geometry of the PESS structure.
+	\item Split Hamiltonian $H$,  
+		\begin{align}
+			\label{splitH}
+			H = H_{\alpha} + H_{\beta}
+		\end{align}
+		where $\alpha$ and $\beta$ are dependent on the geometry of the PESS structure.
 	\item Obtain the evolution operator $U(\tau)$ by Trotter-Suzuki decomposition.
 		\begin{align}
 			e^{-\tau H} = e^{-\tau H_{\alpha}} e^{-\tau H_{\beta}} + O(\tau^{2}).
@@ -111,22 +116,55 @@ In PEPS structure, the ground-state wave function is approximated by iterated ap
 	\item Truncate all the projection tensors and the core tensor.
 	\item Absorb the inverse bond vectors for removing the entanglement on the projection tensors.
 \end{enumerate}
-In the following subsections, we applied various cases to explain it more explicitly.
-\subsection{3-PESS and 5-PESS for infinite Kagome lattice}
-\label{3-5pess}
+which is similar to simple update of PEPS. In the following subsections, we applied various cases to explain it more explicitly.
+\section{Infinite Kagome lattice}
+In the previous section, we have briefly introduced to the procedures of PESS ansatz. The first step is to  choose an suitable $n$-PESS structure, where $n$ is the number of projection tensors in a simplex, to split the Hamiltonian and describe the system. There are many various graphical representation for the Kagome lattice [Fig. \ref{fig411}(a)], such as 3-PESS, 5-PESS and 9-PESS, shown in ref. \cite{}. In this section, we will discuss more details about 3-PESS and 5-PESS.
+\subsection{3-PESS}
+In the 3-PESS case, the PESS state can be drawn as the Fig. \ref{fig4321}(a), which pictures that the many-body states can be described by composing two different simplices, upward- and downward-oriented triangular as shown in Fig \ref{fig4321}(b). Each simplices contain three rank-3 projection tensors, $A^{\sigma_i}_{mm^{\prime}}$ $A^{\sigma_j}_{nn^{\prime}}$ and $A^{\sigma_k}_{ll^{\prime}}$ and a rank-3 core tensor, $S_{mnl}^{\alpha}$ or $S_{m^{\prime}n^{\prime}l^{\prime}}^{\beta}$. Therefore, the form of the Hamiltonian is re-written by eq. \ref{splitH},
+\begin{align}
+	H = H_{\alpha} + H_{\beta} \quad,\text{where} \quad H_{\alpha} = H_{\Delta},\quad H_{\beta} = H_{\nabla}
+\end{align}
+Next, utilize the imaginary-time evolution operator $e^{-\tau H}$ to an random initial state $\Ket{\Psi_{0}}$ iteratively. According to the theorem of Trotter-Suzuki decomposition, the evolution operator can be decomposed into two product terms, when $\tau \rightarrow 0$. Hence, the evolution operator operator of 3-PESS can be written as, 
+\begin{align}
+	\label{eq415}
+	e^{\tau H} = e^{-\tau H_{\Delta}} e^{-\tau H_{\nabla}} + O(\tau^2)
+\end{align}
+when the value of $\tau$ is small enough. 
+\label{3pess}
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.00\textwidth]{figures/fig4321.png}
-	\caption[The picture of the HOSVD for a rank-3 tensor.]{Picture of the HOSVD for a rank-3 tensor $A$. $U^{(1)}$,$U^{(2)}$ and $U^{(3)}$ are unitary matrices and $S$ (yellow cuboid) is a core tensor.}
+	\caption[The graphical representation of 3-PESS]{The graphical representation of 3-PESS. (a) The PESS state can be considered as composed by two simplices, upward- (green triangular) and downward-triangular (green triangular). The red dash-line represent as the geometry of the kagome lattice. As this figure shown, the projection tensors (Blue circle) are rank-3 with the dimension $dD^2$, where $d$ is the dimension of the physicla basis and $D$ is the dimension of the virtual bonds (gray line), and the entangled simplex tensors, with the dimension $D^3$, are located at the cross of three virtual bonds (gray line) in each simplex states. (b) Two simplices in 3-PESS structure. These two type simplices, clustered with the sharing projection tensors, $A^{\sigma_i}_{mm^{\prime}}$, $A^{\sigma_j}_{nn^{\prime}}$ and $A^{\sigma_k}_{ll^{\prime}}$. However, their entangled simplex tensor are individual. In (a), the core tensor of the red simplex is $S^{\alpha}_{mnl}$ and the green one is $S^{\beta}_{m^{\prime}n^{\prime}l^{\prime}}$}
 	\label{fig4321}
 \end{figure}
+
+After determining the evolution operators, $e^{\tau H_{\Delta}}$ and $e^{\tau H_{\nabla}}$, we apply the schem of the simple update to approximate theground state wave function of 3-PESS. As shown in Fig. \ref{fig4323}, we take an example of updating upward-triangular simplex $\alpha$ to illustrate,
+\begin{enumerate}
+	\item Obtain a clustered simplex tensor $\theta$: Firstly, absorb all the environment bond vectors surrounding the simplex state. See Fig. \ref{fig4322}(a),  the environment vectors, $\lambda^{\beta}_{m^{\prime}m}$ , $\lambda^{\beta}_{n^{\prime}n}$ and $\lambda^{\beta}_{l^{\prime}l}$, are obtained from the entangled simplex tensor of simplex $\beta$, due to the canonical form of the PESS \cite{},
+		\begin{align}
+			&\sum_{n,l}{S^{(\beta)}_{mnl}\left( S^{(\beta)}_{m^{\prime}nl}\right)} = \delta_{m,m^{\prime}} \lambda^{(\beta)^2}_{m} \\
+			&\sum_{l,m}{S^{(\beta)}_{mnl}\left( S^{(\beta)}_{mn^{\prime}l}\right)} = \delta_{n,n^{\prime}} \lambda^{(\beta)^2}_{n} \\
+			&\sum_{m,n}{S^{(\beta)}_{mnl}\left( S^{(\beta)}_{mnl^{\prime}}\right)} = \delta_{l,l^{\prime}} \lambda^{(\beta)^2}_{l}
+		\end{align}
+		and base on the features of HOSVD, shown in eq. \ref{}. The $\lambda$s can be simply obtained, when we decompose the clustered tensors of the simplex $\beta$ in the updating process. Secondly, contract all tensors in simplex state to obtain the clustered tensor $\theta$. The mathematical representation of the step is written as,  
+		\begin{align}
+			\theta_{m^{\prime} n^{\prime} l^{\prime}}^{\sigma_i \sigma_j \sigma_k} = \sum_{mnl}{S^{(\alpha)}_{mnl} \lambda^{(\beta)}_{m^{\prime}} A^{\sigma_i}_{mm^{\prime}} \lambda^{(\beta)}_{n^{\prime}} A^{\sigma_j}_{nn^{\prime}} \lambda^{(\beta)}_{l^{\prime}} A^{\sigma_k}_{ll^{\prime}}}
+		\end{align}
+	\item Apply the evolution operator $U(\tau)$: In eq. \ref{eq415}, we have generated the evolution operator for 3-PESS ansatz. Due to updating upward-triangles simplex, $U(\tau)$ is defined as, 
+		\begin{align}
+			U(\tau) = e^{-\tau H_{\Delta}}
+		\end{align}
+		Now that, we utilize $U(\tau)$ to the cluster tensor $\theta$, see Fig. \ref{fig4322}(c) and obtain a new cluster tensor $\theta^{\prime}$, 
+	\item Decompose $\theta^{\prime}$ into the general form of the simplex state: Apply the high-order singular value decomposition (HOSVD) to renormalize projection tensors. During operating HOSVD, we need save the environment bond vectors, $\lambda^{(\alpha)}_{m}$, $\lambda^{(\alpha)}_{n}$ and $\lambda^{(\alpha)}_{l}$, surrounding the simplex $\beta$. All $lambda^{(\alpha)}$ could be obtained from decomposing different modes of $\theta^{\prime}$. As shown in Fig. \ref{fig4312}(b).
+\end{enumerate}
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.00\textwidth]{figures/fig4322.png}
-	\caption[The picture of the HOSVD for a rank-3 tensor.]{Picture of the HOSVD for a rank-3 tensor $A$. $U^{(1)}$,$U^{(2)}$ and $U^{(3)}$ are unitary matrices and $S$ (yellow cuboid) is a core tensor.}
+	\caption[The schem of the simple update for 3-PESS.]{The schem of the simple update for 3-PESS. The more detail descriptions are in the paragraph}
 	\label{fig4322}
 \end{figure}
-
+\subsection{5-PESS}
+\label{5pess}
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.00\textwidth]{figures/fig4323.png}
@@ -136,11 +174,11 @@ In the following subsections, we applied various cases to explain it more explic
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.00\textwidth]{figures/fig4324.png}
-	\caption[The picture of the HOSVD for a rank-3 tensor.]{Picture of the HOSVD for a rank-3 tensor $A$. $U^{(1)}$,$U^{(2)}$ and $U^{(3)}$ are unitary matrices and $S$ (yellow cuboid) is a core tensor.}
+	\caption[The schem of the simple update for 5-PESS.]{The schem of the simple update for 5-PESS. The more detail descriptions are in the paragraph}
 	\label{fig4324}
 \end{figure}
-
-\subsection{4-PESS (Rank-3 local tensors) for Square lattice}
+\section{Infinite Square lattice}
+\subsection{4-PESS (Rank-3 local tensors)}
 \label{4pess2b}
 \begin{figure}[ht]
 	\centering
@@ -154,6 +192,3 @@ In the following subsections, we applied various cases to explain it more explic
 	\caption[The picture of the HOSVD for a rank-3 tensor.]{Picture of the HOSVD for a rank-3 tensor $A$. $U^{(1)}$,$U^{(2)}$ and $U^{(3)}$ are unitary matrices and $S$ (yellow cuboid) is a core tensor.}
 	\label{fig4326}
 \end{figure}
-\subsection{4-PESS (Rank-5 local tensors)}
-\label{4pess4b}
-
