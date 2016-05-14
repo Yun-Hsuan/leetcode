@@ -188,30 +188,32 @@ n input line 157.
 <use  "watermark.pdf" > [21]
 Chapter 4.
 
-Overfull \hbox (0.42523pt too wide) in paragraph at lines 10--11
+Overfull \hbox (0.42523pt too wide) in paragraph at lines 8--9
 \EU1/TimesNewRoman(0)/m/n/12 network representation of simplex states is called
  projected entangled simplex state (PESS)
 <use  "figures/fig411.png" > <use  "watermark.pdf" > [22]
 <use  "watermark.pdf" > [23] <use  "watermark.pdf" > [24]
 <use  "figures/fig4311.png" > <use  "watermark.pdf" > [25]
-<use  "figures/fig4312.png" > <use  "watermark.pdf" > [26]) (./ctm.tex
-<use  "watermark.pdf" > [27]
+<use  "figures/fig4312.png" > <use  "watermark.pdf" > [26]
+<use  "watermark.pdf" > [27] <use  "figures/fig4321.png" >
+<use  "figures/fig4322.png" > <use  "figures/fig4323.png" >) (./ctm.tex
+<use  "watermark.pdf" > [28] <use  "watermark.pdf" > [29]
 Chapter 5.
-<use  "figures/fig501.png" > <use  "watermark.pdf" > [28]
-<use  "figures/fig511.png" > <use  "watermark.pdf" > [29]
+<use  "figures/fig501.png" > <use  "watermark.pdf" > [30]
+<use  "figures/fig511.png" > <use  "watermark.pdf" > [31]
 Overfull \hbox (6.07352pt too wide) in paragraph at lines 41--42
 []\EU1/TimesNewRoman(0)/m/n/12 Insertion: Insert two new columns which consist 
 of { $\OML/cmm/m/it/12 T[]; b; a; T[]$ \EU1/TimesNewRoman(0)/m/n/12 } and { $\O
 ML/cmm/m/it/12 T[]; a; b; T[]$
-<use  "watermark.pdf" > [30] <use  "figures/fig512.png" >
-<use  "figures/fig513.png" > <use  "watermark.pdf" > [31]
-<use  "watermark.pdf" > [32]) (./summary.tex <use  "watermark.pdf" > [33]
+<use  "watermark.pdf" > [32] <use  "figures/fig512.png" >
+<use  "figures/fig513.png" > <use  "watermark.pdf" > [33]
+<use  "watermark.pdf" > [34]) (./summary.tex <use  "watermark.pdf" > [35]
 Chapter 6.
-) (./thesis.bbl <use  "watermark.pdf" > [34] <use  "watermark.pdf" > [35])
+) (./thesis.bbl <use  "watermark.pdf" > [36] <use  "watermark.pdf" > [37])
 
 Package natbib Warning: There were undefined citations.
 
-<use  "watermark.pdf" > [36] (./thesis.aux)
+<use  "watermark.pdf" > [38] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -220,7 +222,7 @@ LaTeX Warning: There were multiply-defined labels.
 
  )
 (see the transcript file for additional information)
-Output written on thesis.pdf (47 pages).
+Output written on thesis.pdf (49 pages).
 Transcript written on thesis.log.
 bibtex thesis
 This is BibTeX, Version 0.99d (TeX Live 2015)
@@ -458,30 +460,32 @@ n input line 157.
 <use  "watermark.pdf" > [21]
 Chapter 4.
 
-Overfull \hbox (0.42523pt too wide) in paragraph at lines 10--11
+Overfull \hbox (0.42523pt too wide) in paragraph at lines 8--9
 \EU1/TimesNewRoman(0)/m/n/12 network representation of simplex states is called
  projected entangled simplex state (PESS)
 <use  "figures/fig411.png" > <use  "watermark.pdf" > [22]
 <use  "watermark.pdf" > [23] <use  "watermark.pdf" > [24]
 <use  "figures/fig4311.png" > <use  "watermark.pdf" > [25]
-<use  "figures/fig4312.png" > <use  "watermark.pdf" > [26]) (./ctm.tex
-<use  "watermark.pdf" > [27]
+<use  "figures/fig4312.png" > <use  "watermark.pdf" > [26]
+<use  "watermark.pdf" > [27] <use  "figures/fig4321.png" >
+<use  "figures/fig4322.png" > <use  "figures/fig4323.png" >) (./ctm.tex
+<use  "watermark.pdf" > [28] <use  "watermark.pdf" > [29]
 Chapter 5.
-<use  "figures/fig501.png" > <use  "watermark.pdf" > [28]
-<use  "figures/fig511.png" > <use  "watermark.pdf" > [29]
+<use  "figures/fig501.png" > <use  "watermark.pdf" > [30]
+<use  "figures/fig511.png" > <use  "watermark.pdf" > [31]
 Overfull \hbox (6.07352pt too wide) in paragraph at lines 41--42
 []\EU1/TimesNewRoman(0)/m/n/12 Insertion: Insert two new columns which consist 
 of { $\OML/cmm/m/it/12 T[]; b; a; T[]$ \EU1/TimesNewRoman(0)/m/n/12 } and { $\O
 ML/cmm/m/it/12 T[]; a; b; T[]$
-<use  "watermark.pdf" > [30] <use  "figures/fig512.png" >
-<use  "figures/fig513.png" > <use  "watermark.pdf" > [31]
-<use  "watermark.pdf" > [32]) (./summary.tex <use  "watermark.pdf" > [33]
+<use  "watermark.pdf" > [32] <use  "figures/fig512.png" >
+<use  "figures/fig513.png" > <use  "watermark.pdf" > [33]
+<use  "watermark.pdf" > [34]) (./summary.tex <use  "watermark.pdf" > [35]
 Chapter 6.
-) (./thesis.bbl <use  "watermark.pdf" > [34] <use  "watermark.pdf" > [35])
+) (./thesis.bbl <use  "watermark.pdf" > [36] <use  "watermark.pdf" > [37])
 
 Package natbib Warning: There were undefined citations.
 
-<use  "watermark.pdf" > [36] (./thesis.aux)
+<use  "watermark.pdf" > [38] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -490,7 +494,7 @@ LaTeX Warning: There were multiply-defined labels.
 
  )
 (see the transcript file for additional information)
-Output written on thesis.pdf (47 pages).
+Output written on thesis.pdf (49 pages).
 Transcript written on thesis.log.
 xelatex thesis
 This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex)
@@ -682,30 +686,32 @@ n input line 157.
 <use  "watermark.pdf" > [21]
 Chapter 4.
 
-Overfull \hbox (0.42523pt too wide) in paragraph at lines 10--11
+Overfull \hbox (0.42523pt too wide) in paragraph at lines 8--9
 \EU1/TimesNewRoman(0)/m/n/12 network representation of simplex states is called
  projected entangled simplex state (PESS)
 <use  "figures/fig411.png" > <use  "watermark.pdf" > [22]
 <use  "watermark.pdf" > [23] <use  "watermark.pdf" > [24]
 <use  "figures/fig4311.png" > <use  "watermark.pdf" > [25]
-<use  "figures/fig4312.png" > <use  "watermark.pdf" > [26]) (./ctm.tex
-<use  "watermark.pdf" > [27]
+<use  "figures/fig4312.png" > <use  "watermark.pdf" > [26]
+<use  "watermark.pdf" > [27] <use  "figures/fig4321.png" >
+<use  "figures/fig4322.png" > <use  "figures/fig4323.png" >) (./ctm.tex
+<use  "watermark.pdf" > [28] <use  "watermark.pdf" > [29]
 Chapter 5.
-<use  "figures/fig501.png" > <use  "watermark.pdf" > [28]
-<use  "figures/fig511.png" > <use  "watermark.pdf" > [29]
+<use  "figures/fig501.png" > <use  "watermark.pdf" > [30]
+<use  "figures/fig511.png" > <use  "watermark.pdf" > [31]
 Overfull \hbox (6.07352pt too wide) in paragraph at lines 41--42
 []\EU1/TimesNewRoman(0)/m/n/12 Insertion: Insert two new columns which consist 
 of { $\OML/cmm/m/it/12 T[]; b; a; T[]$ \EU1/TimesNewRoman(0)/m/n/12 } and { $\O
 ML/cmm/m/it/12 T[]; a; b; T[]$
-<use  "watermark.pdf" > [30] <use  "figures/fig512.png" >
-<use  "figures/fig513.png" > <use  "watermark.pdf" > [31]
-<use  "watermark.pdf" > [32]) (./summary.tex <use  "watermark.pdf" > [33]
+<use  "watermark.pdf" > [32] <use  "figures/fig512.png" >
+<use  "figures/fig513.png" > <use  "watermark.pdf" > [33]
+<use  "watermark.pdf" > [34]) (./summary.tex <use  "watermark.pdf" > [35]
 Chapter 6.
-) (./thesis.bbl <use  "watermark.pdf" > [34] <use  "watermark.pdf" > [35])
+) (./thesis.bbl <use  "watermark.pdf" > [36] <use  "watermark.pdf" > [37])
 
 Package natbib Warning: There were undefined citations.
 
-<use  "watermark.pdf" > [36] (./thesis.aux)
+<use  "watermark.pdf" > [38] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -714,5 +720,5 @@ LaTeX Warning: There were multiply-defined labels.
 
  )
 (see the transcript file for additional information)
-Output written on thesis.pdf (47 pages).
+Output written on thesis.pdf (49 pages).
 Transcript written on thesis.log.
