@@ -200,29 +200,30 @@ Overfull \hbox (0.42523pt too wide) in paragraph at lines 8--9
 <use  "figures/fig4321.png" > <use  "figures/fig4322.png" >
 <use  "watermark.pdf" > [29]
 
-LaTeX Warning: Reference `' on page 30 undefined on input line 157.
+LaTeX Warning: Reference `' on page 30 undefined on input line 158.
 
 <use  "watermark.pdf" > [30] <use  "watermark.pdf" > [31]
-<use  "figures/fig4323.png" > <use  "figures/fig4324.png" >
-<use  "watermark.pdf" > [32] <use  "watermark.pdf" > [33]
-<use  "figures/fig4325.png" > <use  "figures/fig4326.png" >) (./ctm.tex
-<use  "watermark.pdf" > [34] <use  "watermark.pdf" > [35]
+<use  "figures/fig4323.png" > <use  "watermark.pdf" > [32]
+<use  "figures/fig4324.png" > <use  "watermark.pdf" > [33]
+<use  "watermark.pdf" > [34] <use  "figures/fig4325.png" >
+<use  "watermark.pdf" > [35] <use  "figures/fig4326.png" >) (./ctm.tex
+<use  "watermark.pdf" > [36]
 Chapter 5.
-<use  "figures/fig501.png" > <use  "watermark.pdf" > [36]
-<use  "figures/fig511.png" > <use  "watermark.pdf" > [37]
+<use  "figures/fig501.png" > <use  "watermark.pdf" > [37]
+<use  "figures/fig511.png" > <use  "watermark.pdf" > [38]
 Overfull \hbox (6.07352pt too wide) in paragraph at lines 41--42
 []\EU1/TimesNewRoman(0)/m/n/12 Insertion: Insert two new columns which consist 
 of { $\OML/cmm/m/it/12 T[]; b; a; T[]$ \EU1/TimesNewRoman(0)/m/n/12 } and { $\O
 ML/cmm/m/it/12 T[]; a; b; T[]$
-<use  "watermark.pdf" > [38] <use  "figures/fig512.png" >
-<use  "figures/fig513.png" > <use  "watermark.pdf" > [39]
-<use  "watermark.pdf" > [40]) (./summary.tex <use  "watermark.pdf" > [41]
+<use  "watermark.pdf" > [39] <use  "figures/fig512.png" >
+<use  "figures/fig513.png" > <use  "watermark.pdf" > [40]
+<use  "watermark.pdf" > [41]) (./summary.tex <use  "watermark.pdf" > [42]
 Chapter 6.
-) (./thesis.bbl <use  "watermark.pdf" > [42] <use  "watermark.pdf" > [43])
+) (./thesis.bbl <use  "watermark.pdf" > [43] <use  "watermark.pdf" > [44])
 
 Package natbib Warning: There were undefined citations.
 
-<use  "watermark.pdf" > [44] (./thesis.aux)
+<use  "watermark.pdf" > [45] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -231,7 +232,7 @@ LaTeX Warning: There were multiply-defined labels.
 
  )
 (see the transcript file for additional information)
-Output written on thesis.pdf (56 pages).
+Output written on thesis.pdf (57 pages).
 Transcript written on thesis.log.
 bibtex thesis
 This is BibTeX, Version 0.99d (TeX Live 2015)
@@ -481,29 +482,30 @@ Overfull \hbox (0.42523pt too wide) in paragraph at lines 8--9
 <use  "figures/fig4321.png" > <use  "figures/fig4322.png" >
 <use  "watermark.pdf" > [29]
 
-LaTeX Warning: Reference `' on page 30 undefined on input line 157.
+LaTeX Warning: Reference `' on page 30 undefined on input line 158.
 
 <use  "watermark.pdf" > [30] <use  "watermark.pdf" > [31]
-<use  "figures/fig4323.png" > <use  "figures/fig4324.png" >
-<use  "watermark.pdf" > [32] <use  "watermark.pdf" > [33]
-<use  "figures/fig4325.png" > <use  "figures/fig4326.png" >) (./ctm.tex
-<use  "watermark.pdf" > [34] <use  "watermark.pdf" > [35]
+<use  "figures/fig4323.png" > <use  "watermark.pdf" > [32]
+<use  "figures/fig4324.png" > <use  "watermark.pdf" > [33]
+<use  "watermark.pdf" > [34] <use  "figures/fig4325.png" >
+<use  "watermark.pdf" > [35] <use  "figures/fig4326.png" >) (./ctm.tex
+<use  "watermark.pdf" > [36]
 Chapter 5.
-<use  "figures/fig501.png" > <use  "watermark.pdf" > [36]
-<use  "figures/fig511.png" > <use  "watermark.pdf" > [37]
+<use  "figures/fig501.png" > <use  "watermark.pdf" > [37]
+<use  "figures/fig511.png" > <use  "watermark.pdf" > [38]
 Overfull \hbox (6.07352pt too wide) in paragraph at lines 41--42
 []\EU1/TimesNewRoman(0)/m/n/12 Insertion: Insert two new columns which consist 
 of { $\OML/cmm/m/it/12 T[]; b; a; T[]$ \EU1/TimesNewRoman(0)/m/n/12 } and { $\O
 ML/cmm/m/it/12 T[]; a; b; T[]$
-<use  "watermark.pdf" > [38] <use  "figures/fig512.png" >
-<use  "figures/fig513.png" > <use  "watermark.pdf" > [39]
-<use  "watermark.pdf" > [40]) (./summary.tex <use  "watermark.pdf" > [41]
+<use  "watermark.pdf" > [39] <use  "figures/fig512.png" >
+<use  "figures/fig513.png" > <use  "watermark.pdf" > [40]
+<use  "watermark.pdf" > [41]) (./summary.tex <use  "watermark.pdf" > [42]
 Chapter 6.
-) (./thesis.bbl <use  "watermark.pdf" > [42] <use  "watermark.pdf" > [43])
+) (./thesis.bbl <use  "watermark.pdf" > [43] <use  "watermark.pdf" > [44])
 
 Package natbib Warning: There were undefined citations.
 
-<use  "watermark.pdf" > [44] (./thesis.aux)
+<use  "watermark.pdf" > [45] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -512,7 +514,7 @@ LaTeX Warning: There were multiply-defined labels.
 
  )
 (see the transcript file for additional information)
-Output written on thesis.pdf (56 pages).
+Output written on thesis.pdf (57 pages).
 Transcript written on thesis.log.
 xelatex thesis
 This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex)
@@ -716,29 +718,30 @@ Overfull \hbox (0.42523pt too wide) in paragraph at lines 8--9
 <use  "figures/fig4321.png" > <use  "figures/fig4322.png" >
 <use  "watermark.pdf" > [29]
 
-LaTeX Warning: Reference `' on page 30 undefined on input line 157.
+LaTeX Warning: Reference `' on page 30 undefined on input line 158.
 
 <use  "watermark.pdf" > [30] <use  "watermark.pdf" > [31]
-<use  "figures/fig4323.png" > <use  "figures/fig4324.png" >
-<use  "watermark.pdf" > [32] <use  "watermark.pdf" > [33]
-<use  "figures/fig4325.png" > <use  "figures/fig4326.png" >) (./ctm.tex
-<use  "watermark.pdf" > [34] <use  "watermark.pdf" > [35]
+<use  "figures/fig4323.png" > <use  "watermark.pdf" > [32]
+<use  "figures/fig4324.png" > <use  "watermark.pdf" > [33]
+<use  "watermark.pdf" > [34] <use  "figures/fig4325.png" >
+<use  "watermark.pdf" > [35] <use  "figures/fig4326.png" >) (./ctm.tex
+<use  "watermark.pdf" > [36]
 Chapter 5.
-<use  "figures/fig501.png" > <use  "watermark.pdf" > [36]
-<use  "figures/fig511.png" > <use  "watermark.pdf" > [37]
+<use  "figures/fig501.png" > <use  "watermark.pdf" > [37]
+<use  "figures/fig511.png" > <use  "watermark.pdf" > [38]
 Overfull \hbox (6.07352pt too wide) in paragraph at lines 41--42
 []\EU1/TimesNewRoman(0)/m/n/12 Insertion: Insert two new columns which consist 
 of { $\OML/cmm/m/it/12 T[]; b; a; T[]$ \EU1/TimesNewRoman(0)/m/n/12 } and { $\O
 ML/cmm/m/it/12 T[]; a; b; T[]$
-<use  "watermark.pdf" > [38] <use  "figures/fig512.png" >
-<use  "figures/fig513.png" > <use  "watermark.pdf" > [39]
-<use  "watermark.pdf" > [40]) (./summary.tex <use  "watermark.pdf" > [41]
+<use  "watermark.pdf" > [39] <use  "figures/fig512.png" >
+<use  "figures/fig513.png" > <use  "watermark.pdf" > [40]
+<use  "watermark.pdf" > [41]) (./summary.tex <use  "watermark.pdf" > [42]
 Chapter 6.
-) (./thesis.bbl <use  "watermark.pdf" > [42] <use  "watermark.pdf" > [43])
+) (./thesis.bbl <use  "watermark.pdf" > [43] <use  "watermark.pdf" > [44])
 
 Package natbib Warning: There were undefined citations.
 
-<use  "watermark.pdf" > [44] (./thesis.aux)
+<use  "watermark.pdf" > [45] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -747,5 +750,5 @@ LaTeX Warning: There were multiply-defined labels.
 
  )
 (see the transcript file for additional information)
-Output written on thesis.pdf (56 pages).
+Output written on thesis.pdf (57 pages).
 Transcript written on thesis.log.

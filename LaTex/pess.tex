@@ -118,6 +118,7 @@ In PEPS structure, the ground-state wave function is approximated by iterated ap
 \end{enumerate}
 which is similar to simple update of PEPS. In the following subsections, we applied various cases to explain it more explicitly.
 \section{Infinite Kagome lattice}
+\label{kagome}
 In the previous section, we have briefly introduced to the procedures of PESS ansatz. The first step is to  choose an suitable $n$-PESS structure, where $n$ is the number of projection tensors in a simplex, to split the Hamiltonian and describe the system. There are many various graphical representation for the Kagome lattice [Fig. \ref{fig411}(a)], such as 3-PESS, 5-PESS and 9-PESS, shown in ref. \cite{}. In this section, we will discuss more details about 3-PESS and 5-PESS.
 \subsection{3-PESS}
 In the 3-PESS case, the PESS state can be drawn as the Fig. \ref{fig4321}(a), which pictures that the many-body states can be described by composing two different simplices, upward- and downward-oriented triangular as shown in Fig \ref{fig4321}(b). Each simplices contain three rank-3 projection tensors, $A^{\sigma_i}_{mm^{\prime}}$ $A^{\sigma_j}_{nn^{\prime}}$ and $A^{\sigma_k}_{ll^{\prime}}$ and a rank-3 core tensor, $S_{mnl}^{\alpha}$ or $S_{m^{\prime}n^{\prime}l^{\prime}}^{\beta}$. Therefore, the form of the Hamiltonian is re-written by eq. \ref{splitH},
@@ -127,7 +128,7 @@ In the 3-PESS case, the PESS state can be drawn as the Fig. \ref{fig4321}(a), wh
 Next, utilize the imaginary-time evolution operator $e^{-\tau H}$ to an random initial state $\Ket{\Psi_{0}}$ iteratively. According to the theorem of Trotter-Suzuki decomposition, the evolution operator can be decomposed into two product terms, when $\tau \rightarrow 0$. Hence, the evolution operator operator of 3-PESS can be written as, 
 \begin{align}
 	\label{eq415}
-	e^{\tau H} = e^{-\tau H_{\Delta}} e^{-\tau H_{\nabla}} + O(\tau^2)
+	e^{-\tau H} = e^{-\tau H_{\Delta}} e^{-\tau H_{\nabla}} + O(\tau^2)
 \end{align}
 when the value of $\tau$ is small enough. 
 \label{3pess}
@@ -183,11 +184,18 @@ After determining the evolution operators, $e^{\tau H_{\Delta}}$ and $e^{\tau H_
 		see Fig. \ref{fig4322}(f),
 \end{enumerate}
 
-At here, one updated epoch is completed. Finally, the ground state will be obtained by iterating the procedures for each simplex, upward- and downward- triangular $(\Delta, \nabla)$, until the wave function of PESS converge,
-
+At here, one updated epoch is completed. Finally, the ground state will be obtained by iterating the procedures for each simplex, upward- and downward- triangular $(\Delta, \nabla)$, until the wave function of PESS converge, 
 %$\mathlarger{\rjoin}$
 \subsection{5-PESS}
-In the 5-PESS structure, the procedure to approximate the ground state wave function is similar to 3-PESS. However, due to the transformation of the structure, the character of core tensors in 5-PESS is a little different from 3-PESS. See Fig. \ref{fig4323}(a), it is obvious that the core tensors are located on the physical sites. In other words, the core tensors, in 5-PESS, include the physical basis states.
+In the 5-PESS structure [Fig. \ref{fig4323}(a)], the procedure to approximate the ground state wave function is similar to 3-PESS. However, due to the transformation of the structure, the simplices should be re-defined. In the 5-PESS ansatz, each simplex state is composed by an upward- and a downward-triangular and the most significant change is that the core tensors are located on the physical sites. As shown in Fig. \ref{fig4323}(b), each simpliices contain 4 projection tensors $A^{\sigma_i}_{ii^{\prime}}$ $A^{\sigma_j}_{jj^{\prime}}$ $A^{\sigma_k}_{kk^{\prime}}$ and $A^{\sigma_l}_{ll^{\prime}}$, and a core tensor, $S^{\sigma_s (\alpha)}_{ijkl}$ or $S^{\sigma_s (\beta)}_{i^{\prime}j^{\prime}k^{\prime}l^{\prime}}$. Therefor, we can split the Hamiltonian into 
+\begin{align}
+	H = H_{\alpha} + H_{\beta} \quad \text{,where} \quad H_{\alpha} = H_{\rjoinr}, H_{\beta} = H_{\rjoing}
+\end{align}
+and as previous section, the evolution operator is written as, 
+\begin{align}
+	e^{-\tau H} = e^{-\tau H_{\rjoinr}} e^{-\tau H_{\rjoing}} + O(\tau^2)
+\end{align}
+when $\tau \rightarrow 0$.
 
 \label{5pess}
 \begin{figure}[ht]
@@ -196,6 +204,15 @@ In the 5-PESS structure, the procedure to approximate the ground state wave func
 	\caption[The graphical representation of 3-PESS]{The graphical representation of 3-PESS. (a) The PESS state can be considered as composed by two simplices, upward- (green triangular) and downward-triangular (green triangular). The red dash-line represent as the geometry of the kagome lattice. As this figure shown, the projection tensors (Blue circle) are rank-3 with the dimension $dD^2$, where $d$ is the dimension of the physicla basis and $D$ is the dimension of the virtual bonds (gray line), and the entangled simplex tensors, with the dimension $D^3$, are located at the cross of three virtual bonds (gray line) in each simplex states. (b) Two simplices in 3-PESS structure. These two type simplices, clustered with the sharing projection tensors, $A^{\sigma_i}_{mm^{\prime}}$, $A^{\sigma_j}_{nn^{\prime}}$ and $A^{\sigma_k}_{ll^{\prime}}$. However, their entangled simplex tensor are individual. In (a), the core tensor of the red simplex is $S^{\alpha}_{mnl}$ and the green one is $S^{\beta}_{m^{\prime}n^{\prime}l^{\prime}}$}
 	\label{fig4323}
 \end{figure}
+Next, apply the simple update scheme as Fig. \ref{fig4324}. Most of steps are similar to 3-PESS, shown as Fig. \ref{fig4322}. However, we should carefully decompose the cluster tensor $\theta^{\prime}$, where
+\begin{align}
+	\theta^{\prime} = \theta \times U(\tau)
+\end{align}
+see Fig. \ref{fig4324}(d). In this structure, the core tensors contain physical basis states, which means that it can't be decompose by the simply way shown in Fig. \ref{fig4312}, due to
+\begin{align}
+	N \mod n \neq 0
+\end{align}
+where $N$ is the rank of the tensor $\theta^{\prime}$ and $n$ is the mode number of HOSVD. Hence, the bond $\sigma_s$, belonging to the core tensor $S^{(\alpha)}_{i^{\prime}j^{\prime}k^{\prime}l^{\prime}}$ in tensor $\theta^{\prime}$, must be fixed during the decomposition. The more detail and general form of the HOSVD are written in the documentation of \textit{Uni10 Library} \cite{}, which is implemented by c/c++ and helpful for calculating the high-rank linear algebra problems.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.00\textwidth]{figures/fig4324.png}
@@ -203,17 +220,34 @@ In the 5-PESS structure, the procedure to approximate the ground state wave func
 	\label{fig4324}
 \end{figure}
 \section{Infinite Square lattice}
-\subsection{4-PESS (Rank-3 local tensors)}
 \label{4pess2b}
+In previous sec. \ref{kagome}, we have verified the results in ref. \cite{} \cite{}. In order to test and recognize the properties of the PESS ansatz more explicitly, we extend it to simulate infinite square systems and compare it with methods discussed in chap. \ref{chapter:2ditebd}.
+\subsection{4-PESS (Rank-3 projection tensors)}
+The 4-PESS structure could be build by two different methods, which is drawn in the ref. \cite{}. In this section, we use the concept, shown in Fig. \ref{fig4325}(a), to complete the implementation. 
+
+See Fig. \ref{fig4325}(a), the many-body state can be regarded as composed by two different simplices, shown in Fig. \ref{fig4325}(b), repeatedly. The components of each simplices are similar to 5-PESS, but the difference is that the core tensors, $S^{(\alpha_)}_{ijkl}$ and $S^{(\beta)}_{i^{\prime}j^{\prime}k^{\prime}l^{\prime}}$, are not located on the lattice sites. Hence, the Hamiltonian is split into,
+\begin{align}
+	H = H_{\alpha} + H_{\beta} \quad,\text{where} \quad H_{\alpha} = H_{\color{red} \square},\quad H_{\beta} = H_{\color{green} \square}
+\end{align}
+where ${\color{red} \square}$ and ${\color{green} \square}$ are represented simplex $\alpha$ and $\beta$, shown in Fig. \ref{fig4325}(b). Therefor, the evolution operator can be written as, 
+\begin{align}
+	e^{-\tau H} = e^{-\tau H_{\color{red} \square}} e^{-\tau H_{ \color{green} \square}} + O(\tau^2)
+\end{align}
+when $\tau$ is a small constant $\rightarrow 0$.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.00\textwidth]{figures/fig4325.png}
-	\caption[The picture of the HOSVD for a rank-3 tensor.]{Picture of the HOSVD for a rank-3 tensor $A$. $U^{(1)}$,$U^{(2)}$ and $U^{(3)}$ are unitary matrices and $S$ (yellow cuboid) is a core tensor.}
+	\caption[The graphical representation of 3-PESS]{The graphical representation of 3-PESS. (a) The PESS state can be considered as composed by two simplices, upward- (green triangular) and downward-triangular (green triangular). The red dash-line represent as the geometry of the kagome lattice. As this figure shown, the projection tensors (Blue circle) are rank-3 with the dimension $dD^2$, where $d$ is the dimension of the physicla basis and $D$ is the dimension of the virtual bonds (gray line), and the entangled simplex tensors, with the dimension $D^3$, are located at the cross of three virtual bonds (gray line) in each simplex states. (b) Two simplices in 3-PESS structure. These two type simplices, clustered with the sharing projection tensors, $A^{\sigma_i}_{mm^{\prime}}$, $A^{\sigma_j}_{nn^{\prime}}$ and $A^{\sigma_k}_{ll^{\prime}}$. However, their entangled simplex tensor are individual. In (a), the core tensor of the red simplex is $S^{\alpha}_{mnl}$ and the green one is $S^{\beta}_{m^{\prime}n^{\prime}l^{\prime}}$}
 	\label{fig4325}
 \end{figure}
+
+Finally, the ground state wave function can be obtained by repeating the following steps, shown in Fig. \ref{fig4326}, on the simplices, $\alpha$ and $\beta$ $( \color{red} \square$, ${\color{green} \square})$, until the wave function of PESS converge.
+
+Before we do more restrict comparisons, it is obvious that the control of dimensional increment in the 4-PESS is better than in the PEPS [Fig. \ref{fig314}], In 4-PESS structure, the projection tensors are described by rank-3 tensors whose dimension is $dD^2$. However, in the PEPS representation, the dimension of local tensors is $dD^4$. The reduction of tensors dimension is helpful for calculating and studying with a significant larger dimension. Nevertheless, it doesn't also mean that the 4-PESS algorithm is more efficient than PEPS one and actually it encounter in some problems when approximating the environment. We will show mare details in following sections.
+
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.00\textwidth]{figures/fig4326.png}
-	\caption[The picture of the HOSVD for a rank-3 tensor.]{Picture of the HOSVD for a rank-3 tensor $A$. $U^{(1)}$,$U^{(2)}$ and $U^{(3)}$ are unitary matrices and $S$ (yellow cuboid) is a core tensor.}
+	\caption[The scheme of the simple update for 4-PESS, composed by rank-3 projection tensors.]{The scheme of the simple update for 4-PESS, composed by rank-3 projection tensors. The more detail descriptions are in the paragraph}
 	\label{fig4326}
 \end{figure}
