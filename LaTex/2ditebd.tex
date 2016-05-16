@@ -96,9 +96,12 @@ The tensor diagrams shown in the Fig. \ref{fig314} are the procedures of 1D-iTEB
 		\item Decompose $\theta$ into the general form of the MPS:
 		\item Truncation: See Fig. \ref{fig314}(iv), we notice that the dimension of bond $j$ increase to $dD$. To avoid the exponential increment of the dimension, the dimension of bond $j$ must be resized to $D$.
 		\item Absorb the inverse entangled matrix $\lambda^{[A]}$: Remove the entangle influence from $\widetilde{\Gamma}^{[A]}$ and $\widetilde{\Gamma}^{[B]}$ and return the general form of the MPS, as shown in Fig. \ref{fig314}(v).
+			\begin{align}
+				&\widetilde{\Gamma}^{[A]} = \sum_{i}{ \lambda_{i}^{[A]^{-1}} \Gamma^{[A]}_{ij,\sigma_i}} \\
+				&\widetilde{\Gamma}^{[B]} = \sum_{k}{\Gamma^{[B]}_{jk,\sigma_j} \lambda_{k}^{[A]^{-1}}}
+			\end{align}
 		\item Repeat the steps (2)-(5) to update the tensors $\widetilde{\Gamma}^{[B]}$, $\widetilde{\Gamma}^{[A]}$ and $\lambda^{[A]}$ with the evolution operator $e^{-\tau H_{BA}}$.
-		\item Finally, iterate the steps (2)-(6) until the wave function converges.
-In one dimensional many-body systems, the performance of iTEBD is pretty well. Although the accuracy is little less than DMRG \cite{}, it is still widely applied to study or test models due to its high efficiency.
+		\item Iterate the steps (2)-(6) until the wave function converges.
 \end{enumerate}
 
 \begin{figure}[ht][b]
@@ -108,7 +111,6 @@ In one dimensional many-body systems, the performance of iTEBD is pretty well. A
 		\lambda$ for obtaining the states. (iv) After updating the states and $\lambda$ on the purple bond, apply the way to update the red bond and repeat all the steps until the ground state convergence.}
 	\label{fig314}
 \end{figure}
-
 
 In one dimensional many-body systems, the performance of iTEBD is pretty well. Although the accuracy is little less than DMRG \cite{}, it is still widely applied to study or test models due to its high efficiency.
 
@@ -124,29 +126,35 @@ Due to the success in 1-D cases, we desire to extend the framework of iTEBD to s
 	\label{fig315}
 \end{figure}
 
-After building the form of iPEPS, we start to deal with the problem of updating states. The most intuitive method is directional simple update, which means that the states of iPEPS must be updated by iTEBD along four directional moves, namely up, right, down and left. As shown in Fig.\ref{fig316}, 
+After building the form of iPEPS, we start to deal with the problem of updating states. The most intuitive method is directional simple update, which means that the states of iPEPS must be updated by iTEBD along four directional moves, namely up, right, down and left. The scheme of implementing 2D-iTEBD is shown as follows which start from right move,
 
 \begin{enumerate}
-		\item Initialization: According to Eq. \ref{mapgroud}, the ground state can be obtain from any random state $\Ket{\Psi}$ theoretically. Hence, we provide two rank-3 tensors $\Gamma^{[A]}$ and $\Gamma^{[B]}$ which dimension are $dD^2$, where $d$ is the dimension of physical basis and $D$ is the virtual bonds dimension, and two random diagonal matrix $\lambda^{[A]}$ and $\lambda^{[B]}$ which represent the entanglement between each sites at first. See Fig. \ref{fig314}(i).
-		\item Obtain a cluster tensor $\theta$: As shown in Fig. \ref{fig314}(b),
-			\begin{enumerate}
-				\item Absorb the entangled matrices; 
-					\begin{align}
-						&\Gamma^{\prime [A]} = \sum_{ij}{\lambda^{[A]}_{i} \Gamma^{A}_{ij \sigma_i} \lambda^{[B]}_{j}} \\
-						&\Gamma^{\prime [B]} = \sum_{k}{\Gamma^{B}_{k \sigma_j} \lambda^{[A]}_{k}}
-					\end{align}
-						\item Utilize the evolution operate $U(\tau)$: The 2-site evolution operator $U(\tau)$ can be simply obtained from Eq. \ref{evoopt}, In this case, 
-							\begin{align}
-								U(\tau) = e^{-\tau H_{AB}}
-							\end{align}
+	\item Initialization: To describe iPEPS states [Fig. \ref{fig316}], we need two random rank-5 tensors $\Gamma^{[A]}_{uldr,\sigma_j}$ and $\Gamma^{[B]}_{uldr, \sigma_j}$ which dimension are $dD^4$, and four random diagonal matrix $\lambda_{u}$, $\lambda_{l}$, $\lambda_{d}$ and $\lambda_{r}$.
+	\item Obtain a cluster tensor $\Theta$: As shown in Fig. \ref{fig315}(ii),
+		\begin{enumerate}
+			\item Absorb the entangled matrices; 
+				\begin{align}
+					&\Gamma^{\prime [A]}_{uldr,\sigma_i} = \sum_{uldr}{ \lambda_{u}\lambda_{l} \Gamma^{[A]}_{ulrd,\sigma_i} \lambda_{r} \lambda_{d}} \\
+					&\Gamma^{\prime [B]}_{uldr,\sigma_j} = \sum_{uld}{\lambda_{d} \Gamma^{B}_{uldr,\sigma_j} \lambda_{u}\lambda_{l}}
+				\end{align}
+			\item Utilize the evolution operate $U(\tau)$: See Fig. \ref{fig316}(iii)
+				\begin{align}
+					\Theta = \sum_{r,\sigma_i^{\prime}\sigma_j^{\prime}}{U^{\sigma_i^{\prime}\sigma_j^{\prime}}_{\sigma_i\sigma_j} \Gamma^{\prime\sigma_i [A]}_{uld,r} \Gamma^{\prime \sigma_j[B]}_{r,u^{\prime} l^{\prime} d^{\prime}}}
+				\end{align}
+				the rank of $\Theta$ is eight and the dimension is $d^2D^6$.
 			\end{enumerate}
-		\item Decompose $\theta$ into the general form of the MPS:
-		\item Truncation: See Fig. \ref{fig314}(iv), we notice that the dimension of bond $j$ increase to $dD$. To avoid the exponential increment of the dimension, the dimension of bond $j$ must be resized to $D$.
-		\item Absorb the inverse entangled matrix $\lambda^{[A]}$: Remove the entangle influence from $\widetilde{\Gamma}^{[A]}$ and $\widetilde{\Gamma}^{[B]}$ and return the general form of the MPS, as shown in Fig. \ref{fig314}(v).
-		\item Repeat the steps (2)-(5) to update the tensors $\widetilde{\Gamma}^{[B]}$, $\widetilde{\Gamma}^{[A]}$ and $\lambda^{[A]}$ with the evolution operator $e^{-\tau H_{BA}}$.
-		\item Finally, iterate the steps (2)-(6) until the wave function converges.
+		\item Decompose $\theta$ into the general form of iPEPS:
+		\item Truncation: See Fig. \ref{fig316}(iv), the dimension of bond $r$ increase to $dD^3$. To reduce the consumption, we must truncate the dimension to a smaller $D$.
+		\item Absorb the inverse entangled matrix surrounding $\Gamma^{\prime [A]}$ and $\Gamma^{\prime [B]}$: Return to the general form of the iPEPS, as shown in Fig. \ref{fig316}(v).
+				\begin{align}
+					&\widetilde{\Gamma}^{[A]}_{uldr,\sigma_i} = \sum_{uldr}{ \lambda_{u}^{-1} \lambda_{l}^{-1} \Gamma^{[A]}_{ulrd,\sigma_i} \lambda_{d}^{-1}} \\
+					&\widetilde{\Gamma}^{[B]}_{uldr,\sigma_j} = \sum_{uld}{\lambda_{d}^{-1} \Gamma^{[B]}_{uldr,\sigma_j} \lambda_{u}^{-1} \lambda_{l}^{-1}}
+				\end{align}
+			\item Repeat the steps (2)-(5) to update the others directional moves. To explain more explicitly, the procedures of the up move are shown in Fig. \ref{fig317}.
+			\item Iterate the steps (2)-(6) until the wave function converges.
 			
 In one dimensional many-body systems, the performance of iTEBD is pretty well. Although the accuracy is little less than DMRG \cite{}, it is still widely applied to study or test models due to its high efficiency.
+
 \end{enumerate}
 
 \begin{figure}[ht]
@@ -160,45 +168,76 @@ In one dimensional many-body systems, the performance of iTEBD is pretty well. A
 	\centering
 	\includegraphics[width=0.80\textwidth]{figures/fig316.png}
 	\caption[The tensor network diagrams of updating the yellow bond in iPEPS with 2D-iTEBD]{Update the yellow bond and the steps are similar to Fig.\ref{fig315}}
-	\label{fig316}
+	\label{fig317}
 	\end{figure}
 
 \section{Ameliorate two-dimensional iTEBD}
 \label{2dhastin}
 
-The directional simple update discussed in section.\ref{2ditebd} can obtain good iPEPS states in toy models. However, in some complicated model it becomes unstable and inefficient. The reason is that too many multiplications of pseudo-inverse $\lambda$ at the step Fig.\ref{fig315}(v). In numerical methods, it's dangerous to divide a value which is equal or approach to zero. In other words, the more inverse operations, the more probability of destroying algorithms and harder to converge. Hence, the scheme published by \textit{M. B. Hastings} \cite{hastings_light-cone_2009} was developed.
-
+The directional simple update discussed in section.\ref{2ditebd} can obtain good iPEPS states in toy models. However, in some complicated models it becomes unstable and inefficient. The reason is that there are too many multiplications of pseudo-inverse $\lambda^{-1}$ at the step Fig.\ref{fig316}(v). In numerical methods, it's dangerous to divide a value which is equal or approach to zero. In other words, the more inverse operations, the more probability of destroying algorithms and harder to converge. Hence, \textit{M. B. Hastings} develop another scheme to improve that problem \cite{hastings_light-cone_2009}. The procedures from the right is shown as follows,
+%#############
 \begin{enumerate}
-		\item Initialization: According to Eq. \ref{mapgroud}, the ground state can be obtain from any random state $\Ket{\Psi}$ theoretically. Hence, we provide two rank-3 tensors $\Gamma^{[A]}$ and $\Gamma^{[B]}$ which dimension are $dD^2$, where $d$ is the dimension of physical basis and $D$ is the virtual bonds dimension, and two random diagonal matrix $\lambda^{[A]}$ and $\lambda^{[B]}$ which represent the entanglement between each sites at first. See Fig. \ref{fig314}(i).
-		\item Obtain a cluster tensor $\theta$: As shown in Fig. \ref{fig314}(b),
+	\item Initialization: As directional simple update, we declare two random $\Gamma^{[A]}$ and $\Gamma^{[B]}$, and four random diagonal matrix $\lambda_{u}$, $\lambda_{r}$, $\lambda_{l}$ and $\lambda_{d}$ to describe the wave function. \ref{fig318}(i). However, the definition of $\Gamma^{[A]}$ and $\Gamma^{[B]}$ are different. In this scheme,
+		\begin{align}
+			\Gamma^{[A]}_{ulrd,\sigma_i} \equiv \sum_{ur}{\lambda_{u} \Gamma^{[A_s]}_{ulrd,\sigma_i} \lambda_{r}} \\
+			\Gamma^{[B]}_{ulrd,\sigma_j} \equiv \sum_{dl}{\lambda_{d} \Gamma^{[B_s]}_{ulrd,\sigma_j} \lambda_{l}}
+		\end{align}
+		where $\Gamma^{[A_s]}_{ulrd,\sigma_i}$ and $\Gamma^{[B_s]}_{ulrd,\sigma_j}$ are the definition in directional simple update. [In sec.\ref{2ditebd}].
+	\item Obtain the cluster tensor $C$: As shown in Fig. \ref{fig318}(b),
 			\begin{enumerate}
-				\item Absorb the entangled matrices; 
+				\item Absorb the entangled matrices $\lambda_{u}$ into  $\Gamma^{[B]}_{ulrd,\sigma_j}$:
 					\begin{align}
-						&\Gamma^{\prime [A]} = \sum_{ij}{\lambda^{[A]}_{i} \Gamma^{A}_{ij \sigma_i} \lambda^{[B]}_{j}} \\
-						&\Gamma^{\prime [B]} = \sum_{k}{\Gamma^{B}_{k \sigma_j} \lambda^{[A]}_{k}}
+						%&\Gamma^{\prime [A]}_{uldr, \sigma_j} = \sum_{dl}{\lambda_{i} \Gamma^{A}_{ij \sigma_i} \lambda_{j}} \\
+						&\Gamma^{\prime [B]}_{uldr, \sigma_j} = \sum_{u}{\Gamma^{[B]}_{uldr,\sigma_j} \lambda_{u}}
 					\end{align}
-						\item Utilize the evolution operate $U(\tau)$: The 2-site evolution operator $U(\tau)$ can be simply obtained from Eq. \ref{evoopt}, In this case, 
-							\begin{align}
-								U(\tau) = e^{-\tau H_{AB}}
-							\end{align}
+				\item Contract the tensors $\Gamma^{[A]}$, $\Gamma^{\prime [B]}$ and the evolution operate $U(\tau)$: 
+					\begin{align}
+						C = \sum_{r,\sigma_i^{\prime}\sigma_j^{\prime}}{U^{\sigma_i^{\prime}\sigma_j^{\prime}}_{\sigma_i\sigma_j} \Gamma^{\sigma_i [A]}_{uld,r} \Gamma^{\prime \sigma_j[B]}_{r,u^{\prime} l^{\prime} d^{\prime}}}
+					\end{align}
 			\end{enumerate}
-		\item Decompose $\theta$ into the general form of the MPS:
-		\item Truncation: See Fig. \ref{fig314}(iv), we notice that the dimension of bond $j$ increase to $dD$. To avoid the exponential increment of the dimension, the dimension of bond $j$ must be resized to $D$.
-		\item Absorb the inverse entangled matrix $\lambda^{[A]}$: Remove the entangle influence from $\widetilde{\Gamma}^{[A]}$ and $\widetilde{\Gamma}^{[B]}$ and return the general form of the MPS, as shown in Fig. \ref{fig314}(v).
-		\item Repeat the steps (2)-(5) to update the tensors $\widetilde{\Gamma}^{[B]}$, $\widetilde{\Gamma}^{[A]}$ and $\lambda^{[A]}$ with the evolution operator $e^{-\tau H_{BA}}$.
-		\item Finally, iterate the steps (2)-(6) until the wave function converges.
-In one dimensional many-body systems, the performance of iTEBD is pretty well. Although the accuracy is little less than DMRG \cite{}, it is still widely applied to study or test models due to its high efficiency.
+		\item Obtain the cluster tensor $\Theta$: In the step, the entanglement surrounding $\Gamma^{[A]}$ would be absorbed in the tensor $C$,
+			\begin{align}
+				\Theta = \sum_{dl}{\lambda_{d} \lambda_{l} C^{udl,\sigma_i}_{u^{\prime}d^{\prime}l^{\prime},\sigma_j}}
+			\end{align}
+		\item Decompose $\theta$ into the general form of the iPEPS and truncate the updated bond: This step is same as directional simple update, see Fig. \ref{fig318}(v)
+		\item Update $\Gamma^{[A]}$: Due to the tensor $C$ does not contain the entanglement surrounding $\Gamma^{[A]}$, the updated $\Gamma^{[A]}$ can be obtained by contracting tensors $C$ and $\widetilde{\Gamma}^{[B]}$
+			\begin{align}
+				\Gamma^{[A]} = \sum_{u^{\prime}l^{\prime}r^{\prime}\sigma_j}{C^{udl,\sigma_i}_{u^{\prime}d^{\prime}l^{\prime},\sigma_j} \widetilde{\Gamma}^{\sigma_j [B]}_{u^{\prime}d^{\prime}l^{\prime}}}
+			\end{align}
+		\item Absorb the inverse $\lambda_{u}$ into $\widetilde{\Gamma}^{[B]}_{ulrd,\sigma_j}$:
+			\begin{align}
+				\Gamma^{[B]} = \sum_{u}{\lambda_{u}^{-1}\widetilde{\Gamma}^{[B]}_{ulrd,\sigma_j}}
+			\end{align}
+			, which is shown as Fig. \ref{fig318}.
+		\item Repeat the steps (2)-(5) to update the others directional moves, down, left, up.  
+		\item Iterate the steps (2)-(6) until the wave function converges.
 \end{enumerate}
+
+In the procedures of directional simple update, there are six pseudo-inverse $\lambda^{-1}$ must be absorbed in each iteration. Relatively, in this scheme we just need multiply an pseudo-inverse $\lambda^{-1}$ in step(6). Nevertheless, the consumption of updating states in step(5) is higher than the update step in directional simple update and cost more time in each iteration. The stability is able to make the wave function converge in less iterations.
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.00\textwidth]{figures/fig317.png}
 	\caption[The tensor network diagrams for the 2-D iTEBD with QR decomposition]{The tensor network diagrams for the ameliorated 2-D iTEBD.}
-	\label{fig317}
+	\label{fig318}
 \end{figure}
 
 \section{Optimizations}
 \label{2dopt}
+\subsection{QR decomposition}
+Though the strategy described in previous sections improve the stability, it's not efficient enough. The reason why is that the dimension of tensor $\theta$, in Fig.\ref{fig315}(iii) and Fig.\ref{fig317}(iii), is proportional to $d^2D^6$. In addition to that, the time complexity of singular value decomposition is proportional to $O(NM^2)$. In conclusion, those steps are expensive and the dimension of tensor $\theta$ must be redued for accelerating. 
+\label{2doptQR} \begin{figure}[H] \centering \includegraphics[width=0.80\textwidth]{figures/fig318.png} \caption[The tensor network diagrams for the ameliorated 2-D iTEBD with QR decompositiont]{The tensor network diagrams for the ameliorated 2-D iTEBD.} \label{fig318} \end{figure} To achieve the goal, the projected pair state must be decomposed by QR decomposition \cite{li_efficient_2012} \cite{yang_accelerated_2007}. The processes making \textit{Simple Update} more efficient is illustrated in Fig \ref{fig318}.  Most of the steps shown in Fig \ref{fig318} are like in Fig \ref{fig315}. The only difference is that after absorbing all the $\lambda$, we decompose the state to an orthogonal matrix and an upper triangular matrix by QR. For instance, in Fig \ref{fig318} (ii), the state $A$ is decomposed to an orthogonal matrix X and upper triangular matrix $a_R$. Due to the columns of $X$ are orthonormal, $XX^{\dagger}$ is equal to $I$. In the other word, the tensor $X$ can be ignored and we just need consider the tensor $a_R$ by QR. Similarity, the state $B$ can be decomposed to a lower triangular $b_L$ and an orthogonal matrix $Y$ by LQ which is equivalence to operate QR decomposition after transpose the matrix. Next, (iii) we can obtain the tensor $\theta$ whose dimension is $d^2D$ from $a_R$, $b_L$ and an evolution operator.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.90\textwidth]{figures/fig319.png}
+	\includegraphics[width=0.90\textwidth]{figures/fig320.png}
+	\caption[The tensor network diagrams for the ameliorated 2-D iTEBD with QR decompositiont]{The tensor network diagrams for the ameliorated 2-D iTEBD.}
+	\label{fig319}
+\end{figure}
+
+The strategy to accelerate \textit{Ameliorate Simple Update} is shown in the Fig \ref{fig319} and its main idea is also to reduce the dimension of $\theta$.
+
 
 \subsection{Initialization}
 \label{2doptInit}
@@ -214,21 +253,6 @@ From the viewpoint of physics, translational invariance is one of essential prop
 \end{figure}
 
 \subsection{Truncattion Error}
-
-\subsection{QR decomposition}
-
-Though the strategy described in previous sections improve the stability, it's not efficient enough. The reason why is that the dimension of tensor $\theta$, in Fig.\ref{fig315}(iii) and Fig.\ref{fig317}(iii), is proportional to $d^2D^6$. In addition to that, the time complexity of singular value decomposition is proportional to $O(NM^2)$. In conclusion, those steps are expensive and the dimension of tensor $\theta$ must be redued for accelerating. 
-\label{2doptQR} \begin{figure}[H] \centering \includegraphics[width=0.80\textwidth]{figures/fig318.png} \caption[The tensor network diagrams for the ameliorated 2-D iTEBD with QR decompositiont]{The tensor network diagrams for the ameliorated 2-D iTEBD.} \label{fig318} \end{figure} To achieve the goal, the projected pair state must be decomposed by QR decomposition \cite{li_efficient_2012} \cite{yang_accelerated_2007}. The processes making \textit{Simple Update} more efficient is illustrated in Fig \ref{fig318}.  Most of the steps shown in Fig \ref{fig318} are like in Fig \ref{fig315}. The only difference is that after absorbing all the $\lambda$, we decompose the state to an orthogonal matrix and an upper triangular matrix by QR. For instance, in Fig \ref{fig318} (ii), the state $A$ is decomposed to an orthogonal matrix X and upper triangular matrix $a_R$. Due to the columns of $X$ are orthonormal, $XX^{\dagger}$ is equal to $I$. In the other word, the tensor $X$ can be ignored and we just need consider the tensor $a_R$ by QR. Similarity, the state $B$ can be decomposed to a lower triangular $b_L$ and an orthogonal matrix $Y$ by LQ which is equivalence to operate QR decomposition after transpose the matrix. Next, (iii) we can obtain the tensor $\theta$ whose dimension is $d^2D$ from $a_R$, $b_L$ and an evolution operator.
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.90\textwidth]{figures/fig319.png}
-	\includegraphics[width=0.90\textwidth]{figures/fig320.png}
-	\caption[The tensor network diagrams for the ameliorated 2-D iTEBD with QR decompositiont]{The tensor network diagrams for the ameliorated 2-D iTEBD.}
-	\label{fig319}
-\end{figure}
-
-The strategy to accelerate \textit{Ameliorate Simple Update} is shown in the Fig \ref{fig319} and its main idea is also to reduce the dimension of $\theta$.
 
 \section{Comparison}
 
