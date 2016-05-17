@@ -224,6 +224,19 @@ In the procedures of directional simple update, there are six pseudo-inverse $\l
 
 \section{Optimizations}
 \label{2dopt}
+\subsection{Initialization}
+\label{2doptInit}
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=1.00\textwidth]{figures/fig321.png}
+	\caption[The diagrams of initializing projected entangled pair states]{(i) The structure of PEPS, (ii) The initialization of states}
+	\label{fig321}
+\end{figure}
+
+Intuitively, the initialization of states should not affect the result. However, it's a serious misunderstanding. Actually, stating from a awful initial sates may break the algorithms or hardly converge.
+
+From the viewpoint of physics, translational invariance is one of essential properties in many-body system, So we can assume that the group state on two sites should be similar. For instance, if the TN diagram of the states is shown as Fig \ref{fig321}(i), Fig \ref{fig321}(ii) might be the better way to initialize the states.
+
 \subsection{QR and LQ decomposition}
 \label{2doptQR} 
 In the section \ref{2ditebd} and \ref{2dhastin}, we have introduced to two different methods to implement 2D-iTEBD. However, it is hard to apply them to study when the dimension of the virtual bonds become larger because of the rapid increment of the dimension of tensor $\Theta$ [Fig. \ref{fig316}(iii) and Fig. \ref{fig318}(iii)] which is a rank-8 tensor with dimension $d^2D^6$. In addition to the problem of their consumption, the singular value decomposition, which time complexity proportional $O(NM^2)$, is expensive.  Therefore, in this section we apply QR and LQ decomposition to reduce the rank of $\Theta$.
@@ -237,39 +250,61 @@ where $Q_1$ is a $(m \times n)$ unitary matrix and $R_1$ is a $(n \times n)$ upp
 	A = LQ = \begin{bmatrix} L_1, 0 \end{bmatrix} Q = \begin{bmatrix}  L_1, 0\end{bmatrix} \begin{bmatrix} Q_1 \\ Q_2 \end{bmatrix} = L_1 Q_1, 
 \end{align}
 
+In the case of directional simple update, most of the steps of implementing with QR decomposition is similar to original one, see Fig. \ref{fig318}. There are just two differences, 
+\begin{enumerate}
+	\item After the entangled matrices $\lambda$s are absorbed, we decompose the states $\Gamma^{[A]}$ into a unitary matrix $X$ and a upper triangular matrix $a_R$,
+		\begin{align}
+			\Gamma^{[A]}_{\chi_d \chi_l \chi_u, \chi_{\sigma_i} \chi_r} = X_{\chi_d \chi_l \chi_u, \chi_{\sigma_i} \chi_r} {a_R}_{\chi_{\sigma_i} \chi_r,\chi_{\sigma_i} \chi_r}
+		\end{align}
+		and decompose $\Gamma^{[A]}$ into a unitary matrix $Y$ and a lower triangular matrix $b_L$
+		\begin{align}
+			\Gamma^{[B]}_{\chi_{\sigma_j} \chi_r, \chi_d \chi_l \chi_u} = {b_L}_{\chi_{\sigma_j} \chi_r,\chi_{\sigma_j} \chi_r} Y_{\chi_{\sigma_i} \chi_r, \chi_d \chi_l \chi_u} 
+		\end{align}
+		where $\chi_n$ means the dimension of the bond $n$. See Fig. \ref{fig318}(ii).
+	\item Contract $X$ and $a_R$ into $\Gamma^{[A]}$ and $b_L$ and $Y$ into $\Gamma^{[B]}$ before the inverse matrices are absorbed. See Fig. \ref{fig318}(v).
+
+\end{enumerate}
 \begin{figure}[H] 
 	\centering 
-	\includegraphics[width=0.90\textwidth]{figures/fig318.png} 
+	\includegraphics[width=1.00\textwidth]{figures/fig318.png} 
 	\caption[The tensor network diagrams for the ameliorated 2-D iTEBD with QR decompositiont]{The tensor network diagrams for the ameliorated 2-D iTEBD.} 
 	\label{fig318} 
 \end{figure} 
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
 	\centering
-	\includegraphics[width=0.80\textwidth]{figures/fig319.png}
-	\includegraphics[width=0.80\textwidth]{figures/fig320.png}
+	\includegraphics[width=1.00\textwidth]{figures/fig319.png}
+	\includegraphics[width=1.00\textwidth]{figures/fig320.png}
 	\caption[The tensor network diagrams for the ameliorated 2-D iTEBD with QR decompositiont]{The tensor network diagrams for the ameliorated 2-D iTEBD.}
 	\label{fig319}
 \end{figure}
 
-To achieve the goal, the projected pair state must be decomposed by QR decomposition \cite{li_efficient_2012} \cite{yang_accelerated_2007}. The processes making \textit{Simple Update} more efficient is illustrated in Fig \ref{fig318}.  Most of the steps shown in Fig \ref{fig318} are like in Fig \ref{fig315}. The only difference is that after absorbing all the $\lambda$, we decompose the state to an orthogonal matrix and an upper triangular matrix by QR. For instance, in Fig \ref{fig318} (ii), the state $A$ is decomposed to an orthogonal matrix X and upper triangular matrix $a_R$. Due to the columns of $X$ are orthonormal, $XX^{\dagger}$ is equal to $I$. In the other word, the tensor $X$ can be ignored and we just need consider the tensor $a_R$ by QR. Similarity, the state $B$ can be decomposed to a lower triangular $b_L$ and an orthogonal matrix $Y$ by LQ which is equivalence to operate QR decomposition after transpose the matrix. Next, (iii) we can obtain the tensor $\theta$ whose dimension is $d^2D$ from $a_R$, $b_L$ and an evolution operator.
+Nevertheless, the main idea to reduce the tensor $\Theta$ in ameliorate 2D-iTEBD is same as in directional simple update. The scheme becomes more complicated, see Fig. \ref{fig318}, 
 
-The strategy to accelerate \textit{Ameliorate Simple Update} is shown in the Fig \ref{fig319} and its main idea is also to reduce the dimension of $\theta$.
-\subsection{Initialization}
-\label{2doptInit}
+\begin{enumerate}
+	\item Instead absorb $\lambda_d$ and $\lambda_l$ into the cluster tensor $C$, we absorb them into $\Gamma^{[A]}$
+		\begin{align}
+			\Gamma^{\prime [A]}_{uldr,\sigma_i} = \sum_{dl}{\lambda_l \Gamma^{[A]}_{uldr,\sigma_i} \lambda_d}
+		\end{align}
+		and apply the QR and LQ decomposition to split $\Gamma^{\prime [A]}$ and $\Gamma^{\prime [B]}$ into $X\cdot a_R$ and $b_L \cdot Y$. see Fig. \ref{fig319}(iv) and Fig. \ref{fig319}(v) 
+	\item Obtain $\widetilde{\Gamma}^{[A]}$ by contracting tensor $C$, $Y$ and $\b_L$, as shown in Fig. \ref{fig319}(ix)
+		\begin{align}
+			\widetilde{\Gamma}^{[A]}_{urld, \sigma_i} = \sum_{u^{\prime}l^{\prime}d^{\prime}\sigma_j,q}{C^{dlu\sigma_i}_{d^{\prime}l^{\prime}u^{\prime}\sigma_i}Y_{d^{\prime}l^{\prime}u^{\prime}q}{b_L}_{qr}}
+		\end{align}
+		and obtain $\widetilde{\Gamma}^{[B]}$ by contracting $Y$, $b_L$ and $\lambda_u^{-1}$
+		\begin{align}
+			\widetilde{\Gamma}^{[B]}_{urld,\sigma_j} = sum_{q}{{b_L}_{rq}Y_{uld\sigma_j q}\lambda_u^{-1}}
+		\end{align}
+\end{enumerate}
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=1.00\textwidth]{figures/fig321.png}
-	\caption[The diagrams of initializing projected entangled pair states]{(i) The structure of PEPS, (ii) The initialization of states}
-	\label{fig321}
-\end{figure}
-
-Intuitively, the initialization of states should not affect the result. However, it's a serious misunderstanding. Actually, stating from a awful initial sates may break the algorithms or hardly converge.
-
-From the viewpoint of physics, translational invariance is one of essential properties in many-body system, So we can assume that the group state on two sites should be similar. For instance, if the TN diagram of the states is shown as Fig \ref{fig321}(i), Fig \ref{fig321}(ii) might be the better way to initialize the states.
+Through these changed, the tensor $\Theta$ is reduced to and rank-4 tensor, with dimension $d^2D^2$.
 
 \subsection{Truncation Error}
+In order to avoid the dimension of the virtual bonds increase exponentially, after decomposing the tensor $\Theta$, we will truncate the updated bond from $dD^3$ or $d^2D$ to $D$. However, if the singular values are not concentrated to the leading elements, some influential features and basis would be dropped and the algorithms might be broken. Therefor, we set a truncate error $\varepsilon$, 
+\begin{align}
+	\varepsilon = 
+\end{align}
+to determinate the number of basis should be remained.
 
 \section{Comparison}
 

@@ -1,0 +1,94 @@
+This is BibTeX, Version 0.99d (TeX Live 2015)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: thesis.aux
+The style file: apsrev4-1.bst
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
+Database file #1: thesis.bib
+Warning--entry type for "jordan_studies_2011" isn't style-file defined
+--line 246 of file thesis.bib
+Warning--entry type for "bauer_tensor_2011" isn't style-file defined
+--line 255 of file thesis.bib
+Warning--I didn't find a database entry for ""
+Reallocated singl_function (elt_size=4) to 100 items from 50.
+merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
+Control: key (0) 
+Control: author (72) initials jnrlst
+Control: editor formatted (1) identically to author
+Control: production of article title (-1) disabled
+Control: page (0) single
+Control: year (1) truncated
+Control: production of eprint (0) enabled
+Warning--missing journal in white_density_1992
+Warning--missing journal in white_density-matrix_1993
+Warning--missing journal in verstraete_matrix_2006
+Warning--empty year in verstraete_matrix_2006
+Warning--missing journal in ostlund_thermodynamic_1995
+Warning--empty year in ostlund_thermodynamic_1995
+Warning--missing journal in murg_variational_2007
+Warning--empty year in murg_variational_2007
+Warning--missing journal in verstraete_matrix_2008
+Warning--empty year in verstraete_matrix_2008
+Warning--missing journal in vidal_efficient_2003
+Warning--missing journal in vidal_efficient_2004
+Warning--missing journal in vidal_entanglement_2007
+Warning--empty year in jordan_studies_2011
+Warning--missing journal in orus_practical_2014
+Warning--empty year in orus_practical_2014
+Warning--empty year in bauer_tensor_2011
+Warning--missing journal in li_efficient_2012
+Warning--empty year in li_efficient_2012
+Warning--missing journal in vidal_classical_2007
+Warning--missing journal in jiang_accurate_2008
+Warning--empty year in jiang_accurate_2008
+Warning--missing journal in orus_infinite_2008
+Warning--empty year in orus_infinite_2008
+Warning--missing journal in hastings_light-cone_2009
+Warning--empty year in hastings_light-cone_2009
+You've used 17 entries,
+            5847 wiz_defined-function locations,
+            1709 strings with 17954 characters,
+and the built_in function-call counts, 12771 in all, are:
+= -- 831
+> -- 242
+< -- 84
++ -- 95
+- -- 56
+* -- 1795
+:= -- 1408
+add.period$ -- 19
+call.type$ -- 17
+change.case$ -- 70
+chr.to.int$ -- 16
+cite$ -- 43
+duplicate$ -- 1236
+empty$ -- 967
+format.name$ -- 149
+if$ -- 2412
+int.to.chr$ -- 2
+int.to.str$ -- 25
+missing$ -- 162
+newline$ -- 103
+num.names$ -- 51
+pop$ -- 641
+preamble$ -- 1
+purify$ -- 74
+quote$ -- 0
+skip$ -- 460
+stack$ -- 0
+substring$ -- 295
+swap$ -- 1031
+text.length$ -- 28
+text.prefix$ -- 0
+top$ -- 8
+type$ -- 215
+warning$ -- 26
+while$ -- 40
+width$ -- 0
+write$ -- 169
+(There were 29 warnings)
