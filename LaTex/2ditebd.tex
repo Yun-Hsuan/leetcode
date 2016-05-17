@@ -224,26 +224,39 @@ In the procedures of directional simple update, there are six pseudo-inverse $\l
 
 \section{Optimizations}
 \label{2dopt}
-\subsection{QR decomposition}
-Though the strategy described in previous sections improve the stability, it's not efficient enough. The reason why is that the dimension of tensor $\theta$, in Fig.\ref{fig315}(iii) and Fig.\ref{fig317}(iii), is proportional to $d^2D^6$. In addition to that, the time complexity of singular value decomposition is proportional to $O(NM^2)$. In conclusion, those steps are expensive and the dimension of tensor $\theta$ must be redued for accelerating. 
-\label{2doptQR} \begin{figure}[H] \centering \includegraphics[width=0.80\textwidth]{figures/fig318.png} \caption[The tensor network diagrams for the ameliorated 2-D iTEBD with QR decompositiont]{The tensor network diagrams for the ameliorated 2-D iTEBD.} \label{fig318} \end{figure} To achieve the goal, the projected pair state must be decomposed by QR decomposition \cite{li_efficient_2012} \cite{yang_accelerated_2007}. The processes making \textit{Simple Update} more efficient is illustrated in Fig \ref{fig318}.  Most of the steps shown in Fig \ref{fig318} are like in Fig \ref{fig315}. The only difference is that after absorbing all the $\lambda$, we decompose the state to an orthogonal matrix and an upper triangular matrix by QR. For instance, in Fig \ref{fig318} (ii), the state $A$ is decomposed to an orthogonal matrix X and upper triangular matrix $a_R$. Due to the columns of $X$ are orthonormal, $XX^{\dagger}$ is equal to $I$. In the other word, the tensor $X$ can be ignored and we just need consider the tensor $a_R$ by QR. Similarity, the state $B$ can be decomposed to a lower triangular $b_L$ and an orthogonal matrix $Y$ by LQ which is equivalence to operate QR decomposition after transpose the matrix. Next, (iii) we can obtain the tensor $\theta$ whose dimension is $d^2D$ from $a_R$, $b_L$ and an evolution operator.
+\subsection{QR and LQ decomposition}
+\label{2doptQR} 
+In the section \ref{2ditebd} and \ref{2dhastin}, we have introduced to two different methods to implement 2D-iTEBD. However, it is hard to apply them to study when the dimension of the virtual bonds become larger because of the rapid increment of the dimension of tensor $\Theta$ [Fig. \ref{fig316}(iii) and Fig. \ref{fig318}(iii)] which is a rank-8 tensor with dimension $d^2D^6$. In addition to the problem of their consumption, the singular value decomposition, which time complexity proportional $O(NM^2)$, is expensive.  Therefore, in this section we apply QR and LQ decomposition to reduce the rank of $\Theta$.
+
+The QR decomposition allows to decompose a real or complex matrix $A_{m,n}$, with $m \geq n$, into a $m \times m$ unitary matrix $Q$ and a $m \times n$ upper triangular matrix $R$. However, in bottom $(m-n)$ rows of $R$ are filled with zeros. Hence, matrix $Q$ and $R$ can be truncated,
+\begin{align}
+	A = QR = Q \begin{bmatrix} R_1 \\ 0 \end{bmatrix} = \begin{bmatrix} Q_1, Q_2 \end{bmatrix} \begin{bmatrix} R_1 \\ 0 \end{bmatrix} = Q_1 R_1, 
+\end{align}
+where $Q_1$ is a $(m \times n)$ unitary matrix and $R_1$ is a $(n \times n)$ upper triangular matrix. Analogously, the LQ decomposition can decompose a matrix $A_{m,n}$, with $m \leq m$ into a $m \times n$ lower triangular matrix $L_1$ and a $m \times n$ unitary matrix $Q_1$, 
+\begin{align}
+	A = LQ = \begin{bmatrix} L_1, 0 \end{bmatrix} Q = \begin{bmatrix}  L_1, 0\end{bmatrix} \begin{bmatrix} Q_1 \\ Q_2 \end{bmatrix} = L_1 Q_1, 
+\end{align}
+
+\begin{figure}[H] 
+	\centering 
+	\includegraphics[width=0.90\textwidth]{figures/fig318.png} 
+	\caption[The tensor network diagrams for the ameliorated 2-D iTEBD with QR decompositiont]{The tensor network diagrams for the ameliorated 2-D iTEBD.} 
+	\label{fig318} 
+\end{figure} 
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.90\textwidth]{figures/fig319.png}
-	\includegraphics[width=0.90\textwidth]{figures/fig320.png}
+	\includegraphics[width=0.80\textwidth]{figures/fig319.png}
+	\includegraphics[width=0.80\textwidth]{figures/fig320.png}
 	\caption[The tensor network diagrams for the ameliorated 2-D iTEBD with QR decompositiont]{The tensor network diagrams for the ameliorated 2-D iTEBD.}
 	\label{fig319}
 \end{figure}
 
+To achieve the goal, the projected pair state must be decomposed by QR decomposition \cite{li_efficient_2012} \cite{yang_accelerated_2007}. The processes making \textit{Simple Update} more efficient is illustrated in Fig \ref{fig318}.  Most of the steps shown in Fig \ref{fig318} are like in Fig \ref{fig315}. The only difference is that after absorbing all the $\lambda$, we decompose the state to an orthogonal matrix and an upper triangular matrix by QR. For instance, in Fig \ref{fig318} (ii), the state $A$ is decomposed to an orthogonal matrix X and upper triangular matrix $a_R$. Due to the columns of $X$ are orthonormal, $XX^{\dagger}$ is equal to $I$. In the other word, the tensor $X$ can be ignored and we just need consider the tensor $a_R$ by QR. Similarity, the state $B$ can be decomposed to a lower triangular $b_L$ and an orthogonal matrix $Y$ by LQ which is equivalence to operate QR decomposition after transpose the matrix. Next, (iii) we can obtain the tensor $\theta$ whose dimension is $d^2D$ from $a_R$, $b_L$ and an evolution operator.
+
 The strategy to accelerate \textit{Ameliorate Simple Update} is shown in the Fig \ref{fig319} and its main idea is also to reduce the dimension of $\theta$.
-
-
 \subsection{Initialization}
 \label{2doptInit}
-Intuitively, the initialization of states should not affect the result. However, it's a serious misunderstanding. Actually, stating from a awful initial sates may break the algorithms or hardly converge.
-
-From the viewpoint of physics, translational invariance is one of essential properties in many-body system, So we can assume that the group state on two sites should be similar. For instance, if the TN diagram of the states is shown as Fig \ref{fig321}(i), Fig \ref{fig321}(ii) might be the better way to initialize the states.
 
 \begin{figure}[ht]
 	\centering
@@ -252,7 +265,11 @@ From the viewpoint of physics, translational invariance is one of essential prop
 	\label{fig321}
 \end{figure}
 
-\subsection{Truncattion Error}
+Intuitively, the initialization of states should not affect the result. However, it's a serious misunderstanding. Actually, stating from a awful initial sates may break the algorithms or hardly converge.
+
+From the viewpoint of physics, translational invariance is one of essential properties in many-body system, So we can assume that the group state on two sites should be similar. For instance, if the TN diagram of the states is shown as Fig \ref{fig321}(i), Fig \ref{fig321}(ii) might be the better way to initialize the states.
+
+\subsection{Truncation Error}
 
 \section{Comparison}
 
