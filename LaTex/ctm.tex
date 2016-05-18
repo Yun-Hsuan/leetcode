@@ -23,6 +23,7 @@ In chapter.\ref{chapter:2ditebd}, we have discussed about obtaining the infinite
 \begin{align}
 	\label{reduce_a}
 	\bar{a} \equiv \sum_{h=1}^{d} A_{h} \otimes A^{*}_{h} \\
+	\label{reduce_b}
 	\bar{b} \equiv \sum_{h=1}^{d} B_{h} \otimes B^{*}_{h}
 \end{align}
 
@@ -69,12 +70,39 @@ Now, we need repeat the procedures in Fig. \ref{fig512}(b)-(d) again for absorbi
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.75\textwidth]{figures/fig512.png}
-	\includegraphics[width=0.75\textwidth]{figures/fig513.png}
+	\includegraphics[width=0.80\textwidth]{figures/fig512.png}
+	\includegraphics[width=0.80\textwidth]{figures/fig513.png}
 	\caption[The picture of the main idea of itebd.]{The red and blue tensor denotes on \textit{odd} and \textit{even} sites. The yellow one are time evolution operators $e^{-\tau H_{k,k+1}}$, $e^{-\tau H_{k+1,k}}$}
 	\label{fig512}
 \end{figure}
 
 \section{Obtain States from PESS}
 \label{pessctm}
-CTM with PESS.
+In this section, we apply the CTM to approximate the effective environment of 4-PESS structure. Firstly, we must transform it to iPEPS structure which is suit for the form of CTM. As shown in Fig. \ref{fig521}, the projection tensors, $U^{[0]}$, $U^{[1]}$, $U^{[2]}$ and $U^{[3]}$, and the entangled simplex tensors, $S^{[\alpha]}$ and $S^{[\beta]}$ are obtained from 4-PESS ansatz. To map these states to PEPS-like structure, we group the tensors, $S^{[\alpha]}$, $U^{[0]}$ and $U^{[1]}$, in red rectangles into the tensor $A$, 
+\begin{align}
+	A^{\sigma_i \sigma_j}_{i^{\prime}j^{\prime}kl} = \sum_{ij}{U^{[0]}_{ ii^{\prime},\sigma_i} S^{[\alpha]}_{ijkl} U^{[1]}_{ jj^{\prime},\sigma_j}}
+\end{align}
+and group, $S^{[\beta]}$, $U^{[2]}$ and $U^{[3]}$, in blue rectangles into the tensor $B$
+\begin{align}
+	B^{\sigma_k \sigma_l}_{i^{\prime}j^{\prime}kl} = \sum_{k^{\prime}l^{\prime}}{U^{[2]}_{ kk^{\prime},\sigma_i} S^{[\beta]}_{i^{\prime}j^{\prime}k^{\prime}l^{\prime}} U^{[3]}_{ ll^{\prime},\sigma_j}}
+\end{align}
+, whee the ranks of tensor $A$ and $B$ are six and there are two physical bonds contained in each of them. Hence, after combined the physical bonds in tensors $A$ and $B$, the iPEPS structure will be obtained,
+\begin{align}
+	A^{\sigma_i \sigma_j}_{i^{\prime}j^{\prime}kl} \rightarrow  A^{\sigma_A}_{i^{\prime}j^{\prime}kl} \\
+	B^{\sigma_k \sigma_l}_{i^{\prime}j^{\prime}kl} \rightarrow  B^{\sigma_B}_{i^{\prime}j^{\prime}kl}
+\end{align}
+Next, in order to make the structure more balance, the entanglement should be well-distributed between each sites, 
+\begin{align}
+	\widetilde{A} = \sum_{i^{\prime}j^{\prime}kl}{\lambda^{[\beta]^{\frac{1}{2}}}_{i^{\prime}} \lambda^{[\beta]^{\frac{1}{2}}}_{j^{\prime}} A^{\sigma_A}_{i^{\prime}j^{\prime}kl}\lambda^{[\alpha]-\frac{1}{2}}_{l} \lambda^{[\alpha]^{-\frac{1}{2}}}_{k}}\\
+	\widetilde{B} = \sum_{i^{\prime}j^{\prime}kl}{\lambda^{[\alpha]^{\frac{1}{2}}}_{k} \lambda^{[\alpha]^{\frac{1}{2}}}_{l} B^{\sigma_B}_{i^{\prime}j^{\prime}kl} \lambda^{[\beta]^{-\frac{1}{2}}}_{i} \lambda^{[\beta]^{-\frac{1}{2}}}_{j^{\prime}}}
+\end{align}
+and substitute $\widetilde{A}$ and $\widetilde{B}$ into Eq. \ref{reduce_a} and Eq. \ref{reduce_b} to obtain reduced tensors $a$ and $b$. In the end, we apply these two reduced tensor to build the form of CTM and follow the procedures shown in Fig. \ref{fig513} to simulate the effective environment tensors.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.90\textwidth]{figures/fig521.png}
+	\caption[The picture of the main idea of itebd.]{The red and blue tensor denotes on \textit{odd} and \textit{even} sites. The yellow one are time evolution operators $e^{-\tau H_{k,k+1}}$, $e^{-\tau H_{k+1,k}}$}
+	\label{fig521}
+\end{figure}
+
+

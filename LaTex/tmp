@@ -153,69 +153,72 @@ Chapter 3.
 <use  "figures/fig311.png" > <use  "figures/fig311.png" >
 <use  "watermark.pdf" > [11] <use  "figures/fig312.png" >
 <use  "watermark.pdf" > [12] <use  "watermark.pdf" > [13]
-<use  "figures/fig313.png" > <use  "watermark.pdf" > [14]
-<use  "figures/fig314.png" > <use  "watermark.pdf" > [15]
-<use  "figures/fig315.png" > <use  "figures/fig316.png" >
-<use  "watermark.pdf" > [16] <use  "watermark.pdf" > [17]
-Overfull \hbox (11.00592pt too wide) in paragraph at lines 184--186
+<use  "watermark.pdf" > [14] <use  "figures/fig313.png" >
+<use  "watermark.pdf" > [15] <use  "figures/fig314.png" >
+<use  "watermark.pdf" > [16] <use  "figures/fig315.png" >
+<use  "figures/fig316.png" > <use  "watermark.pdf" > [17]
+<use  "watermark.pdf" > [18]
+Overfull \hbox (11.00592pt too wide) in paragraph at lines 202--204
 \EU1/TimesNewRoman(0)/m/n/12 where $\OT1/cmr/m/n/12 ^^@[]$ \EU1/TimesNewRoman(0
 )/m/n/12 and $\OT1/cmr/m/n/12 ^^@[]$ \EU1/TimesNewRoman(0)/m/n/12 are the defin
 ition in directional simple update. [In sec.[]3.2.2[]]. 
-<use  "watermark.pdf" > [18] <use  "figures/fig317.png" >
-<use  "watermark.pdf" > [19] <use  "figures/fig321.png" >
-<use  "watermark.pdf" > [20] <use  "watermark.pdf" > [21]
+<use  "watermark.pdf" > [19] <use  "figures/fig317.png" >
+<use  "watermark.pdf" > [20] <use  "figures/fig321.png" >
+<use  "watermark.pdf" > [21] <use  "watermark.pdf" > [22]
 <use  "figures/fig318.png" > <use  "figures/fig319.png" >
-<use  "figures/fig320.png" > <use  "watermark.pdf" > [22]
+<use  "figures/fig320.png" > <use  "watermark.pdf" > [23]
 
-LaTeX Warning: Text page 23 contains only floats.
+LaTeX Warning: Text page 24 contains only floats.
 
-<use  "watermark.pdf" > [23]
-
-LaTeX Warning: Command \b invalid in math mode on input line 290.
-
+<use  "watermark.pdf" > [24] <use  "watermark.pdf" > [25]
 <use  "figures/fig322.png" > <use  "figures/fig323.png" >
 <use  "figures/fig324.png" > <use  "figures/fig325.png" >
 <use  "figures/fig326.png" > <use  "figures/fig327.png" >) (./pess.tex
-<use  "watermark.pdf" > [24] <use  "watermark.pdf" > [25]
 <use  "watermark.pdf" > [26] <use  "watermark.pdf" > [27]
+<use  "watermark.pdf" > [28]
 Chapter 4.
 
 Overfull \hbox (0.42523pt too wide) in paragraph at lines 8--9
 \EU1/TimesNewRoman(0)/m/n/12 network representation of simplex states is called
  projected entangled simplex state (PESS)
-<use  "figures/fig411.png" > <use  "watermark.pdf" > [28]
-<use  "watermark.pdf" > [29] <use  "watermark.pdf" > [30]
-<use  "figures/fig4311.png" > <use  "watermark.pdf" > [31]
-<use  "figures/fig4312.png" > <use  "watermark.pdf" > [32]
-<use  "watermark.pdf" > [33] <use  "watermark.pdf" > [34]
+<use  "figures/fig411.png" > <use  "watermark.pdf" > [29]
+<use  "watermark.pdf" > [30] <use  "watermark.pdf" > [31]
+<use  "figures/fig4311.png" > <use  "watermark.pdf" > [32]
+<use  "figures/fig4312.png" > <use  "watermark.pdf" > [33]
+<use  "watermark.pdf" > [34] <use  "watermark.pdf" > [35]
 <use  "figures/fig4321.png" > <use  "figures/fig4322.png" >
-<use  "watermark.pdf" > [35]
-
-LaTeX Warning: Reference `' on page 36 undefined on input line 158.
-
 <use  "watermark.pdf" > [36]
 
-LaTeX Warning: Reference `truncationerror' on page 37 undefined on input line 1
+LaTeX Warning: Reference `' on page 37 undefined on input line 158.
+
+<use  "watermark.pdf" > [37]
+
+LaTeX Warning: Reference `truncationerror' on page 38 undefined on input line 1
 68.
 
-<use  "watermark.pdf" > [37] <use  "figures/fig4323.png" >
-<use  "watermark.pdf" > [38] <use  "figures/fig4324.png" >
-<use  "watermark.pdf" > [39] <use  "watermark.pdf" > [40]
-<use  "figures/fig4325.png" > <use  "watermark.pdf" > [41]
-<use  "figures/fig4326.png" >) (./ctm.tex <use  "watermark.pdf" > [42]
+<use  "watermark.pdf" > [38] <use  "figures/fig4323.png" >
+<use  "watermark.pdf" > [39] <use  "figures/fig4324.png" >
+<use  "watermark.pdf" > [40] <use  "watermark.pdf" > [41]
+<use  "figures/fig4325.png" > <use  "watermark.pdf" > [42]
+<use  "figures/fig4326.png" >) (./ctm.tex <use  "watermark.pdf" > [43]
 Chapter 5.
-<use  "figures/fig501.png" > <use  "watermark.pdf" > [43]
-<use  "figures/fig511.png" > <use  "watermark.pdf" > [44]
-Overfull \hbox (6.07352pt too wide) in paragraph at lines 41--42
+<use  "figures/fig501.png" > <use  "watermark.pdf" > [44]
+<use  "figures/fig511.png" > <use  "watermark.pdf" > [45]
+Overfull \hbox (6.07352pt too wide) in paragraph at lines 42--43
 []\EU1/TimesNewRoman(0)/m/n/12 Insertion: Insert two new columns which consist 
 of { $\OML/cmm/m/it/12 T[]; b; a; T[]$ \EU1/TimesNewRoman(0)/m/n/12 } and { $\O
 ML/cmm/m/it/12 T[]; a; b; T[]$
-<use  "watermark.pdf" > [45] <use  "figures/fig512.png" >
-<use  "figures/fig513.png" > <use  "watermark.pdf" > [46]
-<use  "watermark.pdf" > [47]) (./summary.tex <use  "watermark.pdf" > [48]
+<use  "watermark.pdf" > [46] <use  "figures/fig512.png" >
+<use  "figures/fig513.png" > <use  "watermark.pdf" > [47]
+<use  "watermark.pdf" > [48]
+
+LaTeX Warning: Reference `fig513' on page 49 undefined on input line 99.
+
+<use  "figures/fig521.png" >) (./summary.tex <use  "watermark.pdf" > [49]
+<use  "watermark.pdf" > [50]
 Chapter 6.
-) (./thesis.bbl <use  "watermark.pdf" > [49] <use  "watermark.pdf" > [50])
-<use  "watermark.pdf" > [51] (./thesis.aux)
+) (./thesis.bbl <use  "watermark.pdf" > [51] <use  "watermark.pdf" > [52])
+<use  "watermark.pdf" > [53] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -224,7 +227,7 @@ LaTeX Warning: There were multiply-defined labels.
 
  )
 (see the transcript file for additional information)
-Output written on thesis.pdf (63 pages).
+Output written on thesis.pdf (65 pages).
 Transcript written on thesis.log.
 bibtex thesis
 This is BibTeX, Version 0.99d (TeX Live 2015)
@@ -426,69 +429,72 @@ Chapter 3.
 <use  "figures/fig311.png" > <use  "figures/fig311.png" >
 <use  "watermark.pdf" > [11] <use  "figures/fig312.png" >
 <use  "watermark.pdf" > [12] <use  "watermark.pdf" > [13]
-<use  "figures/fig313.png" > <use  "watermark.pdf" > [14]
-<use  "figures/fig314.png" > <use  "watermark.pdf" > [15]
-<use  "figures/fig315.png" > <use  "figures/fig316.png" >
-<use  "watermark.pdf" > [16] <use  "watermark.pdf" > [17]
-Overfull \hbox (11.00592pt too wide) in paragraph at lines 184--186
+<use  "watermark.pdf" > [14] <use  "figures/fig313.png" >
+<use  "watermark.pdf" > [15] <use  "figures/fig314.png" >
+<use  "watermark.pdf" > [16] <use  "figures/fig315.png" >
+<use  "figures/fig316.png" > <use  "watermark.pdf" > [17]
+<use  "watermark.pdf" > [18]
+Overfull \hbox (11.00592pt too wide) in paragraph at lines 202--204
 \EU1/TimesNewRoman(0)/m/n/12 where $\OT1/cmr/m/n/12 ^^@[]$ \EU1/TimesNewRoman(0
 )/m/n/12 and $\OT1/cmr/m/n/12 ^^@[]$ \EU1/TimesNewRoman(0)/m/n/12 are the defin
 ition in directional simple update. [In sec.[]3.2.2[]]. 
-<use  "watermark.pdf" > [18] <use  "figures/fig317.png" >
-<use  "watermark.pdf" > [19] <use  "figures/fig321.png" >
-<use  "watermark.pdf" > [20] <use  "watermark.pdf" > [21]
+<use  "watermark.pdf" > [19] <use  "figures/fig317.png" >
+<use  "watermark.pdf" > [20] <use  "figures/fig321.png" >
+<use  "watermark.pdf" > [21] <use  "watermark.pdf" > [22]
 <use  "figures/fig318.png" > <use  "figures/fig319.png" >
-<use  "figures/fig320.png" > <use  "watermark.pdf" > [22]
+<use  "figures/fig320.png" > <use  "watermark.pdf" > [23]
 
-LaTeX Warning: Text page 23 contains only floats.
+LaTeX Warning: Text page 24 contains only floats.
 
-<use  "watermark.pdf" > [23]
-
-LaTeX Warning: Command \b invalid in math mode on input line 290.
-
+<use  "watermark.pdf" > [24] <use  "watermark.pdf" > [25]
 <use  "figures/fig322.png" > <use  "figures/fig323.png" >
 <use  "figures/fig324.png" > <use  "figures/fig325.png" >
 <use  "figures/fig326.png" > <use  "figures/fig327.png" >) (./pess.tex
-<use  "watermark.pdf" > [24] <use  "watermark.pdf" > [25]
 <use  "watermark.pdf" > [26] <use  "watermark.pdf" > [27]
+<use  "watermark.pdf" > [28]
 Chapter 4.
 
 Overfull \hbox (0.42523pt too wide) in paragraph at lines 8--9
 \EU1/TimesNewRoman(0)/m/n/12 network representation of simplex states is called
  projected entangled simplex state (PESS)
-<use  "figures/fig411.png" > <use  "watermark.pdf" > [28]
-<use  "watermark.pdf" > [29] <use  "watermark.pdf" > [30]
-<use  "figures/fig4311.png" > <use  "watermark.pdf" > [31]
-<use  "figures/fig4312.png" > <use  "watermark.pdf" > [32]
-<use  "watermark.pdf" > [33] <use  "watermark.pdf" > [34]
+<use  "figures/fig411.png" > <use  "watermark.pdf" > [29]
+<use  "watermark.pdf" > [30] <use  "watermark.pdf" > [31]
+<use  "figures/fig4311.png" > <use  "watermark.pdf" > [32]
+<use  "figures/fig4312.png" > <use  "watermark.pdf" > [33]
+<use  "watermark.pdf" > [34] <use  "watermark.pdf" > [35]
 <use  "figures/fig4321.png" > <use  "figures/fig4322.png" >
-<use  "watermark.pdf" > [35]
-
-LaTeX Warning: Reference `' on page 36 undefined on input line 158.
-
 <use  "watermark.pdf" > [36]
 
-LaTeX Warning: Reference `truncationerror' on page 37 undefined on input line 1
+LaTeX Warning: Reference `' on page 37 undefined on input line 158.
+
+<use  "watermark.pdf" > [37]
+
+LaTeX Warning: Reference `truncationerror' on page 38 undefined on input line 1
 68.
 
-<use  "watermark.pdf" > [37] <use  "figures/fig4323.png" >
-<use  "watermark.pdf" > [38] <use  "figures/fig4324.png" >
-<use  "watermark.pdf" > [39] <use  "watermark.pdf" > [40]
-<use  "figures/fig4325.png" > <use  "watermark.pdf" > [41]
-<use  "figures/fig4326.png" >) (./ctm.tex <use  "watermark.pdf" > [42]
+<use  "watermark.pdf" > [38] <use  "figures/fig4323.png" >
+<use  "watermark.pdf" > [39] <use  "figures/fig4324.png" >
+<use  "watermark.pdf" > [40] <use  "watermark.pdf" > [41]
+<use  "figures/fig4325.png" > <use  "watermark.pdf" > [42]
+<use  "figures/fig4326.png" >) (./ctm.tex <use  "watermark.pdf" > [43]
 Chapter 5.
-<use  "figures/fig501.png" > <use  "watermark.pdf" > [43]
-<use  "figures/fig511.png" > <use  "watermark.pdf" > [44]
-Overfull \hbox (6.07352pt too wide) in paragraph at lines 41--42
+<use  "figures/fig501.png" > <use  "watermark.pdf" > [44]
+<use  "figures/fig511.png" > <use  "watermark.pdf" > [45]
+Overfull \hbox (6.07352pt too wide) in paragraph at lines 42--43
 []\EU1/TimesNewRoman(0)/m/n/12 Insertion: Insert two new columns which consist 
 of { $\OML/cmm/m/it/12 T[]; b; a; T[]$ \EU1/TimesNewRoman(0)/m/n/12 } and { $\O
 ML/cmm/m/it/12 T[]; a; b; T[]$
-<use  "watermark.pdf" > [45] <use  "figures/fig512.png" >
-<use  "figures/fig513.png" > <use  "watermark.pdf" > [46]
-<use  "watermark.pdf" > [47]) (./summary.tex <use  "watermark.pdf" > [48]
+<use  "watermark.pdf" > [46] <use  "figures/fig512.png" >
+<use  "figures/fig513.png" > <use  "watermark.pdf" > [47]
+<use  "watermark.pdf" > [48]
+
+LaTeX Warning: Reference `fig513' on page 49 undefined on input line 99.
+
+<use  "figures/fig521.png" >) (./summary.tex <use  "watermark.pdf" > [49]
+<use  "watermark.pdf" > [50]
 Chapter 6.
-) (./thesis.bbl <use  "watermark.pdf" > [49] <use  "watermark.pdf" > [50])
-<use  "watermark.pdf" > [51] (./thesis.aux)
+) (./thesis.bbl <use  "watermark.pdf" > [51] <use  "watermark.pdf" > [52])
+<use  "watermark.pdf" > [53] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -497,7 +503,7 @@ LaTeX Warning: There were multiply-defined labels.
 
  )
 (see the transcript file for additional information)
-Output written on thesis.pdf (63 pages).
+Output written on thesis.pdf (65 pages).
 Transcript written on thesis.log.
 xelatex thesis
 This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex)
@@ -654,69 +660,72 @@ Chapter 3.
 <use  "figures/fig311.png" > <use  "figures/fig311.png" >
 <use  "watermark.pdf" > [11] <use  "figures/fig312.png" >
 <use  "watermark.pdf" > [12] <use  "watermark.pdf" > [13]
-<use  "figures/fig313.png" > <use  "watermark.pdf" > [14]
-<use  "figures/fig314.png" > <use  "watermark.pdf" > [15]
-<use  "figures/fig315.png" > <use  "figures/fig316.png" >
-<use  "watermark.pdf" > [16] <use  "watermark.pdf" > [17]
-Overfull \hbox (11.00592pt too wide) in paragraph at lines 184--186
+<use  "watermark.pdf" > [14] <use  "figures/fig313.png" >
+<use  "watermark.pdf" > [15] <use  "figures/fig314.png" >
+<use  "watermark.pdf" > [16] <use  "figures/fig315.png" >
+<use  "figures/fig316.png" > <use  "watermark.pdf" > [17]
+<use  "watermark.pdf" > [18]
+Overfull \hbox (11.00592pt too wide) in paragraph at lines 202--204
 \EU1/TimesNewRoman(0)/m/n/12 where $\OT1/cmr/m/n/12 ^^@[]$ \EU1/TimesNewRoman(0
 )/m/n/12 and $\OT1/cmr/m/n/12 ^^@[]$ \EU1/TimesNewRoman(0)/m/n/12 are the defin
 ition in directional simple update. [In sec.[]3.2.2[]]. 
-<use  "watermark.pdf" > [18] <use  "figures/fig317.png" >
-<use  "watermark.pdf" > [19] <use  "figures/fig321.png" >
-<use  "watermark.pdf" > [20] <use  "watermark.pdf" > [21]
+<use  "watermark.pdf" > [19] <use  "figures/fig317.png" >
+<use  "watermark.pdf" > [20] <use  "figures/fig321.png" >
+<use  "watermark.pdf" > [21] <use  "watermark.pdf" > [22]
 <use  "figures/fig318.png" > <use  "figures/fig319.png" >
-<use  "figures/fig320.png" > <use  "watermark.pdf" > [22]
+<use  "figures/fig320.png" > <use  "watermark.pdf" > [23]
 
-LaTeX Warning: Text page 23 contains only floats.
+LaTeX Warning: Text page 24 contains only floats.
 
-<use  "watermark.pdf" > [23]
-
-LaTeX Warning: Command \b invalid in math mode on input line 290.
-
+<use  "watermark.pdf" > [24] <use  "watermark.pdf" > [25]
 <use  "figures/fig322.png" > <use  "figures/fig323.png" >
 <use  "figures/fig324.png" > <use  "figures/fig325.png" >
 <use  "figures/fig326.png" > <use  "figures/fig327.png" >) (./pess.tex
-<use  "watermark.pdf" > [24] <use  "watermark.pdf" > [25]
 <use  "watermark.pdf" > [26] <use  "watermark.pdf" > [27]
+<use  "watermark.pdf" > [28]
 Chapter 4.
 
 Overfull \hbox (0.42523pt too wide) in paragraph at lines 8--9
 \EU1/TimesNewRoman(0)/m/n/12 network representation of simplex states is called
  projected entangled simplex state (PESS)
-<use  "figures/fig411.png" > <use  "watermark.pdf" > [28]
-<use  "watermark.pdf" > [29] <use  "watermark.pdf" > [30]
-<use  "figures/fig4311.png" > <use  "watermark.pdf" > [31]
-<use  "figures/fig4312.png" > <use  "watermark.pdf" > [32]
-<use  "watermark.pdf" > [33] <use  "watermark.pdf" > [34]
+<use  "figures/fig411.png" > <use  "watermark.pdf" > [29]
+<use  "watermark.pdf" > [30] <use  "watermark.pdf" > [31]
+<use  "figures/fig4311.png" > <use  "watermark.pdf" > [32]
+<use  "figures/fig4312.png" > <use  "watermark.pdf" > [33]
+<use  "watermark.pdf" > [34] <use  "watermark.pdf" > [35]
 <use  "figures/fig4321.png" > <use  "figures/fig4322.png" >
-<use  "watermark.pdf" > [35]
-
-LaTeX Warning: Reference `' on page 36 undefined on input line 158.
-
 <use  "watermark.pdf" > [36]
 
-LaTeX Warning: Reference `truncationerror' on page 37 undefined on input line 1
+LaTeX Warning: Reference `' on page 37 undefined on input line 158.
+
+<use  "watermark.pdf" > [37]
+
+LaTeX Warning: Reference `truncationerror' on page 38 undefined on input line 1
 68.
 
-<use  "watermark.pdf" > [37] <use  "figures/fig4323.png" >
-<use  "watermark.pdf" > [38] <use  "figures/fig4324.png" >
-<use  "watermark.pdf" > [39] <use  "watermark.pdf" > [40]
-<use  "figures/fig4325.png" > <use  "watermark.pdf" > [41]
-<use  "figures/fig4326.png" >) (./ctm.tex <use  "watermark.pdf" > [42]
+<use  "watermark.pdf" > [38] <use  "figures/fig4323.png" >
+<use  "watermark.pdf" > [39] <use  "figures/fig4324.png" >
+<use  "watermark.pdf" > [40] <use  "watermark.pdf" > [41]
+<use  "figures/fig4325.png" > <use  "watermark.pdf" > [42]
+<use  "figures/fig4326.png" >) (./ctm.tex <use  "watermark.pdf" > [43]
 Chapter 5.
-<use  "figures/fig501.png" > <use  "watermark.pdf" > [43]
-<use  "figures/fig511.png" > <use  "watermark.pdf" > [44]
-Overfull \hbox (6.07352pt too wide) in paragraph at lines 41--42
+<use  "figures/fig501.png" > <use  "watermark.pdf" > [44]
+<use  "figures/fig511.png" > <use  "watermark.pdf" > [45]
+Overfull \hbox (6.07352pt too wide) in paragraph at lines 42--43
 []\EU1/TimesNewRoman(0)/m/n/12 Insertion: Insert two new columns which consist 
 of { $\OML/cmm/m/it/12 T[]; b; a; T[]$ \EU1/TimesNewRoman(0)/m/n/12 } and { $\O
 ML/cmm/m/it/12 T[]; a; b; T[]$
-<use  "watermark.pdf" > [45] <use  "figures/fig512.png" >
-<use  "figures/fig513.png" > <use  "watermark.pdf" > [46]
-<use  "watermark.pdf" > [47]) (./summary.tex <use  "watermark.pdf" > [48]
+<use  "watermark.pdf" > [46] <use  "figures/fig512.png" >
+<use  "figures/fig513.png" > <use  "watermark.pdf" > [47]
+<use  "watermark.pdf" > [48]
+
+LaTeX Warning: Reference `fig513' on page 49 undefined on input line 99.
+
+<use  "figures/fig521.png" >) (./summary.tex <use  "watermark.pdf" > [49]
+<use  "watermark.pdf" > [50]
 Chapter 6.
-) (./thesis.bbl <use  "watermark.pdf" > [49] <use  "watermark.pdf" > [50])
-<use  "watermark.pdf" > [51] (./thesis.aux)
+) (./thesis.bbl <use  "watermark.pdf" > [51] <use  "watermark.pdf" > [52])
+<use  "watermark.pdf" > [53] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -725,5 +734,5 @@ LaTeX Warning: There were multiply-defined labels.
 
  )
 (see the transcript file for additional information)
-Output written on thesis.pdf (63 pages).
+Output written on thesis.pdf (65 pages).
 Transcript written on thesis.log.

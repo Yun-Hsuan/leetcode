@@ -93,7 +93,25 @@ The tensor diagrams shown in the Fig. \ref{fig314} are the procedures of 1D-iTEB
 								U(\tau) = e^{-\tau H_{AB}}
 							\end{align}
 			\end{enumerate}
-		\item Decompose $\theta$ into the general form of the MPS:
+		\item Decompose $\Theta$ into the general form of the MPS: In this step, we utilize singular value decomposition (SVD) to split the tensor $\Theta$ . The SVD decomposition allow to decompose a matrix $A_{m.n}$, with $m \geq n$, into two unitary matrices, $U$, with $m \times m$, and $V^{T}$,with $n \times n$, and an $m \times n$ diagonal matrix $\Sigma$. However, in bottom $m - n$ rows of $\Sigma$ consists entirely of zeros. Hence, the dimension of $U$ and $\Sigma$ can be reduced,
+\begin{align}
+	A = U \Sigma V^T = \begin{bmatrix} U_1 U_2 \end{bmatrix} \begin{bmatrix} \Sigma_1 \\ 0 \end{bmatrix} V^T = U_1 S_1 V^T
+\end{align}
+where $U_1$ is a $m \times n$ unitary matrix, $\Sigma_1$ is a $n \times n$ diagonal matrix. Analogously, when $A_{m,n}$, with $m \leq n$, the matrix $\Sigma_1$ and $V^T$ can be reduced,
+\begin{align}
+	A = U \Sigma V^T = U \begin{bmatrix} \Sigma_1 0 \end{bmatrix} \begin{bmatrix} V_1^T \\ V_2^T \end{bmatrix} = U \Sigma_1 V_1^T
+\end{align}
+where $\Sigma_1$ is a $m \times m$ diagonal matrix and $V_1^T$ is a $m \times n$ unitary matrix. There are two significant properties of the singular value term, Assume that,
+\begin{align}
+\Sigma_1 = diag \left(\sigma_1, \sigma_2, \dots, \sigma_{\max{[m,n]}} \right), 
+\end{align}
+\begin{enumerate}
+	\item All the singular value in $\Sigma_1$ are real.
+	\item The singular values are ordered from large to small,
+		\begin{align}
+			\sigma_1 \geq \sigma_1 \geq \sigma_2 \geq \dots \geq \sigma_{\max{[m,n]}}
+		\end{align}
+\end{enumerate}
 		\item Truncation: See Fig. \ref{fig314}(iv), we notice that the dimension of bond $j$ increase to $dD$. To avoid the exponential increment of the dimension, the dimension of bond $j$ must be resized to $D$.
 		\item Absorb the inverse entangled matrix $\lambda^{[A]}$: Remove the entangle influence from $\widetilde{\Gamma}^{[A]}$ and $\widetilde{\Gamma}^{[B]}$ and return the general form of the MPS, as shown in Fig. \ref{fig314}(v).
 			\begin{align}
@@ -224,8 +242,17 @@ In the procedures of directional simple update, there are six pseudo-inverse $\l
 
 \section{Optimizations}
 \label{2dopt}
+
 \subsection{Initialization}
 \label{2doptInit}
+
+Theoretically, no matter update from any random initial state, we can obtain the ground state wave function by iTEBD-like algorithms. However, many experimental results show that stating from a awful initial sates might hardly converge or even break the algorithms. Hence, we need "guess" a good initial states to protect algorithms.
+
+\begin{enumerate}
+	\item Begin from the Product states.
+	\item Considered the Translational invariance: For example, theres is a iPEPS shown as Fig. \ref{fig321}(i). The arrangement of coefficients in the states $A_{hurdl}$ should be same as $B_{hdlur}$, see Fig. \ref{fig321}(ii).
+\end{enumerate}
+
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.00\textwidth]{figures/fig321.png}
@@ -233,15 +260,11 @@ In the procedures of directional simple update, there are six pseudo-inverse $\l
 	\label{fig321}
 \end{figure}
 
-Intuitively, the initialization of states should not affect the result. However, it's a serious misunderstanding. Actually, stating from a awful initial sates may break the algorithms or hardly converge.
-
-From the viewpoint of physics, translational invariance is one of essential properties in many-body system, So we can assume that the group state on two sites should be similar. For instance, if the TN diagram of the states is shown as Fig \ref{fig321}(i), Fig \ref{fig321}(ii) might be the better way to initialize the states.
-
 \subsection{QR and LQ decomposition}
 \label{2doptQR} 
 In the section \ref{2ditebd} and \ref{2dhastin}, we have introduced to two different methods to implement 2D-iTEBD. However, it is hard to apply them to study when the dimension of the virtual bonds become larger because of the rapid increment of the dimension of tensor $\Theta$ [Fig. \ref{fig316}(iii) and Fig. \ref{fig318}(iii)] which is a rank-8 tensor with dimension $d^2D^6$. In addition to the problem of their consumption, the singular value decomposition, which time complexity proportional $O(NM^2)$, is expensive.  Therefore, in this section we apply QR and LQ decomposition to reduce the rank of $\Theta$.
 
-The QR decomposition allows to decompose a real or complex matrix $A_{m,n}$, with $m \geq n$, into a $m \times m$ unitary matrix $Q$ and a $m \times n$ upper triangular matrix $R$. However, in bottom $(m-n)$ rows of $R$ are filled with zeros. Hence, matrix $Q$ and $R$ can be truncated,
+The QR decomposition allows to decompose a real or complex matrix $A_{m,n}$, with $m \geq n$, into a $m \times m$ unitary matrix $Q$ and a $m \times n$ upper triangular matrix $R$. However, in bottom $(m-n)$ rows of $R$ are filled with zeros. Hence, the matrix $Q$ and $R$ can be truncated,
 \begin{align}
 	A = QR = Q \begin{bmatrix} R_1 \\ 0 \end{bmatrix} = \begin{bmatrix} Q_1, Q_2 \end{bmatrix} \begin{bmatrix} R_1 \\ 0 \end{bmatrix} = Q_1 R_1, 
 \end{align}
@@ -287,24 +310,26 @@ Nevertheless, the main idea to reduce the tensor $\Theta$ in ameliorate 2D-iTEBD
 			\Gamma^{\prime [A]}_{uldr,\sigma_i} = \sum_{dl}{\lambda_l \Gamma^{[A]}_{uldr,\sigma_i} \lambda_d}
 		\end{align}
 		and apply the QR and LQ decomposition to split $\Gamma^{\prime [A]}$ and $\Gamma^{\prime [B]}$ into $X\cdot a_R$ and $b_L \cdot Y$. see Fig. \ref{fig319}(iv) and Fig. \ref{fig319}(v) 
-	\item Obtain $\widetilde{\Gamma}^{[A]}$ by contracting tensor $C$, $Y$ and $\b_L$, as shown in Fig. \ref{fig319}(ix)
+	\item Obtain $\widetilde{\Gamma}^{[A]}$ by contracting tensor $C$, $Y$ and $b_L$, as shown in Fig. \ref{fig319}(ix)
 		\begin{align}
 			\widetilde{\Gamma}^{[A]}_{urld, \sigma_i} = \sum_{u^{\prime}l^{\prime}d^{\prime}\sigma_j,q}{C^{dlu\sigma_i}_{d^{\prime}l^{\prime}u^{\prime}\sigma_i}Y_{d^{\prime}l^{\prime}u^{\prime}q}{b_L}_{qr}}
 		\end{align}
 		and obtain $\widetilde{\Gamma}^{[B]}$ by contracting $Y$, $b_L$ and $\lambda_u^{-1}$
 		\begin{align}
-			\widetilde{\Gamma}^{[B]}_{urld,\sigma_j} = sum_{q}{{b_L}_{rq}Y_{uld\sigma_j q}\lambda_u^{-1}}
+			\widetilde{\Gamma}^{[B]}_{urld,\sigma_j} = \sum_{q}{{b_L}_{rq}Y_{uld\sigma_j q}\lambda_u^{-1}}
 		\end{align}
 \end{enumerate}
 
 Through these changed, the tensor $\Theta$ is reduced to and rank-4 tensor, with dimension $d^2D^2$.
 
 \subsection{Truncation Error}
-In order to avoid the dimension of the virtual bonds increase exponentially, after decomposing the tensor $\Theta$, we will truncate the updated bond from $dD^3$ or $d^2D$ to $D$. However, if the singular values are not concentrated to the leading elements, some influential features and basis would be dropped and the algorithms might be broken. Therefor, we set a truncate error $\varepsilon$, 
+In order to control the increment of the dimension of the virtual bonds, we will truncate the updated bond from $dD^3$ or $d^2D$ to $D$ after decomposing the tensor $\Theta$. However, if the singular values contained in $\Sigma$ are not concentrated to the leading terms, some influential features and basis would be dropped and the algorithms might be broken. Therefor, we set a cut off $\varepsilon$, 
 \begin{align}
-	\varepsilon = 
+	\varepsilon \geq 1 - \sum_{i=1}^{\chi}{\sigma_i^2}
 \end{align}
-to determinate the number of basis should be remained.
+to determinate the dimension of the updated bond, where $\sigma_i$ is the elements at $\Sigma_{[i,i]}$ and $\chi$ is the number of the remained basis . However, it not means that the smaller $\varepsilon$, the more accuracy.  Setting a small cut off also means that more basis of states and approach zero terms in $\Sigma$ be remained. Hence, it not only make less efficiency, but also might destroy the algorithms.
+
+
 
 \section{Comparison}
 
