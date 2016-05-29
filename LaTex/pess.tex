@@ -52,7 +52,7 @@ Now that we can write down the wave function of the simplex-solid state,
 	&= \Tr \left( \dots S_{s_i s_j s_k}^{\alpha} A^{\sigma_i}_{s_i,s_i^{\prime}} A^{\sigma_j}_{s_j,s_j^{\prime}} A^{\sigma_k}_{s_k,s_k^{\prime}} \dots \right) \Ket{\dots \sigma_i \sigma_j \sigma_k \dots}.
 \end{align}
 and apply the tensor-network representation to descrbe it, see in Fig. \ref{fig411}(b).
-This structure could be extended to any higher integer spins. In conlusion, a physical $S=2n$ (even-integer) spin is considered as a symmetric superposition of two virtual $S=n$ spins and $S=2n-1$ (odd-integer) is regarded as a symmetric superposition of a virtual $S=n-1$ spin and a virtual $S=n$ spin [ Fig. \ref{fig411}(a) ]. More details are included in reference \cite{} \cite{}.
+This structure could be extended to any higher integer spins. In conlusion, a physical $S=2n$ (even-integer) spin is considered as a symmetric superposition of two virtual $S=n$ spins and a $S=2n-1$ (odd-integer) one is regarded as a symmetric superposition of a virtual $S=n-1$ spin and a virtual $S=n$ spin [ Fig. \ref{fig411}(a) ]. More details are included in reference \cite{} \cite{}.
 \section{Variational PESS ansatz}
 In this section, we will employ the formulation of the PESS wave function as a variational ansatz. The PESS ansatz is similar to the imaginary time evolution discussed in chapter.\ref{chapter:2ditebd}. However, unlike the PEPS algorithms, we apply a higher rank tensor $S$ to describe the entanglement entropy among virtual particles in a simplex state. Due to the difference, we use \textit{high-order singular value decomposition} (HOSVD) rather than SVD to decompose wave function.
 \subsection{High-order singular value decomposition}
@@ -254,13 +254,25 @@ Before we do more restrict comparisons, it is obvious that the control of dimens
 
 \section{Properties of PESS algorithm}
 
-Before applying the PESS algorithms to study, we should know and verify some features. At beginning, we present the results for the Heisenberg model on Husimi lattice,
+\subsection{3PESS on infinite Kagome lattice}
 
-\subsection{$S=1$}
+Before applying the PESS algorithms to study square lattice systems, we should know and verify some features. At beginning, we present the results for the Heisenberg model on Husimi lattice \cite{},
 
-\begin{figure}[ht]
+\subsubsection{$S=1$}
+
+In the $S=1$ Heisenberg model on the Husimi lattice, the ground state energy per sites $E_0$ decrease with virtual dimension $D$ and converge to $E_0=-1.405$ rapidly, see Fig.\ref{fig4327}. However, according to the theory of the simplex solid states [Sec. \ref{solidstate}], a physical $S=2n-1$ spin can be regarded as a symmetric superposition of a virtual $S=n-1$ and a virtual $S=n$ spin. We predict that there are two different ground state energy between the two simplices (upward- and downward-triangular). As shown in Fig. \ref{fig4328}, the energy difference
+\begin{align}
+	\Delta E = 2 \frac{|E_{\Delta}-E_{\nabla}|}{3}
+\end{align}
+and the spontaneous magnetization
+\begin{align}
+	M = \frac{1}{N} \sum_{i}{\sqrt{\braket{S_x}^2 + \braket{S_y}^2 + \braket{S_z}^2}}
+\end{align}
+can be considered as two different order parameters. The energy difference $\Delta E$ rapid increase to a constant value and the magnetic order parameter $M$ begin to rapid fall to zero almost at the same time, where $D=8$. It means that to describe the simplices states, the requirement of virtual bond dimension $D_c$ must be larger than $8$. The results is also corresponds to the theory of the simplex solid states.
+
+\begin{figure}[H]
 	\centering
-	\includegraphics[width=0.80\textwidth]{figures/3pess_S1GE.png}
+	\includegraphics[width=0.75\textwidth]{figures/3pess_S1GE.png}
 	\caption[The scheme of the simple update for 4-PESS, composed by rank-3 projection tensors.]{The scheme of the simple update for 4-PESS, composed by rank-3 projection tensors. The more detail descriptions are in the paragraph}
 	\label{fig4327}
 \end{figure}
@@ -279,7 +291,7 @@ Before applying the PESS algorithms to study, we should know and verify some fea
 	\label{fig4329}
 \end{figure}
 
-\subsection{$S=2$}
+\subsubsection{$S=2$}
 
 \begin{figure}[ht]
 	\centering
@@ -295,7 +307,6 @@ Before applying the PESS algorithms to study, we should know and verify some fea
 	\label{fig4330}
 \end{figure}
 
-\section{Comparison}
 \subsection{4PESS for Heisenberg model on square lattice}
 
 \begin{figure}[ht]

@@ -80,23 +80,23 @@ To resolve the problem in the end of the section \ref{ite}, the "Simple Update" 
 
 The tensor diagrams shown in the Fig. \ref{fig314} are the procedures of 1D-iTEBD which can be simply build by following steps,
 \begin{enumerate}
-		\item Initialization: According to Eq. \ref{mapgroud}, the ground state can be obtain from any random state $\Ket{\Psi}$ theoretically. Hence, we provide two rank-3 tensors $\Gamma^{[A]}$ and $\Gamma^{[B]}$ which dimension are $dD^2$, where $d$ is the dimension of physical basis and $D$ is the virtual bonds dimension, and two random diagonal matrix $\lambda^{[A]}$ and $\lambda^{[B]}$ which represent the entanglement between each sites at first. See Fig. \ref{fig314}(i).
-		\item Obtain a cluster tensor $\theta$: As shown in Fig. \ref{fig314}(b),
-			\begin{enumerate}
-				\item Absorb the entangled matrices; 
-					\begin{align}
-						&\Gamma^{\prime [A]} = \sum_{ij}{\lambda^{[A]}_{i} \Gamma^{A}_{ij \sigma_i} \lambda^{[B]}_{j}} \\
-						&\Gamma^{\prime [B]} = \sum_{k}{\Gamma^{B}_{k \sigma_j} \lambda^{[A]}_{k}}
-					\end{align}
-						\item Utilize the evolution operate $U(\tau)$: The 2-site evolution operator $U(\tau)$ can be simply obtained from Eq. \ref{evoopt}, In this case, 
-							\begin{align}
-								U(\tau) = e^{-\tau H_{AB}}
-							\end{align}
-			\end{enumerate}
-		\item Decompose $\Theta$ into the general form of the MPS: In this step, we utilize singular value decomposition (SVD) to split the tensor $\Theta$ . The SVD decomposition allow to decompose a matrix $A_{m.n}$, with $m \geq n$, into two unitary matrices, $U$, with $m \times m$, and $V^{T}$,with $n \times n$, and an $m \times n$ diagonal matrix $\Sigma$. However, in bottom $m - n$ rows of $\Sigma$ consists entirely of zeros. Hence, the dimension of $U$ and $\Sigma$ can be reduced,
-\begin{align}
-	A = U \Sigma V^T = \begin{bmatrix} U_1 U_2 \end{bmatrix} \begin{bmatrix} \Sigma_1 \\ 0 \end{bmatrix} V^T = U_1 S_1 V^T
-\end{align}
+	\item Initialization: According to Eq. \ref{mapgroud}, the ground state can be obtain from any random state $\Ket{\Psi}$ theoretically. Hence, we provide two rank-3 tensors $\Gamma^{[A]}$ and $\Gamma^{[B]}$ which dimension are $dD^2$, where $d$ is the dimension of physical basis and $D$ is the virtual bonds dimension, and two random diagonal matrix $\lambda^{[A]}$ and $\lambda^{[B]}$ which represent the entanglement between each sites at first. See Fig. \ref{fig314}(i).
+	\item Obtain a cluster tensor $\theta$: As shown in Fig. \ref{fig314}(b),
+		\begin{enumerate}
+			\item Absorb the entangled matrices; 
+				\begin{align}
+					&\Gamma^{\prime [A]} = \sum_{ij}{\lambda^{[A]}_{i} \Gamma^{A}_{ij \sigma_i} \lambda^{[B]}_{j}} \\
+					&\Gamma^{\prime [B]} = \sum_{k}{\Gamma^{B}_{k \sigma_j} \lambda^{[A]}_{k}}
+				\end{align}
+			\item Utilize the evolution operate $U(\tau)$: The 2-site evolution operator $U(\tau)$ can be simply obtained from Eq. \ref{evoopt}, In this case, 
+				\begin{align}
+					U(\tau) = e^{-\tau H_{AB}}
+				\end{align}
+		\end{enumerate}
+	\item Decompose $\Theta$ into the general form of the MPS: In this step, we utilize singular value decomposition (SVD) to split the tensor $\Theta$ . The SVD decomposition allow to decompose a matrix $A_{m.n}$, with $m \geq n$, into two unitary matrices, $U$, with $m \times m$, and $V^{T}$,with $n \times n$, and an $m \times n$ diagonal matrix $\Sigma$. However, in bottom $m - n$ rows of $\Sigma$ consists entirely of zeros. Hence, the dimension of $U$ and $\Sigma$ can be reduced,
+		\begin{align}
+			A = U \Sigma V^T = \begin{bmatrix} U_1 U_2 \end{bmatrix} \begin{bmatrix} \Sigma_1 \\ 0 \end{bmatrix} V^T = U_1 S_1 V^T
+		\end{align}
 where $U_1$ is a $m \times n$ unitary matrix, $\Sigma_1$ is a $n \times n$ diagonal matrix. Analogously, when $A_{m,n}$, with $m \leq n$, the matrix $\Sigma_1$ and $V^T$ can be reduced,
 \begin{align}
 	A = U \Sigma V^T = U \begin{bmatrix} \Sigma_1 0 \end{bmatrix} \begin{bmatrix} V_1^T \\ V_2^T \end{bmatrix} = U \Sigma_1 V_1^T
@@ -331,11 +331,16 @@ to determinate the dimension of the updated bond, where $\sigma_i$ is the elemen
 
 
 
-\section{Comparison}
-
-So far, we have benchmarked the improved iTEBD. 
-
+\section{Comparison} 
 \label{Comparison}
+
+In previous sections, we have benchmarked the optimizations of 2D-iTEBD. Now that we will compare the results for the Heisenberg model on the square lattice,
+\begin{align}
+	\label{mapgroud}
+	\Ket{\psi_0} = \frac{e^{-\tau H} \Ket{\Psi}}{\parallel e^{-\tau H} \Ket{\Psi}\parallel}
+\end{align}
+and show the influences of the various optimizations.
+
 \subsection{Different Initializations}
 
 \begin{figure}[ht]
@@ -345,13 +350,26 @@ So far, we have benchmarked the improved iTEBD.
 	\label{fig322}
 \end{figure}
 
-See Fig \ref{fig323}, the both cases are 
+Assume that the iPEPS states are constructed as Fig. \ref{fig321}(i) and the algorithm starts from two different initial states, see Fig. \ref{fig322}(i) and Fig. \ref{fig322}(ii), Obviously, The Type1 method does not allow translational symmetry. Hence, the algorithm might hardly converge or even be broken. As shown in Fig \ref{fig323}, the efficient ameliorate 2D-iTEBD (Hastings+QR) starting from the initial states which are obtained from Type2 [Fig. \ref{fig322}(ii)] converge in less 1000 epochs. However, if we begin from the Type1 states [Fig. \ref{fig322}(i)], the algorithm can not converge in 7000 epochs and even be broken in the end. 
+
+In conclusion, through many experiment we have known that this problem may not only occur in 2D-iTEBD, but also in any algorithm which is build on the theory of imaginary-time evolution, such as fast full update \cite{}, PESS \cite{}. Therefor, we should initialize the states carefully when applying them to study the models.
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/fig323.png}
 	\caption[Comparison the results of Heisenberg model on square lattice which are obtaining from different initial states.]{The Blue line represents updating tensors from the initial state shown in Fig \ref{fig322} (i) and the green one represents updating from Fig \ref{fig322} (ii)}
 	\label{fig323}
+\end{figure}
+
+\subsection{Different schemes of 2D-iTEBD}
+
+In previous sections, we have introduced four different implementations of 2D-iTEBD, \textit{Simple Update}, \textit{Ameliorate Simple Update}, \textit{Simple Update with QR decomposition} and \textit{Ameliorate Simple Update with QR}. In Fig. \ref{fig325}, we notice that the methods based on Hastings scheme is more stable than the others which are build on \textit{Simple Update}. The Hastings ways can converge rapidly in 1,000 epochs. However, due to multiplying too many pseudo-inverse matrices, the others methods not only can not converge in 10,000 epochs, but also be broken in the end. Nevertheless, according to the result shown in Fig. \ref{fig325}, we recognize that the QR decomposition is independent on the stability but it make the algorithms more efficient. See Fig. \ref{fig324}, due to the decrement of the dimension of the tensor $\Theta$, the cost time does not increase exponentially with virtual bond dimensions. Therefor, we can simply study the two dimensional systems with a sufficient large virtual bond dimensions $\chi$, which means that we can obtain the better ground states more quickly and the measurement can be calculated more accurate with larger $\chi$.
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.75\textwidth]{figures/fig325.png}
+	\caption[CPU times of different 2D-iTEBD with dynamic trucation error]{}
+	\label{fig325}
 \end{figure}
 
 \begin{figure}[ht]
@@ -361,23 +379,20 @@ See Fig \ref{fig323}, the both cases are
 	\label{fig324}
 \end{figure}
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.75\textwidth]{figures/fig325.png}
-	\caption[Per epoch energy of Heisenberg model on 2d square lattice with fixed truncation error]{}
-	\label{fig325}
-\end{figure}
+\section{Set the cutoff of the truncation error}
+
+To improve the stability of the algorithms, we can set a cutoff $\varepsilon$ of the truncation error. In Fig. \ref{fig326}, we set $\varepsilon = 10^{-7}$ and the methods base on traditional simple update would not be broken and converge in 2300 epochs. Intuitively, setting the smaller cutoff, obtaining the more accurate ground states. In fact,  it is inefficient and unnecessary. As shown in Fig. \ref{fig327}, to avoid breaking, the requirement of the virtual bond dimensions increase. It not only waste the consumption and reduce efficiency, but also effects the stability. 
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.75\textwidth]{figures/fig326.png}
-	\caption[CPU times of different 2D-iTEBD with dynamic trucation error]{}
+	\includegraphics[width=0.65\textwidth]{figures/fig326.png}
+	\caption[Per epoch energy of Heisenberg model on 2d square lattice with fixed truncation error]{}
 	\label{fig326}
 \end{figure}
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.75\textwidth]{figures/fig327.png}
+	\includegraphics[width=0.65\textwidth]{figures/fig327.png}
 	\caption[Per epoch energy of Heisenberg model on 2d square lattice with dynamic truncation error]{}
 	\label{fig327}
 \end{figure}
