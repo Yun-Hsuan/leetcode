@@ -221,7 +221,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 <use  "watermark.pdf" > [44] <use  "figures/3pess_S1GE.png" >
 <use  "watermark.pdf" > [45] <use  "figures/3pess_MDE.png" >
-<use  "figures/3pess_GEN.png" >
+<use  "figures/3pess_GEN.png" > <use  "watermark.pdf" > [46]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 294.
@@ -230,10 +230,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 294.
 
-<use  "figures/3pess_S2GE.png" > <use  "figures/3pess_S2M.png" >
-<use  "figures/4pess_HeiGE.png" >) (./ctm.tex <use  "watermark.pdf" > [46]
-<use  "watermark.pdf" > [47] <use  "watermark.pdf" > [48]
-<use  "watermark.pdf" > [49]
+<use  "figures/3pess_S2GE.png" > <use  "watermark.pdf" > [47]
+<use  "figures/3pess_S2M.png" > <use  "figures/4pess_HeiGE.png" >
+<use  "watermark.pdf" > [48]) (./ctm.tex <use  "watermark.pdf" > [49]
 Chapter 5.
 <use  "figures/fig501.png" > <use  "watermark.pdf" > [50]
 <use  "figures/fig511.png" > <use  "watermark.pdf" > [51]
@@ -248,9 +247,11 @@ ML/cmm/m/it/12 T[]; a; b; T[]$
 LaTeX Warning: Reference `fig513' on page 55 undefined on input line 99.
 
 <use  "figures/fig521.png" > <use  "watermark.pdf" > [55]
-<use  "figures/ctm_itebd.png" > <use  "figures/ctm_pess.png" >) (./thesis.bbl
-<use  "watermark.pdf" > [56] <use  "watermark.pdf" > [57]
-<use  "watermark.pdf" > [58]) <use  "watermark.pdf" > [59] (./thesis.aux)
+<use  "figures/ctm_itebd.png" > <use  "watermark.pdf" > [56]
+<use  "figures/ctm_pess.png" >) (./summary.tex <use  "watermark.pdf" > [57]
+Chapter 6.
+<use  "watermark.pdf" > [58]) (./thesis.bbl <use  "watermark.pdf" > [59]
+<use  "watermark.pdf" > [60]) <use  "watermark.pdf" > [61] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -259,7 +260,7 @@ LaTeX Warning: There were multiply-defined labels.
 
  )
 (see the transcript file for additional information)
-Output written on thesis.pdf (71 pages).
+Output written on thesis.pdf (73 pages).
 Transcript written on thesis.log.
 bibtex thesis
 This is BibTeX, Version 0.99d (TeX Live 2015)
@@ -529,7 +530,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 <use  "watermark.pdf" > [44] <use  "figures/3pess_S1GE.png" >
 <use  "watermark.pdf" > [45] <use  "figures/3pess_MDE.png" >
-<use  "figures/3pess_GEN.png" >
+<use  "figures/3pess_GEN.png" > <use  "watermark.pdf" > [46]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 294.
@@ -538,10 +539,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 294.
 
-<use  "figures/3pess_S2GE.png" > <use  "figures/3pess_S2M.png" >
-<use  "figures/4pess_HeiGE.png" >) (./ctm.tex <use  "watermark.pdf" > [46]
-<use  "watermark.pdf" > [47] <use  "watermark.pdf" > [48]
-<use  "watermark.pdf" > [49]
+<use  "figures/3pess_S2GE.png" > <use  "watermark.pdf" > [47]
+<use  "figures/3pess_S2M.png" > <use  "figures/4pess_HeiGE.png" >
+<use  "watermark.pdf" > [48]) (./ctm.tex <use  "watermark.pdf" > [49]
 Chapter 5.
 <use  "figures/fig501.png" > <use  "watermark.pdf" > [50]
 <use  "figures/fig511.png" > <use  "watermark.pdf" > [51]
@@ -556,9 +556,11 @@ ML/cmm/m/it/12 T[]; a; b; T[]$
 LaTeX Warning: Reference `fig513' on page 55 undefined on input line 99.
 
 <use  "figures/fig521.png" > <use  "watermark.pdf" > [55]
-<use  "figures/ctm_itebd.png" > <use  "figures/ctm_pess.png" >) (./thesis.bbl
-<use  "watermark.pdf" > [56] <use  "watermark.pdf" > [57]
-<use  "watermark.pdf" > [58]) <use  "watermark.pdf" > [59] (./thesis.aux)
+<use  "figures/ctm_itebd.png" > <use  "watermark.pdf" > [56]
+<use  "figures/ctm_pess.png" >) (./summary.tex <use  "watermark.pdf" > [57]
+Chapter 6.
+<use  "watermark.pdf" > [58]) (./thesis.bbl <use  "watermark.pdf" > [59]
+<use  "watermark.pdf" > [60]) <use  "watermark.pdf" > [61] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -567,7 +569,7 @@ LaTeX Warning: There were multiply-defined labels.
 
  )
 (see the transcript file for additional information)
-Output written on thesis.pdf (71 pages).
+Output written on thesis.pdf (73 pages).
 Transcript written on thesis.log.
 xelatex thesis
 This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex)
@@ -792,7 +794,7 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 
 <use  "watermark.pdf" > [44] <use  "figures/3pess_S1GE.png" >
 <use  "watermark.pdf" > [45] <use  "figures/3pess_MDE.png" >
-<use  "figures/3pess_GEN.png" >
+<use  "figures/3pess_GEN.png" > <use  "watermark.pdf" > [46]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 294.
@@ -801,10 +803,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 294.
 
-<use  "figures/3pess_S2GE.png" > <use  "figures/3pess_S2M.png" >
-<use  "figures/4pess_HeiGE.png" >) (./ctm.tex <use  "watermark.pdf" > [46]
-<use  "watermark.pdf" > [47] <use  "watermark.pdf" > [48]
-<use  "watermark.pdf" > [49]
+<use  "figures/3pess_S2GE.png" > <use  "watermark.pdf" > [47]
+<use  "figures/3pess_S2M.png" > <use  "figures/4pess_HeiGE.png" >
+<use  "watermark.pdf" > [48]) (./ctm.tex <use  "watermark.pdf" > [49]
 Chapter 5.
 <use  "figures/fig501.png" > <use  "watermark.pdf" > [50]
 <use  "figures/fig511.png" > <use  "watermark.pdf" > [51]
@@ -819,9 +820,11 @@ ML/cmm/m/it/12 T[]; a; b; T[]$
 LaTeX Warning: Reference `fig513' on page 55 undefined on input line 99.
 
 <use  "figures/fig521.png" > <use  "watermark.pdf" > [55]
-<use  "figures/ctm_itebd.png" > <use  "figures/ctm_pess.png" >) (./thesis.bbl
-<use  "watermark.pdf" > [56] <use  "watermark.pdf" > [57]
-<use  "watermark.pdf" > [58]) <use  "watermark.pdf" > [59] (./thesis.aux)
+<use  "figures/ctm_itebd.png" > <use  "watermark.pdf" > [56]
+<use  "figures/ctm_pess.png" >) (./summary.tex <use  "watermark.pdf" > [57]
+Chapter 6.
+<use  "watermark.pdf" > [58]) (./thesis.bbl <use  "watermark.pdf" > [59]
+<use  "watermark.pdf" > [60]) <use  "watermark.pdf" > [61] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -830,5 +833,5 @@ LaTeX Warning: There were multiply-defined labels.
 
  )
 (see the transcript file for additional information)
-Output written on thesis.pdf (71 pages).
+Output written on thesis.pdf (73 pages).
 Transcript written on thesis.log.
