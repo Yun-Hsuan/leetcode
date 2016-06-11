@@ -148,65 +148,83 @@ Chapter 2.
 <use  "figures/fig222.png" > <use  "watermark.pdf" > [6]
 <use  "figures/fig223.png" > <use  "watermark.pdf" > [7]
 
-LaTeX Warning: Command \i invalid in math mode on input line 96.
+LaTeX Warning: Command \i invalid in math mode on input line 97.
 
 <use  "figures/fig225.png" >) (./2ditebd.tex <use  "watermark.pdf" > [8]
+<use  "watermark.pdf" > [9]
 Chapter 3.
-<use  "watermark.pdf" > [9] <use  "watermark.pdf" > [10]
+<use  "watermark.pdf" > [10] <use  "watermark.pdf" > [11]
 <use  "figures/fig311.png" > <use  "figures/fig311.png" >
-<use  "watermark.pdf" > [11] <use  "figures/fig312.png" >
-<use  "watermark.pdf" > [12] <use  "watermark.pdf" > [13]
-<use  "watermark.pdf" > [14] <use  "figures/fig313.png" >
-<use  "watermark.pdf" > [15] <use  "figures/fig314.png" >
-<use  "watermark.pdf" > [16] <use  "figures/fig315.png" >
-<use  "figures/fig316.png" > <use  "watermark.pdf" > [17]
-<use  "watermark.pdf" > [18]
-Overfull \hbox (11.00592pt too wide) in paragraph at lines 202--204
+<use  "watermark.pdf" > [12] <use  "figures/fig312.png" >
+
+Package natbib Warning: Citation `vidal_classical_2007' on page 13 undefined on
+ input line 75.
+
+
+Package natbib Warning: Citation `jiang_accurate_2008' on page 13 undefined on 
+input line 75.
+
+
+Package natbib Warning: Citation `orus_infinite_2008' on page 13 undefined on i
+nput line 75.
+
+<use  "watermark.pdf" > [13] <use  "watermark.pdf" > [14]
+<use  "watermark.pdf" > [15] <use  "figures/fig313.png" >
+<use  "watermark.pdf" > [16] <use  "figures/fig314.png" >
+<use  "watermark.pdf" > [17] <use  "figures/fig315.png" >
+<use  "figures/fig316.png" > <use  "watermark.pdf" > [18]
+<use  "watermark.pdf" > [19]
+
+Package natbib Warning: Citation `hastings_light-cone_2009' on page 20 undefine
+d on input line 194.
+
+
+Overfull \hbox (11.00592pt too wide) in paragraph at lines 201--203
 \EU1/TimesNewRoman(0)/m/n/12 where $\OT1/cmr/m/n/12 ^^@[]$ \EU1/TimesNewRoman(0
 )/m/n/12 and $\OT1/cmr/m/n/12 ^^@[]$ \EU1/TimesNewRoman(0)/m/n/12 are the defin
 ition in directional simple update. [In sec.[]3.2.2[]]. 
-<use  "watermark.pdf" > [19] <use  "figures/fig317.png" >
-<use  "watermark.pdf" > [20] <use  "figures/fig321.png" >
-<use  "watermark.pdf" > [21] <use  "watermark.pdf" > [22]
+<use  "watermark.pdf" > [20] <use  "figures/fig317.png" >
+<use  "watermark.pdf" > [21] <use  "figures/fig321.png" >
+<use  "watermark.pdf" > [22] <use  "watermark.pdf" > [23]
 <use  "figures/fig318.png" > <use  "figures/fig319.png" >
-<use  "figures/fig320.png" > <use  "watermark.pdf" > [23]
+<use  "figures/fig320.png" > <use  "watermark.pdf" > [24]
 
-LaTeX Warning: Text page 24 contains only floats.
+LaTeX Warning: Text page 25 contains only floats.
 
-<use  "watermark.pdf" > [24] <use  "watermark.pdf" > [25]
+<use  "watermark.pdf" > [25] <use  "watermark.pdf" > [26]
 <use  "figures/fig322.png" >
-Overfull \hbox (8.79068pt too wide) in paragraph at lines 355--356
+Overfull \hbox (8.79068pt too wide) in paragraph at lines 354--355
 \EU1/TimesNewRoman(0)/m/n/12 only occur in 2D-iTEBD, but also in any algorithm 
 which is build on the theory of imaginary-
-<use  "figures/fig323.png" > <use  "watermark.pdf" > [26]
+<use  "figures/fig323.png" > <use  "watermark.pdf" > [27]
 <use  "figures/fig325.png" > <use  "figures/fig324.png" >
-<use  "watermark.pdf" > [27] <use  "watermark.pdf" > [28]
+<use  "watermark.pdf" > [28] <use  "watermark.pdf" > [29]
 <use  "figures/fig326.png" > <use  "figures/fig327.png" >) (./pess.tex
-<use  "watermark.pdf" > [29]
+<use  "watermark.pdf" > [30]
 Chapter 4.
 
 Overfull \hbox (0.42523pt too wide) in paragraph at lines 8--9
 \EU1/TimesNewRoman(0)/m/n/12 network representation of simplex states is called
  projected entangled simplex state (PESS)
-<use  "figures/fig411.png" > <use  "watermark.pdf" > [30]
-<use  "watermark.pdf" > [31] <use  "watermark.pdf" > [32]
-<use  "figures/fig4311.png" > <use  "watermark.pdf" > [33]
-<use  "figures/fig4312.png" > <use  "watermark.pdf" > [34]
-<use  "watermark.pdf" > [35] <use  "watermark.pdf" > [36]
+<use  "figures/fig411.png" > <use  "watermark.pdf" > [31]
+<use  "watermark.pdf" > [32] <use  "watermark.pdf" > [33]
+<use  "figures/fig4311.png" > <use  "watermark.pdf" > [34]
+<use  "figures/fig4312.png" > <use  "watermark.pdf" > [35]
+<use  "watermark.pdf" > [36] <use  "watermark.pdf" > [37]
 <use  "figures/fig4321.png" > <use  "figures/fig4322.png" >
-<use  "watermark.pdf" > [37]
-
-LaTeX Warning: Reference `' on page 38 undefined on input line 158.
-
 <use  "watermark.pdf" > [38]
 
-LaTeX Warning: Reference `truncationerror' on page 39 undefined on input line 1
+LaTeX Warning: Reference `' on page 39 undefined on input line 158.
+
+<use  "watermark.pdf" > [39]
+
+LaTeX Warning: Reference `truncationerror' on page 40 undefined on input line 1
 68.
 
-<use  "watermark.pdf" > [39] <use  "figures/fig4323.png" >
-<use  "watermark.pdf" > [40] <use  "figures/fig4324.png" >
-<use  "watermark.pdf" > [41] <use  "watermark.pdf" > [42]
-<use  "figures/fig4325.png" > <use  "watermark.pdf" > [43]
+<use  "watermark.pdf" > [40] <use  "figures/fig4323.png" >
+<use  "watermark.pdf" > [41] <use  "figures/fig4324.png" >
+<use  "watermark.pdf" > [42] <use  "watermark.pdf" > [43]
+<use  "figures/fig4325.png" > <use  "watermark.pdf" > [44]
 <use  "figures/fig4326.png" >
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -216,9 +234,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 261.
 
-<use  "watermark.pdf" > [44] <use  "figures/3pess_S1GE.png" >
-<use  "watermark.pdf" > [45] <use  "figures/3pess_MDE.png" >
-<use  "figures/3pess_GEN.png" > <use  "watermark.pdf" > [46]
+<use  "watermark.pdf" > [45] <use  "figures/3pess_S1GE.png" >
+<use  "watermark.pdf" > [46] <use  "figures/3pess_MDE.png" >
+<use  "figures/3pess_GEN.png" > <use  "watermark.pdf" > [47]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 294.
@@ -227,30 +245,38 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 294.
 
-<use  "figures/3pess_S2GE.png" > <use  "watermark.pdf" > [47]
-<use  "figures/3pess_S2M.png" > <use  "watermark.pdf" > [48]
+<use  "figures/3pess_S2GE.png" > <use  "watermark.pdf" > [48]
+<use  "figures/3pess_S2M.png" > <use  "watermark.pdf" > [49]
 <use  "figures/4pess_HeiGE.png" > <use  "figures/compare_4pess.jpeg" >)
-(./ctm.tex <use  "watermark.pdf" > [49] <use  "watermark.pdf" > [50]
+(./ctm.tex <use  "watermark.pdf" > [50] <use  "watermark.pdf" > [51]
 Chapter 5.
-<use  "figures/fig501.png" > <use  "watermark.pdf" > [51]
-<use  "figures/fig511.png" > <use  "watermark.pdf" > [52]
+<use  "figures/fig501.png" > <use  "watermark.pdf" > [52]
+<use  "figures/fig511.png" > <use  "watermark.pdf" > [53]
 Overfull \hbox (6.07352pt too wide) in paragraph at lines 42--43
 []\EU1/TimesNewRoman(0)/m/n/12 Insertion: Insert two new columns which consist 
 of { $\OML/cmm/m/it/12 T[]; b; a; T[]$ \EU1/TimesNewRoman(0)/m/n/12 } and { $\O
 ML/cmm/m/it/12 T[]; a; b; T[]$
-<use  "watermark.pdf" > [53] <use  "figures/fig512.png" >
-<use  "figures/fig513.png" > <use  "watermark.pdf" > [54]
-<use  "watermark.pdf" > [55]
+<use  "watermark.pdf" > [54] <use  "figures/fig512.png" >
+<use  "figures/fig513.png" > <use  "watermark.pdf" > [55]
+<use  "watermark.pdf" > [56]
 
-LaTeX Warning: Reference `fig513' on page 56 undefined on input line 99.
+LaTeX Warning: Reference `fig513' on page 57 undefined on input line 99.
 
-<use  "figures/fig521.png" > <use  "watermark.pdf" > [56]
-<use  "watermark.pdf" > [57] <use  "figures/ctm_itebd.png" >
-<use  "figures/ctm_pess.png" > <use  "watermark.pdf" > [58]) (./summary.tex
-<use  "watermark.pdf" > [59]
+<use  "figures/fig521.png" > <use  "watermark.pdf" > [57]
+<use  "watermark.pdf" > [58] <use  "figures/ctm_itebd.png" >
+<use  "figures/ctm_pess.png" >) (./summary.tex <use  "watermark.pdf" > [59]
 Chapter 6.
 <use  "watermark.pdf" > [60]) (./thesis.bbl <use  "watermark.pdf" > [61]
-<use  "watermark.pdf" > [62]) <use  "watermark.pdf" > [63] (./thesis.aux)
+<use  "watermark.pdf" > [62]
+Underfull \hbox (badness 10000) in paragraph at lines 183--187
+[]\EU1/TimesNewRoman(0)/m/n/12 M. B. Hastings, []Journal of Mathematical Physic
+s \EU1/TimesNewRoman(0)/bx/n/12 50\EU1/TimesNewRoman(0)/m/n/12 , 095207 (2009),
+
+)
+
+Package natbib Warning: There were undefined citations.
+
+<use  "watermark.pdf" > [63] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -266,11 +292,15 @@ This is BibTeX, Version 0.99d (TeX Live 2015)
 The top-level auxiliary file: thesis.aux
 The style file: apsrev4-1.bst
 Database file #1: thesis.bib
-Warning--entry type for "jordan_studies_2011" isn't style-file defined
---line 246 of file thesis.bib
 Warning--entry type for "bauer_tensor_2011" isn't style-file defined
---line 255 of file thesis.bib
+--line 200 of file thesis.bib
+Warning--entry type for "jordan_studies_2011" isn't style-file defined
+--line 210 of file thesis.bib
 Warning--I didn't find a database entry for ""
+Warning--I didn't find a database entry for "vidal_classical_2007"
+Warning--I didn't find a database entry for "jiang_accurate_2008"
+Warning--I didn't find a database entry for "orus_infinite_2008"
+Warning--I didn't find a database entry for "hastings_light-cone_2009"
 merlin.mbs apsrev4-1.bst 2010-07-25 4.21a (PWD, AO, DPC) hacked
 Control: key (0) 
 Control: author (72) initials jnrlst
@@ -279,33 +309,9 @@ Control: production of article title (-1) disabled
 Control: page (0) single
 Control: year (1) truncated
 Control: production of eprint (0) enabled
-Warning--missing journal in white_density_1992
-Warning--missing journal in white_density-matrix_1993
-Warning--missing journal in verstraete_matrix_2006
-Warning--empty year in verstraete_matrix_2006
-Warning--missing journal in ostlund_thermodynamic_1995
-Warning--empty year in ostlund_thermodynamic_1995
-Warning--missing journal in murg_variational_2007
-Warning--empty year in murg_variational_2007
-Warning--missing journal in verstraete_matrix_2008
-Warning--empty year in verstraete_matrix_2008
-Warning--missing journal in vidal_efficient_2003
-Warning--missing journal in vidal_efficient_2004
-Warning--missing journal in vidal_entanglement_2007
 Warning--empty year in jordan_studies_2011
-Warning--missing journal in orus_practical_2014
-Warning--empty year in orus_practical_2014
 Warning--empty year in bauer_tensor_2011
-Warning--missing journal in li_efficient_2012
-Warning--empty year in li_efficient_2012
-Warning--missing journal in vidal_classical_2007
-Warning--missing journal in jiang_accurate_2008
-Warning--empty year in jiang_accurate_2008
-Warning--missing journal in orus_infinite_2008
-Warning--empty year in orus_infinite_2008
-Warning--missing journal in hastings_light-cone_2009
-Warning--empty year in hastings_light-cone_2009
-(There were 29 warnings)
+(There were 9 warnings)
 xelatex thesis
 This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex)
  restricted \write18 enabled.
@@ -456,65 +462,83 @@ Chapter 2.
 <use  "figures/fig222.png" > <use  "watermark.pdf" > [6]
 <use  "figures/fig223.png" > <use  "watermark.pdf" > [7]
 
-LaTeX Warning: Command \i invalid in math mode on input line 96.
+LaTeX Warning: Command \i invalid in math mode on input line 97.
 
 <use  "figures/fig225.png" >) (./2ditebd.tex <use  "watermark.pdf" > [8]
+<use  "watermark.pdf" > [9]
 Chapter 3.
-<use  "watermark.pdf" > [9] <use  "watermark.pdf" > [10]
+<use  "watermark.pdf" > [10] <use  "watermark.pdf" > [11]
 <use  "figures/fig311.png" > <use  "figures/fig311.png" >
-<use  "watermark.pdf" > [11] <use  "figures/fig312.png" >
-<use  "watermark.pdf" > [12] <use  "watermark.pdf" > [13]
-<use  "watermark.pdf" > [14] <use  "figures/fig313.png" >
-<use  "watermark.pdf" > [15] <use  "figures/fig314.png" >
-<use  "watermark.pdf" > [16] <use  "figures/fig315.png" >
-<use  "figures/fig316.png" > <use  "watermark.pdf" > [17]
-<use  "watermark.pdf" > [18]
-Overfull \hbox (11.00592pt too wide) in paragraph at lines 202--204
+<use  "watermark.pdf" > [12] <use  "figures/fig312.png" >
+
+Package natbib Warning: Citation `vidal_classical_2007' on page 13 undefined on
+ input line 75.
+
+
+Package natbib Warning: Citation `jiang_accurate_2008' on page 13 undefined on 
+input line 75.
+
+
+Package natbib Warning: Citation `orus_infinite_2008' on page 13 undefined on i
+nput line 75.
+
+<use  "watermark.pdf" > [13] <use  "watermark.pdf" > [14]
+<use  "watermark.pdf" > [15] <use  "figures/fig313.png" >
+<use  "watermark.pdf" > [16] <use  "figures/fig314.png" >
+<use  "watermark.pdf" > [17] <use  "figures/fig315.png" >
+<use  "figures/fig316.png" > <use  "watermark.pdf" > [18]
+<use  "watermark.pdf" > [19]
+
+Package natbib Warning: Citation `hastings_light-cone_2009' on page 20 undefine
+d on input line 194.
+
+
+Overfull \hbox (11.00592pt too wide) in paragraph at lines 201--203
 \EU1/TimesNewRoman(0)/m/n/12 where $\OT1/cmr/m/n/12 ^^@[]$ \EU1/TimesNewRoman(0
 )/m/n/12 and $\OT1/cmr/m/n/12 ^^@[]$ \EU1/TimesNewRoman(0)/m/n/12 are the defin
 ition in directional simple update. [In sec.[]3.2.2[]]. 
-<use  "watermark.pdf" > [19] <use  "figures/fig317.png" >
-<use  "watermark.pdf" > [20] <use  "figures/fig321.png" >
-<use  "watermark.pdf" > [21] <use  "watermark.pdf" > [22]
+<use  "watermark.pdf" > [20] <use  "figures/fig317.png" >
+<use  "watermark.pdf" > [21] <use  "figures/fig321.png" >
+<use  "watermark.pdf" > [22] <use  "watermark.pdf" > [23]
 <use  "figures/fig318.png" > <use  "figures/fig319.png" >
-<use  "figures/fig320.png" > <use  "watermark.pdf" > [23]
+<use  "figures/fig320.png" > <use  "watermark.pdf" > [24]
 
-LaTeX Warning: Text page 24 contains only floats.
+LaTeX Warning: Text page 25 contains only floats.
 
-<use  "watermark.pdf" > [24] <use  "watermark.pdf" > [25]
+<use  "watermark.pdf" > [25] <use  "watermark.pdf" > [26]
 <use  "figures/fig322.png" >
-Overfull \hbox (8.79068pt too wide) in paragraph at lines 355--356
+Overfull \hbox (8.79068pt too wide) in paragraph at lines 354--355
 \EU1/TimesNewRoman(0)/m/n/12 only occur in 2D-iTEBD, but also in any algorithm 
 which is build on the theory of imaginary-
-<use  "figures/fig323.png" > <use  "watermark.pdf" > [26]
+<use  "figures/fig323.png" > <use  "watermark.pdf" > [27]
 <use  "figures/fig325.png" > <use  "figures/fig324.png" >
-<use  "watermark.pdf" > [27] <use  "watermark.pdf" > [28]
+<use  "watermark.pdf" > [28] <use  "watermark.pdf" > [29]
 <use  "figures/fig326.png" > <use  "figures/fig327.png" >) (./pess.tex
-<use  "watermark.pdf" > [29]
+<use  "watermark.pdf" > [30]
 Chapter 4.
 
 Overfull \hbox (0.42523pt too wide) in paragraph at lines 8--9
 \EU1/TimesNewRoman(0)/m/n/12 network representation of simplex states is called
  projected entangled simplex state (PESS)
-<use  "figures/fig411.png" > <use  "watermark.pdf" > [30]
-<use  "watermark.pdf" > [31] <use  "watermark.pdf" > [32]
-<use  "figures/fig4311.png" > <use  "watermark.pdf" > [33]
-<use  "figures/fig4312.png" > <use  "watermark.pdf" > [34]
-<use  "watermark.pdf" > [35] <use  "watermark.pdf" > [36]
+<use  "figures/fig411.png" > <use  "watermark.pdf" > [31]
+<use  "watermark.pdf" > [32] <use  "watermark.pdf" > [33]
+<use  "figures/fig4311.png" > <use  "watermark.pdf" > [34]
+<use  "figures/fig4312.png" > <use  "watermark.pdf" > [35]
+<use  "watermark.pdf" > [36] <use  "watermark.pdf" > [37]
 <use  "figures/fig4321.png" > <use  "figures/fig4322.png" >
-<use  "watermark.pdf" > [37]
-
-LaTeX Warning: Reference `' on page 38 undefined on input line 158.
-
 <use  "watermark.pdf" > [38]
 
-LaTeX Warning: Reference `truncationerror' on page 39 undefined on input line 1
+LaTeX Warning: Reference `' on page 39 undefined on input line 158.
+
+<use  "watermark.pdf" > [39]
+
+LaTeX Warning: Reference `truncationerror' on page 40 undefined on input line 1
 68.
 
-<use  "watermark.pdf" > [39] <use  "figures/fig4323.png" >
-<use  "watermark.pdf" > [40] <use  "figures/fig4324.png" >
-<use  "watermark.pdf" > [41] <use  "watermark.pdf" > [42]
-<use  "figures/fig4325.png" > <use  "watermark.pdf" > [43]
+<use  "watermark.pdf" > [40] <use  "figures/fig4323.png" >
+<use  "watermark.pdf" > [41] <use  "figures/fig4324.png" >
+<use  "watermark.pdf" > [42] <use  "watermark.pdf" > [43]
+<use  "figures/fig4325.png" > <use  "watermark.pdf" > [44]
 <use  "figures/fig4326.png" >
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -524,9 +548,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 261.
 
-<use  "watermark.pdf" > [44] <use  "figures/3pess_S1GE.png" >
-<use  "watermark.pdf" > [45] <use  "figures/3pess_MDE.png" >
-<use  "figures/3pess_GEN.png" > <use  "watermark.pdf" > [46]
+<use  "watermark.pdf" > [45] <use  "figures/3pess_S1GE.png" >
+<use  "watermark.pdf" > [46] <use  "figures/3pess_MDE.png" >
+<use  "figures/3pess_GEN.png" > <use  "watermark.pdf" > [47]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 294.
@@ -535,30 +559,38 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 294.
 
-<use  "figures/3pess_S2GE.png" > <use  "watermark.pdf" > [47]
-<use  "figures/3pess_S2M.png" > <use  "watermark.pdf" > [48]
+<use  "figures/3pess_S2GE.png" > <use  "watermark.pdf" > [48]
+<use  "figures/3pess_S2M.png" > <use  "watermark.pdf" > [49]
 <use  "figures/4pess_HeiGE.png" > <use  "figures/compare_4pess.jpeg" >)
-(./ctm.tex <use  "watermark.pdf" > [49] <use  "watermark.pdf" > [50]
+(./ctm.tex <use  "watermark.pdf" > [50] <use  "watermark.pdf" > [51]
 Chapter 5.
-<use  "figures/fig501.png" > <use  "watermark.pdf" > [51]
-<use  "figures/fig511.png" > <use  "watermark.pdf" > [52]
+<use  "figures/fig501.png" > <use  "watermark.pdf" > [52]
+<use  "figures/fig511.png" > <use  "watermark.pdf" > [53]
 Overfull \hbox (6.07352pt too wide) in paragraph at lines 42--43
 []\EU1/TimesNewRoman(0)/m/n/12 Insertion: Insert two new columns which consist 
 of { $\OML/cmm/m/it/12 T[]; b; a; T[]$ \EU1/TimesNewRoman(0)/m/n/12 } and { $\O
 ML/cmm/m/it/12 T[]; a; b; T[]$
-<use  "watermark.pdf" > [53] <use  "figures/fig512.png" >
-<use  "figures/fig513.png" > <use  "watermark.pdf" > [54]
-<use  "watermark.pdf" > [55]
+<use  "watermark.pdf" > [54] <use  "figures/fig512.png" >
+<use  "figures/fig513.png" > <use  "watermark.pdf" > [55]
+<use  "watermark.pdf" > [56]
 
-LaTeX Warning: Reference `fig513' on page 56 undefined on input line 99.
+LaTeX Warning: Reference `fig513' on page 57 undefined on input line 99.
 
-<use  "figures/fig521.png" > <use  "watermark.pdf" > [56]
-<use  "watermark.pdf" > [57] <use  "figures/ctm_itebd.png" >
-<use  "figures/ctm_pess.png" > <use  "watermark.pdf" > [58]) (./summary.tex
-<use  "watermark.pdf" > [59]
+<use  "figures/fig521.png" > <use  "watermark.pdf" > [57]
+<use  "watermark.pdf" > [58] <use  "figures/ctm_itebd.png" >
+<use  "figures/ctm_pess.png" >) (./summary.tex <use  "watermark.pdf" > [59]
 Chapter 6.
 <use  "watermark.pdf" > [60]) (./thesis.bbl <use  "watermark.pdf" > [61]
-<use  "watermark.pdf" > [62]) <use  "watermark.pdf" > [63] (./thesis.aux)
+<use  "watermark.pdf" > [62]
+Underfull \hbox (badness 10000) in paragraph at lines 183--187
+[]\EU1/TimesNewRoman(0)/m/n/12 M. B. Hastings, []Journal of Mathematical Physic
+s \EU1/TimesNewRoman(0)/bx/n/12 50\EU1/TimesNewRoman(0)/m/n/12 , 095207 (2009),
+
+)
+
+Package natbib Warning: There were undefined citations.
+
+<use  "watermark.pdf" > [63] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -719,65 +751,83 @@ Chapter 2.
 <use  "figures/fig222.png" > <use  "watermark.pdf" > [6]
 <use  "figures/fig223.png" > <use  "watermark.pdf" > [7]
 
-LaTeX Warning: Command \i invalid in math mode on input line 96.
+LaTeX Warning: Command \i invalid in math mode on input line 97.
 
 <use  "figures/fig225.png" >) (./2ditebd.tex <use  "watermark.pdf" > [8]
+<use  "watermark.pdf" > [9]
 Chapter 3.
-<use  "watermark.pdf" > [9] <use  "watermark.pdf" > [10]
+<use  "watermark.pdf" > [10] <use  "watermark.pdf" > [11]
 <use  "figures/fig311.png" > <use  "figures/fig311.png" >
-<use  "watermark.pdf" > [11] <use  "figures/fig312.png" >
-<use  "watermark.pdf" > [12] <use  "watermark.pdf" > [13]
-<use  "watermark.pdf" > [14] <use  "figures/fig313.png" >
-<use  "watermark.pdf" > [15] <use  "figures/fig314.png" >
-<use  "watermark.pdf" > [16] <use  "figures/fig315.png" >
-<use  "figures/fig316.png" > <use  "watermark.pdf" > [17]
-<use  "watermark.pdf" > [18]
-Overfull \hbox (11.00592pt too wide) in paragraph at lines 202--204
+<use  "watermark.pdf" > [12] <use  "figures/fig312.png" >
+
+Package natbib Warning: Citation `vidal_classical_2007' on page 13 undefined on
+ input line 75.
+
+
+Package natbib Warning: Citation `jiang_accurate_2008' on page 13 undefined on 
+input line 75.
+
+
+Package natbib Warning: Citation `orus_infinite_2008' on page 13 undefined on i
+nput line 75.
+
+<use  "watermark.pdf" > [13] <use  "watermark.pdf" > [14]
+<use  "watermark.pdf" > [15] <use  "figures/fig313.png" >
+<use  "watermark.pdf" > [16] <use  "figures/fig314.png" >
+<use  "watermark.pdf" > [17] <use  "figures/fig315.png" >
+<use  "figures/fig316.png" > <use  "watermark.pdf" > [18]
+<use  "watermark.pdf" > [19]
+
+Package natbib Warning: Citation `hastings_light-cone_2009' on page 20 undefine
+d on input line 194.
+
+
+Overfull \hbox (11.00592pt too wide) in paragraph at lines 201--203
 \EU1/TimesNewRoman(0)/m/n/12 where $\OT1/cmr/m/n/12 ^^@[]$ \EU1/TimesNewRoman(0
 )/m/n/12 and $\OT1/cmr/m/n/12 ^^@[]$ \EU1/TimesNewRoman(0)/m/n/12 are the defin
 ition in directional simple update. [In sec.[]3.2.2[]]. 
-<use  "watermark.pdf" > [19] <use  "figures/fig317.png" >
-<use  "watermark.pdf" > [20] <use  "figures/fig321.png" >
-<use  "watermark.pdf" > [21] <use  "watermark.pdf" > [22]
+<use  "watermark.pdf" > [20] <use  "figures/fig317.png" >
+<use  "watermark.pdf" > [21] <use  "figures/fig321.png" >
+<use  "watermark.pdf" > [22] <use  "watermark.pdf" > [23]
 <use  "figures/fig318.png" > <use  "figures/fig319.png" >
-<use  "figures/fig320.png" > <use  "watermark.pdf" > [23]
+<use  "figures/fig320.png" > <use  "watermark.pdf" > [24]
 
-LaTeX Warning: Text page 24 contains only floats.
+LaTeX Warning: Text page 25 contains only floats.
 
-<use  "watermark.pdf" > [24] <use  "watermark.pdf" > [25]
+<use  "watermark.pdf" > [25] <use  "watermark.pdf" > [26]
 <use  "figures/fig322.png" >
-Overfull \hbox (8.79068pt too wide) in paragraph at lines 355--356
+Overfull \hbox (8.79068pt too wide) in paragraph at lines 354--355
 \EU1/TimesNewRoman(0)/m/n/12 only occur in 2D-iTEBD, but also in any algorithm 
 which is build on the theory of imaginary-
-<use  "figures/fig323.png" > <use  "watermark.pdf" > [26]
+<use  "figures/fig323.png" > <use  "watermark.pdf" > [27]
 <use  "figures/fig325.png" > <use  "figures/fig324.png" >
-<use  "watermark.pdf" > [27] <use  "watermark.pdf" > [28]
+<use  "watermark.pdf" > [28] <use  "watermark.pdf" > [29]
 <use  "figures/fig326.png" > <use  "figures/fig327.png" >) (./pess.tex
-<use  "watermark.pdf" > [29]
+<use  "watermark.pdf" > [30]
 Chapter 4.
 
 Overfull \hbox (0.42523pt too wide) in paragraph at lines 8--9
 \EU1/TimesNewRoman(0)/m/n/12 network representation of simplex states is called
  projected entangled simplex state (PESS)
-<use  "figures/fig411.png" > <use  "watermark.pdf" > [30]
-<use  "watermark.pdf" > [31] <use  "watermark.pdf" > [32]
-<use  "figures/fig4311.png" > <use  "watermark.pdf" > [33]
-<use  "figures/fig4312.png" > <use  "watermark.pdf" > [34]
-<use  "watermark.pdf" > [35] <use  "watermark.pdf" > [36]
+<use  "figures/fig411.png" > <use  "watermark.pdf" > [31]
+<use  "watermark.pdf" > [32] <use  "watermark.pdf" > [33]
+<use  "figures/fig4311.png" > <use  "watermark.pdf" > [34]
+<use  "figures/fig4312.png" > <use  "watermark.pdf" > [35]
+<use  "watermark.pdf" > [36] <use  "watermark.pdf" > [37]
 <use  "figures/fig4321.png" > <use  "figures/fig4322.png" >
-<use  "watermark.pdf" > [37]
-
-LaTeX Warning: Reference `' on page 38 undefined on input line 158.
-
 <use  "watermark.pdf" > [38]
 
-LaTeX Warning: Reference `truncationerror' on page 39 undefined on input line 1
+LaTeX Warning: Reference `' on page 39 undefined on input line 158.
+
+<use  "watermark.pdf" > [39]
+
+LaTeX Warning: Reference `truncationerror' on page 40 undefined on input line 1
 68.
 
-<use  "watermark.pdf" > [39] <use  "figures/fig4323.png" >
-<use  "watermark.pdf" > [40] <use  "figures/fig4324.png" >
-<use  "watermark.pdf" > [41] <use  "watermark.pdf" > [42]
-<use  "figures/fig4325.png" > <use  "watermark.pdf" > [43]
+<use  "watermark.pdf" > [40] <use  "figures/fig4323.png" >
+<use  "watermark.pdf" > [41] <use  "figures/fig4324.png" >
+<use  "watermark.pdf" > [42] <use  "watermark.pdf" > [43]
+<use  "figures/fig4325.png" > <use  "watermark.pdf" > [44]
 <use  "figures/fig4326.png" >
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
@@ -787,9 +837,9 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 261.
 
-<use  "watermark.pdf" > [44] <use  "figures/3pess_S1GE.png" >
-<use  "watermark.pdf" > [45] <use  "figures/3pess_MDE.png" >
-<use  "figures/3pess_GEN.png" > <use  "watermark.pdf" > [46]
+<use  "watermark.pdf" > [45] <use  "figures/3pess_S1GE.png" >
+<use  "watermark.pdf" > [46] <use  "figures/3pess_MDE.png" >
+<use  "figures/3pess_GEN.png" > <use  "watermark.pdf" > [47]
 
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 294.
@@ -798,30 +848,38 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 294.
 
-<use  "figures/3pess_S2GE.png" > <use  "watermark.pdf" > [47]
-<use  "figures/3pess_S2M.png" > <use  "watermark.pdf" > [48]
+<use  "figures/3pess_S2GE.png" > <use  "watermark.pdf" > [48]
+<use  "figures/3pess_S2M.png" > <use  "watermark.pdf" > [49]
 <use  "figures/4pess_HeiGE.png" > <use  "figures/compare_4pess.jpeg" >)
-(./ctm.tex <use  "watermark.pdf" > [49] <use  "watermark.pdf" > [50]
+(./ctm.tex <use  "watermark.pdf" > [50] <use  "watermark.pdf" > [51]
 Chapter 5.
-<use  "figures/fig501.png" > <use  "watermark.pdf" > [51]
-<use  "figures/fig511.png" > <use  "watermark.pdf" > [52]
+<use  "figures/fig501.png" > <use  "watermark.pdf" > [52]
+<use  "figures/fig511.png" > <use  "watermark.pdf" > [53]
 Overfull \hbox (6.07352pt too wide) in paragraph at lines 42--43
 []\EU1/TimesNewRoman(0)/m/n/12 Insertion: Insert two new columns which consist 
 of { $\OML/cmm/m/it/12 T[]; b; a; T[]$ \EU1/TimesNewRoman(0)/m/n/12 } and { $\O
 ML/cmm/m/it/12 T[]; a; b; T[]$
-<use  "watermark.pdf" > [53] <use  "figures/fig512.png" >
-<use  "figures/fig513.png" > <use  "watermark.pdf" > [54]
-<use  "watermark.pdf" > [55]
+<use  "watermark.pdf" > [54] <use  "figures/fig512.png" >
+<use  "figures/fig513.png" > <use  "watermark.pdf" > [55]
+<use  "watermark.pdf" > [56]
 
-LaTeX Warning: Reference `fig513' on page 56 undefined on input line 99.
+LaTeX Warning: Reference `fig513' on page 57 undefined on input line 99.
 
-<use  "figures/fig521.png" > <use  "watermark.pdf" > [56]
-<use  "watermark.pdf" > [57] <use  "figures/ctm_itebd.png" >
-<use  "figures/ctm_pess.png" > <use  "watermark.pdf" > [58]) (./summary.tex
-<use  "watermark.pdf" > [59]
+<use  "figures/fig521.png" > <use  "watermark.pdf" > [57]
+<use  "watermark.pdf" > [58] <use  "figures/ctm_itebd.png" >
+<use  "figures/ctm_pess.png" >) (./summary.tex <use  "watermark.pdf" > [59]
 Chapter 6.
 <use  "watermark.pdf" > [60]) (./thesis.bbl <use  "watermark.pdf" > [61]
-<use  "watermark.pdf" > [62]) <use  "watermark.pdf" > [63] (./thesis.aux)
+<use  "watermark.pdf" > [62]
+Underfull \hbox (badness 10000) in paragraph at lines 183--187
+[]\EU1/TimesNewRoman(0)/m/n/12 M. B. Hastings, []Journal of Mathematical Physic
+s \EU1/TimesNewRoman(0)/bx/n/12 50\EU1/TimesNewRoman(0)/m/n/12 , 095207 (2009),
+
+)
+
+Package natbib Warning: There were undefined citations.
+
+<use  "watermark.pdf" > [63] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 

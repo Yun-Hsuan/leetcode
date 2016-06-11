@@ -1,0 +1,305 @@
+
+@article{yang_accelerated_2008,
+	title = {Accelerated Imaginary-time Evolution Methods for the Computation of Solitary Waves},
+	volume = {120},
+	url = {http://onlinelibrary.wiley.com/doi/10.1111/j.1467-9590.2008.00398.x/full},
+	pages = {265--292},
+	number = {3},
+	journaltitle = {Studies in Applied Mathematics},
+	author = {Yang, Jianke and Lakoba, Taras I.},
+	urldate = {2016-04-12},
+	date = {2008},
+	file = {0711.3434v1.pdf:/Users/Yun-Hsuan/Library/Application Support/Firefox/Profiles/qj8apgf1.default/zotero/storage/VSKUZA5X/0711.3434v1.pdf:application/pdf}
+}
+
+@article{jiang_accurate_2008,
+	title = {Accurate Determination of Tensor Network State of Quantum Lattice Models in Two Dimensions},
+	volume = {101},
+	issn = {0031-9007, 1079-7114},
+	url = {http://link.aps.org/doi/10.1103/PhysRevLett.101.090603},
+	doi = {10.1103/PhysRevLett.101.090603},
+	number = {9},
+	journaltitle = {Physical Review Letters},
+	author = {Jiang, H. C. and Weng, Z. Y. and Xiang, T.},
+	urldate = {2016-04-12},
+	date = {2008-08-29},
+	langid = {english},
+	file = {PhysRevLett.101.090603.pdf:/Users/Yun-Hsuan/Library/Application Support/Firefox/Profiles/qj8apgf1.default/zotero/storage/C983CHRM/PhysRevLett.101.090603.pdf:application/pdf}
+}
+
+@article{orus_practical_2014,
+	title = {A practical introduction to tensor networks: Matrix product states and projected entangled pair states},
+	volume = {349},
+	issn = {00034916},
+	url = {http://linkinghub.elsevier.com/retrieve/pii/S0003491614001596},
+	doi = {10.1016/j.aop.2014.06.013},
+	shorttitle = {A practical introduction to tensor networks},
+	pages = {117--158},
+	journaltitle = {Annals of Physics},
+	author = {Orús, Román},
+	urldate = {2016-04-12},
+	date = {2014-10},
+	langid = {english},
+	file = {1-s2.0-S0003491614001596-main.pdf:/Users/Yun-Hsuan/Library/Application Support/Firefox/Profiles/qj8apgf1.default/zotero/storage/5648DE4V/1-s2.0-S0003491614001596-main.pdf:application/pdf}
+}
+
+@article{vidal_classical_2007,
+	title = {Classical Simulation of Infinite-Size Quantum Lattice Systems in One Spatial Dimension},
+	volume = {98},
+	issn = {0031-9007, 1079-7114},
+	url = {http://link.aps.org/doi/10.1103/PhysRevLett.98.070201},
+	doi = {10.1103/PhysRevLett.98.070201},
+	number = {7},
+	journaltitle = {Physical Review Letters},
+	author = {Vidal, G.},
+	urldate = {2016-04-12},
+	date = {2007-02-12},
+	year = {2007},
+	langid = {english},
+	file = {PhysRevLett.98.070201.pdf:/Users/Yun-Hsuan/Library/Application Support/Firefox/Profiles/qj8apgf1.default/zotero/storage/S2KHBECU/PhysRevLett.98.070201.pdf:application/pdf}
+}
+
+@article{schuch_classifying_2011,
+	title = {Classifying quantum phases using matrix product states and projected entangled pair states},
+	volume = {84},
+	issn = {1098-0121, 1550-235X},
+	url = {http://link.aps.org/doi/10.1103/PhysRevB.84.165139},
+	doi = {10.1103/PhysRevB.84.165139},
+	number = {16},
+	journaltitle = {Physical Review B},
+	author = {Schuch, Norbert and Pérez-García, David and Cirac, Ignacio},
+	urldate = {2016-04-12},
+	date = {2011-10-31},
+	langid = {english},
+	file = {PhysRevB.84.165139.pdf:/Users/Yun-Hsuan/Library/Application Support/Firefox/Profiles/qj8apgf1.default/zotero/storage/SXE8UHUI/PhysRevB.84.165139.pdf:application/pdf}
+}
+
+@article{white_density-matrix_1993,
+	title = {Density-matrix algorithms for quantum renormalization groups},
+	volume = {48},
+	url = {http://journals.aps.org/prb/abstract/10.1103/PhysRevB.48.10345},
+	pages = {10345},
+	number = {14},
+	journaltitle = {Physical Review B},
+	author = {White, Steven R.},
+	urldate = {2016-04-12},
+	date = {1993},
+	year = {1993},
+	file = {PhysRevB.48.10345.pdf:/Users/Yun-Hsuan/Library/Application Support/Firefox/Profiles/qj8apgf1.default/zotero/storage/TVE9S2QD/PhysRevB.48.10345.pdf:application/pdf}
+}
+
+@article{white_density_1992,
+	title = {Density matrix formulation for quantum renormalization groups},
+	volume = {69},
+	url = {http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.69.2863},
+	pages = {2863},
+	number = {19},
+	journaltitle = {Physical Review Letters},
+	author = {White, Steven R.},
+	urldate = {2016-04-12},
+	date = {1992},
+	year = {1992},
+	file = {PhysRevLett.69.2863.pdf:/Users/Yun-Hsuan/Library/Application Support/Firefox/Profiles/qj8apgf1.default/zotero/storage/HTMZS5EV/PhysRevLett.69.2863.pdf:application/pdf}
+}
+
+@article{vidal_efficient_2003,
+	title = {Efficient Classical Simulation of Slightly Entangled Quantum Computations},
+	volume = {91},
+	issn = {0031-9007, 1079-7114},
+	url = {http://link.aps.org/doi/10.1103/PhysRevLett.91.147902},
+	doi = {10.1103/PhysRevLett.91.147902},
+	number = {14},
+	journaltitle = {Physical Review Letters},
+	author = {Vidal, Guifré},
+	urldate = {2016-04-12},
+	date = {2003-10-01},
+	year = {2003},
+	langid = {english},
+	file = {PhysRevLett.91.147902.pdf:/Users/Yun-Hsuan/Library/Application Support/Firefox/Profiles/qj8apgf1.default/zotero/storage/SVDP3BEQ/PhysRevLett.91.147902.pdf:application/pdf}
+}
+
+@article{li_efficient_2012,
+	title = {Efficient simulation of infinite tree tensor network states on the Bethe lattice},
+	volume = {86},
+	issn = {1098-0121, 1550-235X},
+	url = {http://link.aps.org/doi/10.1103/PhysRevB.86.195137},
+	doi = {10.1103/PhysRevB.86.195137},
+	number = {19},
+	journaltitle = {Physical Review B},
+	author = {Li, Wei and von Delft, Jan and Xiang, Tao},
+	urldate = {2016-04-12},
+	date = {2012-11-26},
+	langid = {english},
+	file = {PhysRevB.86.195137.pdf:/Users/Yun-Hsuan/Library/Application Support/Firefox/Profiles/qj8apgf1.default/zotero/storage/TN2628G5/PhysRevB.86.195137.pdf:application/pdf}
+}
+
+@article{vidal_efficient_2004,
+	title = {Efficient Simulation of One-Dimensional Quantum Many-Body Systems},
+	volume = {93},
+	issn = {0031-9007, 1079-7114},
+	url = {http://link.aps.org/doi/10.1103/PhysRevLett.93.040502},
+	doi = {10.1103/PhysRevLett.93.040502},
+	number = {4},
+	journaltitle = {Physical Review Letters},
+	author = {Vidal, Guifré},
+	urldate = {2016-04-12},
+	date = {2004-07-19},
+	year = {2004},
+	langid = {english},
+	file = {PhysRevLett.93.040502.pdf:/Users/Yun-Hsuan/Library/Application Support/Firefox/Profiles/qj8apgf1.default/zotero/storage/MB6RA2XB/PhysRevLett.93.040502.pdf:application/pdf}
+}
+
+@article{vidal_entanglement_2007,
+	title = {Entanglement Renormalization},
+	volume = {99},
+	issn = {0031-9007, 1079-7114},
+	url = {http://link.aps.org/doi/10.1103/PhysRevLett.99.220405},
+	doi = {10.1103/PhysRevLett.99.220405},
+	number = {22},
+	journaltitle = {Physical Review Letters},
+	author = {Vidal, G.},
+	urldate = {2016-04-12},
+	date = {2007-11-28},
+	year = {2007},
+	langid = {english},
+	file = {PhysRevLett.99.220405.pdf:/Users/Yun-Hsuan/Library/Application Support/Firefox/Profiles/qj8apgf1.default/zotero/storage/5SKEQUQ2/PhysRevLett.99.220405.pdf:application/pdf}
+}
+
+@article{orus_infinite_2008,
+	title = {Infinite time-evolving block decimation algorithm beyond unitary evolution},
+	volume = {78},
+	issn = {1098-0121, 1550-235X},
+	url = {http://link.aps.org/doi/10.1103/PhysRevB.78.155117},
+	doi = {10.1103/PhysRevB.78.155117},
+	number = {15},
+	journaltitle = {Physical Review B},
+	author = {Orús, R. and Vidal, G.},
+	urldate = {2016-04-12},
+	date = {2008-10-14},
+	langid = {english},
+	file = {PhysRevB.78.155117.pdf:/Users/Yun-Hsuan/Library/Application Support/Firefox/Profiles/qj8apgf1.default/zotero/storage/CRVP6DG8/PhysRevB.78.155117.pdf:application/pdf}
+}
+
+@article{hastings_light-cone_2009,
+	title = {Light-cone matrix product},
+	volume = {50},
+	issn = {00222488},
+	url = {http://scitation.aip.org/content/aip/journal/jmp/50/9/10.1063/1.3149556},
+	doi = {10.1063/1.3149556},
+	pages = {095207},
+	number = {9},
+	journaltitle = {Journal of Mathematical Physics},
+	author = {Hastings, M. B.},
+	urldate = {2016-04-12},
+	date = {2009},
+	langid = {english},
+	file = {1.3149556.pdf:/Users/Yun-Hsuan/Library/Application Support/Firefox/Profiles/qj8apgf1.default/zotero/storage/UAFI2GQA/1.3149556.pdf:application/pdf}
+}
+
+@article{verstraete_matrix_2008,
+	title = {Matrix product states, projected entangled pair states, and variational renormalization group methods for quantum spin systems},
+	volume = {57},
+	issn = {0001-8732, 1460-6976},
+	url = {http://www.tandfonline.com/doi/abs/10.1080/14789940801912366},
+	doi = {10.1080/14789940801912366},
+	pages = {143--224},
+	number = {2},
+	journaltitle = {Advances in Physics},
+	author = {Verstraete, F. and Murg, V. and Cirac, J.I.},
+	urldate = {2016-04-12},
+	date = {2008-03},
+	langid = {english},
+	file = {Matrix product states projected entangled pair states and variational renormalization group methods for quantum spin systems.pdf:/Users/Yun-Hsuan/Library/Application Support/Firefox/Profiles/qj8apgf1.default/zotero/storage/2H8NIBUG/Matrix product states projected entangled pair states and variational renormalization group methods for quantum spin systems.pdf:application/pdf}
+}
+
+@article{verstraete_matrix_2006,
+	title = {Matrix product states represent ground states faithfully},
+	volume = {73},
+	issn = {1098-0121, 1550-235X},
+	url = {http://link.aps.org/doi/10.1103/PhysRevB.73.094423},
+	doi = {10.1103/PhysRevB.73.094423},
+	number = {9},
+	journaltitle = {Physical Review B},
+	author = {Verstraete, F. and Cirac, J. I.},
+	urldate = {2016-04-12},
+	date = {2006-03-20},
+	langid = {english},
+	file = {PhysRevB.73.094423.pdf:/Users/Yun-Hsuan/Library/Application Support/Firefox/Profiles/qj8apgf1.default/zotero/storage/BGP77CTZ/PhysRevB.73.094423.pdf:application/pdf}
+}
+
+@article{nagy_simulating_2012,
+	title = {Simulating quantum systems on the Bethe lattice by translationally invariant infinite-tree tensor network},
+	volume = {327},
+	issn = {00034916},
+	url = {http://linkinghub.elsevier.com/retrieve/pii/S0003491611001850},
+	doi = {10.1016/j.aop.2011.11.012},
+	pages = {542--552},
+	number = {2},
+	journaltitle = {Annals of Physics},
+	author = {Nagy, Ádám},
+	urldate = {2016-04-12},
+	date = {2012-02},
+	langid = {english},
+	file = {1-s2.0-S0003491611001850-main.pdf:/Users/Yun-Hsuan/Library/Application Support/Firefox/Profiles/qj8apgf1.default/zotero/storage/8QMXXN8Q/1-s2.0-S0003491611001850-main.pdf:application/pdf}
+}
+
+@thesis{jordan_studies_2011,
+	title = {Studies of Infinite Two-Dimensional Quantum Lattice Systems with Projected Entangled Pair States},
+	url = {http://www.romanorus.com/JordanThesis.pdf},
+	author = {Jordan, Jacob},
+	urldate = {2016-04-12},
+	date = {2011},
+	file = {s33629940_phd_submission.pdf:/Users/Yun-Hsuan/Library/Application Support/Firefox/Profiles/qj8apgf1.default/zotero/storage/VB2PWAEE/s33629940_phd_submission.pdf:application/pdf}
+}
+
+@thesis{bauer_tensor_2011,
+	title = {Tensor network states},
+	url = {http://stationq.ucsb.edu/~bela/thesis-online.pdf},
+	institution = {{ETH} {ZURICH}},
+	type = {phdthesis},
+	author = {Bauer, Roman Bela},
+	urldate = {2016-04-12},
+	date = {2011},
+	file = {thesis-online.pdf:/Users/Yun-Hsuan/Library/Application Support/Firefox/Profiles/qj8apgf1.default/zotero/storage/IUNNXEFM/thesis-online.pdf:application/pdf}
+}
+
+@article{schollwock_density-matrix_2011,
+	title = {The density-matrix renormalization group in the age of matrix product states},
+	volume = {326},
+	url = {http://www.sciencedirect.com/science/article/pii/S0003491610001752},
+	pages = {96--192},
+	number = {1},
+	journaltitle = {Annals of Physics},
+	author = {Schollwöck, Ulrich},
+	urldate = {2016-04-12},
+	date = {2011},
+	file = {1306.2164v3.pdf:/Users/Yun-Hsuan/Library/Application Support/Firefox/Profiles/qj8apgf1.default/zotero/storage/3D277G7D/1306.2164v3.pdf:application/pdf}
+}
+
+@article{ostlund_thermodynamic_1995,
+	title = {Thermodynamic limit of density matrix renormalization},
+	volume = {75},
+	url = {http://journals.aps.org/prl/abstract/10.1103/PhysRevLett.75.3537},
+	pages = {3537},
+	number = {19},
+	journaltitle = {Physical review letters},
+	author = {Östlund, Stellan and Rommer, Stefan},
+	urldate = {2016-04-12},
+	date = {1995},
+	file = {PhysRevLett.75.3537.pdf:/Users/Yun-Hsuan/Library/Application Support/Firefox/Profiles/qj8apgf1.default/zotero/storage/PU7DCCTP/PhysRevLett.75.3537.pdf:application/pdf}
+}
+
+@article{murg_variational_2007,
+	title = {Variational study of hard-core bosons in a two-dimensional optical lattice using projected entangled pair states},
+	volume = {75},
+	issn = {1050-2947, 1094-1622},
+	url = {http://link.aps.org/doi/10.1103/PhysRevA.75.033605},
+	doi = {10.1103/PhysRevA.75.033605},
+	number = {3},
+	journaltitle = {Physical Review A},
+	author = {Murg, V. and Verstraete, F. and Cirac, J. I.},
+	urldate = {2016-04-12},
+	date = {2007-03-13},
+	langid = {english},
+	file = {PhysRevA.75.033605.pdf:/Users/Yun-Hsuan/Library/Application Support/Firefox/Profiles/qj8apgf1.default/zotero/storage/2IRNSGQK/PhysRevA.75.033605.pdf:application/pdf}
+}
