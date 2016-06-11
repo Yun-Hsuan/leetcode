@@ -293,7 +293,7 @@ can be considered as two different order parameters. The energy difference $\Del
 
 \subsubsection{$S=2$}
 
-Turning to the $S=2$ Heisenberg model, the ground state energy per site again converge to $E_0 = -4.8185$ [Fig. \ref{fig4330}] when the dimension $D$ is sufficient enough. Unlike the $S=1$ case, each spins on sites can be considered as a symmetric superposition of tow $S=1$ spins, which means that the ground state is a uniform simplex-solid state. Hence, theoretically there is no energy gap between two different simplices (upward- and downward-triangle).
+Turning to the $S=2$ Heisenberg model, the ground state energy per site again converge to $E_0 = -4.8185$ [Fig. \ref{fig4330}] when the dimension $D$ is sufficient enough. Unlike the $S=1$ case, each spins on sites can be considered as a symmetric superposition of two $S=1$ spins, which means that the ground state is a uniform simplex-solid state. Hence, theoretically there is no energy gap between two different simplices (upward- and downward-triangle). Then see Fig.~\ref{fig4331}, we find again that the local magnetization $M$ vanish suddenly when the virtual bond dimension $D \geq 8$. The result also prove that the ground state in the $S=2$ case have no magnetic.
 
 \begin{figure}[H]
 	\centering
@@ -306,17 +306,25 @@ Turning to the $S=2$ Heisenberg model, the ground state energy per site again co
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/3pess_S2M.png}
 	\caption[The scheme of the simple update for 4-PESS, composed by rank-3 projection tensors.]{The scheme of the simple update for 4-PESS, composed by rank-3 projection tensors. The more detail descriptions are in the paragraph}
-	\label{fig4330}
+	\label{fig4331}
 \end{figure}
 
-\subsection{4PESS for Heisenberg model on square lattice}
+\subsection{4-PESS for Heisenberg model on square lattice}
+
+For the $spin- \frac{1}{2}$ Heisenberg model on square lattice, we also find that the accuracy is strongly dependent on the virtual bond dimension $D$, see Fig.~\ref{fig4332}. However, the 4-PESS ansatz is unstable with some specific dimension $D$, such as, 6,9 and so on. In these cases, the algorithm might hard converge or even be broken. 
+
+Our comparison among two dimensional algorithms is shown in Fig.~\ref{fig4333}. The algorithms started from $D=2$ and setted the cutoff $\varepsilon = 10^{-7}$ to determine how many basis should be truncated. The results shows that the ground states obtain by 4-PESS ansatz is more accuracy then by 2D-iTEBD and the dimension of projection tensors is less than in PEPS.
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/4pess_HeiGE.png}
 	\caption[The scheme of the simple update for 4-PESS, composed by rank-3 projection tensors.]{The scheme of the simple update for 4-PESS, composed by rank-3 projection tensors. The more detail descriptions are in the paragraph}
-	\label{fig4331}
+	\label{fig4332}
 \end{figure}
 
-\subsection{Comparison between PESS and iPEPS}
-
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\textwidth]{figures/compare_4pess.jpeg}
+	\caption[The scheme of the simple update for 4-PESS, composed by rank-3 projection tensors.]{The scheme of the simple update for 4-PESS, composed by rank-3 projection tensors. The more detail descriptions are in the paragraph}
+	\label{fig4333}
+\end{figure}

@@ -121,9 +121,6 @@ LaTeX Warning: Label `fig318' multiply defined.
 LaTeX Warning: Label `mapgroud' multiply defined.
 
 
-LaTeX Warning: Label `fig4330' multiply defined.
-
-
 LaTeX Warning: Label `reduce_a' multiply defined.
 
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/tipa/t3cmr.fd)
@@ -231,27 +228,29 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 294.
 
 <use  "figures/3pess_S2GE.png" > <use  "watermark.pdf" > [47]
-<use  "figures/3pess_S2M.png" > <use  "figures/4pess_HeiGE.png" >
-<use  "watermark.pdf" > [48]) (./ctm.tex <use  "watermark.pdf" > [49]
+<use  "figures/3pess_S2M.png" > <use  "watermark.pdf" > [48]
+<use  "figures/4pess_HeiGE.png" > <use  "figures/compare_4pess.jpeg" >)
+(./ctm.tex <use  "watermark.pdf" > [49] <use  "watermark.pdf" > [50]
 Chapter 5.
-<use  "figures/fig501.png" > <use  "watermark.pdf" > [50]
-<use  "figures/fig511.png" > <use  "watermark.pdf" > [51]
+<use  "figures/fig501.png" > <use  "watermark.pdf" > [51]
+<use  "figures/fig511.png" > <use  "watermark.pdf" > [52]
 Overfull \hbox (6.07352pt too wide) in paragraph at lines 42--43
 []\EU1/TimesNewRoman(0)/m/n/12 Insertion: Insert two new columns which consist 
 of { $\OML/cmm/m/it/12 T[]; b; a; T[]$ \EU1/TimesNewRoman(0)/m/n/12 } and { $\O
 ML/cmm/m/it/12 T[]; a; b; T[]$
-<use  "watermark.pdf" > [52] <use  "figures/fig512.png" >
-<use  "figures/fig513.png" > <use  "watermark.pdf" > [53]
-<use  "watermark.pdf" > [54]
+<use  "watermark.pdf" > [53] <use  "figures/fig512.png" >
+<use  "figures/fig513.png" > <use  "watermark.pdf" > [54]
+<use  "watermark.pdf" > [55]
 
-LaTeX Warning: Reference `fig513' on page 55 undefined on input line 99.
+LaTeX Warning: Reference `fig513' on page 56 undefined on input line 99.
 
-<use  "figures/fig521.png" > <use  "watermark.pdf" > [55]
-<use  "figures/ctm_itebd.png" > <use  "watermark.pdf" > [56]
-<use  "figures/ctm_pess.png" >) (./summary.tex <use  "watermark.pdf" > [57]
+<use  "figures/fig521.png" > <use  "watermark.pdf" > [56]
+<use  "watermark.pdf" > [57] <use  "figures/ctm_itebd.png" >
+<use  "figures/ctm_pess.png" > <use  "watermark.pdf" > [58]) (./summary.tex
+<use  "watermark.pdf" > [59]
 Chapter 6.
-<use  "watermark.pdf" > [58]) (./thesis.bbl <use  "watermark.pdf" > [59]
-<use  "watermark.pdf" > [60]) <use  "watermark.pdf" > [61] (./thesis.aux)
+<use  "watermark.pdf" > [60]) (./thesis.bbl <use  "watermark.pdf" > [61]
+<use  "watermark.pdf" > [62]) <use  "watermark.pdf" > [63] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -260,7 +259,7 @@ LaTeX Warning: There were multiply-defined labels.
 
  )
 (see the transcript file for additional information)
-Output written on thesis.pdf (73 pages).
+Output written on thesis.pdf (75 pages).
 Transcript written on thesis.log.
 bibtex thesis
 This is BibTeX, Version 0.99d (TeX Live 2015)
@@ -430,9 +429,6 @@ LaTeX Warning: Label `fig318' multiply defined.
 LaTeX Warning: Label `mapgroud' multiply defined.
 
 
-LaTeX Warning: Label `fig4330' multiply defined.
-
-
 LaTeX Warning: Label `reduce_a' multiply defined.
 
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/tipa/t3cmr.fd)
@@ -540,27 +536,29 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 294.
 
 <use  "figures/3pess_S2GE.png" > <use  "watermark.pdf" > [47]
-<use  "figures/3pess_S2M.png" > <use  "figures/4pess_HeiGE.png" >
-<use  "watermark.pdf" > [48]) (./ctm.tex <use  "watermark.pdf" > [49]
+<use  "figures/3pess_S2M.png" > <use  "watermark.pdf" > [48]
+<use  "figures/4pess_HeiGE.png" > <use  "figures/compare_4pess.jpeg" >)
+(./ctm.tex <use  "watermark.pdf" > [49] <use  "watermark.pdf" > [50]
 Chapter 5.
-<use  "figures/fig501.png" > <use  "watermark.pdf" > [50]
-<use  "figures/fig511.png" > <use  "watermark.pdf" > [51]
+<use  "figures/fig501.png" > <use  "watermark.pdf" > [51]
+<use  "figures/fig511.png" > <use  "watermark.pdf" > [52]
 Overfull \hbox (6.07352pt too wide) in paragraph at lines 42--43
 []\EU1/TimesNewRoman(0)/m/n/12 Insertion: Insert two new columns which consist 
 of { $\OML/cmm/m/it/12 T[]; b; a; T[]$ \EU1/TimesNewRoman(0)/m/n/12 } and { $\O
 ML/cmm/m/it/12 T[]; a; b; T[]$
-<use  "watermark.pdf" > [52] <use  "figures/fig512.png" >
-<use  "figures/fig513.png" > <use  "watermark.pdf" > [53]
-<use  "watermark.pdf" > [54]
+<use  "watermark.pdf" > [53] <use  "figures/fig512.png" >
+<use  "figures/fig513.png" > <use  "watermark.pdf" > [54]
+<use  "watermark.pdf" > [55]
 
-LaTeX Warning: Reference `fig513' on page 55 undefined on input line 99.
+LaTeX Warning: Reference `fig513' on page 56 undefined on input line 99.
 
-<use  "figures/fig521.png" > <use  "watermark.pdf" > [55]
-<use  "figures/ctm_itebd.png" > <use  "watermark.pdf" > [56]
-<use  "figures/ctm_pess.png" >) (./summary.tex <use  "watermark.pdf" > [57]
+<use  "figures/fig521.png" > <use  "watermark.pdf" > [56]
+<use  "watermark.pdf" > [57] <use  "figures/ctm_itebd.png" >
+<use  "figures/ctm_pess.png" > <use  "watermark.pdf" > [58]) (./summary.tex
+<use  "watermark.pdf" > [59]
 Chapter 6.
-<use  "watermark.pdf" > [58]) (./thesis.bbl <use  "watermark.pdf" > [59]
-<use  "watermark.pdf" > [60]) <use  "watermark.pdf" > [61] (./thesis.aux)
+<use  "watermark.pdf" > [60]) (./thesis.bbl <use  "watermark.pdf" > [61]
+<use  "watermark.pdf" > [62]) <use  "watermark.pdf" > [63] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -569,7 +567,7 @@ LaTeX Warning: There were multiply-defined labels.
 
  )
 (see the transcript file for additional information)
-Output written on thesis.pdf (73 pages).
+Output written on thesis.pdf (75 pages).
 Transcript written on thesis.log.
 xelatex thesis
 This is XeTeX, Version 3.14159265-2.6-0.99992 (TeX Live 2015) (preloaded format=xelatex)
@@ -694,9 +692,6 @@ LaTeX Warning: Label `fig318' multiply defined.
 LaTeX Warning: Label `mapgroud' multiply defined.
 
 
-LaTeX Warning: Label `fig4330' multiply defined.
-
-
 LaTeX Warning: Label `reduce_a' multiply defined.
 
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/tipa/t3cmr.fd)
@@ -804,27 +799,29 @@ Package hyperref Warning: Token not allowed in a PDF string (Unicode):
 (hyperref)                removing `math shift' on input line 294.
 
 <use  "figures/3pess_S2GE.png" > <use  "watermark.pdf" > [47]
-<use  "figures/3pess_S2M.png" > <use  "figures/4pess_HeiGE.png" >
-<use  "watermark.pdf" > [48]) (./ctm.tex <use  "watermark.pdf" > [49]
+<use  "figures/3pess_S2M.png" > <use  "watermark.pdf" > [48]
+<use  "figures/4pess_HeiGE.png" > <use  "figures/compare_4pess.jpeg" >)
+(./ctm.tex <use  "watermark.pdf" > [49] <use  "watermark.pdf" > [50]
 Chapter 5.
-<use  "figures/fig501.png" > <use  "watermark.pdf" > [50]
-<use  "figures/fig511.png" > <use  "watermark.pdf" > [51]
+<use  "figures/fig501.png" > <use  "watermark.pdf" > [51]
+<use  "figures/fig511.png" > <use  "watermark.pdf" > [52]
 Overfull \hbox (6.07352pt too wide) in paragraph at lines 42--43
 []\EU1/TimesNewRoman(0)/m/n/12 Insertion: Insert two new columns which consist 
 of { $\OML/cmm/m/it/12 T[]; b; a; T[]$ \EU1/TimesNewRoman(0)/m/n/12 } and { $\O
 ML/cmm/m/it/12 T[]; a; b; T[]$
-<use  "watermark.pdf" > [52] <use  "figures/fig512.png" >
-<use  "figures/fig513.png" > <use  "watermark.pdf" > [53]
-<use  "watermark.pdf" > [54]
+<use  "watermark.pdf" > [53] <use  "figures/fig512.png" >
+<use  "figures/fig513.png" > <use  "watermark.pdf" > [54]
+<use  "watermark.pdf" > [55]
 
-LaTeX Warning: Reference `fig513' on page 55 undefined on input line 99.
+LaTeX Warning: Reference `fig513' on page 56 undefined on input line 99.
 
-<use  "figures/fig521.png" > <use  "watermark.pdf" > [55]
-<use  "figures/ctm_itebd.png" > <use  "watermark.pdf" > [56]
-<use  "figures/ctm_pess.png" >) (./summary.tex <use  "watermark.pdf" > [57]
+<use  "figures/fig521.png" > <use  "watermark.pdf" > [56]
+<use  "watermark.pdf" > [57] <use  "figures/ctm_itebd.png" >
+<use  "figures/ctm_pess.png" > <use  "watermark.pdf" > [58]) (./summary.tex
+<use  "watermark.pdf" > [59]
 Chapter 6.
-<use  "watermark.pdf" > [58]) (./thesis.bbl <use  "watermark.pdf" > [59]
-<use  "watermark.pdf" > [60]) <use  "watermark.pdf" > [61] (./thesis.aux)
+<use  "watermark.pdf" > [60]) (./thesis.bbl <use  "watermark.pdf" > [61]
+<use  "watermark.pdf" > [62]) <use  "watermark.pdf" > [63] (./thesis.aux)
 
 LaTeX Warning: There were undefined references.
 
@@ -833,5 +830,5 @@ LaTeX Warning: There were multiply-defined labels.
 
  )
 (see the transcript file for additional information)
-Output written on thesis.pdf (73 pages).
+Output written on thesis.pdf (75 pages).
 Transcript written on thesis.log.
