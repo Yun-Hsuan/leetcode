@@ -3,6 +3,10 @@
 #include <chrono>
 #include <random>
 
+unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
+std::mt19937_64 generator(seed);
+std::uniform_real_distribution<double> distribution(0.,1.);
+
 void vectorMul(int val, double* vec, int len){
 	for(int n = 0; n < len; n++)
 		vec[n] *= (double)val;
@@ -91,9 +95,6 @@ double Lattice::ExactM(){
 }
 
 void Lattice::updateSpin(int i, int j){
-	unsigned seed = std::chrono::system_clock::now().time_since_epoch().count();
-	std::mt19937_64 generator(seed);
-	std::uniform_real_distribution<double> distribution(0.,1.);
 	double randNum = distribution(generator);
 	if(spinH(i,j)>0)
 		conf[j*Lh+i].flip();

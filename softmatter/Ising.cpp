@@ -13,7 +13,7 @@ int main(){
 	//printf("E0: %10f\n", L.ExactE());
 	//L.printConf();	
 	printf("T,E,M\n");
-	for(int T = 320; T >= 150; T-=10){
+	for(int T = 500; T >= 0; T-=10){
 		L.setT((double)T/100.);
 		L.MonteOpt(200);
 		L.Measure(100,1,100);
