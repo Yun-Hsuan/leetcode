@@ -6,7 +6,7 @@
 
 int main(){
 
-	int N= 100000;
+	int N= 1000000;
 	double x,y;
 	int i,count;
 	double z;

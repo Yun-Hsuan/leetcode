@@ -58,7 +58,7 @@ void Lattice::printConf(){
 	
 	for(int j = 0; j < Lv; j++){
 		for(int i = 0; i < Lh; i++)
-			printf("%d ", conf[j*Lh+i].S);
+			printf("%f ", conf[j*Lh+i].S);
 		printf("\n");
 	}
 
