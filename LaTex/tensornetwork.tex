@@ -6,7 +6,7 @@ In this chapter, we will introduce the foundations of tensor network \cite{jorda
 \section{Representation of tensors in tensor Networks}
 \label{notations}
 
-In mathematical concept, a tensor is considered as a multi-dimensional array of scalars. It could be described by a node and few bonds in the tensor network language. The each bond represent to an \textit{index} of the array, and the number of bonds corresponds to the rank of the tensor. See Fig.~\ref{fig211}(i-iv), the notations without bonds, with a single bond, with two bonds and with $N$ bonds can be considered as scalars, vectors, matrices and rank-$N$ tensors. To explain more clearly, if there is a tensor $T_{\alpha \beta \gamma}$ shown as the Fig.~\ref{fig211}(iv) and the dimensions of the each bond $\alpha, \beta$ and $\gamma$ are $\chi_{\alpha},\chi_{\alpha}$ and $\chi_{\gamma}$, we can say that the tensor $T_{\alpha \beta \gamma}$ contains $\chi_{\alpha}\chi_{\beta}\chi_{\gamma}$
+In mathematical concept, a tensor is considered as a multi-dimensional array of scalars. It could be described by a node and few bonds in the tensor network language. The each bond represent to an \textit{index} of the array, and the number of bonds corresponds to the rank of the tensor. See Fig.~\ref{fig211}(i-iv), the notations without bonds, with a single bond, with two bonds and with $N$ bonds can be considered as scalars, vectors, matrices and rank-$N$ tensors. To explain more clearly, if there is a tensor $T_{\alpha \beta \gamma}$ shown as the Fig.~\ref{fig211}(iv) and the dimensions of the each bond $\alpha, \beta$ and $\gamma$ are $\chi_{\alpha},\chi_{\alpha}$ and $\chi_{\gamma}$, we can say that the tensor $T_{\alpha \beta \gamma}$ contains $\chi_{\alpha}\chi_{\beta}\chi_{\gamma}$ coefficients.
 
 %\begin{align}
 %	D_{total} = \begin{cases}
@@ -24,7 +24,11 @@ In mathematical concept, a tensor is considered as a multi-dimensional array of 
 
 \section{Tensor operations and tensor network diagrams} % (fold)
 \label{operation}
-%In the computational languages, a fold tensor can be regard as a container of the elements. It is not endowed with meanings until unfolded to a specified shape. In other words, we must transform it to a tensor less than rank-3 before doing operations. The process is also called \textit{permuteation}.
+
+Since computers can only perform the calculation with matrices, to implement calculations of tensor networks on computers, we need do some operations on tensors, such as permutation and reshape. To explain more explicitly, we define a representation at first,
+\begin{enumerate}
+	\item $T_{[\alpha \beta], \gamma}$: The bonds $\alpha$ and $\beta$ of a tensor $T$ are grouped. It can be recognized as a matrix, which rows and columns are $\chi_{\alpha}\chi_{\beta}$ and $\chi_{\gamma}$. We will discuss more more details in Sec.~\ref{reshape}
+\end{enumerate}
 
 \subsection{Permutation}
 
@@ -35,6 +39,17 @@ The permutation operation is to re-order the arrangement of the coefficients in 
 	\includegraphics[width=0.75\textwidth]{figures/fig224.png}
 	\caption[The permutation of a tensor.]{ Permute tensor $A_{\alpha \beta \gamma}$ to $\hat{A}_{\alpha \gamma \beta}$ }
 	\label{fig224}
+\end{figure}
+
+\subsection{Reshape}
+\label{reshape}
+The reshape operation is to combined more than two bonds of a tensor into a single bond. Although the rank of the tensor is reduced, the arrangement of coefficients is unchanged. The dimension of the new bond is equal to the product of the dimensions of the bonds contained in it. As shown in Fig.~\ref{figreshape}, we joint the bonds $\alpha$ and $\beta$ into a new bond $\delta$. Assume that the dimension of the bonds $\alpha$ and $\beta$ are $\chi_{\alpha}$ and $\chi_{\beta}$. The dimension of the bond $\delta$ is equal to $\chi_{\alpha}\chi_{\beta}$.
+
+\begin{figure}[H]
+	\centering
+	\includegraphics[width=0.75\textwidth]{figures/figreshape.png}
+	\caption[The permutation of a tensor.]{ Permute tensor $A_{\alpha \beta \gamma}$ to $\hat{A}_{\alpha \gamma \beta}$ }
+	\label{figreshape}
 \end{figure}
 
 %\begin{align}
@@ -54,56 +69,117 @@ The permutation operation is to re-order the arrangement of the coefficients in 
 
 \subsection{Tensor contraction}
 
-Tensor contraction is defined as the sum of all products of the shared indices of tensors. For instance, the tensor diagram of contracting two rank-2 tensors $A_{\alpha \beta}$ and $B_{\beta \gamma}$ is shown as Fig.~\ref{fig222}(i) which can be written as, 
+Tensor contraction is defined as the sum of all products of the shared indices of tensors. For instance, the tensor diagram of contracting two rank-2 tensors $A_{\alpha \beta}$ and $B_{\beta \gamma}$ is shown as Fig.~\ref{fig222}(i) which can be written as
 \begin{align}
 	C_{\alpha \gamma}=\sum\limits_{\beta = 1}^{\chi_{\beta}}{A_{\alpha \beta}B_{\beta \gamma}},
 \end{align}
-where $\chi_{\beta}$ is the dimension of the bond $\beta$, and it can be recognized as the inner-product of two matrices $A_{\chi_{\alpha}, \chi_{\beta}}$ and $B_{\chi_{\beta}, \chi_{\gamma}}$. Now that we extend to a more complicated example, see Fig.~\ref{fig222}(ii). The equation of the tensor diagram is described as,
+where $\chi_{\beta}$ is the dimension of the bond $\beta$, and it can be recognized as the inner-product of two matrices $A_{\chi_{\alpha}, \chi_{\beta}}$ and $B_{\chi_{\beta}, \chi_{\gamma}}$. Now that we extend to a more complicated example, see Fig.~\ref{fig222}(ii). The equation of the tensor diagram is described as
 \begin{align}
-	D_{\alpha \gamma \sigma \epsilon}=\sum_{\beta \rho \delta}{A_{\rho \beta}B_{\beta \sigma \epsilon \delta}C_{\gamma \delta \rho \alpha}},
+	D_{\alpha \gamma \sigma \epsilon}=\sum_{\beta \rho \delta}{A_{\rho \beta}B_{\beta \sigma \epsilon \delta}C_{\gamma \delta \rho \alpha}}.
 \end{align}
-in this case, we desired to contract the bonds $\rho,\beta$ and $\delta$ which dimensions are $\chi_{rho}, \chi_{beta}$ and $\chi_{\delta}$. Hence, we can complete the contraction processes by following steps,
-
-\begin{enumerate}
-
-	\item Select a pair of tensors arbitrarily: In the example, we choose the tensor $A_{\rho \beta}$ and $C_{\gamma \alpha \delta \rho}$ at first. 
-	\item Permute the tensors to specific shape and operate the inner-product: As shown in Fig.~\ref{fig223}(ii)-(iii) Permute $A_{\rho \beta}$ and $C_{\gamma \alpha \delta}$ to the specified shape $A_{\rho, \beta}$ and $C_{\gamma \alpha \delta, \rho}$, which can be considered as the matrices $A_{\chi_{\rho},\chi_{\beta}}$ and $C_{\chi_{\gamma} \chi_{\alpha} \chi_{\delta}, \chi_{\rho}}$ and inner product two matrices, 
-		\begin{align}
-			\theta_{\gamma \alpha \delta \beta} = C_{\chi_{\gamma} \chi_{\alpha} \chi_{\delta} \chi_{\rho}} \cdot A_{\chi_{\rho}, \chi_{\beta}}
-		\end{align}
-	\item Repeat the step (1) and (2) until all tensors are contracted: See Fig.~\ref{fig223}(iii)-(iv), repeat the steps again to contract the remained tensors $\theta_{\gamma \alpha \delta \beta}$ and $B_{\beta \sigma \delta \varepsilon}$
-\end{enumerate}
+In this case, we desired to contract the bonds $\rho,\beta$ and $\delta$ which dimensions are $\chi_{\rho}, \chi_{\beta}$ and $\chi_{\delta}$. Hence, we can complete the contraction processes by following steps,
 
 \begin{figure}[H]
 	\centering
-	\includegraphics[width=0.80\textwidth]{figures/fig222.png}
+	\includegraphics[width=0.75\textwidth]{figures/fig222.png}
 	\caption[The examples of tensor diagrams.]{(i) Contract rank-2 tensors $A_{\alpha \beta}$ and $B_{\beta \gamma} $ (ii) Contract a rank-2 tensor $A_{\rho \beta}$, and two rank-4 tensors $B_{\sigma \varepsilon \delta}$ and $C_{\delta \rho \alpha}$}
 	\label{fig222}
 \end{figure}
 
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.95\textwidth]{figures/fig223.png}
+	\includegraphics[width=0.75\textwidth]{figures/fig223.png}
 	\caption[The contraction procedures of the network shown in Fig\ref{fig222}(ii)]{ The contraction procedures of the network shown in Fig\ref{fig222}}
 	\label{fig223}
 \end{figure}
 
+\begin{enumerate}
+
+	\item Select a pair of tensors arbitrarily: In the example, we choose the tensor $A_{\rho \beta}$ and $C_{\gamma \alpha \delta \rho}$ at first. 
+	\item Permute the tensors to specific shape and operate the inner-product: As shown in Fig.~\ref{fig223}(ii)-(iii) Permute $A_{\rho \beta}$ and $C_{\gamma \alpha \delta \delta}$ to the specified shape $A_{\rho, \beta}$ and $C_{[\gamma \alpha \delta], \rho}$, which can be considered as the inner product of two matrices $A$ and $C$, 
+		\begin{align}
+			\theta_{\gamma \alpha \delta \beta} = \sum_{\rho = 1}^{\chi_{\rho}}{C_{[\gamma \alpha \delta], \rho} A_{\rho, \beta}}
+		\end{align}
+	\item Repeat the step (1) and (2) until all tensors are contracted: See Fig.~\ref{fig223}(iii)-(iv), repeat the steps again to contract the remained tensors $\theta_{\gamma \alpha \delta \beta}$ and $B_{\beta \sigma \delta \varepsilon}$
+\end{enumerate}
 %Actually, the choice in step (1) is restricted in some algorithms, such as corner transfer matrix \cite{PhysRevB.85.205117} and fast full update \cite{PhysRevB.92.035142}, because the order of the contraction network is strongly correlated to the efficiency. For example, if the dimensions of the bonds of the tensors, $A_{\rho \beta}$, $B_{\beta \sigma \epsilon \delta}$ and $C_{\gamma \delta \rho \alpha}$ in Fig.~\ref{fig223}(i), are $D$. The consumption of the contraction of $A_{\rho \beta}$ and $C_{\gamma \delta \rho \alpha}$ is $D^4$. However, if we contract $B_{\beta \sigma \epsilon \delta}$ and $C_{\gamma \delta \rho \alpha}$ at first, it will increase to $D^6$. Therefor, how to determine the cheapest contraction order is a significant issue \cite{PhysRevE.90.033315}.
 
 \section{Describe Quantum states with tensor network} % (fold)
 \label{sub:map2quan}
 
-Before drawing a many-body system with tensor-network representation, we should discuss how to describe a spin chain composed by $N$ particles, with each particles having $d$ states. The system can be regard as a congregation of $N$ localized particles and we have recognized that a pure state corresponds to a vector in Hilbert space. Hence, the wave-function of many-body systems can be described by $N$ subspace,
+Before drawing a many-body system with tensor-network representation, we should discuss how to describe a spin chain composed by $N$ particles, with each particles having $d$ states. The system can be regard as a congregation of $N$ localized particles and we have recognized that a pure state corresponds to a vector in Hilbert space. Hence, the wave-function of many-body systems can be described by $N$ subspace
 \begin{align}
 	\Ket{\Psi_{N}} =\sum_{i_1,i_2,\ldots,i_N}{C_{i_1,i_2,i_3,\ldots,i_N}\Ket{i_1}\otimes\Ket{i_2}\otimes \ldots \otimes \Ket{i_N}},
 	\label{wavefunc}
 \end{align}
-where each individual $\Ket{i_1}, \Ket{i_2},\ldots, \Ket{i_N}$ spanned by an orthogonal basis , with the degree of freedom $d$. After writing down the formulation of the wave-function, Eq.~\ref{wavefunc}, we are able to build a tensor-network representation for quantum states. The wave-function $\Ket{\Psi_N}$ is shown as Fig.~\ref{fig225}(a), each bond of the tensor corresponds to the local Hilbert space $\Ket{i_n}$ and the dimension of it is equivalent to the probable states of the particle on the $n$-th site and the coefficients of the rank-N tensor corresponds to $C_{i_1,i_2,i_3,\ldots,i_N}$.
+where each individual wave function $\Ket{i_1}, \Ket{i_2},\ldots, \Ket{i_N}$ has the degree of freedom $d$. After writing down the formulation of the wave-function, Eq.~\ref{wavefunc}, we are able to build a tensor-network representation for quantum states. The wave-function $\Ket{\Psi_N}$ is shown as Fig.~\ref{fig225}(a), each bond of the tensor corresponds to the local Hilbert space $\Ket{i_n}$ and the dimension of it is equivalent to the probable states of the particles on the $n$-th site and the coefficients of the rank-$N$ tensor corresponds to $C_{i_1,i_2,i_3,\ldots,i_N}$.
 
-No matter from Eq.~\ref{wavefunc} or Fig.~\ref{fig225}(a), we can notice that the number of coefficients in $C_{i_1,i_2,i_3,\ldots,\i_N}$ is proportional to $d^N$, directly. Therefor, it is impossible to fully describe a many-body system by a classical machine if the system size larger then fifty. Fortunately, according to the theory of MPS \cite{PhysRevB.73.094423} \cite{PhysRevLett.75.3537}, the wave-function can be decomposed to two subsystem by Schmidt decomposition and there are more discussions in the Chap.\ref{chapter:2ditebd}. 
+No matter from Eq.~\ref{wavefunc} or Fig.~\ref{fig225}(i), we can notice that the number of coefficients in $C_{i_1,i_2,i_3,\ldots,\i_N}$ is proportional to $d^N$, directly. Therefor, it is impossible to fully describe a many-body system by a classical machine if the system size larger than fifty. Fortunately, according to the theory of MPS \cite{PhysRevB.73.094423} \cite{PhysRevLett.75.3537}, the wave-function can be decomposed to two subsystem by the Schmidt decomposition.
 \begin{figure}[ht]
 	\centering
-	\includegraphics[width=0.85\textwidth]{figures/fig225.png}
+	\includegraphics[width=0.75\textwidth]{figures/fig225.png}
 	\caption[Represent wave-function of quntum states of TN]{(i) The wave-function, $\Ket{\Psi_N}$ (ii) The norm of $\Ket{\Psi_N}$, $\Braket{\Psi_N|\Psi_N}$ (iii) Expectation value of observable $O$, $\Bra{\Psi_N}O\Ket{\Psi_N}$}
 	\label{fig225}
 \end{figure}
+
+\section{Matrix product state}
+\label{MPS}
+
+Base on the theory of MPS, the wave-function composed by pure states can be decompose to many unit cells by \textit{sigular value decomopostion} and \textit{Schmidt decomposition}. To explain the MPS structure more explicitly, we begin from splitting the wave-function $\Ket{\Psi_N}$ [Fig.~\ref{fig225}(a)] between $n$ and $n+1$ sites with Schmidt decomposition, 
+\begin{align}
+	\label{schmitwave}
+	\Ket{\Psi_{N}} = \sum_{\alpha_n} \lambda_{\alpha_n} \Ket{\psi_{\alpha_n}^{[1\dots n]}} \Ket{\psi_{\alpha_n}^{[n+1\dots N]}}
+\end{align}
+where $\lambda_{\alpha_n} > 0$ and $\sum\limits_{\alpha_n}{\lambda_{\alpha_n}^2 = 1}$. To obtain the one site wave function $\Ket{\psi_{\alpha_n}^{[n+1]}}$, we perform Schmidt decomposition on $\Ket{\psi_{\alpha_n}^{[n+1\dots N]}}$ between the $n+1$ and $n+2$ sites,
+\begin{align}
+	\Ket{\psi_{\alpha_n}^{[n+1\dots N]}} = \sum_{\alpha_{n+1}} \lambda_{\alpha_{n+1}} \Ket{\psi_{\alpha_{n+1}}^{[n+1]}} \Ket{\psi_{\alpha_{n+2}}^{[n+2\dots N]}}
+\end{align}
+then span $\Ket{\psi_{\alpha_{n+1}}^{[n+1]}}$ by the spin basis $i_{n+1}$,
+\begin{align}
+	\Ket{\psi_{\alpha_{n+1}}^{[n+1]}} = \sum_{i_{n+1}}{\Gamma^{[n+1] i_{n+1}}_{\alpha_n \alpha_{n+1}} \Ket{i_{n+1}}}
+\end{align}
+and the Eq. \ref{schmitwave} can be re-written as, 
+\begin{align}
+	\Ket{\Psi_{N}} = \sum_{\alpha_n,\alpha_{n+1}}\sum_{i_{n+1}}{\lambda_{\alpha_n} \Gamma^{[n+1] i_{n+1}}_{\alpha_n \alpha_{n+1}} \lambda_{\alpha_{n+1}l} \Ket{\psi_{\alpha_n}^{[1\dots n]}} \Ket{i_{n+1}} \Ket{\psi_{\alpha_{n+2}}^{[n+2\dots N]}} }
+\end{align}
+In the end, we can repeat the same process site-by-site in the entire system and obtain the MPS structure,
+\begin{align}
+	\Ket{\Psi_N} = \sum_{\alpha_1,\dots ,\alpha_N}\sum_{i_1,\dots ,i_N}{ \Gamma^{[1] i_{1}}_{\alpha_1} \lambda_{\alpha_1} \Gamma^{[2] i_{2}}_{\alpha_1 \alpha_{2}} \lambda_{\alpha_2} \dots  \lambda_{\alpha_{N-2}} \Gamma^{[N-1] i_{N-1}}_{\alpha_{N-2} \alpha_{N-1}} \lambda_{\alpha_{N-1}} \Gamma^{[N] i_{N}}_{\alpha_{N}} \Ket{i_1 i_2 \dots i_N}}
+\end{align}
+and the tensor network representation is shown as Fig.~\ref{fig311}, 
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.90\textwidth]{figures/fig3111.png}
+	\caption[The tensor network representation of matrix product states]{The tensor network representation of matrix product states.}
+	\label{fig311}
+\end{figure}
+
+Now that we try to expand it to a infinite chain \cite{PhysRevLett.98.070201}. Since the translation invariance, the wave function $\Ket{\Psi_{N=\infty}}$ can be represent as $n$-site translational symmetric states, which means that $\Gamma^{[i]}$ and $\lambda^{[i_{i}]}$ are independent of $\Gamma^{[i+n]}$ and $\lambda^{[i+n]}$. For instance, when $n=2$, the wave-function of a infinite chain can be recognized as a composite of two different matrix product states $\lambda^{[A]}\Gamma^{[A]}$ (red nodes) and $\lambda^{[B]}\Gamma^{[B]}$ (purple nodes), as shown in Fig.\ref{fig312}, 
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.90\textwidth]{figures/fig311.png}
+	\caption[The tensor network representation of infinite matrix product states]{The tensor network representation of infinite matrix product states.}
+	\label{fig312}
+\end{figure}
+
+Next, in order to update the two states in the unit cell, we utilize the \textit{Suzuki Trotter decomposition} to approximate the entire evolution operator with $2$-sites operators, \textit{The first-order Suzuk-Trotter decompostio} of operator $e^{\delta (A+B)}$ is,
+\begin{align}
+	\label{STd}
+	e^{\delta A + B} = e^{\delta A}e^{\delta B} + O(\delta^2)
+\end{align}
+where $A$ and $B$ are two non-commutative operators.Therefore, the entire evolution operator can be approximated by grouping the two site operator $H_{AB}$ and $H_{BA}$,
+\begin{align}
+	\label{evoopt}
+	e^{-\tau H} = \left(e^{-\delta H}\right)^{\frac{\tau}{\delta}} \approx \left(\prod e^{\delta H_{AB}} \right)\left( \prod e^{\delta H_{BA}}\right)
+\end{align}
+and we can obtain the evolution operator $e^{H_{AB}}$ and $e^{H_{BA}}$ straightly after solving two-site hamiltonians, $H_{AB}$ and $H_{BA}$.
+So far, we have constructed the infinite MPS and the 2-site evolution operators $e^{-\tau H_{AB}}$ and $e^{-\tau H_{BA}}$. Hence, the tensor network representation of Eq.~\ref{mapgroud} can be drawn as Fig.~\ref{fig313}, which means that the ground state $\Ket{\psi_0}$ can be regard as contracting all the tensors in the diagram. So the next problem: How can we contract them and preserve the structure like Fig{\ref{fig311}}?
+
+\begin{figure}[ht]
+	\centering
+	\includegraphics[width=0.90\textwidth]{figures/fig312.png}
+	\caption[The tensor diagram of imaginary time evolving block decimation.]{The red and blue tensor denote on \textit{odd} and \textit{even} sites and the yellow tensors are time evolution operators $e^{-\tau H_{AB}}$ and $e^{-\tau H_{BA}}$}
+	\label{fig313}
+\end{figure}
+

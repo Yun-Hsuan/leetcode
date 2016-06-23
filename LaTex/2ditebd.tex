@@ -4,16 +4,18 @@
 
 In one-dimensional many-body systems, the performance of one-dimension imaginary time evolving block decimation (1D-iTEBD) is very well, especially its high efficiency. Naturally, people wanted to extend the framework to study the two-dimensional systems. However, through many experiments we notice that the accuracy in 2-D is less than 1-D. In order to resolve that obstacle, optimizations of 2-D algorithms became an essential part in the condense matter physics. 
 
-In the Sec.~\ref{ite} and Sec.~\ref{itebd}, we briefly review the idea of imaginary time evolution (TEBD) \cite{PhysRevLett.93.040502} \cite{PhysRevB.78.155117} and explain how to extend it to simulate an infinite two-dimensional system (2D-iTEBD) \cite{PhysRevB.86.195137}. However, the method recorded in Ref.~\cite{PhysRevB.86.195137} is unstable because it multiply too many pseudo-inverse matrices during updating the wave-functions. Hence, In the Sec.~\ref{2dhastin} and Sec.~\ref{2dopt} we have more advance discussions about optimizing 2D-iTEBD, such as the method developed by Hastings \cite{light_hastings}, splitting projection states by QR and LQ decomposition tools, and so on. In the final Sec.~\ref{Comparison}, we utilize 2D-iTEBD to simulate the toy models, Heisenberg and transverse Ising, on two-dimensional square lattice and compare the features among 2D-TEBD algorithms which are implemented by different strategies. Notice that in this chapter we just focus on obtaining good projected entangled pair states \cite{PhysRevA.75.033605} by 2D-iTEBD. The optimization of measuring the local observables will be discussed in the Chap.~\ref{chapter:ctm}.
+In the Sec.~\ref{ite} and Sec.~\ref{itebd}, we briefly review the idea of imaginary time evolution (TEBD) \cite{PhysRevLett.93.040502} \cite{PhysRevB.78.155117} and explain how to extend it to simulate an infinite two-dimensional system (2D-iTEBD) \cite{PhysRevB.86.195137}. However, the method recorded in Ref.~\cite{PhysRevB.86.195137} is unstable because it multiply too many pseudo-inverse matrices during updating the wave-functions. Hence, In the Sec.~\ref{2dhastin} and Sec.~\ref{2dopt} we have more advance discussions about optimizing 2D-iTEBD, such as the method developed by Hastings \cite{light_hastings}, splitting projection states by QR and LQ decomposition tools, and so on. In the final Sec.~\ref{Comparison}, we utilize 2D-iTEBD to simulate the toy models, Heisenberg and transverse Ising models, on two-dimensional square lattice and compare the features among 2D-iTEBD algorithms which are implemented by different strategies.
 
-\section{Imaginary Time Evolution}
+\section{Matrix product states and imaginary Time Evolution}
 \label{ite}
 In this section, we apply the conclusion of the theory of imaginary time evolution and matrix product states (MPS) \cite{PhysRevB.73.094423} \cite{PhysRevLett.75.3537} to explain the fundamental concept of TEBD-like algorithms. Theoretically, we could project any initial random states to the ground state if the imaginary time evolution operator $e^{-\tau H}$ exist,  
 \begin{align}
 	\label{mapgroud}
 	\Ket{\psi_0} = \frac{e^{-\tau H} \Ket{\Psi}}{\parallel e^{-\tau H} \Ket{\Psi}\parallel}
 \end{align}
-where $H$ is the Hamiltonian of a specified model. However, according to Eq.~\ref{wavefunc}, we have known that the number of coefficients in an origin evolution operator $e^{-\tau H}$ is proportional to $d^N \times d^N$. In other words, it is impossible to update entire system directly. Therefor, in one-dimensional quantum many-body systems we apply MPS structure to restrict the exponential increment of the dimension. Base on the theory of MPS, the wave-function composed by pure states can be decompose to many unit cells by \textit{sigular value decomopostion} and \textit{Schmidt decomposition}. To explain the MPS structure more explicitly, we begin from splitting the wave-function $\Ket{\Psi_N}$ [Fig.~\ref{fig225}(a)] between $n$ and $n+1$ sites with Schmidt decomposition, 
+where $H$ is the Hamiltonian of a specified model. However, according to Eq.~\ref{wavefunc}, we have known that the number of coefficients in an origin evolution operator $e^{-\tau H}$ is proportional to $d^N \times d^N$. In other words, it is impossible to update entire system directly. Therefore, in one-dimensional quantum many-body systems we apply MPS structure to restrict the exponential increment of the dimension. 
+
+Base on the theory of MPS, the wave-function composed by pure states can be decompose to many unit cells by \textit{sigular value decomopostion} and \textit{Schmidt decomposition}. To explain the MPS structure more explicitly, we begin from splitting the wave-function $\Ket{\Psi_N}$ [Fig.~\ref{fig225}(a)] between $n$ and $n+1$ sites with Schmidt decomposition, 
 \begin{align}
 	\label{schmitwave}
 	\Ket{\Psi_{N}} = \sum_{\alpha_n} \lambda_{\alpha_n} \Ket{\psi_{\alpha_n}^{[1\dots n]}} \Ket{\psi_{\alpha_n}^{[n+1\dots N]}}
@@ -56,7 +58,7 @@ Next, in order to update the two states in the unit cell, we utilize the \textit
 	\label{STd}
 	e^{\delta A + B} = e^{\delta A}e^{\delta B} + O(\delta^2)
 \end{align}
-where $A$ and $B$ are two non-commutative operators.Therefor, the entire evolution operator can be approximated by grouping the two site operator $H_{AB}$ and $H_{BA}$,
+where $A$ and $B$ are two non-commutative operators.Therefore, the entire evolution operator can be approximated by grouping the two site operator $H_{AB}$ and $H_{BA}$,
 \begin{align}
 	\label{evoopt}
 	e^{-\tau H} = \left(e^{-\delta H}\right)^{\frac{\tau}{\delta}} \approx \left(\prod e^{\delta H_{AB}} \right)\left( \prod e^{\delta H_{BA}}\right)
@@ -322,7 +324,7 @@ Nevertheless, the main idea to reduce the tensor $\Theta$ in ameliorate 2D-iTEBD
 Through these changed, the clustered tensor $\Theta$ is reduced to and rank-4 tensor, with dimension $d^2D^2$.
 
 \subsection{Truncation Error}
-In order to control the increment of the dimension of the virtual bonds, we must truncate the updated bond from $dD^3$ or $d^2D$ to $D$ after decomposing the tensor $\Theta$. However, if the singular values contained in $\Sigma$ are not concentrated to the leading terms, some influential features and basis would be dropped and the algorithms might be broken. Therefor, we set a cut off $\varepsilon$, 
+In order to control the increment of the dimension of the virtual bonds, we must truncate the updated bond from $dD^3$ or $d^2D$ to $D$ after decomposing the tensor $\Theta$. However, if the singular values contained in $\Sigma$ are not concentrated to the leading terms, some influential features and basis would be dropped and the algorithms might be broken. Therefore, we set a cut off $\varepsilon$, 
 \begin{align}
 	\varepsilon \geq 1 - \sum_{i=1}^{\chi}{\sigma_i^2}
 \end{align}
@@ -360,7 +362,7 @@ In conclusion, through many experiment we have known that this problem may not o
 
 \subsection{Different schemes of 2D-iTEBD}
 
-In previous sections, we have introduced four different implementations of 2D-iTEBD, \textit{Simple Update}, \textit{Ameliorate Simple Update}, \textit{Simple Update with QR decomposition} and \textit{Ameliorate Simple Update with QR}. In Fig.~\ref{fig325}, we notice that the methods based on Hastings scheme is more stable than the others which are build on \textit{Simple Update}. The Hastings ways can converge rapidly in 1,000 epochs. However, due to multiplying too many pseudo-inverse matrices, the others methods not only can not converge in 10,000 epochs, but also be broken in the end. Nevertheless, according to the result shown in Fig.~\ref{fig325}, we recognize that the QR decomposition is independent on the stability but it make the algorithms more efficient. See Fig.~\ref{fig324}, due to the decrement of the dimension of the tensor $\Theta$, the cost time does not increase exponentially with virtual bond dimensions. Therefor, we can simply study the two dimensional systems with a sufficient large virtual bond dimensions $D$, which means that we can obtain the better ground states more quickly and the measurement can be calculated more accurate with larger $D$.
+In previous sections, we have introduced four different implementations of 2D-iTEBD, \textit{Simple Update}, \textit{Ameliorate Simple Update}, \textit{Simple Update with QR decomposition} and \textit{Ameliorate Simple Update with QR}. In Fig.~\ref{fig325}, we notice that the methods based on Hastings scheme is more stable than the others which are build on \textit{Simple Update}. The Hastings ways can converge rapidly in 1,000 epochs. However, due to multiplying too many pseudo-inverse matrices, the others methods not only can not converge in 10,000 epochs, but also be broken in the end. Nevertheless, according to the result shown in Fig.~\ref{fig325}, we recognize that the QR decomposition is independent on the stability but it make the algorithms more efficient. See Fig.~\ref{fig324}, due to the decrement of the dimension of the tensor $\Theta$, the cost time does not increase exponentially with virtual bond dimensions. Therefore, we can simply study the two dimensional systems with a sufficient large virtual bond dimensions $D$, which means that we can obtain the better ground states more quickly and the measurement can be calculated more accurate with larger $D$.
 
 \begin{figure}[ht]
 	\centering
