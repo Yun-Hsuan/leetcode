@@ -175,6 +175,18 @@ emedefault.sty)
 emedefault.sty)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/themes/outer/beamerouterth
 emedefault.sty)))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/braket/braket.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/mdframed/mdframed.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/expl3-code.tex)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/l3unicode-data.def)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/l3pdfmode.def)))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/etoolbox/etoolbox.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/zref-abspage.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/zref-base.sty))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/needspace/needspace.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/mdframed/md-frame-0.mdf))
 (/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/themes/theme/beamerthemeMa
 drid.sty
 (/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/themes/color/beamercolorth
@@ -187,13 +199,17 @@ emerounded.sty)
 emeinfolines.sty))
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 94.
+(hyperref)                removing `math shift' on input line 96.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 94.
+(hyperref)                removing `math shift' on input line 96.
 
-(./ppt.aux)
+(./ppt.aux
+
+LaTeX Warning: Label `2DI' multiply defined.
+
+)
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
@@ -221,11 +237,11 @@ r-theorem-dictionary/translator-theorem-dictionary-English.dict) (./ppt.nav)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 )
-Overfull \hbox (25.01973pt too wide) in paragraph at lines 94--94
+Overfull \hbox (25.01973pt too wide) in paragraph at lines 96--96
  [][][][]  
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 98.
+(Font)              size <5> substituted on input line 100.
 
 
 Overfull \hbox (25.01973pt too wide) has occurred while \output is active
@@ -237,15 +253,15 @@ Overfull \hbox (25.01973pt too wide) has occurred while \output is active
 [2]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 109.
+(hyperref)                removing `math shift' on input line 111.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\pi' on input line 109.
+(hyperref)                removing `\pi' on input line 111.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 109.
+(hyperref)                removing `math shift' on input line 111.
 
 
 Overfull \hbox (25.01973pt too wide) has occurred while \output is active
@@ -253,47 +269,41 @@ Overfull \hbox (25.01973pt too wide) has occurred while \output is active
 [3]
 Overfull \hbox (25.01973pt too wide) has occurred while \output is active
  [][][][]  
-[4]
+[4] <figures/2DIsing.png, id=164, 418.56375pt x 121.45375pt>
+<use figures/2DIsing.png>
 Overfull \hbox (25.01973pt too wide) has occurred while \output is active
  [][][][]  
-[5]
+[5 <./figures/2DIsing.png>]
 Overfull \hbox (25.01973pt too wide) has occurred while \output is active
  [][][][]  
-[6]
+[6] <figures/2DIsingEM.png, id=221, 578.16pt x 397.485pt>
+<use figures/2DIsingEM.png>pdfTeX warning (ext4): destination with the same ide
+ntifier (name{2DI}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.185 \end{frame}
+                 
 Overfull \hbox (25.01973pt too wide) has occurred while \output is active
  [][][][]  
-[7]
+[7 <./figures/2DIsingEM.png>]
 Overfull \hbox (25.01973pt too wide) has occurred while \output is active
  [][][][]  
 [8]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 205.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 205.
+
+
 Overfull \hbox (25.01973pt too wide) has occurred while \output is active
  [][][][]  
 [9]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 156.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 156.
-
-
 Overfull \hbox (25.01973pt too wide) has occurred while \output is active
  [][][][]  
-[10]
-Overfull \hbox (25.01973pt too wide) has occurred while \output is active
- [][][][]  
-[11]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\translate ' on input line 200.
-
-
-Overfull \hbox (25.01973pt too wide) has occurred while \output is active
- [][][][]  
-[12 </usr/local/texlive/2015/texmf-dist/tex/latex/beamer/art/beamericonbook.pdf
-> </usr/local/texlive/2015/texmf-dist/tex/latex/beamer/art/beamericonarticle.pd
-f>] (./ppt.aux)
+[10] (./ppt.aux)
 
 Package rerunfilecheck Warning: File `ppt.out' has changed.
 (rerunfilecheck)                Rerun to get outlines right
@@ -303,16 +313,23 @@ Package rerunfilecheck Warning: File `ppt.out' has changed.
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
+
+LaTeX Warning: There were multiply-defined labels.
+
  )
 (see the transcript file for additional information)</usr/local/texlive/2015/te
-xmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/tex
-mf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2015/texmf
--dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2015/texmf-
-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2015/texmf-d
-ist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2015/texmf-dis
-t/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2015/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2015/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/local/texlive/2015/texmf-dist/
-fonts/type1/public/amsfonts/cm/cmssi8.pfb>
-Output written on ppt.pdf (12 pages, 119775 bytes).
+xmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2015/tex
+mf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2015/texm
+f-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></usr/local/texlive/2015/texmf-
+dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></usr/local/texlive/2015/texmf-di
+st/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr/local/texlive/2015/texmf-dis
+t/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/local/texlive/2015/texmf-dist
+/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/local/texlive/2015/texmf-dist/f
+onts/type1/public/amsfonts/cm/cmss9.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmssi10.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmssi12.pfb></usr/local/texlive/2015/texmf-dist/fon
+ts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local/texlive/2015/texmf-dist/font
+s/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2015/texmf-dist/fonts
+/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on ppt.pdf (10 pages, 177282 bytes).
 Transcript written on ppt.log.

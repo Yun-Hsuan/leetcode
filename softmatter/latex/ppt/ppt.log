@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2016.4.3)  19 JUN 2016 20:51
+This is pdfTeX, Version 3.14159265-2.6-1.40.16 (TeX Live 2015) (preloaded format=pdflatex 2015.7.14)  23 JUN 2016 05:44
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -707,6 +707,251 @@ Package: beamerinnerthemedefault 2014/06/30  (rcs-revision 580088513a67)
 emedefault.sty
 Package: beamerouterthemedefault 2012/12/19  (rcs-revision 1686da3db3c9)
 )))
+(/usr/local/texlive/2015/texmf-dist/tex/latex/braket/braket.sty)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/mdframed/mdframed.sty
+Package: mdframed 2013/07/01 1.9b: mdframed
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3packages/xparse/xparse.sty
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/expl3.sty
+Package: expl3 2015/03/01 v5547 L3 programming layer (loader) 
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/expl3-code.tex
+Package: expl3 2015/03/01 v5547 L3 programming layer (code) 
+L3 Module: l3bootstrap 2015/02/28 v5542 L3 Bootstrap code
+L3 Module: l3names 2015/02/24 v5535 L3 Namespace for primitives
+L3 Module: l3basics 2015/01/27 v5500 L3 Basic definitions
+L3 Module: l3expan 2014/11/27 v5472 L3 Argument expansion
+L3 Module: l3tl 2015/01/27 v5500 L3 Token lists
+L3 Module: l3str 2015/03/01 v5545 L3 Strings
+L3 Module: l3seq 2014/08/23 v5354 L3 Sequences and stacks
+L3 Module: l3int 2015/02/21 v5529 L3 Integers
+\c_max_int=\count153
+\l_tmpa_int=\count154
+\l_tmpb_int=\count155
+\g_tmpa_int=\count156
+\g_tmpb_int=\count157
+L3 Module: l3quark 2014/08/23 v5354 L3 Quarks
+L3 Module: l3prg 2014/08/23 v5354 L3 Control structures
+\g__prg_map_int=\count158
+L3 Module: l3clist 2014/08/23 v5354 L3 Comma separated lists
+L3 Module: l3token 2014/09/15 v5422 L3 Experimental token manipulation
+L3 Module: l3prop 2014/08/23 v5354 L3 Property lists
+L3 Module: l3msg 2015/02/26 v5537 L3 Messages
+L3 Module: l3file 2014/08/24 v5369 L3 File and I/O operations
+\l_iow_line_count_int=\count159
+\l__iow_target_count_int=\count160
+\l__iow_current_line_int=\count161
+\l__iow_current_word_int=\count162
+\l__iow_current_indentation_int=\count163
+L3 Module: l3skip 2014/08/23 v5354 L3 Dimensions and skips
+\c_zero_dim=\dimen188
+\c_max_dim=\dimen189
+\l_tmpa_dim=\dimen190
+\l_tmpb_dim=\dimen191
+\g_tmpa_dim=\dimen192
+\g_tmpb_dim=\dimen193
+\c_zero_skip=\skip57
+\c_max_skip=\skip58
+\l_tmpa_skip=\skip59
+\l_tmpb_skip=\skip60
+\g_tmpa_skip=\skip61
+\g_tmpb_skip=\skip62
+\c_zero_muskip=\muskip12
+\c_max_muskip=\muskip13
+\l_tmpa_muskip=\muskip14
+\l_tmpb_muskip=\muskip15
+\g_tmpa_muskip=\muskip16
+\g_tmpb_muskip=\muskip17
+L3 Module: l3keys 2015/01/27 v5500 L3 Key-value interfaces
+\g__keyval_level_int=\count164
+\l_keys_choice_int=\count165
+L3 Module: l3fp 2014/08/22 v5336 L3 Floating points
+\c__fp_leading_shift_int=\count166
+\c__fp_middle_shift_int=\count167
+\c__fp_trailing_shift_int=\count168
+\c__fp_big_leading_shift_int=\count169
+\c__fp_big_middle_shift_int=\count170
+\c__fp_big_trailing_shift_int=\count171
+\c__fp_Bigg_leading_shift_int=\count172
+\c__fp_Bigg_middle_shift_int=\count173
+\c__fp_Bigg_trailing_shift_int=\count174
+L3 Module: l3box 2014/08/23 v5354 L3 Experimental boxes
+\c_empty_box=\box53
+\l_tmpa_box=\box54
+\l_tmpb_box=\box55
+\g_tmpa_box=\box56
+\g_tmpb_box=\box57
+L3 Module: l3coffins 2014/08/23 v5354 L3 Coffin code layer
+\l__coffin_internal_box=\box58
+\l__coffin_internal_dim=\dimen194
+\l__coffin_offset_x_dim=\dimen195
+\l__coffin_offset_y_dim=\dimen196
+\l__coffin_x_dim=\dimen197
+\l__coffin_y_dim=\dimen198
+\l__coffin_x_prime_dim=\dimen199
+\l__coffin_y_prime_dim=\dimen200
+\c_empty_coffin=\box59
+\l__coffin_aligned_coffin=\box60
+\l__coffin_aligned_internal_coffin=\box61
+\l_tmpa_coffin=\box62
+\l_tmpb_coffin=\box63
+\l__coffin_display_coffin=\box64
+\l__coffin_display_coord_coffin=\box65
+\l__coffin_display_pole_coffin=\box66
+\l__coffin_display_offset_dim=\dimen201
+\l__coffin_display_x_dim=\dimen202
+\l__coffin_display_y_dim=\dimen203
+L3 Module: l3color 2014/08/23 v5354 L3 Experimental color support
+L3 Module: l3candidates 2015/03/01 v5544 L3 Experimental additions to l3kernel
+\l__box_top_dim=\dimen204
+\l__box_bottom_dim=\dimen205
+\l__box_left_dim=\dimen206
+\l__box_right_dim=\dimen207
+\l__box_top_new_dim=\dimen208
+\l__box_bottom_new_dim=\dimen209
+\l__box_left_new_dim=\dimen210
+\l__box_right_new_dim=\dimen211
+\l__box_internal_box=\box67
+\l__coffin_bounding_shift_dim=\dimen212
+\l__coffin_left_corner_dim=\dimen213
+\l__coffin_right_corner_dim=\dimen214
+\l__coffin_bottom_corner_dim=\dimen215
+\l__coffin_top_corner_dim=\dimen216
+\l__coffin_scaled_total_height_dim=\dimen217
+\l__coffin_scaled_width_dim=\dimen218
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/l3unicode-data.def
+File: l3unicode-data.def 2015/03/01 v5544 L3 Unicode data
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/l3kernel/l3pdfmode.def
+File: l3pdfmode.def 2015/03/01 v5544 L3 Experimental driver: PDF mode
+\l__driver_color_stack_int=\count175
+))
+Package: xparse 2014/11/25 v5471 L3 Experimental document command parser
+\l__xparse_current_arg_int=\count176
+\l__xparse_m_args_int=\count177
+\l__xparse_mandatory_args_int=\count178
+\l__xparse_processor_int=\count179
+\l__xparse_v_nesting_int=\count180
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/etoolbox/etoolbox.sty
+Package: etoolbox 2015/05/04 v2.2 e-TeX tools for LaTeX (JAW)
+\etb@tempcnta=\count181
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/zref-abspage.sty
+Package: zref-abspage 2012/04/04 v2.24 Module abspage for zref (HO)
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/zref-base.sty
+Package: zref-base 2012/04/04 v2.24 Module base for zref (HO)
+Package zref Info: New property list: main on input line 759.
+Package zref Info: New property: default on input line 760.
+Package zref Info: New property: page on input line 761.
+)
+\c@abspage=\count182
+Package zref Info: New property: abspage on input line 62.
+)
+(/usr/local/texlive/2015/texmf-dist/tex/latex/needspace/needspace.sty
+Package: needspace 2010/09/12 v1.3d reserve vertical space
+)
+\mdf@templength=\skip63
+\c@mdf@globalstyle@cnt=\count183
+\mdf@skipabove@length=\skip64
+\mdf@skipbelow@length=\skip65
+\mdf@leftmargin@length=\skip66
+\mdf@rightmargin@length=\skip67
+\mdf@innerleftmargin@length=\skip68
+\mdf@innerrightmargin@length=\skip69
+\mdf@innertopmargin@length=\skip70
+\mdf@innerbottommargin@length=\skip71
+\mdf@splittopskip@length=\skip72
+\mdf@splitbottomskip@length=\skip73
+\mdf@outermargin@length=\skip74
+\mdf@innermargin@length=\skip75
+\mdf@linewidth@length=\skip76
+\mdf@innerlinewidth@length=\skip77
+\mdf@middlelinewidth@length=\skip78
+\mdf@outerlinewidth@length=\skip79
+\mdf@roundcorner@length=\skip80
+\mdf@footenotedistance@length=\skip81
+\mdf@userdefinedwidth@length=\skip82
+\mdf@needspace@length=\skip83
+\mdf@frametitleaboveskip@length=\skip84
+\mdf@frametitlebelowskip@length=\skip85
+\mdf@frametitlerulewidth@length=\skip86
+\mdf@frametitleleftmargin@length=\skip87
+\mdf@frametitlerightmargin@length=\skip88
+\mdf@shadowsize@length=\skip89
+\mdf@extratopheight@length=\skip90
+\mdf@subtitleabovelinewidth@length=\skip91
+\mdf@subtitlebelowlinewidth@length=\skip92
+\mdf@subtitleaboveskip@length=\skip93
+\mdf@subtitlebelowskip@length=\skip94
+\mdf@subtitleinneraboveskip@length=\skip95
+\mdf@subtitleinnerbelowskip@length=\skip96
+\mdf@subsubtitleabovelinewidth@length=\skip97
+\mdf@subsubtitlebelowlinewidth@length=\skip98
+\mdf@subsubtitleaboveskip@length=\skip99
+\mdf@subsubtitlebelowskip@length=\skip100
+\mdf@subsubtitleinneraboveskip@length=\skip101
+\mdf@subsubtitleinnerbelowskip@length=\skip102
+
+(/usr/local/texlive/2015/texmf-dist/tex/latex/mdframed/md-frame-0.mdf
+File: md-frame-0.mdf 2013/07/01\ 1.9b: md-frame-0
+)
+\mdf@frametitlebox=\box68
+\mdf@footnotebox=\box69
+\mdf@splitbox@one=\box70
+\mdf@splitbox@two=\box71
+\mdf@splitbox@save=\box72
+\mdfsplitboxwidth=\skip103
+\mdfsplitboxtotalwidth=\skip104
+\mdfsplitboxheight=\skip105
+\mdfsplitboxdepth=\skip106
+\mdfsplitboxtotalheight=\skip107
+\mdfframetitleboxwidth=\skip108
+\mdfframetitleboxtotalwidth=\skip109
+\mdfframetitleboxheight=\skip110
+\mdfframetitleboxdepth=\skip111
+\mdfframetitleboxtotalheight=\skip112
+\mdffootnoteboxwidth=\skip113
+\mdffootnoteboxtotalwidth=\skip114
+\mdffootnoteboxheight=\skip115
+\mdffootnoteboxdepth=\skip116
+\mdffootnoteboxtotalheight=\skip117
+\mdftotallinewidth=\skip118
+\mdfboundingboxwidth=\skip119
+\mdfboundingboxtotalwidth=\skip120
+\mdfboundingboxheight=\skip121
+\mdfboundingboxdepth=\skip122
+\mdfboundingboxtotalheight=\skip123
+\mdf@freevspace@length=\skip124
+\mdf@horizontalwidthofbox@length=\skip125
+\mdf@verticalmarginwhole@length=\skip126
+\mdf@horizontalspaceofbox=\skip127
+\mdfsubtitleheight=\skip128
+\mdfsubsubtitleheight=\skip129
+\c@mdfcountframes=\count184
+
+****** mdframed patching \endmdf@trivlist
+
+****** -- failed******
+
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \newmdtheoremenv with sig. 'O{} m o m o ' on line 601.
+.................................................
+.................................................
+. LaTeX info: "xparse/define-command"
+. 
+. Defining command \mdtheorem with sig. ' O{} m o m o ' on line 701.
+.................................................
+\mdf@envdepth=\count185
+\c@mdf@env@i=\count186
+\c@mdf@env@ii=\count187
+\c@mdf@zref@counter=\count188
+Package zref Info: New property: mdf@pagevalue on input line 895.
+)
 (/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/themes/theme/beamerthemeMa
 drid.sty
 Package: beamerthemeMadrid 2010/06/17  (rcs-revision d02a7cf4d8ae)
@@ -729,29 +974,33 @@ Package: beamerouterthemeinfolines 2012/10/16  (rcs-revision 51a8c72084af)
 ))
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 94.
+(hyperref)                removing `math shift' on input line 96.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 94.
+(hyperref)                removing `math shift' on input line 96.
 
-(./ppt.aux)
+(./ppt.aux
+
+LaTeX Warning: Label `2DI' multiply defined.
+
+)
 \openout1 = `ppt.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 94.
-LaTeX Font Info:    ... okay on input line 94.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 96.
+LaTeX Font Info:    ... okay on input line 96.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -789,16 +1038,16 @@ LaTeX Font Info:    ... okay on input line 94.
 
 (/usr/local/texlive/2015/texmf-dist/tex/context/base/supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count153
-\scratchdimen=\dimen188
-\scratchbox=\box53
-\nofMPsegments=\count154
-\nofMParguments=\count155
+\scratchcounter=\count189
+\scratchdimen=\dimen219
+\scratchbox=\box73
+\nofMPsegments=\count190
+\nofMParguments=\count191
 \everyMPshowfont=\toks43
-\MPscratchCnt=\count156
-\MPscratchDim=\dimen189
-\MPnumerator=\count157
-\makeMPintoPDFobject=\count158
+\MPscratchCnt=\count192
+\MPscratchDim=\dimen220
+\MPnumerator=\count193
+\makeMPintoPDFobject=\count194
 \everyMPtoPDFconversion=\toks44
 ) (/usr/local/texlive/2015/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
 Package: epstopdf-base 2010/02/09 v2.5 Base part for package epstopdf
@@ -816,8 +1065,8 @@ File: epstopdf-sys.cfg 2010/07/13 v1.3 Configuration of (r)epstopdf for TeX Liv
 e
 ))
 ABD: EveryShipout initializing macros
-\AtBeginShipoutBox=\box54
-Package hyperref Info: Link coloring OFF on input line 94.
+\AtBeginShipoutBox=\box74
+Package hyperref Info: Link coloring OFF on input line 96.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
@@ -825,68 +1074,68 @@ Package: nameref 2012/10/27 v2.43 Cross-referencing by name of section
 (/usr/local/texlive/2015/texmf-dist/tex/generic/oberdiek/gettitlestring.sty
 Package: gettitlestring 2010/12/03 v1.4 Cleanup title references (HO)
 )
-\c@section@level=\count159
+\c@section@level=\count195
 )
-LaTeX Info: Redefining \ref on input line 94.
-LaTeX Info: Redefining \pageref on input line 94.
-LaTeX Info: Redefining \nameref on input line 94.
+LaTeX Info: Redefining \ref on input line 96.
+LaTeX Info: Redefining \pageref on input line 96.
+LaTeX Info: Redefining \nameref on input line 96.
 
 (./ppt.out) (./ppt.out)
 \@outlinefile=\write5
 \openout5 = `ppt.out'.
 
 LaTeX Font Info:    Overwriting symbol font `operators' in version `normal'
-(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 94.
+(Font)                  OT1/cmr/m/n --> OT1/cmss/m/n on input line 96.
 LaTeX Font Info:    Overwriting symbol font `operators' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 94.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 96.
 \symnumbers=\mathgroup6
 \sympureletters=\mathgroup7
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 94.
-LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 94.
+(Font)                  OT1/cmss/m/n --> OT1/cmr/m/n on input line 96.
+LaTeX Font Info:    Redeclaring math alphabet \mathbf on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `normal'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 94.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 94.
-LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 94.
+(Font)                  OT1/cmr/bx/n --> OT1/cmss/bx/n on input line 96.
+LaTeX Font Info:    Redeclaring math alphabet \mathsf on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `normal'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 94.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/m/n on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 94.
-LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 94.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/m/n on input line 96.
+LaTeX Font Info:    Redeclaring math alphabet \mathit on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `normal'
-(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 94.
+(Font)                  OT1/cmr/m/it --> OT1/cmss/m/it on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 94.
-LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 94.
+(Font)                  OT1/cmr/bx/it --> OT1/cmss/m/it on input line 96.
+LaTeX Font Info:    Redeclaring math alphabet \mathtt on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `normal'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 94.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 94.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/m/n on input line 96.
 LaTeX Font Info:    Overwriting symbol font `numbers' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 94.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 96.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 94.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathrm' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 94.
+(Font)                  OT1/cmss/bx/n --> OT1/cmr/bx/n on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathbf' in version `bold'
-(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 94.
+(Font)                  OT1/cmss/bx/n --> OT1/cmss/bx/n on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathsf' in version `bold'
-(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 94.
+(Font)                  OT1/cmss/m/n --> OT1/cmss/bx/n on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathit' in version `bold'
-(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 94.
+(Font)                  OT1/cmss/m/it --> OT1/cmss/bx/it on input line 96.
 LaTeX Font Info:    Overwriting math alphabet `\mathtt' in version `bold'
-(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 94.
-LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 94.
+(Font)                  OT1/cmtt/m/n --> OT1/cmtt/bx/n on input line 96.
+LaTeX Font Info:    Redeclaring symbol font `pureletters' on input line 96.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `normal'
 (Font)                  OT1/cmss/m/it --> OT1/mathkerncmss/m/sl on input line 9
-4.
+6.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/cmss/bx/it --> OT1/mathkerncmss/m/sl on input line 
-94.
+96.
 LaTeX Font Info:    Overwriting symbol font `pureletters' in version `bold'
 (Font)                  OT1/mathkerncmss/m/sl --> OT1/mathkerncmss/bx/sl on inp
-ut line 94.
+ut line 96.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/translator/dicts/translato
 r-basic-dictionary/translator-basic-dictionary-English.dict
@@ -912,32 +1161,32 @@ Dictionary: translator-numbers-dictionary, Language: English
 r-theorem-dictionary/translator-theorem-dictionary-English.dict
 Dictionary: translator-theorem-dictionary, Language: English 
 )
-LaTeX Info: Redefining \includegraphics on input line 94.
+LaTeX Info: Redefining \includegraphics on input line 96.
  (./ppt.nav)
-LaTeX Font Info:    Try loading font information for U+msa on input line 94.
+LaTeX Font Info:    Try loading font information for U+msa on input line 96.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Try loading font information for U+msb on input line 94.
+LaTeX Font Info:    Try loading font information for U+msb on input line 96.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Try loading font information for OT1+mathkerncmss on input 
-line 94.
+line 96.
 
 (/usr/local/texlive/2015/texmf-dist/tex/latex/sansmathaccent/ot1mathkerncmss.fd
 File: ot1mathkerncmss.fd 2013/03/27 Fontinst v1.933 font definitions for OT1/ma
 thkerncmss.
 )
-Overfull \hbox (25.01973pt too wide) in paragraph at lines 94--94
+Overfull \hbox (25.01973pt too wide) in paragraph at lines 96--96
  [][][][]  
  []
 
 
 LaTeX Font Warning: Font shape `OT1/cmss/m/n' in size <4> not available
-(Font)              size <5> substituted on input line 98.
+(Font)              size <5> substituted on input line 100.
 
 
 Overfull \hbox (25.01973pt too wide) has occurred while \output is active
@@ -957,15 +1206,15 @@ Overfull \hbox (25.01973pt too wide) has occurred while \output is active
 ]
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 109.
+(hyperref)                removing `math shift' on input line 111.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\pi' on input line 109.
+(hyperref)                removing `\pi' on input line 111.
 
 
 Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 109.
+(hyperref)                removing `math shift' on input line 111.
 
 
 Overfull \hbox (25.01973pt too wide) has occurred while \output is active
@@ -981,28 +1230,51 @@ Overfull \hbox (25.01973pt too wide) has occurred while \output is active
 
 [4
 
-]
+] <figures/2DIsing.png, id=191, 418.56375pt x 121.45375pt>
+File: figures/2DIsing.png Graphic file (type png)
+
+<use figures/2DIsing.png>
+Package pdftex.def Info: figures/2DIsing.png used on input line 159.
+(pdftex.def)             Requested size: 171.14764pt x 49.66106pt.
+
 Overfull \hbox (25.01973pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [5
 
-]
+ <./figures/2DIsing.png>]
+Package mdframed Info: mdframed detected package amsthm 
+ changed the theorem header of amsthm
+(mdframed)              on input line 178.
+Package mdframed Info: mdframed inside a box 
+ mdframed uses option nobreak mdframed on input line 178.
+
 Overfull \hbox (25.01973pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [6
 
-]
+] <figures/2DIsingEM.png, id=248, 578.16pt x 397.485pt>
+File: figures/2DIsingEM.png Graphic file (type png)
+
+<use figures/2DIsingEM.png>
+Package pdftex.def Info: figures/2DIsingEM.png used on input line 185.
+(pdftex.def)             Requested size: 256.72147pt x 176.49513pt.
+pdfTeX warning (ext4): destination with the same identifier (name{2DI}) has bee
+n already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.185 \end{frame}
+                 
 Overfull \hbox (25.01973pt too wide) has occurred while \output is active
  [][][][]  
  []
 
 [7
 
-]
+ <./figures/2DIsingEM.png>]
 Overfull \hbox (25.01973pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1010,6 +1282,15 @@ Overfull \hbox (25.01973pt too wide) has occurred while \output is active
 [8
 
 ]
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 205.
+
+
+Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
+(hyperref)                removing `math shift' on input line 205.
+
+
 Overfull \hbox (25.01973pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1017,15 +1298,6 @@ Overfull \hbox (25.01973pt too wide) has occurred while \output is active
 [9
 
 ]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 156.
-
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `math shift' on input line 156.
-
-
 Overfull \hbox (25.01973pt too wide) has occurred while \output is active
  [][][][]  
  []
@@ -1033,26 +1305,6 @@ Overfull \hbox (25.01973pt too wide) has occurred while \output is active
 [10
 
 ]
-Overfull \hbox (25.01973pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[11
-
-]
-
-Package hyperref Warning: Token not allowed in a PDF string (PDFDocEncoding):
-(hyperref)                removing `\translate ' on input line 200.
-
-
-Overfull \hbox (25.01973pt too wide) has occurred while \output is active
- [][][][]  
- []
-
-[12
-
- </usr/local/texlive/2015/texmf-dist/tex/latex/beamer/art/beamericonbook.pdf> <
-/usr/local/texlive/2015/texmf-dist/tex/latex/beamer/art/beamericonarticle.pdf>]
 \tf@nav=\write6
 \openout6 = `ppt.nav'.
 
@@ -1062,41 +1314,48 @@ Overfull \hbox (25.01973pt too wide) has occurred while \output is active
 \tf@snm=\write8
 \openout8 = `ppt.snm'.
 
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 228.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 228.
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 285.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 285.
  (./ppt.aux)
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 228.
-Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 228.
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 285.
+Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 285.
 Package rerunfilecheck Info: File `ppt.out' has not changed.
-(rerunfilecheck)             Checksum: C61D4B132E7F00B7F4D57FD734B0FE59;661.
+(rerunfilecheck)             Checksum: DD48ECFE3FB70BC1ECE0C11332C2E010;703.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 1.0pt have occurred.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 228.
+
+LaTeX Warning: There were multiply-defined labels.
+
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 285.
  ) 
 Here is how much of TeX's memory you used:
- 16949 strings out of 493089
- 329242 string characters out of 6134849
- 395316 words of memory out of 5000000
- 19988 multiletter control sequences out of 15000+600000
- 18150 words of font info for 66 fonts, out of 8000000 for 9000
+ 23803 strings out of 493089
+ 466822 string characters out of 6134842
+ 523447 words of memory out of 5000000
+ 26804 multiletter control sequences out of 15000+600000
+ 17487 words of font info for 64 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 56i,18n,63p,379b,622s stack positions out of 5000i,500n,10000p,200000b,80000s
-</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb
-></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb><
-/usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></
-usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></u
-sr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr
-/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/l
-ocal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb>
-Output written on ppt.pdf (12 pages, 120175 bytes).
+ 56i,19n,62p,10388b,600s stack positions out of 5000i,500n,10000p,200000b,80000s
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb
+></usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb>
+</usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi8.pfb></
+usr/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi9.pfb></us
+r/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss10.pfb></usr
+/local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss12.pfb></usr/
+local/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss8.pfb></usr/lo
+cal/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmss9.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi10.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi12.pfb></usr/loca
+l/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmssi8.pfb></usr/local
+/texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/
+texlive/2015/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy8.pfb>
+Output written on ppt.pdf (10 pages, 178191 bytes).
 PDF statistics:
- 486 PDF objects out of 1000 (max. 8388607)
- 438 compressed objects within 5 object streams
- 39 named destinations out of 1000 (max. 500000)
- 163 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 405 PDF objects out of 1000 (max. 8388607)
+ 360 compressed objects within 4 object streams
+ 31 named destinations out of 1000 (max. 500000)
+ 155 words of extra memory for PDF output out of 10000 (max. 10000000)
 

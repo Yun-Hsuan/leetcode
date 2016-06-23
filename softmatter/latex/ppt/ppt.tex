@@ -11,6 +11,8 @@
 % notice. 
 
 \documentclass{beamer}
+\usepackage{braket}
+\usepackage{mdframed}
 
 % There are many different themes available for Beamer. A comprehensive
 % list with examples is given here:
@@ -111,119 +113,174 @@
 \begin{frame}{Introduction to the Monte Carlo Method}{Demo - calculate $\pi$}
 \begin{itemize}
 \item {
-	My first point.
+	Define a domain of the target.
+	\begin{align}
+		p(x,y) = \begin{cases}
+			1 & \text{, } x^2 + y^2 \leq 1 \\
+			0 & \text{, otherwise} 
+		\end{cases}
+	\end{align}
 }
 \item {
-	My second point.
+	Generate random numbers $(x_i, y_i)$ from uniform distribute $[-1, 1]$.
+	\begin{align}	
+		p_i = 1 \text{ if } &x^2+y^2 \leq 1\text{; } p+i = 0 \text{ otherwise} \\
+		&\pi \approx \frac{1}{N} \sum_{i=1}^{N} pi + O( 1 / \sqrt{N})
+	\end{align}
 }
 \end{itemize}
 \end{frame}
 
-\subsection{Demo - calculate L-J particles in the NVT-ensemble}
+\begin{frame}{Introduction to the Monte Carlo Method}{Demo - calculate $\pi$}
 
+\end{frame}
+
+\subsection{Demo - calculate 2-D classical Ising model}
+
+\begin{frame}{Introduction to the Monte Carlo Method}{Demo - calculate 2-D classical Ising model}
+	\begin{itemize}
+		\item Build the configuration of a 2-D square lattice and set spins on each site. [Fig.~\ref{2DI}]
+	\end{itemize}
+	\begin{figure}[h]
+		\includegraphics[width=0.50\textwidth]{figures/2DIsing.png}
+		\label{2DI}
+	\end{figure}
+			\begin{align}
+				&H = -J \sum_{i \neq j}{\sigma_i^z \sigma_j^z}\\ 
+				&\Psi = \Ket{\sigma_1, \sigma_j, \cdots, \sigma_N}
+			\end{align}
+	\begin{itemize}
+		\item Calculate the probability of the configuration at time $t$:
+			\begin{align}
+				P(E,t) =  e^{-\beta E(C)} \text{, where } \beta = \frac{1}{k_B T}
+			\end{align}
+	\end{itemize}
+
+\end{frame}
+
+\begin{frame}{Introduction to the Monte Carlo Method}{Demo - calculate 2-D classical Ising model}
+	\begin{itemize}
+		\item Importance Sampling: Metropolis algorithm \\
+
+			Choose a spin randomly and determined that if it should be flipped to a new configuration $C^{\prime}$ \\
+			\centerline{$\Delta E = E(C^{\prime}) - E(C)$}
+			\begin{mdframed}
+				\begin{align*}
+					&\Delta E < 0 : \text{ accept filp} \\ 
+					&\Delta E > 0 = \begin{cases}
+					\text{accept }C^{\prime} \text{, if } e^{-\beta \Delta E} \geq \text{random number}  \\
+					\text{reject }C^{\prime} \text{, otherwise} 
+				\end{cases}
+				\\
+			\end{align*}
+		\end{mdframed}
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Introduction to the Monte Carlo Method}{Demo - calculate 2-D classical Ising model}
+	\begin{figure}[h]
+		\includegraphics[width=0.75\textwidth]{figures/2DIsingEM.png}
+		\label{2DI}
+	\end{figure}
+\end{frame}
+
+\subsection{Calculate L-J particles in the NVT-ensemble}
 % You can reveal the parts of a slide one at a time
 % with the \pause command:
-\begin{frame}{Introduction to the Monte Carlo Method}{Demo - calculate L-J particlas in NVT ensemble}
+\begin{frame}{Introduction to the Monte Carlo Method}{Calculate L-J particlas in NVT ensemble}
 
 \begin{itemize}
-\item {
-	First item.
-		\pause % The slide will pause after showing the first item
-}
-\item {   
-	Second item.
-}
-% You can also specify when the content should appear
-% by using <n->:
-\item<3-> {
-	Third item.
-}
-\item<4-> {
-	Fourth item.
-}
-% or you can use the \uncover command to reveal general
-% content (not just \items):
-	\item<5-> {
-		Fifth item. \uncover<6->{Extra text in the fifth item.}
-	}
+	\item Initialize a molecular configuration: \\
+		In this case, we can set the atoms in the cubic sites.
+	\item Determined the Trial move:
+	\item Importance Sampling: Metropolis algorithm
+	\item Repeat until the energy converge.
 \end{itemize}
 \end{frame}
 
 \section{Introduction to the models for describing the phase behaviour}
 
-\subsection{Penetrable Sphere Model (PSM)}
-\subsection{Gaussian core Model (GCM)}
+\subsection{Penetrable Sphere Model (PSM) }
+\subsection{Gaussian core Model (GCM) }
 \subsection{Gaussian exponential Model (GEM-$n$)}
 
-\begin{frame}{Blocks}
-\begin{block}{Block Title}
-You can also highlight sections of your presentation in a block, with it's own title
-\end{block}
-\begin{theorem}
-There are separate environments for theorems, examples, definitions and proofs.
-\end{theorem}
-\begin{example}
-Here is an example of an example block.
-\end{example}
-\end{frame}
-
-% Placing a * after \section means it will not show in the
-% outline or table of contents.
-\section*{Summary}
-
-\begin{frame}{Summary}
-\begin{itemize}
-\item
-The \alert{first main message} of your talk in one or two lines.
-\item
-The \alert{second main message} of your talk in one or two lines.
-\item
-Perhaps a \alert{third message}, but not more than that.
-\end{itemize}
-
-\begin{itemize}
-\item
-Outlook
-\begin{itemize}
-\item
-Something you haven't solved.
-\item
-Something else you haven't solved.
-\end{itemize}
-\end{itemize}
+\begin{frame}{Introduction to the models for describing the phase behaviour}
+	
 \end{frame}
 
 \section{Results}
+\begin{frame}{Results}
+	
+\end{frame}
 
-% All of the following is optional and typically not needed. 
-\appendix
-\section<presentation>*{\appendixname}
-\subsection<presentation>*{For Further Reading}
+%\begin{frame}{Blocks}
+%\begin{block}{Block Title}
+%You can also highlight sections of your presentation in a block, with it's own title
+%\end{block}
+%\begin{theorem}
+%There are separate environments for theorems, examples, definitions and proofs.
+%\end{theorem}
+%\begin{example}
+%Here is an example of an example block.
+%\end{example}
+%\end{frame}
+%
+%% Placing a * after \section means it will not show in the
+%% outline or table of contents.
+%\section*{Summary}
+%
+%\begin{frame}{Summary}
+%\begin{itemize}
+%\item
+%The \alert{first main message} of your talk in one or two lines.
+%\item
+%The \alert{second main message} of your talk in one or two lines.
+%\item
+%Perhaps a \alert{third message}, but not more than that.
+%\end{itemize}
+%
+%\begin{itemize}
+%\item
+%Outlook
+%\begin{itemize}
+%\item
+%Something you haven't solved.
+%\item
+%Something else you haven't solved.
+%\end{itemize}
+%\end{itemize}
+%\end{frame}
+%
+%
+%% All of the following is optional and typically not needed. 
+%\appendix
+%\section<presentation>*{\appendixname}
+%\subsection<presentation>*{For Further Reading}
+%
+%\begin{frame}[allowframebreaks]
+%\frametitle<presentation>{For Further Reading}
+%
+%\begin{thebibliography}{10}
+%
+%\beamertemplatebookbibitems
+%% Start with overview books.
+%
+%\bibitem{Author1990}
+%A.~Author.
+%\newblock {\em Handbook of Everything}.
+%\newblock Some Press, 1990.
+%
+%
+%\beamertemplatearticlebibitems
+%% Followed by interesting articles. Keep the list short. 
+%
+%\bibitem{Someone2000}
+%S.~Someone.
+%\newblock On this and that.
+%\newblock {\em Journal of This and That}, 2(1):50--100,
+%	2000.
+%	\end{thebibliography}
+%	\end{frame}
 
-\begin{frame}[allowframebreaks]
-\frametitle<presentation>{For Further Reading}
-
-\begin{thebibliography}{10}
-
-\beamertemplatebookbibitems
-% Start with overview books.
-
-\bibitem{Author1990}
-A.~Author.
-\newblock {\em Handbook of Everything}.
-\newblock Some Press, 1990.
-
-
-\beamertemplatearticlebibitems
-% Followed by interesting articles. Keep the list short. 
-
-\bibitem{Someone2000}
-S.~Someone.
-\newblock On this and that.
-\newblock {\em Journal of This and That}, 2(1):50--100,
-	2000.
-	\end{thebibliography}
-	\end{frame}
-
-	\end{document} 
+\end{document} 
 
