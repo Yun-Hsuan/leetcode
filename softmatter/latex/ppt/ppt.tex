@@ -13,6 +13,8 @@
 \documentclass{beamer}
 \usepackage{braket}
 \usepackage{mdframed}
+\usepackage{multimedia}
+\usepackage[export]{adjustbox}
 
 % There are many different themes available for Beamer. A comprehensive
 % list with examples is given here:
@@ -46,7 +48,6 @@
 %\usetheme{Singapore}
 %\usetheme{Szeged}
 %\usetheme{Warsaw}
-
 \title{Phase behaviour of the PSM GCM and GEM-$n$ models}
 
 % A subtitle is optional and this may be deleted
@@ -132,7 +133,6 @@
 \end{frame}
 
 \begin{frame}{Introduction to the Monte Carlo Method}{Demo - calculate $\pi$}
-
 \end{frame}
 
 \subsection{Demo - calculate 2-D classical Ising model}
@@ -178,10 +178,20 @@
 \end{frame}
 
 \begin{frame}{Introduction to the Monte Carlo Method}{Demo - calculate 2-D classical Ising model}
-	\begin{figure}[h]
-		\includegraphics[width=0.75\textwidth]{figures/2DIsingEM.png}
-		\label{2DI}
-	\end{figure}
+	\begin{columns}[c]
+		\begin{column}[T]{4cm}
+			\movie[height = 1.5 \textwidth, width = 1.0 \textwidth]{2D classical Ising}{figures/2DIsing.mpg}
+		\end{column}
+		\begin{column}[T]{8cm}
+				\begin{figure}
+					\includegraphics[width=0.9\textwidth]{figures/2DIsingEM.png}
+					\label{2DI}
+				\end{figure}
+		\end{column}
+	\end{columns}
+\end{frame}
+
+\begin{frame}{Introduction to the Monte Carlo Method}{Demo - calculate 2-D classical Ising model}
 \end{frame}
 
 \subsection{Calculate L-J particles in the NVT-ensemble}
