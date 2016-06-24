@@ -5,7 +5,7 @@
 \label{solidstate}
 The simplex-solid state of an SU(N) quantum anti-ferromagnet was derived by Arovas \cite{PhysRevB.77.104404} and the most significant property is that any simplex states could be described by a natural generalization of the AKLT \cite{PhysRevLett.59.799} \cite{Affleck1988} valence bond solid state. It means that the bond signlets of the AKLT could be extended to $N$-site simplices.
 
-The concept of simplex-solid states ansatz were introduce by Xie et al \cite{PhysRevX.4.011025} \cite{PhysRevB.93.075154}. The tensor-network representation of simplex states is called projected entangled simplex state (PESS) which is also considered as an extension of PEPS. It obey the area law \cite{RevModPhys.82.277} of entanglement entropy and is able to characterizing two-dimensional systems if the dimension of the virtual bonds are large enough. The difference from the PEPS is that the entanglement among the virtual particles is described by entangled simplex tensors which depend on the structure of PESS. For example, see Fig.~\ref{fig411}(b), in kagome lattice there are three virtual particles within the simplex state so the entangled simplex tensor $S_{mnl}$ is a rank-3 tensor.
+The concept of simplex-solid states ansatz were introduce by Xie et al \cite{PhysRevX.4.011025, PhysRevB.93.075154}. The tensor-network representation of simplex states is called projected entangled simplex state (PESS) which is also considered as an extension of PEPS. It obeys the area law \cite{RevModPhys.82.277} of entanglement entropy and is able to characterize two-dimensional systems if the dimension of the virtual bonds are large enough. Unlke PEPS, the entanglement among the virtual particles is described by entangled simplex tensors which depends on the structure of PESS. For example, in Fig.~\ref{fig411}(b), on akagome lattice there are three virtual particles within the simplex state so the entangled simplex tensor $S_{mnl}$ is a rank-3 tensor.
 
 \begin{figure}[ht]
 	\centering
@@ -14,7 +14,7 @@ The concept of simplex-solid states ansatz were introduce by Xie et al \cite{Phy
 	\label{fig411}
 \end{figure}
 
-For illustrating how to write down the formulation of the PESS wave function, we begin from a simple system, the spin-2 simplex state on an infinite Kagome lattice. See Fig.~\ref{fig411}(a), each physical $S=2$ states on the lattices could be treated as a symmetric superposition of two virtual $S=1$ spins. According to the theory of AKLT, each neighbor simplices (triangles) share a single site symmetrically, which also means that the $S=1$ spins could be assigned to one of the simplices (vertex-sharing). Hence, there are three $S=1$ spins in each simplex states. From the features of the $SU(2)$ group, the decomposition of the direct-product of three integer spins is written as, 
+To illustrate how to write down the formulation of the PESS wave function, we begin from a simple system, the spin-2 simplex state on an infinite Kagome lattice. In Fig.~\ref{fig411}(a), each physical $S=2$ states on the lattices could be treated as a symmetric superposition of two virtual $S=1$ spins. According to the theory of AKLT, each neighbor simplices (triangles) share a single site symmetrically, which also means that the $S=1$ spins could be assigned to one of the simplices (vertex-sharing). Hence, there are three $S=1$ spins in each simplex state. From the features of the $SU(2)$ group, the decomposition of the direct-product of three integer spins is written as, 
 \begin{align}
 	\label{su2}
 	n \otimes n \otimes n = [a_0 \times 0] \oplus \dots \oplus [a_k \times k] \oplus \dots \oplus [a_{3n} \times 3n] \\
@@ -24,16 +24,16 @@ For illustrating how to write down the formulation of the PESS wave function, we
 	\end{cases}
 	\quad \text{, } k = 0, 1, \dots , 3n ,
 \end{align}
-where $a_k$ is a constant and $k$ express the $k$th irreducible representation. Now that we can write down the product of the spins in the simplex as,  
+where $a_k$ is a constant and $k$ indicates the $k$th irreducible representation. Now that we can write down the product of the spins in the simplex as,  
 \begin{align}
 	\label{111}
 	\barbelow{1} \otimes \barbelow{1} \otimes \barbelow{1} = \barbelow{0} \oplus \left( 3 \times \barbelow{1} \right) \oplus \left( 2 \times \barbelow{2} \right) \oplus \barbelow{3},
 \end{align}
-and show that there is an unique spin-singlet state. The result encourage us to define a virtual singlet on simplex,
+and show that there is an unique spin-singlet state. The result encourages us to define a virtual singlet on simplex,
 \begin{align}
 	\Ket{\psi_{\alpha}} = \frac{1}{\sqrt{6}} \sum_{\left\{ s_i s_j s_k\right\}}{S^{\alpha}_{s_i s_j s_k}\Ket{s_i, s_j, s_k}},
 \end{align}
-where $s_i,s_j,s_k$ are $S=1$ virtual spins located at site $i,j$ and $k$ of the simplex $\alpha$ and $S^{\alpha}_{s_i s_j s_k}$ is the Levi-Civita antisymmetric tensor $\varepsilon_{ijk}$ [Fig.~\ref{fig411}(b)]. For mapping the two virtual $S=1$ spins to the spin-2 subspace, we defined the projection operator $P_i$ $P_j$ and $P_k$on each site,
+where $s_i,s_j,s_k$ are $S=1$ virtual spins located at site $i,j$ and $k$ of the simplex $\alpha$ and $S^{\alpha}_{s_i s_j s_k}$ is the Levi-Civita antisymmetric tensor $\varepsilon_{ijk}$ [Fig.~\ref{fig411}(b)]. In order to  map the two virtual $S=1$ spins to the spin-2 subspace, we define the projection operator $P_i$ $P_j$ and $P_k$ on each site,
 \begin{align}
 	&P_i = \sum_{s_i,s^{\prime}_{i}}\sum_{\sigma_i}{A^{\sigma_i}_{s_i,s_i^{\prime}}\Ket{\sigma_i}\Bra{s_i,s_i^{\prime}}} \\
 	&P_j = \sum_{s_j,s^{\prime}_{j}}\sum_{\sigma_j}{A^{\sigma_j}_{s_j,s_j^{\prime}}\Ket{\sigma_j}\Bra{s_j,s_j^{\prime}}} \\
@@ -53,22 +53,22 @@ Now that we can write down the wave function of the simplex-solid state,
 	\Ket{\Phi} &= \bigoplus_i P_i \prod_{\alpha}{\Ket{\psi_{\alpha}}} \\
 	&= \Tr \left( \dots S_{s_i s_j s_k}^{\alpha} A^{\sigma_i}_{s_i,s_i^{\prime}} A^{\sigma_j}_{s_j,s_j^{\prime}} A^{\sigma_k}_{s_k,s_k^{\prime}} \dots \right) \Ket{\dots \sigma_i \sigma_j \sigma_k \dots}.
 \end{align}
-and apply the tensor-network representation to descrbe it, see Fig.~\ref{fig411}(b).
-This structure could be extended to any higher integer spins. In conlusion, a physical $S=2n$ (even-integer) spin is considered as a symmetric superposition of two virtual $S=n$ spins and a $S=2n-1$ (odd-integer) one is regarded as a symmetric superposition of a virtual $S=n-1$ spin and a virtual $S=n$ spin [ Fig.~\ref{fig411}(a) ]. More details are derived in reference \cite{PhysRevB.93.075154} \cite{0953-8984-21-45-456009}.
+and apply the tensor-network representation to describe it, as shown in Fig.~\ref{fig411}(b).
+This structure could be extended to any higher integer spins. In conlusion, a physical $S=2n$ (even-integer) spin is considered as a symmetric superposition of two virtual $S=n$ spins and a $S=2n-1$ (odd-integer) one is regarded as a symmetric superposition of a virtual $S=n-1$ spin and a virtual $S=n$ spin [ Fig.~\ref{fig411}(a) ]. More details are presented in reference \cite{PhysRevB.93.075154} \cite{0953-8984-21-45-456009}.
 
 \section{Variational PESS ansatz}
-In this section, we will employ the formulation of the PESS wave function as a variational ansatz. The PESS ansatz is similar to the imaginary time evolution discussed in chapter.\ref{chapter:2ditebd}. However, unlike the PEPS algorithms, we apply a higher rank tensor $S$ to describe the entanglement entropy among virtual particles in a simplex state. Due to the difference, we use \textit{high-order singular value decomposition} (HOSVD) \cite{PhysRevB.86.045139} \cite{doi:10.1137/S0895479896305696} rather than SVD to decompose wave function.
+In this section, we will employ the formulation of the PESS wave function as a variational ansatz. The PESS ansatz is similar to the imaginary time evolution discussed in chapter.\ref{chapter:2ditebd}. However, unlike the PEPS algorithms, we apply a higher rank tensor $S$ to describe the entanglement entropy among virtual particles in a simplex state. Due to the difference, we use \textit{high-order singular value decomposition} (HOSVD) \cite{PhysRevB.86.045139} \cite{doi:10.1137/S0895479896305696} rather than SVD to decompose the wave function.
 \subsection{High-order singular value decomposition}
 \label{hosvd}
-In the section, we will introduce to $N$th-order singular value decomposition (HOSVD), which is proposed for decomposing rank-N tensors, and show the pseudo-code to illustrate the scheme of the implementation.
-\begin{figure}[ht]
+In this section, we will introduce the $N$th-order singular value decomposition (HOSVD), which is proposed for decomposing rank-N tensors, and show the pseudo-code to illustrate the scheme of the implementation.
+\begin{figure}[b]
 	\centering
 	\includegraphics[width=1.00\textwidth]{figures/fig4311.png}
 	\caption[The picture of HOSVD for a rank-3 tensor.]{The picture of HOSVD for a rank-3 tensor $A$. $U^{(1)}$,$U^{(2)}$ and $U^{(3)}$ are unitary matrices and $S$ (yellow cuboid) is a core tensor.}
 	\label{fig4311}
 \end{figure}
 
-According to the theorem of HOSVD \cite{doi:10.1137/S0895479896305696}, every \textit{complex} ($ I_1 \times I_2 \times \dots \times I_N$)-tensor $A$ could be decompose to a \textit{core tensor} $S$ and other $n$-mode unitary matrix $U^{(n)}$, where $n$ must be smaller than $N$,
+According to the theorem of HOSVD \cite{doi:10.1137/S0895479896305696}, every \textit{complex} ($ I_1 \times I_2 \times \dots \times I_N$)-tensor $A$ could be decomposed to a \textit{core tensor} $S$ and other $n$-mode unitary matrix $U^{(n)}$, where $n$ must be smaller than $N$,
 \begin{align}
 	A = S \times U^{(1)} \times U^{(2)} \times \dots \times U^{(n)}
 \end{align} 
@@ -77,20 +77,20 @@ As shown in Fig.~\ref{fig4311}, a rank-3 tensor $A$ is decomposed into a core te
 		\begin{align}		
 			\left\langle S^{(n)}_{\alpha},S^{(n)}_{\beta} \right\rangle \quad \text{, if} \quad \alpha = \beta
 		\end{align}		
-		In other words, no matter the shape of $S$, each rows are orthogonal.
+		In other words, no matter what the shape of $S$ is, any two rows are orthogonal.
 	\item Ordering: The Frobenius-norms $\text{ } \norm{S^{(n)}_{i}} $ is ordered from large to small.
 		\begin{align}		
 			\norm{S^{(n)}_1} \geq \norm{S^{(n)}_2} \geq \dots \geq \norm{S^{(n)}_{I_n}} \geq 0,
 		\end{align}		
 		for all possible values of $n$.
 \end{enumerate}
-\begin{figure}[ht]
+\begin{figure}[t]
 	\centering
 	\includegraphics[width=0.90\textwidth]{figures/fig4312.png}
 	\caption[The tensor-network representation of HOSVD]{(a) Decompose $A$ to a core tensor $S$ and $n$-mode unitary matrix $U^{(n)}$, (b) Obtain tensors $U^{(n)}$ from decomposing various modes of tensor $A$ by SVD, (c) Obtain the core tensor $S$ from contracting all transpose unitary tensors $U^{(n)T}$ }
 	\label{fig4312}
 \end{figure}
-Now that we show the tensor-network representation for explaining more explicitly. If the target is to decompse a rank-3 $(N=3)$ tensor $A$ from 3 $(n=3)$ different modes, see Fig.~\ref{fig4312}(a), we can implement it by the following steps, 
+For instance, if the target is to decompose a rank-3 $(N=3)$ tensor $A$ from 3 $(n=3)$ different modes, as in Fig.~\ref{fig4312}(a), we can implement it by the following steps, 
 \begin{enumerate}
 	\item	Reshaping the tensors to each modes and obtain $U^{(n)}$ by SVD , as shown in Fig.~\ref{fig4312}(b).
 	\item	Contract all $U^{(n)T}$ tensors for calculating $S$, 
@@ -100,7 +100,7 @@ Now that we show the tensor-network representation for explaining more explicitl
 		see Fig.~\ref{fig4312}(c).
 \end{enumerate}
 \subsection{Simple update for PESS}
-In Chap.~\ref{chapter:2ditebd}, we have introduced an efficient approximation, the "simple update", for determining the ground states in the PEPS. In principle, the wave-function of PESS can be approached by the same way. In PEPS structure, the ground-state wave function is approximated by iterated application of imaginary-time evolution operators $U(\tau) = e^{-\tau H}$ on an random PEPS state $\Ket{\Psi_t}$, where $\tau$ is a small constant, see Fig.~\ref{fig312}. Base on the scheme, we can obtain the ground-state wave function of PESS by following steps,
+In Chap.~\ref{chapter:2ditebd}, we have introduced an efficient approximation, the "simple update", for determining the ground state in the PEPS. In principle, the wave-function of PESS can be approached by the same way. In PEPS structure, the ground-state wave function is approximated by iterated application of imaginary-time evolution operators $U(\tau) = e^{-\tau H}$ on an random PEPS state $\Ket{\Psi_t}$, where $\tau$ is a small constant, see Fig.~\ref{fig312}. Base on the scheme, we can obtain the ground-state wave function of PESS by following steps,which is similar to the simple update of PEPS
 \begin{enumerate}
 	\item Split Hamiltonian $H$,  
 		\begin{align}
@@ -113,7 +113,7 @@ In Chap.~\ref{chapter:2ditebd}, we have introduced an efficient approximation, t
 			e^{-\tau H} = e^{-\tau H_{\alpha}} e^{-\tau H_{\beta}} + O(\tau^{2}).
 		\end{align}
 	\item Absorb the environment bond vectors, which are considered as the entanglement between each simplex states, into projection tensors, and contract all projection tensors in the simplex state with the core tensor to obtain a cluster tensor.
-	\item Apply the evolution operator $U$ to the cluster tensor for obtaining a new cluster tensor.
+	\item Apply the evolution operator $U$ the cluster tensor for obtaining a new cluster tensor.
 	\item Decompose the new cluster tensor by HOSVD.
 	\item Truncate all the projection tensors and the core tensor.
 	\item Absorb the inverse bond vectors for removing the entanglement on the projection tensors.
@@ -122,9 +122,9 @@ which is similar to simple update of PEPS.
 
 \section{Infinite Kagome lattice}
 \label{kagome}
-In the previous section, we have briefly introduced to the procedures of PESS ansatz. The first step is to  choose an suitable $n$-PESS structure, where $n$ is the number of projection tensors in a simplex, to split the Hamiltonian and describe the system. There are many various graphical representation for the Kagome lattice [Fig.~\ref{fig411}(a)], such as 3-PESS, 5-PESS and 9-PESS \cite{PhysRevX.4.011025}. In this section, we will discuss more details about 3-PESS and 5-PESS.
+In the previous section, we have briefly introduced to the procedures of PESS ansatz. The first step is to  choose an suitable $n$-PESS structure, where $n$ is the number of projection tensors in a simplex, to split the Hamiltonian and describe the system. There are many various graphical representations for the Kagome lattice [Fig.~\ref{fig411}(a)], such as 3-PESS, 5-PESS and 9-PESS \cite{PhysRevX.4.011025}. In this section, we will discuss more details about 3-PESS and 5-PESS.
 \subsection{3-PESS}
-In the 3-PESS case, the PESS state can be drawn as the Fig.~\ref{fig4321}(a), which pictures that the many-body states can be described by composing two different simplices, upward- and downward-oriented triangular as shown in Fig \ref{fig4321}(b). Each simplices contain three rank-3 projection tensors, $A^{\sigma_i}_{mm^{\prime}}$ $A^{\sigma_j}_{nn^{\prime}}$ and $A^{\sigma_k}_{ll^{\prime}}$ and a rank-3 core tensor, $S_{mnl}^{\alpha}$ or $S_{m^{\prime}n^{\prime}l^{\prime}}^{\beta}$. Therefore, the form of the Hamiltonian is re-written by Eq.~\ref{splitH} as,
+In the 3-PESS case, the PESS state can be drawn as in Fig.~\ref{fig4321}(a). It shows pictures that the many-body states can be described by composing two different simplices, upward- and downward-oriented triangular as shown in Fig \ref{fig4321}(b). Each simplices contain three rank-3 projection tensors, $A^{\sigma_i}_{mm^{\prime}}$ $A^{\sigma_j}_{nn^{\prime}}$ and $A^{\sigma_k}_{ll^{\prime}}$ and a rank-3 core tensor, $S_{mnl}^{\alpha}$ or $S_{m^{\prime}n^{\prime}l^{\prime}}^{\beta}$. Therefore, the form of the Hamiltonian is rewritten by Eq.~\ref{splitH} as,
 \begin{align}
 	H = H_{\alpha} + H_{\beta} \quad,\text{where} \quad H_{\alpha} = H_{\Delta},\quad H_{\beta} = H_{\nabla}
 \end{align}

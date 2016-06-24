@@ -1,5 +1,6 @@
 %!TEX root = thesis.tex
 \chapter{Tensor Network Theory} 
+\label{chap2}
 In this chapter, we will introduce the foundations of tensor network \cite{jordan_studies_2011,Orus2014117,bauer_tensor_2011}, which is a new language for condense matter physics, and explain how to map the quantum many-body systems into the tensor network. 
 %This section begins from a fundamental question: How to draw a tensor network diagram? In tensor network theory , we are used to represent tensors as the notations, shown in Fig.~\ref{fig211}, because \textit{tensor diagrams} can fully describe the quantum states of any geometric lattice systems explicitly. Furthermore, base on its clear representation, the implementation of tensor network algorithms become simply. 
 
@@ -43,14 +44,16 @@ The permutation operation is to re-order the arrangement of the coefficients in 
 
 \subsection{Reshape}
 \label{reshape}
-The reshape operation is to combined more than two bonds of a tensor into a single bond. Although the rank of the tensor is reduced, the arrangement of coefficients is unchanged. The dimension of the new bond is equal to the product of the dimensions of the bonds contained in it. As shown in Fig.~\ref{figreshape}, we joint the bonds $\alpha$ and $\beta$ into a new bond $\delta$. Assume that the dimension of the bonds $\alpha$ and $\beta$ are $\chi_{\alpha}$ and $\chi_{\beta}$. The dimension of the bond $\delta$ is equal to $\chi_{\alpha}\chi_{\beta}$.
+The reshape operation is to combined more than two bonds of a tensor into a single bond. Although the rank of the tensor is reduced, the arrangement of coefficients is unchanged. The dimension of the new bond is equal to the product of the dimensions of the bonds contained in it. As shown in Fig.~\ref{figreshape}, we joint the bonds $\alpha$ and $\beta$ into a new bond $\delta$. Assume that the dimension of the bonds $\alpha$ and $\beta$ are $\chi_{\alpha}$ and $\chi_{\beta}$. The dimension of the bond $\delta$ is equal to $\chi_{\alpha}\chi_{\beta}$. In this thesis, we write down this operation as\begin{align}
+	T_{\alpha, \delta} = T_{\alpha, \beta \gamma}
+\end{align}
 
 \begin{figure}[H]
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/figreshape.png}
 	\caption[The permutation of a tensor.]{ Permute tensor $A_{\alpha \beta \gamma}$ to $\hat{A}_{\alpha \gamma \beta}$ }
 	\label{figreshape}
-\end{figure}
+\end{figure} 
 
 %\begin{align}
 %	A_{\alpha \beta \gamma} \rightarrow \hat{A}_{\alpha \gamma \beta}
@@ -114,7 +117,7 @@ Before drawing a many-body system with tensor-network representation, we should 
 \end{align}
 where each individual wave function $\Ket{i_1}, \Ket{i_2},\ldots, \Ket{i_N}$ has the degree of freedom $d$. After writing down the formulation of the wave-function, Eq.~\ref{wavefunc}, we are able to build a tensor-network representation for quantum states. The wave-function $\Ket{\Psi_N}$ is shown as Fig.~\ref{fig225}(a), each bond of the tensor corresponds to the local Hilbert space $\Ket{i_n}$ and the dimension of it is equivalent to the probable states of the particles on the $n$-th site and the coefficients of the rank-$N$ tensor corresponds to $C_{i_1,i_2,i_3,\ldots,i_N}$.
 
-No matter from Eq.~\ref{wavefunc} or Fig.~\ref{fig225}(i), we can notice that the number of coefficients in $C_{i_1,i_2,i_3,\ldots,\i_N}$ is proportional to $d^N$, directly. Therefor, it is impossible to fully describe a many-body system by a classical machine if the system size larger than fifty. Fortunately, according to the theory of MPS \cite{PhysRevB.73.094423} \cite{PhysRevLett.75.3537}, the wave-function can be decomposed to two subsystem by the Schmidt decomposition.
+No matter from Eq.~\ref{wavefunc} or Fig.~\ref{fig225}(i), we can notice that the number of coefficients in $C_{i_1,i_2,i_3,\ldots,\i_N}$ is proportional to $d^N$, directly. Therefor, it is impossible to fully describe a many-body system by a classical machine if the system size larger than fifty. Fortunately, according to the theory of MPS \cite{PhysRevB.73.094423, PhysRevLett.75.3537}, the wave-function can be decomposed to two subsystem by the Schmidt decomposition.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/fig225.png}
@@ -125,7 +128,7 @@ No matter from Eq.~\ref{wavefunc} or Fig.~\ref{fig225}(i), we can notice that th
 \section{Matrix product state}
 \label{MPS}
 
-Base on the theory of MPS, the wave-function composed by pure states can be decompose to many unit cells by \textit{sigular value decomopostion} and \textit{Schmidt decomposition}. To explain the MPS structure more explicitly, we begin from splitting the wave-function $\Ket{\Psi_N}$ [Fig.~\ref{fig225}(a)] between $n$ and $n+1$ sites with Schmidt decomposition, 
+Base on the theory of MPS, the wave-function composed by pure states can be decompose into many unit cells by \textit{sigular value decomopostion} and \textit{Schmidt decomposition}. To explain the MPS structure more explicitly, we begin from splitting the wave-function $\Ket{\Psi_N}$ [Fig.~\ref{fig225}(a)] between $n$ and $n+1$ sites with Schmidt decomposition, 
 \begin{align}
 	\label{schmitwave}
 	\Ket{\Psi_{N}} = \sum_{\alpha_n} \lambda_{\alpha_n} \Ket{\psi_{\alpha_n}^{[1\dots n]}} \Ket{\psi_{\alpha_n}^{[n+1\dots N]}}
@@ -138,7 +141,7 @@ then span $\Ket{\psi_{\alpha_{n+1}}^{[n+1]}}$ by the spin basis $i_{n+1}$,
 \begin{align}
 	\Ket{\psi_{\alpha_{n+1}}^{[n+1]}} = \sum_{i_{n+1}}{\Gamma^{[n+1] i_{n+1}}_{\alpha_n \alpha_{n+1}} \Ket{i_{n+1}}}
 \end{align}
-and the Eq. \ref{schmitwave} can be re-written as, 
+and the Eq. \ref{schmitwave} can be rewritten as
 \begin{align}
 	\Ket{\Psi_{N}} = \sum_{\alpha_n,\alpha_{n+1}}\sum_{i_{n+1}}{\lambda_{\alpha_n} \Gamma^{[n+1] i_{n+1}}_{\alpha_n \alpha_{n+1}} \lambda_{\alpha_{n+1}l} \Ket{\psi_{\alpha_n}^{[1\dots n]}} \Ket{i_{n+1}} \Ket{\psi_{\alpha_{n+2}}^{[n+2\dots N]}} }
 \end{align}
@@ -146,40 +149,20 @@ In the end, we can repeat the same process site-by-site in the entire system and
 \begin{align}
 	\Ket{\Psi_N} = \sum_{\alpha_1,\dots ,\alpha_N}\sum_{i_1,\dots ,i_N}{ \Gamma^{[1] i_{1}}_{\alpha_1} \lambda_{\alpha_1} \Gamma^{[2] i_{2}}_{\alpha_1 \alpha_{2}} \lambda_{\alpha_2} \dots  \lambda_{\alpha_{N-2}} \Gamma^{[N-1] i_{N-1}}_{\alpha_{N-2} \alpha_{N-1}} \lambda_{\alpha_{N-1}} \Gamma^{[N] i_{N}}_{\alpha_{N}} \Ket{i_1 i_2 \dots i_N}}
 \end{align}
-and the tensor network representation is shown as Fig.~\ref{fig311}, 
-\begin{figure}[ht]
+and the tensor network representation is shown as Fig.~\ref{fig311}
+
+Now we try to expand it to an infinite chain \cite{PhysRevLett.98.070201}. Due to the translational invariance, the wave function $\Ket{\Psi_{N=\infty}}$ can be represented as $n$-site translational symmetric states, which means that $\Gamma^{[i]}$ and $\lambda^{[i_{i}]}$ are independent of $\Gamma^{[i+n]}$ and $\lambda^{[i+n]}$. For instance, when $n=2$, the wave-function of an infinite chain can be recognized as a composite of two different matrix product states $\lambda^{[A]}\Gamma^{[A]}$ (red nodes) and $\lambda^{[B]}\Gamma^{[B]}$ (purple nodes), as shown in Fig.\ref{fig312}. Therefore, the requirement of the coefficients is reduced from $d^N$ to $NdD^2$, where $D$ is bond dimension between each matrix product states and we also call it virtual bond dimension.
+
+\begin{figure}[hb]
 	\centering
 	\includegraphics[width=0.90\textwidth]{figures/fig3111.png}
 	\caption[The tensor network representation of matrix product states]{The tensor network representation of matrix product states.}
 	\label{fig311}
 \end{figure}
 
-Now that we try to expand it to a infinite chain \cite{PhysRevLett.98.070201}. Since the translation invariance, the wave function $\Ket{\Psi_{N=\infty}}$ can be represent as $n$-site translational symmetric states, which means that $\Gamma^{[i]}$ and $\lambda^{[i_{i}]}$ are independent of $\Gamma^{[i+n]}$ and $\lambda^{[i+n]}$. For instance, when $n=2$, the wave-function of a infinite chain can be recognized as a composite of two different matrix product states $\lambda^{[A]}\Gamma^{[A]}$ (red nodes) and $\lambda^{[B]}\Gamma^{[B]}$ (purple nodes), as shown in Fig.\ref{fig312}, 
-
-\begin{figure}[ht]
+\begin{figure}[hb]
 	\centering
 	\includegraphics[width=0.90\textwidth]{figures/fig311.png}
 	\caption[The tensor network representation of infinite matrix product states]{The tensor network representation of infinite matrix product states.}
 	\label{fig312}
 \end{figure}
-
-Next, in order to update the two states in the unit cell, we utilize the \textit{Suzuki Trotter decomposition} to approximate the entire evolution operator with $2$-sites operators, \textit{The first-order Suzuk-Trotter decompostio} of operator $e^{\delta (A+B)}$ is,
-\begin{align}
-	\label{STd}
-	e^{\delta A + B} = e^{\delta A}e^{\delta B} + O(\delta^2)
-\end{align}
-where $A$ and $B$ are two non-commutative operators.Therefore, the entire evolution operator can be approximated by grouping the two site operator $H_{AB}$ and $H_{BA}$,
-\begin{align}
-	\label{evoopt}
-	e^{-\tau H} = \left(e^{-\delta H}\right)^{\frac{\tau}{\delta}} \approx \left(\prod e^{\delta H_{AB}} \right)\left( \prod e^{\delta H_{BA}}\right)
-\end{align}
-and we can obtain the evolution operator $e^{H_{AB}}$ and $e^{H_{BA}}$ straightly after solving two-site hamiltonians, $H_{AB}$ and $H_{BA}$.
-So far, we have constructed the infinite MPS and the 2-site evolution operators $e^{-\tau H_{AB}}$ and $e^{-\tau H_{BA}}$. Hence, the tensor network representation of Eq.~\ref{mapgroud} can be drawn as Fig.~\ref{fig313}, which means that the ground state $\Ket{\psi_0}$ can be regard as contracting all the tensors in the diagram. So the next problem: How can we contract them and preserve the structure like Fig{\ref{fig311}}?
-
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.90\textwidth]{figures/fig312.png}
-	\caption[The tensor diagram of imaginary time evolving block decimation.]{The red and blue tensor denote on \textit{odd} and \textit{even} sites and the yellow tensors are time evolution operators $e^{-\tau H_{AB}}$ and $e^{-\tau H_{BA}}$}
-	\label{fig313}
-\end{figure}
-
