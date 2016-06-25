@@ -1,11 +1,14 @@
 %!TEX root = thesis.tex
 \chapter{Infinite Projected Entangled Simplex State}
 \label{chapter:ipess}
+%%%%%%%%%%%%%%%%%
+In this chapter, we introduce a new class of tensor network states called projected entangled simplex solid state PESS.
+%%%%%%%%%%%%%%%%%
 \section{Simplex-solid State}
 \label{solidstate}
-The simplex-solid state of an SU(N) quantum anti-ferromagnet was derived by Arovas \cite{PhysRevB.77.104404} and the most significant property is that any simplex states could be described by a natural generalization of the AKLT \cite{PhysRevLett.59.799} \cite{Affleck1988} valence bond solid state. It means that the bond signlets of the AKLT could be extended to $N$-site simplices.
+The simplex-solid state of an SU(N) quantum anti-ferromagnet was first derived by Arovas \cite{PhysRevB.77.104404} and the most significant property is that any simplex states could be described by a natural generalization of the AKLT \cite{PhysRevLett.59.799} \cite{Affleck1988} valence bond solid state. It means that the bond signlets of the AKLT could be extended to $N$-site simplices.
 
-The concept of simplex-solid states ansatz were introduce by Xie et al \cite{PhysRevX.4.011025, PhysRevB.93.075154}. The tensor-network representation of simplex states is called projected entangled simplex state (PESS) which is also considered as an extension of PEPS. It obeys the area law \cite{RevModPhys.82.277} of entanglement entropy and is able to characterize two-dimensional systems if the dimension of the virtual bonds are large enough. Unlke PEPS, the entanglement among the virtual particles is described by entangled simplex tensors which depends on the structure of PESS. For example, in Fig.~\ref{fig411}(b), on akagome lattice there are three virtual particles within the simplex state so the entangled simplex tensor $S_{mnl}$ is a rank-3 tensor.
+The concept of simplex-solid states ansatz were introduce by Xie et al \cite{PhysRevX.4.011025, PhysRevB.93.075154}. The tensor-network representation of simplex states is called projected entangled simplex state (PESS) which is also considered as an extension of PEPS. It obeys the area law \cite{RevModPhys.82.277} of entanglement entropy and is able to characterize two-dimensional systems if the dimension of the virtual bonds are large enough. Unlke PEPS, the entanglement among the virtual particles is described by entangled simplex tensors which depends on the structure of PESS. For example, in Fig.~\ref{fig411}(b), on a kagome lattice there are three virtual particles within the simplex state so the entangled simplex tensor $S_{mnl}$ is a rank-3 tensor.
 
 \begin{figure}[ht]
 	\centering
@@ -33,7 +36,7 @@ and show that there is an unique spin-singlet state. The result encourages us to
 \begin{align}
 	\Ket{\psi_{\alpha}} = \frac{1}{\sqrt{6}} \sum_{\left\{ s_i s_j s_k\right\}}{S^{\alpha}_{s_i s_j s_k}\Ket{s_i, s_j, s_k}},
 \end{align}
-where $s_i,s_j,s_k$ are $S=1$ virtual spins located at site $i,j$ and $k$ of the simplex $\alpha$ and $S^{\alpha}_{s_i s_j s_k}$ is the Levi-Civita antisymmetric tensor $\varepsilon_{ijk}$ [Fig.~\ref{fig411}(b)]. In order to  map the two virtual $S=1$ spins to the spin-2 subspace, we define the projection operator $P_i$ $P_j$ and $P_k$ on each site,
+where $s_i,s_j,s_k$ are $S=1$ virtual spins located at site $i,j$ and $k$ of the simplex $\alpha$ and $S^{\alpha}_{s_i s_j s_k}$ is the Levi-Civita antisymmetric tensor $\varepsilon_{ijk}$ [Fig.~\ref{fig411}(b)]. In order to map the two virtual $S=1$ spins to the spin-2 subspace, we define the projection operator $P_i$ $P_j$ and $P_k$ on each site,
 \begin{align}
 	&P_i = \sum_{s_i,s^{\prime}_{i}}\sum_{\sigma_i}{A^{\sigma_i}_{s_i,s_i^{\prime}}\Ket{\sigma_i}\Bra{s_i,s_i^{\prime}}} \\
 	&P_j = \sum_{s_j,s^{\prime}_{j}}\sum_{\sigma_j}{A^{\sigma_j}_{s_j,s_j^{\prime}}\Ket{\sigma_j}\Bra{s_j,s_j^{\prime}}} \\
@@ -60,7 +63,7 @@ This structure could be extended to any higher integer spins. In conlusion, a ph
 In this section, we will employ the formulation of the PESS wave function as a variational ansatz. The PESS ansatz is similar to the imaginary time evolution discussed in chapter.\ref{chapter:2ditebd}. However, unlike the PEPS algorithms, we apply a higher rank tensor $S$ to describe the entanglement entropy among virtual particles in a simplex state. Due to the difference, we use \textit{high-order singular value decomposition} (HOSVD) \cite{PhysRevB.86.045139} \cite{doi:10.1137/S0895479896305696} rather than SVD to decompose the wave function.
 \subsection{High-order singular value decomposition}
 \label{hosvd}
-In this section, we will introduce the $N$th-order singular value decomposition (HOSVD), which is proposed for decomposing rank-N tensors, and show the pseudo-code to illustrate the scheme of the implementation.
+In this section, we will introduce the $N$th-order singular value decomposition or so called high-order SVD (HOSVD), which is proposed for decomposing rank-$N$ tensors, and show the pseudo-code to illustrate the scheme of the implementation.
 \begin{figure}[b]
 	\centering
 	\includegraphics[width=1.00\textwidth]{figures/fig4311.png}
@@ -90,7 +93,7 @@ As shown in Fig.~\ref{fig4311}, a rank-3 tensor $A$ is decomposed into a core te
 	\caption[The tensor-network representation of HOSVD]{(a) Decompose $A$ to a core tensor $S$ and $n$-mode unitary matrix $U^{(n)}$, (b) Obtain tensors $U^{(n)}$ from decomposing various modes of tensor $A$ by SVD, (c) Obtain the core tensor $S$ from contracting all transpose unitary tensors $U^{(n)T}$ }
 	\label{fig4312}
 \end{figure}
-For instance, if the target is to decompose a rank-3 $(N=3)$ tensor $A$ from 3 $(n=3)$ different modes, as in Fig.~\ref{fig4312}(a), we can implement it by the following steps, 
+For instance, if the goal is to decompose a rank-3 $(N=3)$ tensor $A$ from 3 $(n=3)$ different modes, as in Fig.~\ref{fig4312}(a), we can implement it by the following steps, 
 \begin{enumerate}
 	\item	Reshaping the tensors to each modes and obtain $U^{(n)}$ by SVD , as shown in Fig.~\ref{fig4312}(b).
 	\item	Contract all $U^{(n)T}$ tensors for calculating $S$, 
@@ -100,9 +103,9 @@ For instance, if the target is to decompose a rank-3 $(N=3)$ tensor $A$ from 3 $
 		see Fig.~\ref{fig4312}(c).
 \end{enumerate}
 \subsection{Simple update for PESS}
-In Chap.~\ref{chapter:2ditebd}, we have introduced an efficient approximation, the "simple update", for determining the ground state in the PEPS. In principle, the wave-function of PESS can be approached by the same way. In PEPS structure, the ground-state wave function is approximated by iterated application of imaginary-time evolution operators $U(\tau) = e^{-\tau H}$ on an random PEPS state $\Ket{\Psi_t}$, where $\tau$ is a small constant, see Fig.~\ref{fig312}. Base on the scheme, we can obtain the ground-state wave function of PESS by following steps,which is similar to the simple update of PEPS
+In Chap.~\ref{chapter:2ditebd}, we have introduced an efficient approximation, the "simple update", for determining the ground state in the PEPS. In principle, the wave-function of PESS can be approached by the same way. In PEPS structure, the ground-state wave function is approximated by iterated application of imaginary-time evolution operators $U(\tau) = e^{-\tau H}$ on an random PEPS state $\Ket{\Psi_t}$, where $\tau$ is a small constant, see Fig.~\ref{fig312}. We can obtain the ground-state wave function of PESS by following steps, which is similar to the simple update of PEPS
 \begin{enumerate}
-	\item Split Hamiltonian $H$,  
+	\item Split the Hamiltonian $H$,  
 		\begin{align}
 			\label{splitH}
 			H = H_{\alpha} + H_{\beta}
@@ -112,7 +115,7 @@ In Chap.~\ref{chapter:2ditebd}, we have introduced an efficient approximation, t
 		\begin{align}
 			e^{-\tau H} = e^{-\tau H_{\alpha}} e^{-\tau H_{\beta}} + O(\tau^{2}).
 		\end{align}
-	\item Absorb the environment bond vectors, which are considered as the entanglement between each simplex states, into projection tensors, and contract all projection tensors in the simplex state with the core tensor to obtain a cluster tensor.
+	\item Absorb the environment bond vectors, which are considered as the entanglement between each simplex state, into projection tensors, and contract all projection tensors in the simplex state with the core tensor to obtain a cluster tensor.
 	\item Apply the evolution operator $U$ the cluster tensor for obtaining a new cluster tensor.
 	\item Decompose the new cluster tensor by HOSVD.
 	\item Truncate all the projection tensors and the core tensor.
@@ -122,8 +125,10 @@ which is similar to simple update of PEPS.
 
 \section{Infinite Kagome lattice}
 \label{kagome}
-In the previous section, we have briefly introduced to the procedures of PESS ansatz. The first step is to  choose an suitable $n$-PESS structure, where $n$ is the number of projection tensors in a simplex, to split the Hamiltonian and describe the system. There are many various graphical representations for the Kagome lattice [Fig.~\ref{fig411}(a)], such as 3-PESS, 5-PESS and 9-PESS \cite{PhysRevX.4.011025}. In this section, we will discuss more details about 3-PESS and 5-PESS.
+In the previous section, we have briefly introduce to the procedures of PESS algorithm. The first step is to  choose an suitable $n$-PESS structure, where $n$ is the number of projection tensors in a simplex, to split the Hamiltonian and describe the system. There are many various graphical representations for the Kagome lattice [Fig.~\ref{fig411}(a)], such as 3-PESS, 5-PESS and 9-PESS \cite{PhysRevX.4.011025}. In this section, we will discuss more details about 3-PESS and 5-PESS.
+
 \subsection{3-PESS}
+
 In the 3-PESS case, the PESS state can be drawn as in Fig.~\ref{fig4321}(a). It shows pictures that the many-body states can be described by composing two different simplices, upward- and downward-oriented triangular as shown in Fig \ref{fig4321}(b). Each simplices contain three rank-3 projection tensors, $A^{\sigma_i}_{mm^{\prime}}$ $A^{\sigma_j}_{nn^{\prime}}$ and $A^{\sigma_k}_{ll^{\prime}}$ and a rank-3 core tensor, $S_{mnl}^{\alpha}$ or $S_{m^{\prime}n^{\prime}l^{\prime}}^{\beta}$. Therefore, the form of the Hamiltonian is rewritten by Eq.~\ref{splitH} as,
 \begin{align}
 	H = H_{\alpha} + H_{\beta} \quad,\text{where} \quad H_{\alpha} = H_{\Delta},\quad H_{\beta} = H_{\nabla}
@@ -138,37 +143,37 @@ when the value of $\tau$ is small enough.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.00\textwidth]{figures/fig4321.png}
-	\caption[The graphical representation of 3-PESS]{The graphical representation of 3-PESS. (a) The PESS state can be considered as composed by two simplices, upward- (green triangular) and downward-triangular (green triangular). The red dash-line represent as the geometry of the kagome lattice. As this figure shown, the projection tensors (Blue circle) are rank-3 with the dimension $dD^2$, where $d$ is the dimension of the physical basis and $D$ is the dimension of the virtual bonds (gray line), and the entangled simplex tensors, with the dimension $D^3$, are located at the cross of three virtual bonds (gray line) in each simplex states. (b) Two simplices in 3-PESS structure. These two type simplices, clustered with the sharing projection tensors, $A^{\sigma_i}_{mm^{\prime}}$, $A^{\sigma_j}_{nn^{\prime}}$ and $A^{\sigma_k}_{ll^{\prime}}$. However, their entangled simplex tensor are individual. In (a), the core tensor of the red simplex is $S^{\alpha}_{mnl}$ and the green one is $S^{\beta}_{m^{\prime}n^{\prime}l^{\prime}}$}
+	\caption[The graphical representation of 3-PESS]{The graphical representation of 3-PESS. (a) The PESS state can be considered as composed of two simplices, upward- (green triangle) and downward-triangular (green triangular). The red dash-line represents the geometry of the kagome lattice. As this figure shown, the projection tensors (Blue circle) are rank-3 with the dimension $dD^2$, where $d$ is the dimension of the physical basis and $D$ is the dimension of the virtual bonds (gray line), and the entangled simplex tensors, with the dimension $D^3$, are located at the cross of three virtual bonds (gray line) in each simplex states. (b) Two simplices in 3-PESS structure. These two type simplices, clustered with the sharing projection tensors, $A^{\sigma_i}_{mm^{\prime}}$, $A^{\sigma_j}_{nn^{\prime}}$ and $A^{\sigma_k}_{ll^{\prime}}$. However, their entangled simplex tensor are individual. In (a), the core tensor of the red simplex is $S^{\alpha}_{mnl}$ and the green one is $S^{\beta}_{m^{\prime}n^{\prime}l^{\prime}}$}
 	\label{fig4321}
 \end{figure}
 
-After determining the evolution operators, $e^{\tau H_{\Delta}}$ and $e^{\tau H_{\nabla}}$, we apply the schem of the simple update to approximate the wave-function of the ground state. As shown in Fig.~\ref{fig4323}, we take an example of updating upward-triangular simplex $\alpha$ to illustrate,
+After determining the evolution operators, $e^{\tau H_{\Delta}}$ and $e^{\tau H_{\nabla}}$, we apply the scheme of the simple update to approximate the wave-function of the ground state. As shown in Fig.~\ref{fig4323}, we take the upward-triangular simplex $\alpha$ as an example to illustrate the update scheme,
 
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.00\textwidth]{figures/fig4322.png}
-	\caption[The schem of the simple update for 3-PESS.]{The schem of the simple update for 3-PESS. The more detail descriptions are in the paragraph}
+	\caption[The scheme of the simple update for 3-PESS.]{The scheme of the simple update for 3-PESS. The more detailed descriptions are in the paragraph}
 	\label{fig4322}
 \end{figure}
 
 \begin{enumerate}
-	\item Obtain a clustered simplex tensor $\Theta$: Firstly, absorb all the environment bond vectors surrounding the simplex state. See Fig.~\ref{fig4322}(a),  the environment vectors, $\lambda^{\beta}_{m^{\prime}m}$ , $\lambda^{\beta}_{n^{\prime}n}$ and $\lambda^{\beta}_{l^{\prime}l}$, are obtained from the entangled simplex tensor of simplex $\beta$, due to the canonical form of the PESS \cite{},
+	\item Obtain a clustered simplex tensor $\Theta$: Firstly, absorb all the environment bond vectors surrounding the simplex state. See Fig.~\ref{fig4322}(a),  the environment vectors, $\lambda^{\beta}_{m^{\prime}m}$ , $\lambda^{\beta}_{n^{\prime}n}$ and $\lambda^{\beta}_{l^{\prime}l}$, are obtained from the entangled simplex tensor of simplex $\beta$, due to the canonical form of the PESS,
 		\begin{align}
 			&\sum_{n,l}{S^{(\beta)}_{mnl}\left( S^{(\beta)}_{m^{\prime}nl}\right)} = \delta_{m,m^{\prime}} \lambda^{(\beta)^2}_{m} \\
 			&\sum_{l,m}{S^{(\beta)}_{mnl}\left( S^{(\beta)}_{mn^{\prime}l}\right)} = \delta_{n,n^{\prime}} \lambda^{(\beta)^2}_{n} \\
 			&\sum_{m,n}{S^{(\beta)}_{mnl}\left( S^{(\beta)}_{mnl^{\prime}}\right)} = \delta_{l,l^{\prime}} \lambda^{(\beta)^2}_{l}
 		\end{align}
-		and base on the features of HOSVD. The $\lambda$s can be simply obtained, when we decompose the clustered tensors of the simplex $\beta$ in the updating process. Secondly, contract all tensors in simplex state to obtain the clustered tensor $\Theta$. The mathematical representation of the step is written as,  
+		and based on the features of HOSVD. The $\lambda$s can be simply obtained, when we decompose the clustered tensors of the simplex $\beta$ in the updating process. Secondly, contract all tensors in simplex state to obtain the clustered tensor $\Theta$. The mathematical representation of the step is written as,  
 		\begin{align}
 			\Theta_{m^{\prime} n^{\prime} l^{\prime}}^{\sigma_i \sigma_j \sigma_k} = \sum_{mnl,m^{\prime}n^{\prime}l^{\prime}}{S^{(\alpha)}_{mnl} \lambda^{(\beta)}_{m^{\prime \prime}} A^{\sigma_i}_{mm^{\prime}} \lambda^{(\beta)}_{n^{\prime \prime}} A^{\sigma_j}_{nn^{\prime}} \lambda^{(\beta)}_{l^{\prime \prime}} A^{\sigma_k}_{ll^{\prime}}}
 		\end{align}
-	\item Apply the evolution operator $U(\tau)$: we can generated the evolution operator for 3-PESS ansatz by the Eq.~\ref{eq415}. For updating upward-triangles simplex, $U(\tau)$ is defined as, 
+	\item Apply the evolution operator $U(\tau)$: we can generate the evolution operator for 3-PESS ansatz by the Eq.~\ref{eq415}. For updating upward-triangular simplex, $U(\tau)$ is defined as, 
 		\begin{align}
 			U(\tau) = e^{-\tau H_{\Delta}}
 		\end{align}
-		Now that, we utilize $U(\tau)$ to the cluster tensor $\Theta$, see Fig.~\ref{fig4322}(c) and obtain a new cluster tensor $\Theta^{\prime}$, 
-	\item Decompose $\Theta^{\prime}$ into the general form of the simplex state: Apply the high-order singular value decomposition (HOSVD) to obtain new projection tensors, $U^{(\sigma_i)}$, $U^{(\sigma_j)}$ and $U^{(\sigma_k)}$, and a new core tensor of simplex $\alpha$, $S^{(\alpha)^{\prime}}$, see Fig.~\ref{fig4322}(d). During operating HOSVD, we need save the environment bond vectors, $\lambda^{(\alpha)}_{m}$, $\lambda^{(\alpha)}_{n}$ and $\lambda^{(\alpha)}_{l}$, surrounding the simplex $\beta$. All $\lambda^{(\alpha)}$ could be obtained from decomposing different modes of $\Theta^{\prime}$. As shown in Fig.~\ref{fig4312}(b).
-	\item Truncation: In order to avoid the exponential increment of the virtual bonds dimension, we need truncate the brown bonds in Fig.~\ref{fig4322}(d) to specified dimension $D^{\prime}$ which can be fixed to original dimension $D$ or determined dynamically by setting an truncation error as the discussion in section \ref{truncationerror}. The simple way is to truncate projection tensors firstly,  
+		Now we can utilize $U(\tau)$ to the cluster tensor $\Theta$, as in Fig.~\ref{fig4322}(c) and obtain a new cluster tensor $\Theta^{\prime}$, 
+	\item Decompose $\Theta^{\prime}$ into the general form of the simplex state: Apply the high-order singular value decomposition (HOSVD) to obtain new projection tensors, $U^{(\sigma_i)}$, $U^{(\sigma_j)}$ and $U^{(\sigma_k)}$, and a new core tensor of simplex $\alpha$, $S^{(\alpha)^{\prime}}$, see Fig.~\ref{fig4322}(d). During operating HOSVD, we need to save the environment bond vectors, $\lambda^{(\alpha)}_{m}$, $\lambda^{(\alpha)}_{n}$ and $\lambda^{(\alpha)}_{l}$, surrounding the simplex $\beta$. All $\lambda^{(\alpha)}$ could be obtained from decomposing different modes of $\Theta^{\prime}$. As shown in Fig.~\ref{fig4312}(b).
+	\item Truncation: In order to avoid the exponential increment of the virtual bonds dimension, we need truncate the brown bonds in Fig.~\ref{fig4322}(d) to specified dimension $D^{\prime}$ which can be fixed to original dimension $D$ or determined dynamically by setting an truncation error as the discussion in Sec.~\ref{truncaterr}. The simple way is to truncate projection tensors firstly,  
 		\begin{align}
 			&U^{\sigma_i} \rightarrow \widetilde{U}^{\sigma_i}_{mm^{\prime}} \\
 			&U^{\sigma_j} \rightarrow \widetilde{U}^{\sigma_j}_{nn^{\prime}} \\
@@ -178,7 +183,7 @@ After determining the evolution operators, $e^{\tau H_{\Delta}}$ and $e^{\tau H_
 		\begin{align}
 			\widetilde{S}^{(\alpha)} = \sum_{m^{\prime}n^{\prime}l^{\prime}}{\Theta_{m^{\prime} n^{\prime} l^{\prime}}^{\prime \sigma_i \sigma_j \sigma_k} \widetilde{U}^{\sigma_i}_{mm^{\prime}} \widetilde{U}^{\sigma_j}_{nn^{\prime}} \widetilde{U}^{\sigma_k}_{ll^{\prime}}}
 		\end{align}
-	\item Absorb the inverse environment bond vectors $\lambda^{(\beta)^{-1}}$ into truncated projection tensors: To obtain the updated projection tensors $\widetilde{A}^{\sigma_i}_{mm^{\prime}}$, $\widetilde{A}^{\sigma_j}_{nn^{\prime}}$ and $\widetilde{A}^{\sigma_k}_{ll^{\prime}}$, we need remove the influence of environment, 
+	\item Absorb the inverse environment bond vectors $\lambda^{(\beta)^{-1}}$ into truncated projection tensors: To obtain the updated projection tensors $\widetilde{A}^{\sigma_i}_{mm^{\prime}}$, $\widetilde{A}^{\sigma_j}_{nn^{\prime}}$ and $\widetilde{A}^{\sigma_k}_{ll^{\prime}}$, we need to remove the influence of environment, 
 		\begin{align}
 			\widetilde{A}^{\sigma_i}_{mm^{\prime}} &= \sum_{m^{\prime \prime}}{ \lambda^{(\beta)}_{m^{\prime} m^{\prime \prime}} \widetilde{U}^{\sigma_i}_{mm^{\prime \prime}}} \\
 			\widetilde{A}^{\sigma_j}_{nn^{\prime}} &= \sum_{n^{\prime \prime}}{ \lambda^{(\beta)}_{n^{\prime} n^{\prime \prime}} \widetilde{U}^{\sigma_j}_{nn^{\prime \prime}}} \\
@@ -187,39 +192,39 @@ After determining the evolution operators, $e^{\tau H_{\Delta}}$ and $e^{\tau H_
 		see Fig.~\ref{fig4322}(f),
 \end{enumerate}
 
-At here, one updated epoch is completed. Finally, the ground state will be obtained by iterating the procedures for each simplex, upward- and downward- triangular $(\Delta, \nabla)$, until the wave function of PESS converge, 
+At here, one updated epoch is completed. Finally, the ground state will be obtained by iterating the procedures for each simplex, upward- and downward- triangular $(\Delta, \nabla)$, until the wave function of PESS converges, 
 %$\mathlarger{\rjoin}$
 \subsection{5-PESS}
-In the 5-PESS structure [Fig.~\ref{fig4323}(a)], the procedure to approximate the ground state wave function is similar to 3-PESS. However, due to the transformation of the structure, the simplices should be re-defined. In the 5-PESS ansatz, each simplex state is composed by an upward- and a downward-triangular and the most significant change is that the core tensors are located on the physical sites. As shown in Fig.~\ref{fig4323}(b), each simpliices contain 4 projection tensors $A^{\sigma_i}_{ii^{\prime}}$ $A^{\sigma_j}_{jj^{\prime}}$ $A^{\sigma_k}_{kk^{\prime}}$ and $A^{\sigma_l}_{ll^{\prime}}$, and a core tensor, $S^{\sigma_s (\alpha)}_{ijkl}$ or $S^{\sigma_s (\beta)}_{i^{\prime}j^{\prime}k^{\prime}l^{\prime}}$. Therefor, we can split the Hamiltonian into 
+\label{5pess}
+In the 5-PESS structure [Fig.~\ref{fig4323}(a)], the procedure to approximate the ground state wave function is similar to 3-PESS. However, due to the transformation of the structure, the simplices should be re-defined. In the 5-PESS ansatz, each simplex state is composed of an upward- and a downward-triangular and the most significant difference is that the core tensors are located on the physical sites. As shown in Fig.~\ref{fig4323}(b), each simplex contains 4 projection tensors $A^{\sigma_i}_{ii^{\prime}}$ $A^{\sigma_j}_{jj^{\prime}}$ $A^{\sigma_k}_{kk^{\prime}}$ and $A^{\sigma_l}_{ll^{\prime}}$, and a core tensor, $S^{\sigma_s (\alpha)}_{ijkl}$ or $S^{\sigma_s (\beta)}_{i^{\prime}j^{\prime}k^{\prime}l^{\prime}}$. Therefore, we can split the Hamiltonian into 
 \begin{align}
 	H = H_{\alpha} + H_{\beta} \quad \text{,where} \quad H_{\alpha} = H_{\rjoinr}, H_{\beta} = H_{\rjoing}
 \end{align}
-and as previous section, the evolution operator is written as, 
+and as in previous section, the evolution operator is written as, 
 \begin{align}
 	e^{-\tau H} = e^{-\tau H_{\rjoinr}} e^{-\tau H_{\rjoing}} + O(\tau^2)
 \end{align}
 when $\tau \rightarrow 0$.
 
-\label{5pess}
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.00\textwidth]{figures/fig4323.png}
-	\caption[The graphical representation of 5-PESS]{The graphical representation of 5-PESS. (a) The PESS state can be considered as composed by two simplices, $\rjoinr$ and $\rjoing$. The red dash-line represent as the geometry of the kagome lattice. As this figure shown, the projection tensors (Blue circle) are rank-3 with the dimension $dD^2$, where $d$ is the dimension of the physicla basis and $D$ is the dimension of the virtual bonds (gray line), and the entangled simplex tensors, with the dimension $dD^4$, are located at the center physical sites in simplices. (b) Two simplices in 5-PESS structure. These two type simplices, clustered with the sharing projection tensors, $A^{\sigma_i}_{ii^{\prime}}$, $A^{\sigma_j}_{jj^{\prime}}$, $A^{\sigma_k}_{kk^{\prime}}$ and $A^{\sigma_l}_{ll^{\prime}}$. However, their entangled simplex tensor are individual. In (a), the core tensor of the red simplex is $S^{\alpha}_{\sigma_s ijkl}$ and the green one is $S^{\beta}_{\sigma_s k^{\prime}j^{\prime}k^{\prime}l^{\prime}}$}
+	\caption[The graphical representation of 5-PESS]{The graphical representation of 5-PESS. (a) The PESS state can be considered as composed of two simplices, $\rjoinr$ and $\rjoing$. The red dash-line represents the geometry of the kagome lattice. As this figure shown, the projection tensors (Blue circle) are rank-3 with the dimension $dD^2$, where $d$ is the dimension of the physicla basis and $D$ is the dimension of the virtual bonds (gray line), and the entangled simplex tensors, with the dimension $dD^4$, are located at the center physical sites in simplices. (b) Two simplices in 5-PESS structure. These two type simplices, clustered with the sharing projection tensors, $A^{\sigma_i}_{ii^{\prime}}$, $A^{\sigma_j}_{jj^{\prime}}$, $A^{\sigma_k}_{kk^{\prime}}$ and $A^{\sigma_l}_{ll^{\prime}}$. However, their entangled simplex tensor are individual. In (a), the core tensor of the red simplex is $S^{\alpha}_{\sigma_s ijkl}$ and the green one is $S^{\beta}_{\sigma_s k^{\prime}j^{\prime}k^{\prime}l^{\prime}}$}
 	\label{fig4323}
 \end{figure}
 Next, apply the simple update scheme as Fig.~\ref{fig4324}. Most of steps are similar to 3-PESS, shown as Fig.~\ref{fig4322}. However, we should carefully decompose the cluster tensor $\Theta^{\prime}$, where
 \begin{align}
 	\Theta^{\prime} = \Theta \times U(\tau)
 \end{align}
-see Fig.~\ref{fig4324}(d). In this structure, the core tensors contain physical basis states, which means that it can not be decompose by the simply way shown in Fig.~\ref{fig4312} due to
+see Fig.~\ref{fig4324}(d). In this structure, the core tensors contain physical basis states, which means that it can not be decomposed by the simply way shown in Fig.~\ref{fig4312} due to
 \begin{align}
 	N \mod n \neq 0
 \end{align}
-where $N$ is the rank of the tensor $\Theta^{\prime}$ and $n$ is the mode number of HOSVD. Hence, the bond $\sigma_s$, belonging to the core tensor $S^{(\alpha)}_{i^{\prime}j^{\prime}k^{\prime}l^{\prime}}$ in tensor $\Theta^{\prime}$, must be fixed during the decomposition. The more detail and general form of the HOSVD are written in the documentation of \textit{Uni10 Library} \cite{}, which is implemented by c/c++ and helpful for calculating the high-rank linear algebra problems.
+where $N$ is the rank of the tensor $\Theta^{\prime}$ and $n$ is the mode number of HOSVD. Hence, the bond $\sigma_s$, belonging to the core tensor $S^{(\alpha)}_{i^{\prime}j^{\prime}k^{\prime}l^{\prime}}$ in tensor $\Theta^{\prime}$, must be fixed during the decomposition. More details and general form of the HOSVD are written in the documentation of \textit{Uni10 Library} \cite{}, which is implemented by c/c++ and helpful for calculating the high-rank linear algebra problems.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.00\textwidth]{figures/fig4324.png}
-	\caption[The schem of the simple update for 5-PESS.]{The schem of the simple update for 5-PESS. The more detail descriptions are in the paragraph}
+	\caption[The scheme of the simple update for 5-PESS.]{The scheme of the simple update for 5-PESS. The more detailed descriptions are in the paragraph}
 	\label{fig4324}
 \end{figure}
 \section{Infinite Square lattice}
@@ -227,13 +232,13 @@ where $N$ is the rank of the tensor $\Theta^{\prime}$ and $n$ is the mode number
 In order to test and recognize the properties of the PESS ansatz more explicitly, we extend it to simulate infinite square systems and compare it with methods discussed in the Chap.~\ref{chapter:2ditebd}.
 
 \subsection{4-PESS (Rank-3 projection tensors)}
-The 4-PESS structure could be build by two different methods, which are drawn in the Ref.~\cite{PhysRevX.4.011025}. In this section, we use the concept, shown in Fig.~\ref{fig4325}, to complete the implementation. 
+The 4-PESS structure could be built by two different methods, which are drawn in the Ref.~\cite{PhysRevX.4.011025}. In this section, we use the concept, shown in Fig.~\ref{fig4325}, to complete the implementation. 
 
-See Fig.~\ref{fig4325}(a), the many-body state can be regarded as composed by two different simplices, as shown in Fig.~\ref{fig4325}(b), repeatedly. The components of each simplices are similar to 5-PESS, but the difference is that the core tensors, $S^{(\alpha_)}_{ijkl}$ and $S^{(\beta)}_{i^{\prime}j^{\prime}k^{\prime}l^{\prime}}$, are not located on the lattice sites. Hence, the Hamiltonian is split into,
+See Fig.~\ref{fig4325}(a), the many-body state can be regarded as a composite of two different simplices, as shown in Fig.~\ref{fig4325}(b), repeatedly. The components of each simplix are similar to 5-PESS, but the difference is that the core tensors, $S^{(\alpha_)}_{ijkl}$ and $S^{(\beta)}_{i^{\prime}j^{\prime}k^{\prime}l^{\prime}}$, are not located on the lattice sites. Hence, the Hamiltonian is split into,
 \begin{align}
 	H = H_{\alpha} + H_{\beta} \quad,\text{where} \quad H_{\alpha} = H_{\color{red} \square},\quad H_{\beta} = H_{\color{green} \square}
 \end{align}
-where ${\color{red} \square}$ and ${\color{green} \square}$ are represented simplex $\alpha$ and $\beta$, shown in Fig.~\ref{fig4325}(b). Therefor, the evolution operator can be written as, 
+where ${\color{red} \square}$ and ${\color{green} \square}$ are represented simplex $\alpha$ and $\beta$, shown in Fig.~\ref{fig4325}(b). Therefore, the evolution operator can be written as, 
 \begin{align}
 	e^{-\tau H} = e^{-\tau H_{\color{red} \square}} e^{-\tau H_{ \color{green} \square}} + O(\tau^2)
 \end{align}
@@ -241,7 +246,7 @@ when $\tau$ is a small constant $\rightarrow 0$.
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.00\textwidth]{figures/fig4325.png}
-	\caption[The graphical representation of 5-PESS]{The graphical representation of 5-PESS. (a) The PESS state can be considered as composed by two simplices, ${\color{red} \square}$ and ${\color{green} \square}$. The red dash-line represent as the geometry of the kagome lattice. As this figure shown, the projection tensors (Blue circle) are rank-3 with the dimension $dD^2$, where $d$ is the dimension of the physicla basis and $D$ is the dimension of the virtual bonds (gray line), and the entangled simplex tensors, with the dimension $D^4$, are located at the cross of three virtual bonds (gray line) in each simplex states. (b) Two simplices in 3-PESS structure. These two type simplices, clustered with the sharing projection tensors, $A^{\sigma_i}_{ii^{\prime}}$, $A^{\sigma_j}_{jj^{\prime}}$, $A^{\sigma_k}_{kk^{\prime}}$ and $A^{\sigma_l}_{ll^{\prime}}$. However, their entangled simplex tensor are individual. In (a), the core tensor of the red simplex is $S^{\alpha}_{ijkl}$ and the green one is $S^{\beta}_{i^{\prime}j^{\prime}k^{\prime}l^{\prime}}$}
+	\caption[The graphical representation of 5-PESS]{The graphical representation of 5-PESS. (a) The PESS state can be considered as composed of two simplices, ${\color{red} \square}$ and ${\color{green} \square}$. The red dash-line represents the geometry of the kagome lattice. As this figure shown, the projection tensors (Blue circle) are rank-3 with the dimension $dD^2$, where $d$ is the dimension of the physicla basis and $D$ is the dimension of the virtual bonds (gray line), and the entangled simplex tensors, with the dimension $D^4$, are located at the cross of three virtual bonds (gray line) in each simplex states. (b) Two simplices in 3-PESS structure. These two type simplices, clustered with the sharing projection tensors, $A^{\sigma_i}_{ii^{\prime}}$, $A^{\sigma_j}_{jj^{\prime}}$, $A^{\sigma_k}_{kk^{\prime}}$ and $A^{\sigma_l}_{ll^{\prime}}$. However, their entangled simplex tensor are individual. In (a), the core tensor of the red simplex is $S^{\alpha}_{ijkl}$ and the green one is $S^{\beta}_{i^{\prime}j^{\prime}k^{\prime}l^{\prime}}$}
 	\label{fig4325}
 \end{figure}
 
@@ -260,7 +265,7 @@ Before we do more restrict comparisons, it is obvious that the control of dimens
 
 \subsection{3PESS on infinite Kagome lattice}
 
-Before applying the PESS algorithms to study square lattice systems, we should know and verify some features. At beginning, we present the results for the Heisenberg model on Husimi lattice \cite{Husimi1} \cite{Husimi2},
+Before applying the PESS algorithms to study square lattice systems, we should know and verify some features. At beginning, we present the results for the Heisenberg model on Husimi lattice \cite{Husimi1, Husimi2},
 
 \subsubsection{$S=1$}
 

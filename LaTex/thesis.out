@@ -9,14 +9,14 @@
 \BOOKMARK [2][-]{subsection.2.2.1}{Permutation}{section.2.2}% 9
 \BOOKMARK [2][-]{subsection.2.2.2}{Reshape}{section.2.2}% 10
 \BOOKMARK [2][-]{subsection.2.2.3}{Tensor\040contraction}{section.2.2}% 11
-\BOOKMARK [1][-]{section.2.3}{Describe\040Quantum\040states\040with\040tensor\040network}{chapter.2}% 12
+\BOOKMARK [1][-]{section.2.3}{Quantum\040state\040as\040a\040tensor\040network}{chapter.2}% 12
 \BOOKMARK [1][-]{section.2.4}{Matrix\040product\040state}{chapter.2}% 13
 \BOOKMARK [0][-]{chapter.3}{2-D\040Imaginary\040Time\040Evolving\040Block\040Decimation}{}% 14
 \BOOKMARK [1][-]{section.3.1}{Imaginary\040Time\040Evolution}{chapter.3}% 15
 \BOOKMARK [1][-]{section.3.2}{Infinite\040Imaginary-Time\040Evolving\040Block\040Decimation\040for\0402-D\040system}{chapter.3}% 16
-\BOOKMARK [2][-]{subsection.3.2.1}{One-dimensional\040iTEBD}{section.3.2}% 17
+\BOOKMARK [2][-]{subsection.3.2.1}{One\040dimensional\040iTEBD}{section.3.2}% 17
 \BOOKMARK [2][-]{subsection.3.2.2}{Two-dimensional\040iTEBD}{section.3.2}% 18
-\BOOKMARK [1][-]{section.3.3}{Ameliorate\040two-dimensional\040iTEBD}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.3}{Improvement\040a\040la\040Hastings}{chapter.3}% 19
 \BOOKMARK [1][-]{section.3.4}{Optimizations}{chapter.3}% 20
 \BOOKMARK [2][-]{subsection.3.4.1}{Initialization}{section.3.4}% 21
 \BOOKMARK [2][-]{subsection.3.4.2}{QR\040and\040LQ\040decomposition}{section.3.4}% 22
@@ -24,7 +24,7 @@
 \BOOKMARK [1][-]{section.3.5}{Comparison}{chapter.3}% 24
 \BOOKMARK [2][-]{subsection.3.5.1}{Different\040Initializations}{section.3.5}% 25
 \BOOKMARK [2][-]{subsection.3.5.2}{Different\040schemes\040of\0402D-iTEBD}{section.3.5}% 26
-\BOOKMARK [1][-]{section.3.6}{Set\040the\040cutoff\040of\040the\040truncation\040error}{chapter.3}% 27
+\BOOKMARK [1][-]{section.3.6}{Cutoff\040of\040the\040truncation\040error}{chapter.3}% 27
 \BOOKMARK [0][-]{chapter.4}{Infinite\040Projected\040Entangled\040Simplex\040State}{}% 28
 \BOOKMARK [1][-]{section.4.1}{Simplex-solid\040State}{chapter.4}% 29
 \BOOKMARK [1][-]{section.4.2}{Variational\040PESS\040ansatz}{chapter.4}% 30
