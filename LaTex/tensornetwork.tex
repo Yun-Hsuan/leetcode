@@ -26,12 +26,12 @@ Mathematically, a tensor is considered as a multi-dimensional array of scalars. 
 \section{Tensor operations and tensor network diagrams} % (fold)
 \label{operation}
 
-Since computers can perform the calculation efficiently of matrices, to implement calculations of tensor networks on computers, we need to perform operations on tensors to make them into matrices, such as permutation and reshape. To explain more explicitly, we define a representation at first,
+Since computers can perform the calculation efficiently of matrices, to implement calculations of tensor networks on computers, we need to perform operations on tensors to make them into matrices, such as permutation and reshape. To explain more explicitly, we define a representation at first
 
 
-\begin{enumerate}
+\begin{itemize}
 	\item $T_{[\alpha \beta], \gamma}$: The bonds $\alpha$ and $\beta$ of a tensor $T$ are grouped. It can be recognized as a matrix, which rows and columns are $\chi_{\alpha}\chi_{\beta}$ and $\chi_{\gamma}$. We will discuss more more details in Sec.~\ref{reshape}
-\end{enumerate}
+\end{itemize}
 
 \subsection{Permutation}
 
@@ -101,7 +101,7 @@ In this case, we want to contract bonds $\rho,\beta$ and $\delta$ whose dimensio
 \begin{enumerate}
 
 	\item Select a pair of tensors arbitrarily: In the example, we choose the tensor $A_{\rho \beta}$ and $C_{\gamma \alpha \delta \rho}$ at first. 
-	\item Permute the tensors to specific shapes and perform the inner-product: As shown in Fig.~\ref{fig223}(ii)-(iii) Permute $A_{\rho \beta}$ and $C_{\gamma \alpha \delta \delta}$ to the specific shape $A_{\rho, \beta}$ and $C_{[\gamma \alpha \delta], \rho}$, which can be regarded as inner product of two matrices $A$ and $C$, 
+	\item Permute the tensors to specific shapes and perform the inner-product: As shown in Fig.~\ref{fig223}(ii)-(iii) Permute $A_{\rho \beta}$ and $C_{\gamma \alpha \delta \delta}$ to the specific shape $A_{\rho, \beta}$ and $C_{[\gamma \alpha \delta], \rho}$, which can be regarded as inner-product of two matrices $A$ and $C$, 
 		\begin{align}
 			\theta_{\gamma \alpha \delta \beta} = \sum_{\rho = 1}^{\chi_{\rho}}{C_{[\gamma \alpha \delta], \rho} A_{\rho, \beta}}
 		\end{align}
@@ -121,7 +121,7 @@ where individual basis vector $\Ket{i_1}, \Ket{i_2},\ldots, \Ket{i_N}$ has $d$ d
 
 From Eq.~(\ref{wavefunc}) or Fig.~\ref{fig225}(i), we notice that the number of coefficients in $C_{i_1,i_2,i_3,\ldots,\i_N}$ is $d^N$. Therefor, it is impossible to fully describe a many-body system by a classical computer if the system size larger than fifty. Fortunately, the ground state wave-function in condense matter systems satisfy the entanglement area law \cite{RevModPhys.82.277}. We can significantly reduce the number of parameters by explicitly constructing wave functions to satisfy the area law.
 %Fortunately, according to the theory of MPS \cite{PhysRevB.73.094423, PhysRevLett.75.3537}, the wave-function can be decomposed to two subsystem by the Schmidt decomposition.
-\begin{figure}[ht]
+\begin{figure}[t]
 	\centering
 	\includegraphics[width=0.75\textwidth]{figures/fig225.png}
 	\caption[Represent wave-function of quntum states of TN]{(i) The wave-function, $\Ket{\Psi_N}$ (ii) The norm of $\Ket{\Psi_N}$, $\Braket{\Psi_N|\Psi_N}$ (iii) Expectation value of observable $O$, $\Bra{\Psi_N}O\Ket{\Psi_N}$}
@@ -132,7 +132,8 @@ From Eq.~(\ref{wavefunc}) or Fig.~\ref{fig225}(i), we notice that the number of 
 \label{MPS}
 
 %The wave-function composed by pure states can be decompose into many unit cells by \textit{sigular value decomopostion} and \textit{Schmidt decomposition}. 
-A pure state wave function can be written as a sum of product of bipartite wave functions. We begin from splitting the wave-function $\Ket{\Psi_N}$ [Fig.~\ref{fig225}(a)] between $n$ and $n+1$ sites with Schmidt decomposition, 
+%A pure state wave function can be written as a sum of product of bipartite wave functions. 
+To construct the MPS, we begin from splitting the wave-function $\Ket{\Psi_N}$ [Fig.~\ref{fig225}(a)] between $n$ and $n+1$ sites with Schmidt decomposition, 
 \begin{align}
 	\label{schmitwave}
 	\Ket{\Psi_{N}} = \sum_{\alpha_n} \lambda_{\alpha_n} \Ket{\psi_{\alpha_n}^{[1\dots n]}} \Ket{\psi_{\alpha_n}^{[n+1\dots N]}}
@@ -145,7 +146,7 @@ then span $\Ket{\psi_{\alpha_{n+1}}^{[n+1]}}$ by the spin basis $i_{n+1}$,
 \begin{align}
 	\Ket{\psi_{\alpha_{n+1}}^{[n+1]}} = \sum_{i_{n+1}}{\Gamma^{[n+1] i_{n+1}}_{\alpha_n \alpha_{n+1}} \Ket{i_{n+1}}}
 \end{align}
-and the Eq. \ref{schmitwave} can be rewritten as
+and the Eq.~(\ref{schmitwave}) can be rewritten as
 \begin{align}
 	\Ket{\Psi_{N}} = \sum_{\alpha_n,\alpha_{n+1}}\sum_{i_{n+1}}{\lambda_{\alpha_n} \Gamma^{[n+1] i_{n+1}}_{\alpha_n \alpha_{n+1}} \lambda_{\alpha_{n+1}l} \Ket{\psi_{\alpha_n}^{[1\dots n]}} \Ket{i_{n+1}} \Ket{\psi_{\alpha_{n+2}}^{[n+2\dots N]}} }
 \end{align}
@@ -155,22 +156,32 @@ In the end, we can repeat the same process site-by-site in the entire system and
 \end{align}
 and the tensor network representation is shown as Fig.~\ref{fig311}. So far the decomposition is exact, and an approximate MPS can be constructed by cutting of the dimensions of $\lambda$
 
-Now we try to expand it to an infinite chain \cite{PhysRevLett.98.070201}. Due to the translational invariance, the wave function $\Ket{\Psi_{N=\infty}}$ can be represented as $n$-site translational symmetric states, which means that $\Gamma^{[i]}$ and $\lambda^{[i_{i}]}$ are independent of $\Gamma^{[i+n]}$ and $\lambda^{[i+n]}$. For instance, when $n=2$, the wave-function of an infinite chain can be recognized as a composite of two different matrix product states $\lambda^{[A]}\Gamma^{[A]}$ (red nodes) and $\lambda^{[B]}\Gamma^{[B]}$ (purple nodes), as shown in Fig.\ref{fig312}. Therefore, the requirement of the coefficients is reduced from $d^N$ to $NdD^2$, where $D$ is bond dimension between each matrix product states and we also call it virtual bond dimension. 
-%%%%%%%%%%%%%%%%%%%
-This can be extended to 2D 
-in the following chapters, we will use MPS and PEPS as our variational wave function to study quantum many-body systems.
-%%%%%%%%%%%%%%%%%%%
-
-\begin{figure}[hb]
+\begin{figure}[t]
 	\centering
 	\includegraphics[width=0.90\textwidth]{figures/fig3111.png}
 	\caption[The tensor network representation of matrix product states]{The tensor network representation of a matrix product state.}
 	\label{fig311}
 \end{figure}
 
-\begin{figure}[hb]
+\begin{figure}[t]
 	\centering
 	\includegraphics[width=0.90\textwidth]{figures/fig311.png}
 	\caption[The tensor network representation of infinite matrix product states]{The tensor network representation of an infinite matrix product state.}
 	\label{fig312}
 \end{figure}
+
+Now we try to expand it to an infinite chain \cite{PhysRevLett.98.070201}. Due to the translational invariance, the wave function $\Ket{\Psi_{N=\infty}}$ can be represented as $n$-site translational symmetric states, which means that $\Gamma^{[i]}$ and $\lambda^{[i_{i}]}$ are independent of $\Gamma^{[i+n]}$ and $\lambda^{[i+n]}$. For instance, when $n=2$, the wave-function of an infinite chain can be recognized as a composite of two different matrix product states $\lambda^{[A]}\Gamma^{[A]}$ (red nodes) and $\lambda^{[B]}\Gamma^{[B]}$ (purple nodes), as shown in Fig.\ref{fig312}. Therefore, the requirement of the coefficients is reduced from $d^N$ to $NdD^2$, where $D$ is bond dimension between each matrix product states and we also call it virtual bond dimension. 
+%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%
+\section{Projected entangled pair state}
+
+The PEPS structure is a straightforward extension of MPS and obeys the restriction of MPS. Therefore, it can be expanded to a infinite structure, iPEPS, which is composed of $n$-site translational invariant states. For instance, we can draw a tensor diagram as shown in Fig.~\ref{fig315} to represent the wave function of a 2D many-body system which is composed of 2-site translational symmetric states. In the following chapters, we will use MPS and PEPS as our variational wave function to study quantum many-body systems.
+
+\begin{figure}[ht]
+
+	\centering
+	\includegraphics[width=0.6\textwidth]{figures/fig314.png}
+	\caption[The tensor diagrams of 2D lattice]{Four sites unit cell in iPEPS.}
+	\label{fig315}
+\end{figure}
+

@@ -1,14 +1,14 @@
 %!TEX root = thesis.tex
 \chapter{Corner Transfer Matrix}
 \label{chapter:ctm}
-The \textit{cerner transfer matrix renormalization group} (CTMRG) \cite{doi:10.1143/JPSJ.65.891} \cite{PhysRevB.80.094403} \cite{PhysRevB.84.041108} is an algorithm to numerically compute the \textit{effective environments} which is an approximation of the environment of systems. For example, if the infinite PEPS is composed by a single tensor $A^{h}_{uldr}$ repeatedly, where $h$ express a physical basis of  $\mathbb{V}$ with dimension $d$, and $u,l,d,r$ are virtual bonds with dimension $D$, see Fig.~\ref{fig501}(a). Then we can represent the scale norm $\Braket{\psi|\psi}$ by a simple two dimensional tensor network $\varepsilon$ which is characterized by reduced tensors $a$, shown in Fig.~\ref{fig501}(b). The reduced tensor $a$ is defined as eq.\ref{reduce_a}, 
+The \textit{cerner transfer matrix renormalization group} (CTMRG) \cite{doi:10.1143/JPSJ.65.891,PhysRevB.80.094403,PhysRevB.84.041108} is an algorithm to numerically compute the \textit{effective environments} which is an approximation of the environment of systems. For example, if the infinite PEPS is composed by a single tensor $A^{h}_{uldr}$ repeatedly, where $h$ express a physical basis of  $\mathbb{V}$ with dimension $d$, and $u,l,d,r$ are virtual bonds with dimension $D$, see Fig.~\ref{fig501}(a). Then we can represent the scale norm $\Braket{\psi|\psi}$ by a simple two dimensional tensor network $\varepsilon$ which is characterized by reduced tensors $a$, as shown in Fig.~\ref{fig501}(b). The reduced tensor $a$ is defined as Eq.~(\ref{reduce_a})
 \begin{align}
 	\label{reduce_a}
-	a \equiv \sum_{h=1}^{d} A_{h} \otimes A^{*}_{h}
+	a \equiv \sum_{h=1}^{d} A_{h} \otimes A^{*}_{h}.
 \end{align}
-The environment $\varepsilon^{[\vec{r}]}$ of the site $\vec{r}$ could be described by the reduced tensors in the gray rectangles in Fig.\ref{fig501}(c) and the \textit{effective environments} $G^{[\vec{r}]}$ shown in Fig.~\ref{fig501}(d) is target of the CTMRG. 
+Then, see Fig.~\ref{fig501}(c-d), the environment $\varepsilon^{[\vec{r}]}$ can be regarded as a composite of reduced tensors surrounded the site $\vec{r}$. Finally, to simulate the \textit{effective environments} $G^{[\vec{r}]}$ is the goal of the CTMRG.
 
-In the following subsections, we will show more details of implementation of CTM and compare some features between obtaining the states from iPEPE and PESS.
+In the following sections, we will show more details of implementation of CTM and compare the features between obtaining the states from iPEPE and PESS.
 
 \begin{figure}[ht]
 	\centering
@@ -19,15 +19,13 @@ In the following subsections, we will show more details of implementation of CTM
 
 \section{Obtain States from PEPS}
 \label{2ditebdctm}
-In chapter.\ref{chapter:2ditebd}, we have discussed about obtaining the infinite PEPS state $\Ket{\psi}$ of an infinite 2D square lattice by imaginary time evolution and known that the infinite PEPS could be characterized by two tensors $A^h_{uldr}$ and $B^h_{drul}$ repeatedly (Fig.~\ref{fig511}(a)). The scalar norm of the iPEPS $\Braket{\psi|\psi}$ is composed by reduced tensors $a_{\bar{u}\bar{l}\bar{d}\bar{r}}$ and $b_{\bar{d}\bar{r}\bar{u}\bar{l}}$(Fig.~\ref{fig511}(b)), where
+In Chap.\ref{chapter:2ditebd}, we have discussed about obtaining the infinite PEPS state $\Ket{\psi}$ of an infinite 2D square lattice by 2D-iTEBD and known that the infinite PEPS could be characterized by two tensors $A^h_{uldr}$ and $B^h_{drul}$ repeatedly [Fig.~\ref{fig511}(a)]. The scalar norm of the iPEPS $\Braket{\psi|\psi}$ is composed of reduced tensors $a_{\bar{u}\bar{l}\bar{d}\bar{r}}$ and $b_{\bar{d}\bar{r}\bar{u}\bar{l}}$ [Fig.~\ref{fig511}(b)]
 \begin{align}
-	\label{reduce_a}
 	\bar{a} \equiv \sum_{h=1}^{d} A_{h} \otimes A^{*}_{h} \\
 	\label{reduce_b}
 	\bar{b} \equiv \sum_{h=1}^{d} B_{h} \otimes B^{*}_{h}
-\end{align}
-
-Then, we can consider the environment $\varepsilon^{\left[\vec{r_1},\vec{r_2},\vec{r_3},\vec{r_4}\right]}$ of a four-site structure (Fig.~\ref{fig511}(c)), and try to approximate it with effective environment $G^{\left[\vec{r_1},\vec{r_2},\vec{r_3},\vec{r_4}\right]}$ (Fig.~\ref{fig511}(d)), which consists of $C_1, T_{a1}, T_{b1},C_2, T_{a2}, T_{b2},C_3, T_{a3}, T_{b3},C_4, T_{a4}, T_{b4},$
+\end{align}.
+Hence, the environment $\varepsilon^{\left[\vec{r_1},\vec{r_2},\vec{r_3},\vec{r_4}\right]}$ can be regarded as a composite of reduced tensors surrounded a four-site unit cell [Fig.~\ref{fig511}(c)], and the effective environment $G^{\left[\vec{r_1},\vec{r_2},\vec{r_3},\vec{r_4}\right]}$ [Fig.~\ref{fig511}(d)] consists of $C_1, T_{a1}, T_{b1},C_2, T_{a2}, T_{b2},C_3, T_{a3}, T_{b3},C_4, T_{a4}, T_{b4},$
 
 \begin{figure}[ht]
 	\centering
@@ -36,7 +34,8 @@ Then, we can consider the environment $\varepsilon^{\left[\vec{r_1},\vec{r_2},\v
 	\label{fig511}
 \end{figure}
 
-For the approximation of environment, the directional variant of the CTMRG was developed. According to \textit{directional coarse-graining moves}, the effective environment could be updated from four different moves , left, right, up and down and iterated until the environments converges. 
+%For the approximation of environment, the directional variant of the CTMRG was developed. 
+According to \textit{directional coarse-graining moves}, the effective environment could be updated from four different moves, left, right, up and down and iterated until the environments converges. 
 
 For instance, the procedures to the left move, shown in the Fig.~\ref{fig512} which is derived by Roman and Vidal, is made up of four major steps,
 \begin{enumerate}
@@ -67,7 +66,7 @@ See the Fig.~\ref{fig512}(d) and \ref{fig512}(f).
 		the dimension of bonds of $D_z$ and $D_w$ increase to $\chi^2$. For that reason, we have to truncate $\tilde{Z}$ and $\tilde{W}$ to isometries $Z$ and $W$ which are equivalent to keeping the columns of $\tilde{Z}$ and $\tilde{W}$ corresponding to $\chi$ largest eigenvalues of $D_z$ and $D_w$.
 \end{enumerate}
 
-Now, we need repeat the procedures in Fig.~\ref{fig512}(b)-(d) again for absorbing the other inserted column in Fig.~\ref{fig512}(d) and obtain a new effective environment $G^{\prime \left[\vec{r_1},\vec{r_2},\vec{r_3},\vec{r_4}\right]}$ for the four-site unit cell. By composing four variant moves of the CTM we build an epoch of CTMRG. 
+Now, we need to repeat the procedures in Fig.~\ref{fig512}(b)-(d) again for absorbing the other inserted column and obtain a new effective environment $G^{\prime \left[\vec{r_1},\vec{r_2},\vec{r_3},\vec{r_4}\right]}$. By composing four variant moves of the CTM we build an epoch of CTMRG. 
 
 \begin{figure}[ht]
 	\centering
@@ -79,7 +78,7 @@ Now, we need repeat the procedures in Fig.~\ref{fig512}(b)-(d) again for absorbi
 
 \section{Obtain States from PESS}
 \label{pessctm}
-In this section, we apply the CTM to approximate the effective environment of 4-PESS structure. Firstly, we must transform it to iPEPS structure which is suit for the form of CTM. As shown in Fig.~\ref{fig521}, the projection tensors, $U^{[0]}$, $U^{[1]}$, $U^{[2]}$ and $U^{[3]}$, and the entangled simplex tensors, $S^{[\alpha]}$ and $S^{[\beta]}$ are obtained from 4-PESS ansatz. To map these states to PEPS-like structure, we group the tensors, $S^{[\alpha]}$, $U^{[0]}$ and $U^{[1]}$, in red rectangles into the tensor $A$, 
+In this section, we apply the CTM to approximate the effective environment of 4-PESS structure. Firstly, we must transform it to iPEPS structure which is suit to the form of CTM. As shown in Fig.~\ref{fig521}, the projection tensors, $U^{[0]}$, $U^{[1]}$, $U^{[2]}$ and $U^{[3]}$, and the entangled simplex tensors, $S^{[\alpha]}$ and $S^{[\beta]}$ are obtained from 4-PESS ansatz. To map these states to PEPS-like structure, we group the tensors, $S^{[\alpha]}$, $U^{[0]}$ and $U^{[1]}$, in red rectangles into the tensor $A$, 
 \begin{align}
 	A^{\sigma_i \sigma_j}_{i^{\prime}j^{\prime}kl} = \sum_{ij}{U^{[0]}_{ ii^{\prime},\sigma_i} S^{[\alpha]}_{ijkl} U^{[1]}_{ jj^{\prime},\sigma_j}}
 \end{align}
@@ -112,8 +111,8 @@ To compare the performance of the approximations, we have applied 2D-iTEBD and P
 \begin{align}
 	H = -\sum_{<\vec{r},\vec{r}^{\prime}>}{\sigma_z^{[ \vec{r}^{} ]} \sigma_z^{[ \vec{r}^{\prime} ]}} - \lambda \sum_{\vec{r}}{\sigma_x^{[ \vec{r} ]}}
 \end{align}
-, and use directional CTM to obtain the effective environment at each sides. See Fig.~\ref{fig522}, the order-parameter $m_z \equiv  \Bra{\Psi} \sigma_z \Ket{\Psi}$ as a function of the external magnetic field $\lambda$. We find that when measuring the local observable with directional CTM, the better ground states are obtained. However, it have no improvement when approaching to near-critical point. The possible reason is that 
-the original states computed by iPEPS approximation is not accuracy sufficiently. Next, turn to the cases which states are obtained from 4-PESS algorithm.When $D=2$ and $\chi = 20$, we find that it is hard to converge near the critical point because the virtual bonds dimension too small to describe the systems. After increasing the virtual dimension, we notice that it converge to $\lambda_c \approx 3.220$. In Sec.~\ref{chapter:ipess}, we have shown that the ground states obtained by 4-PESS has more accuracy. Hence, it is not astonish that the result compute with 4-PESS+CTM is better than 2D-iTEBD+CTM. However, it still can not compare with  the quantum Monte Carlo estimation which is $\lambda^{MC}_c \approx 3.044$ \cite{PhysRevE.66.066110}.
+, and use directional CTM to obtain the effective environment. See Fig.~\ref{fig522}, the order-parameter $m_z \equiv  \Bra{\Psi} \sigma_z \Ket{\Psi}$ as a function of the external magnetic field $\lambda$. We find that when measuring the local observable with directional CTM, the better ground states are obtained. However, it have no improvement when approaching to near-critical point. The possible reason is that 
+the original states computed by iPEPS approximation is not accurate sufficiently. Next, turn to the cases which states are obtained from 4-PESS algorithm.When $D=2$ and $\chi = 20$, we find that it is hard to converge near the critical point because the virtual bonds dimension is too small to describe the system. After increasing the virtual dimension, we notice that it converges to $\lambda_c \approx 3.220$. In Sec.~\ref{chapter:ipess}, we show that the ground states obtained by 4-PESS is more accurate. Hence, it is not astonish that the result compute with 4-PESS+CTM is better than 2D-iTEBD+CTM. However, it still can not compare with the quantum Monte Carlo estimation which show that $\lambda^{MC}_c \approx 3.044$ \cite{PhysRevE.66.066110}.
 
 \begin{figure}[H]
 	\centering

@@ -1,10 +1,10 @@
 %!TEX root = thesis.tex
-\chapter{2-D Imaginary Time Evolving Block Decimation}
+\chapter{2D Imaginary Time Evolving Block Decimation}
 \label{chapter:2ditebd}
 In this chapter, we disscues how to generalize the 1D-iTEBD algorithms to 2D and how to further improve the method.
-%In one-dimensional many-body states, the performance of one-dimension imaginary time evolving block decimation (1D-iTEBD) is very well, especially its high efficiency. It is straightforward to think of expanding this framework to two-dimensional problems. However, through many attempts we notice that the accuracy in 2-D is less than 1-D. In order to overcome that obstacle, optimization of 2-D algorithms becomes an significant issue in condense matter physics. 
+%In one-dimensional many-body states, the performance of one-dimension imaginary time evolving block decimation (1D-iTEBD) is very well, especially its high efficiency. It is straightforward to think of expanding this framework to two-dimensional problems. However, through many attempts we notice that the accuracy in 2D is less than 1D. In order to overcome that obstacle, optimization of 2D algorithms becomes an significant issue in condense matter physics. 
 
-In Sec.~\ref{ite} and Sec.~\ref{itebd}, we briefly review the idea of imaginary time evolution (TEBD) \cite{PhysRevLett.93.040502} \cite{PhysRevB.78.155117} and explain how to extend it to simulate an infinite two-dimensional system (2D-iTEBD) \cite{PhysRevB.86.195137}. However, the method presented in Ref.~\cite{hahaPhysRevB.86.195137} is unstable because it multiplies too many pseudo-inverse matrices during the update of the wave-functions. Hence, In Sec.~\ref{2dhastin} and Sec.~\ref{2dopt} we will discuss the improvement of 2D-iTEBD in detail, such as the method developed by Hastings \cite{light_hastings}, splitting projection states by QR and LQ decomposition, etc. In Sec.~\ref{Comparison}, we utilize 2D-iTEBD to simulate the Heisenberg and transverse Ising models on two-dimensional square lattice and compare the features among 2D-iTEBD algorithms implemented with different strategies.
+In Sec.~\ref{ite} and Sec.~\ref{itebd}, we briefly review the idea of imaginary time evolution (TEBD) \cite{PhysRevLett.93.040502} \cite{PhysRevB.78.155117} and explain how to extend it to simulate an infinite two dimensional system (2D-iTEBD) \cite{PhysRevB.86.195137}. However, the method presented in Ref.~\cite{PhysRevLett.101.090603} is unstable because it multiplies too many pseudo-inverse matrices during the update of the wave-functions. Hence, In Sec.~\ref{2dhastin} and Sec.~\ref{2dopt} we will discuss the improvement of 2D-iTEBD in detail, such as the method developed by Hastings \cite{light_hastings}, splitting projection states by QR and LQ decomposition, etc. In Sec.~\ref{Comparison}, we utilize 2D-iTEBD to simulate the Heisenberg and transverse Ising models on two dimensional square lattice and compare the features among 2D-iTEBD algorithms implemented with different strategies.
 
 
 \section{Imaginary Time Evolution}
@@ -14,7 +14,7 @@ Theoretically, we could project any initial random states to the ground state if
 	\label{mapgroud}
 	\Ket{\psi_0} = \frac{e^{-\tau H} \Ket{\Psi}}{\parallel e^{-\tau H} \Ket{\Psi}\parallel}
 \end{align}
-where $H$ is the Hamiltonian of a specific model. However, according to Eq.~(\ref{wavefunc}), we have known that the number of coefficients the evolution operator $e^{-\tau H}$ is proportional to $d^N \times d^N$. In other words, it is impossible to update entire system directly. Therefore, in one-dimensional quantum many-body systems we apply MPS structure to restrict the exponential increase of the dimension. 
+where $H$ is the Hamiltonian of a specific model. However, according to Eq.~(\ref{wavefunc}), we have known that the number of coefficients the evolution operator $e^{-\tau H}$ is proportional to $d^N \times d^N$. In other words, it is impossible to update entire system directly. Therefore, in one dimensional quantum many-body systems we apply MPS structure to restrict the exponential increase of the dimension. 
 
 In order to update the two tensors in the unit cell [Fig.~\ref{fig312}], we utilize the \textit{Suzuki-Trotter decomposition} to approximate the entire evolution operator with $2$-sites operators. \textit{The first-order Suzuk-Trotter decompostio} of operator $e^{\delta (A+B)}$ is,
 \begin{align}
@@ -27,7 +27,7 @@ where $A$ and $B$ are two non-commutative operators.Therefore, the entire evolut
 	e^{-\tau H} = \left(e^{-\delta H}\right)^{\frac{\tau}{\delta}} \approx \left(\prod e^{\delta H_{AB}} \right)\left( \prod e^{\delta H_{BA}}\right)
 \end{align}
 and we can obtain the evolution operator $e^{H_{AB}}$ and $e^{H_{BA}}$ straightly after solving two-site Hamiltonians, $H_{AB}$ and $H_{BA}$.
-So far, we have constructed the infinite MPS and the 2-site evolution operators $e^{-\tau H_{AB}}$ and $e^{-\tau H_{BA}}$. The tensor network representation of Eq.~\ref{mapgroud} can be drawn as Fig.~\ref{fig313}. The ground state $\Ket{\psi_0}$ can be regard as contracting all the tensors in the diagram. So the next problem is: How can we contract them and preserve the structure like Fig{\ref{fig311}}?
+So far, we have constructed the infinite MPS and the 2-site evolution operators $e^{-\tau H_{AB}}$ and $e^{-\tau H_{BA}}$. The tensor network representation of Eq.~(\ref{mapgroud}) can be drawn as Fig.~\ref{fig313}. The ground state $\Ket{\psi_0}$ can be regard as contracting all the tensors in the diagram. So the next problem is: How can we contract them and preserve the structure like Fig{\ref{fig311}}?
 
 \begin{figure}[ht]
 	\centering
@@ -35,16 +35,21 @@ So far, we have constructed the infinite MPS and the 2-site evolution operators 
 	\caption[The tensor diagram of imaginary time evolving block decimation.]{The red and blue tensor denote on \textit{odd} and \textit{even} sites and the yellow tensors are time evolution operators $e^{-\tau H_{AB}}$ and $e^{-\tau H_{BA}}$}
 	\label{fig313}
 \end{figure}
-\section{Infinite Imaginary-Time Evolving Block Decimation for 2-D system}
 
-In this section, we focus on how to implement and optimize 2D-iTEBD algorithms. Interested readers can refer to the related articles for details  \cite{PhysRevLett.99.220405, PhysRevLett.101.090603, PhysRevB.78.155117}.
+\subsection{One dimensional infinite imaginary-time evolving block decimation}
 \label{itebd}
-\subsection{One dimensional iTEBD}
-To resolve the problem mentioned in the end of the Sec.~\ref{ite}, the "simple update" scheme was developed and have widely applied to iPEPS. 
+The infinite imaginary-time evolving block decimation (iTEBD) \cite{PhysRevLett.98.070201, PhysRevB.78.155117} or so called the "simple update" scheme was developed and have widely applied to infinite PEPS. The tensor diagrams shown in the Fig.~\ref{fig314} are the procedures of 1D-iTEBD which can be simply built by the following steps,
 
-The tensor diagrams shown in the Fig.~\ref{fig314} are the procedures of 1D-iTEBD which can be simply built by the following steps,
+\begin{figure}[hb]
+	\centering
+	\includegraphics[width=0.90\textwidth]{figures/fig313.png}
+	\caption[The tensor network diagrams for the 1D iTEBD]{ (i)Absorb all $\lambda$ to $\Gamma$. (ii) Contract an evolution operator $e^{-\delta H}$ for evolving the system. (iii) Decompose the tensor $\theta$ by SVD. (iv) Truncate and update the states and $\lambda$ on the green bond.(v) Remove $
+		\lambda$ for obtaining the states. (iv) After updating the states and $\lambda$ on the purple bond, we can apply the same way to update the red bond and repeat all the steps until the ground state converges.}
+	\label{fig314}
+\end{figure}
+
 \begin{enumerate}
-	\item Initialization: According to Eq. \ref{mapgroud}, the ground state can be obtained from any random state $\Ket{\Psi}$ theoretically. Hence, we provide two rank-3 tensors $\Gamma^{[A]}$ and $\Gamma^{[B]}$ with dimension $dD^2$, where $d$ is the dimension of physical basis and $D$ is the virtual bonds dimension. Two random diagonal matricies $\lambda^{[A]}$ and $\lambda^{[B]}$ are also provided to represent the entanglement between each sites at first. See Fig.~\ref{fig314}(i).
+	\item Initialization: According to Eq.~{\ref{mapgroud}}, the ground state can be obtained from any random state $\Ket{\Psi}$ theoretically. Hence, we provide two rank-3 tensors $\Gamma^{[A]}$ and $\Gamma^{[B]}$ with dimension $dD^2$, where $d$ is the dimension of physical basis and $D$ is the virtual bonds dimension. Two random diagonal matricies $\lambda^{[A]}$ and $\lambda^{[B]}$ are also provided to represent the entanglement between each sites at first. See Fig.~\ref{fig314}(i).
 	\item Obtain a cluster tensor $\Theta$: As shown in Fig.~\ref{fig314}(b),
 		\begin{enumerate}
 			\item Absorb the entangled matrices; 
@@ -52,7 +57,7 @@ The tensor diagrams shown in the Fig.~\ref{fig314} are the procedures of 1D-iTEB
 					&\Gamma^{\prime [A]} = \sum_{ij}{\lambda^{[A]}_{i} \Gamma^{A}_{ij \sigma_i} \lambda^{[B]}_{j}} \\
 					&\Gamma^{\prime [B]} = \sum_{k}{\Gamma^{B}_{k \sigma_j} \lambda^{[A]}_{k}}
 				\end{align}
-			\item Utilize the evolution operate $U(\tau)$: The 2-site evolution operator $U(\tau)$ can be simply obtained from Eq. \ref{evoopt}. In this case, 
+			\item Utilize the evolution operate $U(\tau)$: The 2-site evolution operator $U(\tau)$ can be simply obtained from Eq.~(\ref{evoopt}). In this case, 
 				\begin{align}
 					U(\tau) = e^{-\tau H_{AB}}
 				\end{align}
@@ -76,7 +81,7 @@ where $\Sigma_1$ is a $m \times m$ diagonal matrix and $V_1^T$ is a $m \times n$
 			\sigma_1 \geq \sigma_1 \geq \sigma_2 \geq \dots \geq \sigma_{\max{[m,n]}}
 		\end{align}
 \end{enumerate}
-		\item Truncation: See Fig.~\ref{fig314}(iv), we notice that the dimension of bond $j$ increases to $dD$. To avoid the exponential increment of the dimension, the dimension of bond $j$ must be resized to $D$.
+		\item Truncation: See Fig.~\ref{fig314}(iv), we notice that the dimension of bond $j$ increases to $dD$. To avoid the exponential increase of the dimension, the dimension of bond $j$ must be resized to $D$.
 		\item Absorb the inverse entangled matrices $\lambda^{[A]}$: Remove the entangle influence from $\widetilde{\Gamma}^{[A]}$ and $\widetilde{\Gamma}^{[B]}$ and return the general form of MPS, as shown in Fig.~\ref{fig314}(v).
 			\begin{align}
 				&\widetilde{\Gamma}^{[A]} = \sum_{i}{ \lambda_{i}^{[A]^{-1}} \Gamma^{[A]}_{ij,\sigma_i}} \\
@@ -86,32 +91,15 @@ where $\Sigma_1$ is a $m \times m$ diagonal matrix and $V_1^T$ is a $m \times n$
 		\item Iterate the steps (2)-(6) until the wave function converges.
 \end{enumerate}
 
-\begin{figure}[ht]
-	\centering
-	\includegraphics[width=0.90\textwidth]{figures/fig313.png}
-	\caption[The tensor network diagrams for the 1-D iTEBD]{ (i)Absorb all $\lambda$ to $\Gamma$. (ii) Contract an evolution operator $e^{-\delta H}$ for evolving the system. (iii) Decompose the tensor $\theta$ by SVD. (iv) Truncate and update the states and $\lambda$ on the green bond.(v) Remove $
-		\lambda$ for obtaining the states. (iv) After updating the states and $\lambda$ on the purple bond, we can apply the same way to update the red bond and repeat all the steps until the ground state converges.}
-	\label{fig314}
-\end{figure}
-
 In one dimensional many-body systems, the performance of iTEBD is good. Although the accuracy is slightly less than DMRG \cite{PhysRevB.48.10345}, it is still widely applied to study or test models due to its high efficiency.
 
+\section{Infinite Imaginary-Time Evolving Block Decimation for 2D system}
+
+In this section, we focus on how to implement and optimize 2D-iTEBD algorithms. Interested readers can refer to the related articles for technical details  \cite{PhysRevLett.99.220405, PhysRevLett.101.090603, PhysRevB.78.155117}.
 \subsection{Two-dimensional iTEBD}
 \label{2ditebd}
 
-Due to the success in one-dimensional cases, we want to extend the framework of iTEBD to simulate two-dimensional systems . In this case, we describe the wave-functions by the projected entangled pair states (PEPS) rather than MPS. 
-%%%%%%%%%%%%%%%%%%%%%%%%
-The PEPS structure is a straightforward extension of MPS and obeys the restriction of MPS. Therefore, it can be expanded to a infinite structure, iPEPS, which is composed of $n$-site translational invariant states. For instance, we can draw a tensor diagram as shown in Fig.~\ref{fig315} to represent the wave function of a 2-D many-body system which is composed of 2-site translational symmetric states.
-%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{figure}[ht]
-
-	\centering
-	\includegraphics[width=0.6\textwidth]{figures/fig314.png}
-	\caption[The tensor diagrams of 2-D lattice]{Four sites unit cell in iPEPS.}
-	\label{fig315}
-\end{figure}
-
+Due to the success in one dimensional cases, we want to extend the framework of iTEBD to simulate two dimensional systems . In this case, we describe the wave-functions by the projected entangled pair states (PEPS) rather than MPS. 
 The most intuitive update method is directional simple update, which means that the states of iPEPS must be updated by iTEBD along four directional moves: namely up, right, down and left. The scheme of implementing 2D-iTEBD is shown as follows which starts from the right move,
 
 \begin{enumerate}
@@ -202,7 +190,7 @@ In the procedures of directional simple update, there are six pseudo-inverse $\l
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=1.00\textwidth]{figures/fig317.png}
-	\caption[The tensor network diagrams for the 2-D iTEBD with QR decomposition]{The tensor network diagrams for the improve 2-D iTEBD.}
+	\caption[The tensor network diagrams for the 2D iTEBD with QR decomposition]{The tensor network diagrams for the improve 2D iTEBD.}
 	\label{fig318}
 \end{figure}
 
@@ -212,7 +200,7 @@ In the procedures of directional simple update, there are six pseudo-inverse $\l
 \subsection{Initialization}
 \label{2doptInit}
 
-Theoretically, regardless of which initial state we use, the ground state wave-function can be obtained by iTEBD algorithms. However, many trials show that starting from an bad initial state might cause the break down the algorithms. Hence, we need to "guess" a good initial state.
+Theoretically, regardless of which initial state we use, the ground state wave-function can be obtained by iTEBD algorithms. However, many trials show that starting from an bad initial state might cause the breakdown the algorithms. Hence, we need to "guess" a good initial state.
 
 \begin{enumerate}
 	\item Begin from product states.
@@ -228,7 +216,7 @@ Theoretically, regardless of which initial state we use, the ground state wave-f
 
 \subsection{QR and LQ decomposition}
 \label{2doptQR} 
-In Sec.~\ref{2ditebd} and Sec.~\ref{2dhastin}, we introduced two different methods to implement 2D-iTEBD. However, it is hard to apply them when the dimension of the virtual bonds becomes larger due to the rapid increment of the dimension of tensor $\Theta$ [Fig.~\ref{fig316}(iii) and Fig.~\ref{fig318}(iii)] which is a rank-8 tensor with dimension $d^2D^6$. In addition to the problem of the consumption, the singular value decomposition, is expensive because the time complexity is proportional to $O(M^2N)$. Therefore, in this section we apply QR and LQ decomposition to reduce the rank of $\Theta$.
+In Sec.~\ref{2ditebd} and Sec.~\ref{2dhastin}, we introduced two different methods to implement 2D-iTEBD. However, it is hard to apply them when the dimension of the virtual bonds becomes larger due to the rapid increase of the dimension of tensor $\Theta$ [Fig.~\ref{fig316}(iii) and Fig.~\ref{fig318}(iii)] which is a rank-8 tensor with dimension $d^2D^6$. In addition to the problem of the consumption, the singular value decomposition, is expensive because the time complexity is proportional to $O(M^2N)$. Therefore, in this section we apply QR and LQ decomposition to reduce the rank of $\Theta$.
 
 The QR decomposition decomposes a real or complex matrix $A_{m,n}$, with $m \geq n$, into a $m \times m$ unitary matrix $Q$ and a $m \times n$ upper triangular matrix $R$. However, in bottom $(m-n)$ rows of $R$ are filled with zeros. Hence, the matrix $Q$ and $R$ can be truncated,
 \begin{align}
@@ -243,20 +231,20 @@ In the case of the directional simple update, most of the steps of implementing 
 \begin{enumerate}
 	\item After the entangled matrices $\lambda$s are absorbed, we decompose the states $\Gamma^{[A]}$ into a unitary matrix $X$ and a upper triangular matrix $a_R$,
 		\begin{align}
-			\Gamma^{[A]}_{\chi_d \chi_l \chi_u, \chi_{\sigma_i} \chi_r} = X_{\chi_d \chi_l \chi_u, \chi_{\sigma_i} \chi_r} {a_R}_{\chi_{\sigma_i} \chi_r,\chi_{\sigma_i} \chi_r}
+			\Gamma^{[A]}_{d l u, \sigma_i r} = \sum_{r^{\prime}=1}^{\chi_{r^{\prime}}}X_{d l u, r^{\prime}} {a_R}_{r^{\prime},\sigma_i r}
 		\end{align}
 		and decompose $\Gamma^{[A]}$ into a unitary matrix $Y$ and a lower triangular matrix $b_L$
 		\begin{align}
-			\Gamma^{[B]}_{\chi_{\sigma_j} \chi_r, \chi_d \chi_l \chi_u} = {b_L}_{\chi_{\sigma_j} \chi_r,\chi_{\sigma_j} \chi_r} Y_{\chi_{\sigma_i} \chi_r, \chi_d \chi_l \chi_u} 
+			\Gamma^{[B]}_{\sigma_j r, d l u} = \sum_{r^{\prime}=1}^{\chi_{r^{\prime}}}{b_L}_{\sigma_j r, r^{\prime}} Y_{r^{\prime}, d l u} 
 		\end{align}
-		where $\chi_n$ means the dimension of the bond $n$. See Fig.~\ref{fig319}(ii).
+		where $\chi_{r^{\prime}} = \chi_{\sigma_i}\chi{r}$. See Fig.~\ref{fig319}(ii).
 	\item Contract $X$ and $a_R$ into $\Gamma^{[A]}$ and $b_L$ and $Y$ into $\Gamma^{[B]}$ before the inverse matrices are absorbed. See Fig.~\ref{fig319}(v).
 
 \end{enumerate}
 \begin{figure}[H] 
 	\centering 
 	\includegraphics[width=1.00\textwidth]{figures/fig318.png} 
-	\caption[The tensor network diagrams for the improve 2-D iTEBD with QR decomposition]{The tensor network diagrams for the improve 2-D iTEBD with QR and LQ decomposition.} 
+	\caption[The tensor network diagrams for the improve 2D iTEBD with QR decomposition]{The tensor network diagrams for the improve 2D iTEBD with QR and LQ decomposition.} 
 	\label{fig319} 
 \end{figure} 
 
@@ -264,11 +252,11 @@ In the case of the directional simple update, most of the steps of implementing 
 	\centering
 	\includegraphics[width=1.00\textwidth]{figures/fig319.png}
 	\includegraphics[width=1.00\textwidth]{figures/fig320.png}
-	\caption[The tensor network diagrams for the improve 2-D iTEBD with QR and LQ decomposition]{The tensor network diagrams for the improve 2-D iTEBD with QR and LQ decomposition.}
+	\caption[The tensor network diagrams for the improve 2D iTEBD with QR and LQ decomposition]{The tensor network diagrams for the improve 2D iTEBD with QR and LQ decomposition.}
 	\label{fig320}
 \end{figure}
 
-Nevertheless, the main idea to reduce the tensor $\Theta$ in ameliorate 2D-iTEBD in the same way as the directional simple update. The scheme becomes more complicated, see Fig.~\ref{fig320}, 
+Nevertheless, the main idea to reduce the tensor $\Theta$ in improved 2D-iTEBD in the same way as the directional simple update. The scheme becomes more complicated, see Fig.~\ref{fig320}, 
 
 \begin{enumerate}
 	\item Instead absorb $\lambda_d$ and $\lambda_l$ into the cluster tensor $C$, we absorb them into $\Gamma^{[A]}$
@@ -301,34 +289,33 @@ to determine the dimension of the updated bond, where $\sigma_i$ is the elements
 
 Now we compare the results for the Heisenberg model on the square lattice,
 \begin{align}
-	\label{mapgroud}
 	H = J \sum_{<ij>}{\left( S^{x}_{i}S^{x}_{j}+S^{y}_{i}S^{y}_{j}+S^{z}_{i}S^{z}_{j} \right)}
 \end{align}
 and show the effect of the various optimizations.
 
 \subsection{Different Initializations}
 
-\begin{figure}[ht]
+\begin{figure}[!ht]
 	\centering
-	\includegraphics[width=1.00\textwidth]{figures/fig322.png}
+	\includegraphics[width=0.8\textwidth]{figures/fig322.png}
 	\caption[Different methods to initialize the states]{(i) Type 1, (ii) Type 2}
 	\label{fig322}
 \end{figure}
 
-Assume that the iPEPS states are constructed as Fig.~\ref{fig321}(i) and the algorithm starts from two different initial states, see Fig.~\ref{fig322}(i) and Fig.~\ref{fig322}(ii). Obviously, The Type1 method does not obey translational symmetry. Hence, the algorithm might hardly converge or even break down. As shown in Fig \ref{fig323}, the efficient ameliorate 2D-iTEBD (Hastings+QR) starting from the initial states which are obtained from Type2 [Fig.~\ref{fig322}(ii)] converge in less 1000 epochs. However, if we begin from the Type1 states [Fig.~\ref{fig322}(i)], the algorithm does not converge in 7000 epochs and even be broken in the end. 
-In conclusion, through many experiment we have known that this problem may not only occur in 2D-iTEBD, but also in any algorithm which is based on the theory of imaginary-time evolution, such as fast full update \cite{PhysRevB.92.035142}, PESS \cite{PhysRevX.4.011025}.
-
-\begin{figure}[ht]
+\begin{figure}[!hb]
 	\centering
-	\includegraphics[width=0.75\textwidth]{figures/fig323.png}
+	\includegraphics[width=0.7\textwidth]{figures/fig323.png}
 	\caption[Comparison the results of Heisenberg model on square lattice which are obtaining from different initial states.]{Comparison the results of Heisenberg model on square lattice are obtaining from different initial states. The Blue line represents updating tensors from the initial state shown in Fig \ref{fig322} (i) and the green one represents updating from Fig \ref{fig322} (ii)}
 
 	\label{fig323}
 \end{figure}
 
+Assume that the iPEPS states are constructed as Fig.~\ref{fig321}(i) and the algorithm starts from two different initial states, see Fig.~\ref{fig322}(i) and Fig.~\ref{fig322}(ii). Obviously, The Type1 method does not obey translational symmetry. Hence, the algorithm might hardly converge or even breakdown. As shown in Fig \ref{fig323}, the efficient improved 2D-iTEBD (Hastings+QR) starting from the initial states which are obtained from Type2 [Fig.~\ref{fig322}(ii)] converge in less 1000 epochs. However, if we begin from the Type1 states [Fig.~\ref{fig322}(i)], the algorithm does not converge in 7000 epochs and even be broken in the end. 
+In conclusion, through many experiment we have known that this problem may not only occur in 2D-iTEBD, but also in any algorithm which is based on the theory of imaginary-time evolution, such as fast full update \cite{PhysRevB.92.035142}, PESS \cite{PhysRevX.4.011025}.
+
 \subsection{Different schemes of 2D-iTEBD}
 
-In previous sections, we have introduced four different implementations of 2D-iTEBD, \textit{Simple Update}, \textit{Ameliorate Simple Update}, \textit{Simple Update with QR decomposition} and \textit{Ameliorate Simple Update with QR}. In Fig.~\ref{fig325}, we notice that the methods based on Hastings scheme are more stable than the other which are build on \textit{Simple Update}. The Hastings ways can converge rapidly in 1,000 epochs. However, due to multiplying too many pseudo-inverse matrices, the other methods can not converge in 10,000 epochs, and break down in the end. Nevertheless, according to the result shown in Fig.~\ref{fig325}, we find that the QR decomposition has no effects on the stability but it makes the algorithms more efficient, see Fig.~\ref{fig324}. Due to the reduced dimensions of the tensor $\Theta$, the time cost does not increase exponentially with virtual bond dimensions. Therefore, we can simply study the two dimensional systems with a sufficient large virtual bond dimension $D$, which means that we can obtain the better ground states more quickly and the measurement can be calculated more accurately with larger $D$.
+In previous sections, we have introduced four different implementations of 2D-iTEBD, \textit{Simple Update}, \textit{Improved Simple Update}, \textit{Simple Update with QR decomposition} and \textit{Improved Simple Update with QR}. In Fig.~\ref{fig325}, we notice that the methods based on Hastings scheme are more stable than the other which are build on \textit{Simple Update}. The Hastings ways can converge rapidly in 1,000 epochs. However, due to multiplying too many pseudo-inverse matrices, the other methods can not converge in 10,000 epochs, and breakdown in the end. Nevertheless, according to the result shown in Fig.~\ref{fig325}, we find that the QR decomposition has no effects on the stability but it makes the algorithms more efficient, see Fig.~\ref{fig324}. Due to the reduced dimensions of the tensor $\Theta$, the time cost does not increase exponentially with virtual bond dimensions. Therefore, we can simply study the two dimensional systems with a sufficient large virtual bond dimension $D$, which means that we can obtain the better ground states more quickly and the measurement can be calculated more accurately with larger $D$.
 
 \begin{figure}[ht]
 	\centering
@@ -351,7 +338,7 @@ To improve the stability of the algorithms, we can set a cutoff $\varepsilon$ of
 \begin{figure}[ht]
 	\centering
 	\includegraphics[width=0.65\textwidth]{figures/fig326.png}
-	\caption[Energy per epoch of Heisenberg model on two-dimensional square lattice with the cutoff, $\varepsilon = 10^{-7}$]{Per epoch energy of Heisenberg model on two-dimensional square lattice with the cutoff, $\varepsilon = 10^{-7}$.}
+	\caption[Energy per epoch of Heisenberg model on two dimensional square lattice with the cutoff, $\varepsilon = 10^{-7}$]{Per epoch energy of Heisenberg model on two dimensional square lattice with the cutoff, $\varepsilon = 10^{-7}$.}
 	\label{fig326}
 \end{figure}
 
