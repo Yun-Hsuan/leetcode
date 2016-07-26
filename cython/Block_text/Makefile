@@ -1,7 +1,27 @@
-all:
-	python setup.py build_ext -if
+EXU:= test_cpp.e
+CC:=g++
+FLAGS:= -O3 -m64 -std=c++0x #-pg -Wall
+OBJ := Block.o Matrix.o
+all: $(OBJ) $(EXU)
 
+$(OBJ): %.o: %.cpp
+	$(CC) -c -I$(INC) $(FLAGS) $< -o $@
+	
+$(EXU): %.e: %.cpp
+	$(CC) -I$(INC) -L$(LIB) $(FLAGS) $(OBJ) $< -o $@ 
+
+leak_check:
+	valgrind --leak-check=yes ./test_cpp.e
+
+run:
+	./$(EXU)
+
+run_hup:
+	nohup ./$(EXU) &
+
+.PHONY: clean cleanobj cleanall
 clean:
-	-rm -r pyBlock.cpp pyBlock.so build
-
-#-Wunused-function -Wunneeded-internal-declaration 
+	rm -f *.e *.out
+cleanobj:
+	rm -rf $(OBJ)
+cleanall: clean cleanobj cleandata

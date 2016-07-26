@@ -3,14 +3,14 @@ from Cython.Build import cythonize
 from Cython.Distutils import build_ext
 import numpy as np
 
-ext = Extension("pyBlock",
-                sources=["pyBlock.pyx", "Block.cpp"],
+ext = Extension("pyUni10",
+                sources=["pyUni10.pyx", "Block.cpp", "Matrix.cpp"],
                 extra_compile_args=["-O3", "-Wno-unused-function", "-Wno-constant-logical-operand"],
                 include_dirs=[np.get_include()],
                 language="c++")
 
 setup(
-      name="pyBlock",
+      name="pyUni10",
       ext_modules=cythonize(ext))
 
 #setup(

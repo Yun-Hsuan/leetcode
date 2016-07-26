@@ -12,6 +12,8 @@ typedef std::complex<double> Complex;
 
 namespace Uni10{
 
+	class Matrix;
+
 	enum rflag{
 		RNULL = 0,
 		RTYPE = 1
@@ -27,16 +29,15 @@ namespace Uni10{
 		public:
 
 			friend std::ostream& operator<< (std::ostream& os, const Block& b);
-			friend Block operator*(Real a, const Block& b);
-			friend Block operator+(const Block& a, const Block& b);
+			//friend Block operator*(Real a, const Block& b);
+			friend Matrix operator+(const Block& a, const Block& b);
 
 			Block();
-			Block(size_t _Rnum, size_t _Cnum);
+			Block(const Block& a);
 			Block(rflag uni10_tp, size_t _Rnum, size_t _Cnum);
 			Block(cflag uni10_tp, size_t _Rnum, size_t _Cnum);
+			//Block(size_t _Rnum, size_t _Cnum);
 			size_t elemNum()const;
-			void setElem(Real* _elem);
-			void setElem(Complex* _elem);
 			int typeID() const;
 			size_t row();
 			size_t col();
@@ -45,8 +46,9 @@ namespace Uni10{
 
 			~Block();
 
-		private:
+	    friend class Matrix;
 
+		protected:
 			rflag r_flag;
 			cflag c_flag;
 			size_t Rnum;

@@ -1,8 +1,8 @@
-import pyBlock as blk
+import pyUni10 as uni10
 import numpy as np
 
-a = blk.pyBlock("R", 2, 2)
-c = blk.pyBlock("R", 2, 2)
+a = uni10.pyMatrix("R", 2, 2)
+c = uni10.pyMatrix("R", 2, 2)
 #b = blk.pyBlock("C", 2, 2)
 #c = np.array([complex(2.123, 3.123),complex(3.12,4.123),complex(2.90, 3.123),complex(3.12, 4.1290)])
 d = np.array([2., 3.,11.,4.])
@@ -16,7 +16,11 @@ e = np.array([2., 3.,11.,4.])
 a.setElem(d)
 c.setElem(e)
 #print a.getElem()
-print a + c
+#d = a + c
+print a
+print c
+
+
 #b.setElem(c)
 
 #print a * 2.0
