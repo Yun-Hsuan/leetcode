@@ -3,3 +3,5 @@ all:
 
 clean:
 	-rm -r pyBlock.cpp pyBlock.so build
+
+#-Wunused-function -Wunneeded-internal-declaration 
