@@ -17,9 +17,20 @@ a.setElem(d)
 c.setElem(e)
 #print a.getElem()
 #d = a + c
-print a
-print c
+print '================'
+print a.elemNum()
+print '================'
+print c.elemNum()
+print '================'
 
+print '================'
+print a.getElem()
+print '================'
+print c
+print '================'
+
+print a + c
+#print c.getElem()
 
 #b.setElem(c)
 

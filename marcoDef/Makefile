@@ -3,7 +3,7 @@ PYINC := /usr/include/python2.7
 INC := $(UNI10_ROOT)/include
 LIB := $(UNI10_ROOT)/lib
 CC:=gcc
-FLAGS:=-m64 -fPIC
+FLAGS:=-m64 -fPIC -Dongpu=2
 #OBJ := ioData.o 
 #all: ioData.o main.e 
 

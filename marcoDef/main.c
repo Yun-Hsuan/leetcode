@@ -33,7 +33,11 @@ void** Malloc2Darray(size_t row, size_t col, char type){
 }
 
 int main(){
-  printf("=================\n");
+#if ongpu
+  int i;
+  for(i = 0 ; i < ongpu; i++)
+    printf("=======2==========\n");
+#endif
   double** prob = (double**)Malloc2Darray(2, 4, 'd');
   double* test = (double*)malloc(sizeof(double)*4);
   test[0] = 1.0;
