@@ -12,7 +12,6 @@ class J{
 
   private:
     int l;
-    int x;
 
 };
 
