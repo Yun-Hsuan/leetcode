@@ -8,7 +8,7 @@ class J{
       l(0){};
     ~J(){};
 
-    void printl() const;
+    static void printl();
 
   private:
     int l;

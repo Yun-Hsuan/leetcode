@@ -1,6 +1,6 @@
 EXU:= test.e
 CC:=g++
-OBJ:= J.o
+OBJ:= J.o func.o
 FLAGS:= -O3 -m64 -std=c++11 #-pg -Wall
 all: $(OBJ) $(EXU)
 

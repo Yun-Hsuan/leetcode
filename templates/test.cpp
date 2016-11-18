@@ -1,11 +1,13 @@
 #include "J.hpp"
+//#include "func.h"
 
 int main(){
 
   J<int> A;
-  //J A(3);
-  A.printl();
 
+  J<int>::printl();
+  
   return 0;
 
 }
+
